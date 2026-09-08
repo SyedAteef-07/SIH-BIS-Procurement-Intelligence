@@ -35,4 +35,24 @@ Frontend → Backend API → AI/RAG → Standards Knowledge Base → Database
 
 ## Project Status
 
-Under Development
+The frontend dashboard and backend API contract are implemented on the feature
+branch. The local catalog is a safe, deterministic seed for development; live
+BIS ingestion, embeddings, PostgreSQL, Qdrant, and Neo4j can be introduced
+behind the documented service boundary.
+
+## Backend MVP
+
+The FastAPI backend accepts product or tender text and returns ranked standards,
+resolved related references, certification guidance, and likely specification
+gaps. Start it from the repository root after installing
+`backend/requirements.txt`:
+
+```text
+uvicorn app.main:app --app-dir backend --reload
+```
+
+Use `POST /api/analyze` with `{"description": "PVC electrical cable rated 1100V"}`
+or browse the catalog with `GET /api/standards`. The catalog is deliberately
+small and deterministic for local development; production deployments can
+replace it with the standards database and vector/RAG pipeline without changing
+the API response contract.
