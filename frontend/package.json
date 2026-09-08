@@ -1,5 +1,5 @@
 {
-  "name": "bis-procurement-intelligence",
+  "name": "bis-procurement-intelligence-frontend",
   "private": true,
   "version": "0.1.0",
   "type": "module",
@@ -9,11 +9,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@vitejs/plugin-react": "^4.3.1",
-    "vite": "^5.4.8",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "lucide-react": "^0.468.0"
+    "@vitejs/plugin-react": "latest",
+    "lucide-react": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "vite": "latest"
   },
   "devDependencies": {}
 }
