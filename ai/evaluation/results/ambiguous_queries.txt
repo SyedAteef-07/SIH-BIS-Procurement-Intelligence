@@ -1,0 +1,272 @@
+Ambiguous query diagnostics: grades 3/2 are relevant, 1 is weakly related.
+Review NDCG@5 and Recall@5 rather than first-rank metrics alone.
+
+Q081: road lighting equipment
+Graded labels: {'IS-DEMO-003': 3, 'IS-DEMO-021': 2, 'IS-DEMO-022': 2, 'IS-DEMO-020': 1}
+  semantic: IS-DEMO-003 (grade 3), IS-DEMO-020 (grade 1), IS-DEMO-019 (grade 0), IS-DEMO-018 (grade 0), IS-DEMO-021 (grade 2)
+    NDCG@5=0.8123; Recall@5=0.6667
+  semantic_rerank: IS-DEMO-003 (grade 3), IS-DEMO-020 (grade 1), IS-DEMO-019 (grade 0), IS-DEMO-018 (grade 0), IS-DEMO-021 (grade 2)
+    NDCG@5=0.8123; Recall@5=0.6667
+  hybrid_rerank: IS-DEMO-003 (grade 3), IS-DEMO-020 (grade 1), IS-DEMO-019 (grade 0), IS-DEMO-018 (grade 0), IS-DEMO-021 (grade 2)
+    NDCG@5=0.8123; Recall@5=0.6667
+  hybrid: IS-DEMO-003 (grade 3), IS-DEMO-020 (grade 1), IS-DEMO-019 (grade 0), IS-DEMO-018 (grade 0), IS-DEMO-021 (grade 2)
+    NDCG@5=0.8123; Recall@5=0.6667
+  semantic_fusion_0.5: IS-DEMO-003 (grade 3), IS-DEMO-020 (grade 1), IS-DEMO-019 (grade 0), IS-DEMO-018 (grade 0), IS-DEMO-021 (grade 2)
+    NDCG@5=0.8123; Recall@5=0.6667
+  hybrid_fusion_0.5: IS-DEMO-003 (grade 3), IS-DEMO-020 (grade 1), IS-DEMO-019 (grade 0), IS-DEMO-018 (grade 0), IS-DEMO-021 (grade 2)
+    NDCG@5=0.8123; Recall@5=0.6667
+  semantic_fusion_1: IS-DEMO-003 (grade 3), IS-DEMO-020 (grade 1), IS-DEMO-019 (grade 0), IS-DEMO-018 (grade 0), IS-DEMO-021 (grade 2)
+    NDCG@5=0.8123; Recall@5=0.6667
+  hybrid_fusion_1: IS-DEMO-003 (grade 3), IS-DEMO-020 (grade 1), IS-DEMO-019 (grade 0), IS-DEMO-018 (grade 0), IS-DEMO-021 (grade 2)
+    NDCG@5=0.8123; Recall@5=0.6667
+  semantic_fusion_1.5: IS-DEMO-003 (grade 3), IS-DEMO-020 (grade 1), IS-DEMO-019 (grade 0), IS-DEMO-018 (grade 0), IS-DEMO-021 (grade 2)
+    NDCG@5=0.8123; Recall@5=0.6667
+  hybrid_fusion_1.5: IS-DEMO-003 (grade 3), IS-DEMO-020 (grade 1), IS-DEMO-019 (grade 0), IS-DEMO-018 (grade 0), IS-DEMO-021 (grade 2)
+    NDCG@5=0.8123; Recall@5=0.6667
+  semantic_fusion_2: IS-DEMO-003 (grade 3), IS-DEMO-020 (grade 1), IS-DEMO-019 (grade 0), IS-DEMO-018 (grade 0), IS-DEMO-021 (grade 2)
+    NDCG@5=0.8123; Recall@5=0.6667
+  hybrid_fusion_2: IS-DEMO-003 (grade 3), IS-DEMO-020 (grade 1), IS-DEMO-019 (grade 0), IS-DEMO-018 (grade 0), IS-DEMO-021 (grade 2)
+    NDCG@5=0.8123; Recall@5=0.6667
+
+Q082: electrical cables for power supply
+Graded labels: {'IS-DEMO-005': 3, 'IS-DEMO-023': 2, 'IS-DEMO-024': 2}
+  semantic: IS-DEMO-005 (grade 3), IS-DEMO-023 (grade 2), IS-DEMO-024 (grade 2), IS-DEMO-016 (grade 0), IS-DEMO-025 (grade 0)
+    NDCG@5=1.0000; Recall@5=1.0000
+  semantic_rerank: IS-DEMO-005 (grade 3), IS-DEMO-023 (grade 2), IS-DEMO-024 (grade 2), IS-DEMO-011 (grade 0), IS-DEMO-001 (grade 0)
+    NDCG@5=1.0000; Recall@5=1.0000
+  hybrid_rerank: IS-DEMO-005 (grade 3), IS-DEMO-023 (grade 2), IS-DEMO-024 (grade 2), IS-DEMO-011 (grade 0), IS-DEMO-001 (grade 0)
+    NDCG@5=1.0000; Recall@5=1.0000
+  hybrid: IS-DEMO-005 (grade 3), IS-DEMO-023 (grade 2), IS-DEMO-024 (grade 2), IS-DEMO-011 (grade 0), IS-DEMO-010 (grade 0)
+    NDCG@5=1.0000; Recall@5=1.0000
+  semantic_fusion_0.5: IS-DEMO-005 (grade 3), IS-DEMO-023 (grade 2), IS-DEMO-024 (grade 2), IS-DEMO-001 (grade 0), IS-DEMO-016 (grade 0)
+    NDCG@5=1.0000; Recall@5=1.0000
+  hybrid_fusion_0.5: IS-DEMO-005 (grade 3), IS-DEMO-023 (grade 2), IS-DEMO-024 (grade 2), IS-DEMO-011 (grade 0), IS-DEMO-025 (grade 0)
+    NDCG@5=1.0000; Recall@5=1.0000
+  semantic_fusion_1: IS-DEMO-005 (grade 3), IS-DEMO-023 (grade 2), IS-DEMO-024 (grade 2), IS-DEMO-001 (grade 0), IS-DEMO-016 (grade 0)
+    NDCG@5=1.0000; Recall@5=1.0000
+  hybrid_fusion_1: IS-DEMO-005 (grade 3), IS-DEMO-023 (grade 2), IS-DEMO-024 (grade 2), IS-DEMO-011 (grade 0), IS-DEMO-025 (grade 0)
+    NDCG@5=1.0000; Recall@5=1.0000
+  semantic_fusion_1.5: IS-DEMO-005 (grade 3), IS-DEMO-023 (grade 2), IS-DEMO-024 (grade 2), IS-DEMO-001 (grade 0), IS-DEMO-011 (grade 0)
+    NDCG@5=1.0000; Recall@5=1.0000
+  hybrid_fusion_1.5: IS-DEMO-005 (grade 3), IS-DEMO-023 (grade 2), IS-DEMO-024 (grade 2), IS-DEMO-011 (grade 0), IS-DEMO-027 (grade 0)
+    NDCG@5=1.0000; Recall@5=1.0000
+  semantic_fusion_2: IS-DEMO-005 (grade 3), IS-DEMO-023 (grade 2), IS-DEMO-024 (grade 2), IS-DEMO-001 (grade 0), IS-DEMO-011 (grade 0)
+    NDCG@5=1.0000; Recall@5=1.0000
+  hybrid_fusion_2: IS-DEMO-005 (grade 3), IS-DEMO-023 (grade 2), IS-DEMO-024 (grade 2), IS-DEMO-011 (grade 0), IS-DEMO-001 (grade 0)
+    NDCG@5=1.0000; Recall@5=1.0000
+
+Q083: transformer procurement and acceptance testing
+Graded labels: {'IS-DEMO-001': 3, 'IS-DEMO-011': 2, 'IS-DEMO-015': 2, 'IS-DEMO-012': 1}
+  semantic: IS-DEMO-015 (grade 2), IS-DEMO-013 (grade 0), IS-DEMO-001 (grade 3), IS-DEMO-016 (grade 0), IS-DEMO-011 (grade 2)
+    NDCG@5=0.7078; Recall@5=1.0000
+  semantic_rerank: IS-DEMO-015 (grade 2), IS-DEMO-016 (grade 0), IS-DEMO-014 (grade 0), IS-DEMO-013 (grade 0), IS-DEMO-001 (grade 3)
+    NDCG@5=0.5274; Recall@5=0.6667
+  hybrid_rerank: IS-DEMO-015 (grade 2), IS-DEMO-016 (grade 0), IS-DEMO-014 (grade 0), IS-DEMO-013 (grade 0), IS-DEMO-001 (grade 3)
+    NDCG@5=0.5274; Recall@5=0.6667
+  hybrid: IS-DEMO-015 (grade 2), IS-DEMO-016 (grade 0), IS-DEMO-013 (grade 0), IS-DEMO-014 (grade 0), IS-DEMO-001 (grade 3)
+    NDCG@5=0.5274; Recall@5=0.6667
+  semantic_fusion_0.5: IS-DEMO-015 (grade 2), IS-DEMO-013 (grade 0), IS-DEMO-016 (grade 0), IS-DEMO-001 (grade 3), IS-DEMO-014 (grade 0)
+    NDCG@5=0.5557; Recall@5=0.6667
+  hybrid_fusion_0.5: IS-DEMO-015 (grade 2), IS-DEMO-016 (grade 0), IS-DEMO-013 (grade 0), IS-DEMO-014 (grade 0), IS-DEMO-001 (grade 3)
+    NDCG@5=0.5274; Recall@5=0.6667
+  semantic_fusion_1: IS-DEMO-015 (grade 2), IS-DEMO-013 (grade 0), IS-DEMO-016 (grade 0), IS-DEMO-001 (grade 3), IS-DEMO-014 (grade 0)
+    NDCG@5=0.5557; Recall@5=0.6667
+  hybrid_fusion_1: IS-DEMO-015 (grade 2), IS-DEMO-016 (grade 0), IS-DEMO-013 (grade 0), IS-DEMO-014 (grade 0), IS-DEMO-001 (grade 3)
+    NDCG@5=0.5274; Recall@5=0.6667
+  semantic_fusion_1.5: IS-DEMO-015 (grade 2), IS-DEMO-016 (grade 0), IS-DEMO-013 (grade 0), IS-DEMO-014 (grade 0), IS-DEMO-001 (grade 3)
+    NDCG@5=0.5274; Recall@5=0.6667
+  hybrid_fusion_1.5: IS-DEMO-015 (grade 2), IS-DEMO-016 (grade 0), IS-DEMO-014 (grade 0), IS-DEMO-013 (grade 0), IS-DEMO-001 (grade 3)
+    NDCG@5=0.5274; Recall@5=0.6667
+  semantic_fusion_2: IS-DEMO-015 (grade 2), IS-DEMO-016 (grade 0), IS-DEMO-013 (grade 0), IS-DEMO-014 (grade 0), IS-DEMO-001 (grade 3)
+    NDCG@5=0.5274; Recall@5=0.6667
+  hybrid_fusion_2: IS-DEMO-015 (grade 2), IS-DEMO-016 (grade 0), IS-DEMO-014 (grade 0), IS-DEMO-013 (grade 0), IS-DEMO-001 (grade 3)
+    NDCG@5=0.5274; Recall@5=0.6667
+
+Q084: worker protection on a construction site
+Graded labels: {'IS-DEMO-004': 3, 'IS-DEMO-031': 2, 'IS-DEMO-036': 1}
+  semantic: IS-DEMO-004 (grade 3), IS-DEMO-031 (grade 2), IS-DEMO-022 (grade 0), IS-DEMO-025 (grade 0), IS-DEMO-021 (grade 0)
+    NDCG@5=0.9468; Recall@5=1.0000
+  semantic_rerank: IS-DEMO-004 (grade 3), IS-DEMO-031 (grade 2), IS-DEMO-025 (grade 0), IS-DEMO-036 (grade 1), IS-DEMO-022 (grade 0)
+    NDCG@5=0.9926; Recall@5=1.0000
+  hybrid_rerank: IS-DEMO-004 (grade 3), IS-DEMO-031 (grade 2), IS-DEMO-025 (grade 0), IS-DEMO-036 (grade 1), IS-DEMO-022 (grade 0)
+    NDCG@5=0.9926; Recall@5=1.0000
+  hybrid: IS-DEMO-004 (grade 3), IS-DEMO-022 (grade 0), IS-DEMO-002 (grade 0), IS-DEMO-031 (grade 2), IS-DEMO-025 (grade 0)
+    NDCG@5=0.8828; Recall@5=1.0000
+  semantic_fusion_0.5: IS-DEMO-004 (grade 3), IS-DEMO-031 (grade 2), IS-DEMO-022 (grade 0), IS-DEMO-025 (grade 0), IS-DEMO-036 (grade 1)
+    NDCG@5=0.9880; Recall@5=1.0000
+  hybrid_fusion_0.5: IS-DEMO-004 (grade 3), IS-DEMO-022 (grade 0), IS-DEMO-031 (grade 2), IS-DEMO-002 (grade 0), IS-DEMO-025 (grade 0)
+    NDCG@5=0.9049; Recall@5=1.0000
+  semantic_fusion_1: IS-DEMO-004 (grade 3), IS-DEMO-031 (grade 2), IS-DEMO-025 (grade 0), IS-DEMO-022 (grade 0), IS-DEMO-036 (grade 1)
+    NDCG@5=0.9880; Recall@5=1.0000
+  hybrid_fusion_1: IS-DEMO-004 (grade 3), IS-DEMO-031 (grade 2), IS-DEMO-022 (grade 0), IS-DEMO-025 (grade 0), IS-DEMO-002 (grade 0)
+    NDCG@5=0.9468; Recall@5=1.0000
+  semantic_fusion_1.5: IS-DEMO-004 (grade 3), IS-DEMO-031 (grade 2), IS-DEMO-025 (grade 0), IS-DEMO-022 (grade 0), IS-DEMO-036 (grade 1)
+    NDCG@5=0.9880; Recall@5=1.0000
+  hybrid_fusion_1.5: IS-DEMO-004 (grade 3), IS-DEMO-031 (grade 2), IS-DEMO-022 (grade 0), IS-DEMO-025 (grade 0), IS-DEMO-002 (grade 0)
+    NDCG@5=0.9468; Recall@5=1.0000
+  semantic_fusion_2: IS-DEMO-004 (grade 3), IS-DEMO-031 (grade 2), IS-DEMO-025 (grade 0), IS-DEMO-022 (grade 0), IS-DEMO-036 (grade 1)
+    NDCG@5=0.9880; Recall@5=1.0000
+  hybrid_fusion_2: IS-DEMO-004 (grade 3), IS-DEMO-031 (grade 2), IS-DEMO-025 (grade 0), IS-DEMO-022 (grade 0), IS-DEMO-002 (grade 0)
+    NDCG@5=0.9468; Recall@5=1.0000
+
+Q085: water distribution infrastructure
+Graded labels: {'IS-DEMO-010': 3, 'IS-DEMO-032': 2, 'IS-DEMO-033': 2, 'IS-DEMO-008': 2, 'IS-DEMO-034': 1}
+  semantic: IS-DEMO-033 (grade 2), IS-DEMO-001 (grade 0), IS-DEMO-008 (grade 2), IS-DEMO-032 (grade 2), IS-DEMO-034 (grade 1)
+    NDCG@5=0.5118; Recall@5=0.7500
+  semantic_rerank: IS-DEMO-033 (grade 2), IS-DEMO-001 (grade 0), IS-DEMO-010 (grade 3), IS-DEMO-008 (grade 2), IS-DEMO-034 (grade 1)
+    NDCG@5=0.6775; Recall@5=0.7500
+  hybrid_rerank: IS-DEMO-033 (grade 2), IS-DEMO-001 (grade 0), IS-DEMO-010 (grade 3), IS-DEMO-008 (grade 2), IS-DEMO-034 (grade 1)
+    NDCG@5=0.6775; Recall@5=0.7500
+  hybrid: IS-DEMO-001 (grade 0), IS-DEMO-033 (grade 2), IS-DEMO-034 (grade 1), IS-DEMO-008 (grade 2), IS-DEMO-005 (grade 0)
+    NDCG@5=0.3052; Recall@5=0.5000
+  semantic_fusion_0.5: IS-DEMO-033 (grade 2), IS-DEMO-001 (grade 0), IS-DEMO-008 (grade 2), IS-DEMO-032 (grade 2), IS-DEMO-010 (grade 3)
+    NDCG@5=0.7041; Recall@5=1.0000
+  hybrid_fusion_0.5: IS-DEMO-001 (grade 0), IS-DEMO-033 (grade 2), IS-DEMO-034 (grade 1), IS-DEMO-008 (grade 2), IS-DEMO-010 (grade 3)
+    NDCG@5=0.5296; Recall@5=0.7500
+  semantic_fusion_1: IS-DEMO-033 (grade 2), IS-DEMO-001 (grade 0), IS-DEMO-008 (grade 2), IS-DEMO-010 (grade 3), IS-DEMO-032 (grade 2)
+    NDCG@5=0.7186; Recall@5=1.0000
+  hybrid_fusion_1: IS-DEMO-001 (grade 0), IS-DEMO-033 (grade 2), IS-DEMO-034 (grade 1), IS-DEMO-008 (grade 2), IS-DEMO-010 (grade 3)
+    NDCG@5=0.5296; Recall@5=0.7500
+  semantic_fusion_1.5: IS-DEMO-033 (grade 2), IS-DEMO-001 (grade 0), IS-DEMO-008 (grade 2), IS-DEMO-010 (grade 3), IS-DEMO-034 (grade 1)
+    NDCG@5=0.6546; Recall@5=0.7500
+  hybrid_fusion_1.5: IS-DEMO-033 (grade 2), IS-DEMO-001 (grade 0), IS-DEMO-008 (grade 2), IS-DEMO-034 (grade 1), IS-DEMO-010 (grade 3)
+    NDCG@5=0.6328; Recall@5=0.7500
+  semantic_fusion_2: IS-DEMO-033 (grade 2), IS-DEMO-001 (grade 0), IS-DEMO-008 (grade 2), IS-DEMO-010 (grade 3), IS-DEMO-034 (grade 1)
+    NDCG@5=0.6546; Recall@5=0.7500
+  hybrid_fusion_2: IS-DEMO-033 (grade 2), IS-DEMO-001 (grade 0), IS-DEMO-008 (grade 2), IS-DEMO-010 (grade 3), IS-DEMO-034 (grade 1)
+    NDCG@5=0.6546; Recall@5=0.7500
+
+Q086: electrical installation protection
+Graded labels: {'IS-DEMO-025': 3, 'IS-DEMO-028': 2, 'IS-DEMO-026': 2, 'IS-DEMO-037': 2, 'IS-DEMO-027': 1}
+  semantic: IS-DEMO-025 (grade 3), IS-DEMO-037 (grade 2), IS-DEMO-021 (grade 0), IS-DEMO-022 (grade 0), IS-DEMO-028 (grade 2)
+    NDCG@5=0.8328; Recall@5=0.7500
+  semantic_rerank: IS-DEMO-025 (grade 3), IS-DEMO-037 (grade 2), IS-DEMO-028 (grade 2), IS-DEMO-036 (grade 0), IS-DEMO-012 (grade 0)
+    NDCG@5=0.8609; Recall@5=0.7500
+  hybrid_rerank: IS-DEMO-025 (grade 3), IS-DEMO-037 (grade 2), IS-DEMO-028 (grade 2), IS-DEMO-036 (grade 0), IS-DEMO-012 (grade 0)
+    NDCG@5=0.8609; Recall@5=0.7500
+  hybrid: IS-DEMO-025 (grade 3), IS-DEMO-037 (grade 2), IS-DEMO-022 (grade 0), IS-DEMO-021 (grade 0), IS-DEMO-036 (grade 0)
+    NDCG@5=0.7367; Recall@5=0.5000
+  semantic_fusion_0.5: IS-DEMO-025 (grade 3), IS-DEMO-037 (grade 2), IS-DEMO-021 (grade 0), IS-DEMO-028 (grade 2), IS-DEMO-036 (grade 0)
+    NDCG@5=0.8437; Recall@5=0.7500
+  hybrid_fusion_0.5: IS-DEMO-025 (grade 3), IS-DEMO-037 (grade 2), IS-DEMO-021 (grade 0), IS-DEMO-036 (grade 0), IS-DEMO-022 (grade 0)
+    NDCG@5=0.7367; Recall@5=0.5000
+  semantic_fusion_1: IS-DEMO-025 (grade 3), IS-DEMO-037 (grade 2), IS-DEMO-028 (grade 2), IS-DEMO-021 (grade 0), IS-DEMO-036 (grade 0)
+    NDCG@5=0.8609; Recall@5=0.7500
+  hybrid_fusion_1: IS-DEMO-025 (grade 3), IS-DEMO-037 (grade 2), IS-DEMO-028 (grade 2), IS-DEMO-036 (grade 0), IS-DEMO-021 (grade 0)
+    NDCG@5=0.8609; Recall@5=0.7500
+  semantic_fusion_1.5: IS-DEMO-025 (grade 3), IS-DEMO-037 (grade 2), IS-DEMO-028 (grade 2), IS-DEMO-021 (grade 0), IS-DEMO-036 (grade 0)
+    NDCG@5=0.8609; Recall@5=0.7500
+  hybrid_fusion_1.5: IS-DEMO-025 (grade 3), IS-DEMO-037 (grade 2), IS-DEMO-028 (grade 2), IS-DEMO-036 (grade 0), IS-DEMO-021 (grade 0)
+    NDCG@5=0.8609; Recall@5=0.7500
+  semantic_fusion_2: IS-DEMO-025 (grade 3), IS-DEMO-037 (grade 2), IS-DEMO-028 (grade 2), IS-DEMO-036 (grade 0), IS-DEMO-021 (grade 0)
+    NDCG@5=0.8609; Recall@5=0.7500
+  hybrid_fusion_2: IS-DEMO-025 (grade 3), IS-DEMO-037 (grade 2), IS-DEMO-028 (grade 2), IS-DEMO-036 (grade 0), IS-DEMO-021 (grade 0)
+    NDCG@5=0.8609; Recall@5=0.7500
+
+Q087: lighting for a public building
+Graded labels: {'IS-DEMO-018': 3, 'IS-DEMO-019': 2}
+  semantic: IS-DEMO-018 (grade 3), IS-DEMO-003 (grade 0), IS-DEMO-020 (grade 0), IS-DEMO-019 (grade 2), IS-DEMO-021 (grade 0)
+    NDCG@5=0.9324; Recall@5=1.0000
+  semantic_rerank: IS-DEMO-003 (grade 0), IS-DEMO-018 (grade 3), IS-DEMO-020 (grade 0), IS-DEMO-022 (grade 0), IS-DEMO-019 (grade 2)
+    NDCG@5=0.6271; Recall@5=1.0000
+  hybrid_rerank: IS-DEMO-003 (grade 0), IS-DEMO-018 (grade 3), IS-DEMO-020 (grade 0), IS-DEMO-022 (grade 0), IS-DEMO-019 (grade 2)
+    NDCG@5=0.6271; Recall@5=1.0000
+  hybrid: IS-DEMO-003 (grade 0), IS-DEMO-020 (grade 0), IS-DEMO-018 (grade 3), IS-DEMO-019 (grade 2), IS-DEMO-023 (grade 0)
+    NDCG@5=0.5389; Recall@5=1.0000
+  semantic_fusion_0.5: IS-DEMO-018 (grade 3), IS-DEMO-003 (grade 0), IS-DEMO-020 (grade 0), IS-DEMO-019 (grade 2), IS-DEMO-021 (grade 0)
+    NDCG@5=0.9324; Recall@5=1.0000
+  hybrid_fusion_0.5: IS-DEMO-003 (grade 0), IS-DEMO-020 (grade 0), IS-DEMO-018 (grade 3), IS-DEMO-019 (grade 2), IS-DEMO-022 (grade 0)
+    NDCG@5=0.5389; Recall@5=1.0000
+  semantic_fusion_1: IS-DEMO-018 (grade 3), IS-DEMO-003 (grade 0), IS-DEMO-020 (grade 0), IS-DEMO-019 (grade 2), IS-DEMO-022 (grade 0)
+    NDCG@5=0.9324; Recall@5=1.0000
+  hybrid_fusion_1: IS-DEMO-003 (grade 0), IS-DEMO-020 (grade 0), IS-DEMO-018 (grade 3), IS-DEMO-019 (grade 2), IS-DEMO-022 (grade 0)
+    NDCG@5=0.5389; Recall@5=1.0000
+  semantic_fusion_1.5: IS-DEMO-003 (grade 0), IS-DEMO-018 (grade 3), IS-DEMO-020 (grade 0), IS-DEMO-019 (grade 2), IS-DEMO-022 (grade 0)
+    NDCG@5=0.6419; Recall@5=1.0000
+  hybrid_fusion_1.5: IS-DEMO-003 (grade 0), IS-DEMO-018 (grade 3), IS-DEMO-020 (grade 0), IS-DEMO-019 (grade 2), IS-DEMO-022 (grade 0)
+    NDCG@5=0.6419; Recall@5=1.0000
+  semantic_fusion_2: IS-DEMO-003 (grade 0), IS-DEMO-018 (grade 3), IS-DEMO-020 (grade 0), IS-DEMO-019 (grade 2), IS-DEMO-022 (grade 0)
+    NDCG@5=0.6419; Recall@5=1.0000
+  hybrid_fusion_2: IS-DEMO-003 (grade 0), IS-DEMO-018 (grade 3), IS-DEMO-020 (grade 0), IS-DEMO-019 (grade 2), IS-DEMO-022 (grade 0)
+    NDCG@5=0.6419; Recall@5=1.0000
+
+Q088: steel for building construction
+Graded labels: {'IS-DEMO-006': 3, 'IS-DEMO-029': 2}
+  semantic: IS-DEMO-029 (grade 2), IS-DEMO-006 (grade 3), IS-DEMO-005 (grade 0), IS-DEMO-002 (grade 0), IS-DEMO-027 (grade 0)
+    NDCG@5=0.8340; Recall@5=1.0000
+  semantic_rerank: IS-DEMO-029 (grade 2), IS-DEMO-006 (grade 3), IS-DEMO-002 (grade 0), IS-DEMO-023 (grade 0), IS-DEMO-030 (grade 0)
+    NDCG@5=0.8340; Recall@5=1.0000
+  hybrid_rerank: IS-DEMO-029 (grade 2), IS-DEMO-006 (grade 3), IS-DEMO-002 (grade 0), IS-DEMO-023 (grade 0), IS-DEMO-030 (grade 0)
+    NDCG@5=0.8340; Recall@5=1.0000
+  hybrid: IS-DEMO-029 (grade 2), IS-DEMO-006 (grade 3), IS-DEMO-002 (grade 0), IS-DEMO-005 (grade 0), IS-DEMO-023 (grade 0)
+    NDCG@5=0.8340; Recall@5=1.0000
+  semantic_fusion_0.5: IS-DEMO-029 (grade 2), IS-DEMO-006 (grade 3), IS-DEMO-002 (grade 0), IS-DEMO-005 (grade 0), IS-DEMO-027 (grade 0)
+    NDCG@5=0.8340; Recall@5=1.0000
+  hybrid_fusion_0.5: IS-DEMO-029 (grade 2), IS-DEMO-006 (grade 3), IS-DEMO-002 (grade 0), IS-DEMO-005 (grade 0), IS-DEMO-023 (grade 0)
+    NDCG@5=0.8340; Recall@5=1.0000
+  semantic_fusion_1: IS-DEMO-029 (grade 2), IS-DEMO-006 (grade 3), IS-DEMO-002 (grade 0), IS-DEMO-005 (grade 0), IS-DEMO-027 (grade 0)
+    NDCG@5=0.8340; Recall@5=1.0000
+  hybrid_fusion_1: IS-DEMO-029 (grade 2), IS-DEMO-006 (grade 3), IS-DEMO-002 (grade 0), IS-DEMO-023 (grade 0), IS-DEMO-005 (grade 0)
+    NDCG@5=0.8340; Recall@5=1.0000
+  semantic_fusion_1.5: IS-DEMO-029 (grade 2), IS-DEMO-006 (grade 3), IS-DEMO-002 (grade 0), IS-DEMO-005 (grade 0), IS-DEMO-030 (grade 0)
+    NDCG@5=0.8340; Recall@5=1.0000
+  hybrid_fusion_1.5: IS-DEMO-029 (grade 2), IS-DEMO-006 (grade 3), IS-DEMO-002 (grade 0), IS-DEMO-023 (grade 0), IS-DEMO-005 (grade 0)
+    NDCG@5=0.8340; Recall@5=1.0000
+  semantic_fusion_2: IS-DEMO-029 (grade 2), IS-DEMO-006 (grade 3), IS-DEMO-002 (grade 0), IS-DEMO-005 (grade 0), IS-DEMO-030 (grade 0)
+    NDCG@5=0.8340; Recall@5=1.0000
+  hybrid_fusion_2: IS-DEMO-029 (grade 2), IS-DEMO-006 (grade 3), IS-DEMO-002 (grade 0), IS-DEMO-023 (grade 0), IS-DEMO-005 (grade 0)
+    NDCG@5=0.8340; Recall@5=1.0000
+
+Q089: firefighting water equipment
+Graded labels: {'IS-DEMO-035': 3, 'IS-DEMO-008': 2, 'IS-DEMO-032': 1}
+  semantic: IS-DEMO-035 (grade 3), IS-DEMO-009 (grade 0), IS-DEMO-040 (grade 0), IS-DEMO-032 (grade 1), IS-DEMO-033 (grade 0)
+    NDCG@5=0.7911; Recall@5=0.5000
+  semantic_rerank: IS-DEMO-035 (grade 3), IS-DEMO-009 (grade 0), IS-DEMO-040 (grade 0), IS-DEMO-010 (grade 0), IS-DEMO-033 (grade 0)
+    NDCG@5=0.7453; Recall@5=0.5000
+  hybrid_rerank: IS-DEMO-035 (grade 3), IS-DEMO-009 (grade 0), IS-DEMO-040 (grade 0), IS-DEMO-010 (grade 0), IS-DEMO-033 (grade 0)
+    NDCG@5=0.7453; Recall@5=0.5000
+  hybrid: IS-DEMO-035 (grade 3), IS-DEMO-009 (grade 0), IS-DEMO-040 (grade 0), IS-DEMO-007 (grade 0), IS-DEMO-034 (grade 0)
+    NDCG@5=0.7453; Recall@5=0.5000
+  semantic_fusion_0.5: IS-DEMO-035 (grade 3), IS-DEMO-009 (grade 0), IS-DEMO-040 (grade 0), IS-DEMO-033 (grade 0), IS-DEMO-032 (grade 1)
+    NDCG@5=0.7864; Recall@5=0.5000
+  hybrid_fusion_0.5: IS-DEMO-035 (grade 3), IS-DEMO-009 (grade 0), IS-DEMO-040 (grade 0), IS-DEMO-007 (grade 0), IS-DEMO-010 (grade 0)
+    NDCG@5=0.7453; Recall@5=0.5000
+  semantic_fusion_1: IS-DEMO-035 (grade 3), IS-DEMO-009 (grade 0), IS-DEMO-040 (grade 0), IS-DEMO-010 (grade 0), IS-DEMO-033 (grade 0)
+    NDCG@5=0.7453; Recall@5=0.5000
+  hybrid_fusion_1: IS-DEMO-035 (grade 3), IS-DEMO-009 (grade 0), IS-DEMO-040 (grade 0), IS-DEMO-010 (grade 0), IS-DEMO-007 (grade 0)
+    NDCG@5=0.7453; Recall@5=0.5000
+  semantic_fusion_1.5: IS-DEMO-035 (grade 3), IS-DEMO-009 (grade 0), IS-DEMO-040 (grade 0), IS-DEMO-010 (grade 0), IS-DEMO-033 (grade 0)
+    NDCG@5=0.7453; Recall@5=0.5000
+  hybrid_fusion_1.5: IS-DEMO-035 (grade 3), IS-DEMO-009 (grade 0), IS-DEMO-040 (grade 0), IS-DEMO-010 (grade 0), IS-DEMO-007 (grade 0)
+    NDCG@5=0.7453; Recall@5=0.5000
+  semantic_fusion_2: IS-DEMO-035 (grade 3), IS-DEMO-009 (grade 0), IS-DEMO-040 (grade 0), IS-DEMO-010 (grade 0), IS-DEMO-033 (grade 0)
+    NDCG@5=0.7453; Recall@5=0.5000
+  hybrid_fusion_2: IS-DEMO-035 (grade 3), IS-DEMO-009 (grade 0), IS-DEMO-040 (grade 0), IS-DEMO-010 (grade 0), IS-DEMO-007 (grade 0)
+    NDCG@5=0.7453; Recall@5=0.5000
+
+Q090: insulation for electrical equipment
+Graded labels: {'IS-DEMO-017': 3, 'IS-DEMO-014': 2, 'IS-DEMO-016': 2, 'IS-DEMO-036': 1}
+  semantic: IS-DEMO-017 (grade 3), IS-DEMO-036 (grade 1), IS-DEMO-005 (grade 0), IS-DEMO-037 (grade 0), IS-DEMO-024 (grade 0)
+    NDCG@5=0.7050; Recall@5=0.3333
+  semantic_rerank: IS-DEMO-017 (grade 3), IS-DEMO-005 (grade 0), IS-DEMO-036 (grade 1), IS-DEMO-012 (grade 0), IS-DEMO-023 (grade 0)
+    NDCG@5=0.6929; Recall@5=0.3333
+  hybrid_rerank: IS-DEMO-017 (grade 3), IS-DEMO-005 (grade 0), IS-DEMO-036 (grade 1), IS-DEMO-012 (grade 0), IS-DEMO-023 (grade 0)
+    NDCG@5=0.6929; Recall@5=0.3333
+  hybrid: IS-DEMO-036 (grade 1), IS-DEMO-017 (grade 3), IS-DEMO-005 (grade 0), IS-DEMO-024 (grade 0), IS-DEMO-001 (grade 0)
+    NDCG@5=0.5004; Recall@5=0.3333
+  semantic_fusion_0.5: IS-DEMO-017 (grade 3), IS-DEMO-036 (grade 1), IS-DEMO-005 (grade 0), IS-DEMO-024 (grade 0), IS-DEMO-025 (grade 0)
+    NDCG@5=0.7050; Recall@5=0.3333
+  hybrid_fusion_0.5: IS-DEMO-036 (grade 1), IS-DEMO-017 (grade 3), IS-DEMO-005 (grade 0), IS-DEMO-024 (grade 0), IS-DEMO-023 (grade 0)
+    NDCG@5=0.5004; Recall@5=0.3333
+  semantic_fusion_1: IS-DEMO-017 (grade 3), IS-DEMO-036 (grade 1), IS-DEMO-005 (grade 0), IS-DEMO-024 (grade 0), IS-DEMO-025 (grade 0)
+    NDCG@5=0.7050; Recall@5=0.3333
+  hybrid_fusion_1: IS-DEMO-017 (grade 3), IS-DEMO-036 (grade 1), IS-DEMO-005 (grade 0), IS-DEMO-024 (grade 0), IS-DEMO-012 (grade 0)
+    NDCG@5=0.7050; Recall@5=0.3333
+  semantic_fusion_1.5: IS-DEMO-017 (grade 3), IS-DEMO-005 (grade 0), IS-DEMO-036 (grade 1), IS-DEMO-024 (grade 0), IS-DEMO-012 (grade 0)
+    NDCG@5=0.6929; Recall@5=0.3333
+  hybrid_fusion_1.5: IS-DEMO-017 (grade 3), IS-DEMO-036 (grade 1), IS-DEMO-005 (grade 0), IS-DEMO-012 (grade 0), IS-DEMO-023 (grade 0)
+    NDCG@5=0.7050; Recall@5=0.3333
+  semantic_fusion_2: IS-DEMO-017 (grade 3), IS-DEMO-005 (grade 0), IS-DEMO-036 (grade 1), IS-DEMO-012 (grade 0), IS-DEMO-024 (grade 0)
+    NDCG@5=0.6929; Recall@5=0.3333
+  hybrid_fusion_2: IS-DEMO-017 (grade 3), IS-DEMO-036 (grade 1), IS-DEMO-005 (grade 0), IS-DEMO-012 (grade 0), IS-DEMO-023 (grade 0)
+    NDCG@5=0.7050; Recall@5=0.3333
