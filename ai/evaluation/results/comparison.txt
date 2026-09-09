@@ -1,0 +1,106 @@
+Ranking comparison: unfiltered; means exclude out-of-domain queries.
+
+overall
+System                                    recall@1    recall@3    recall@5         mrr      ndcg@5
+BGE + FAISS                                 0.9204      0.9593      0.9778      0.9944      0.9720
+BGE + FAISS + Reranker                      0.9148      0.9583      0.9741      0.9889      0.9690
+Hybrid + Reranker                           0.9148      0.9583      0.9741      0.9889      0.9690
+Hybrid RRF (before reranking)               0.9194      0.9472      0.9685      0.9815      0.9623
+BGE + CE rank fusion w=0.5                  0.9204      0.9556      0.9769      0.9944      0.9724
+Hybrid + CE rank fusion w=0.5               0.9194      0.9528      0.9713      0.9815      0.9651
+BGE + CE rank fusion w=1                    0.9204      0.9583      0.9769      0.9944      0.9728
+Hybrid + CE rank fusion w=1                 0.9231      0.9556      0.9741      0.9870      0.9697
+BGE + CE rank fusion w=1.5                  0.9148      0.9583      0.9741      0.9889      0.9686
+Hybrid + CE rank fusion w=1.5               0.9148      0.9583      0.9741      0.9889      0.9680
+BGE + CE rank fusion w=2                    0.9148      0.9583      0.9741      0.9889      0.9686
+Hybrid + CE rank fusion w=2                 0.9148      0.9583      0.9741      0.9889      0.9682
+
+ambiguous
+System                                    recall@1    recall@3    recall@5         mrr      ndcg@5
+BGE + FAISS                                 0.3833      0.6333      0.8000      1.0000      0.8074
+BGE + FAISS + Reranker                      0.3333      0.6250      0.7667      0.9500      0.7770
+Hybrid + Reranker                           0.3333      0.6250      0.7667      0.9500      0.7770
+Hybrid RRF (before reranking)               0.2750      0.5250      0.7167      0.8333      0.6883
+BGE + CE rank fusion w=0.5                  0.3833      0.6000      0.7917      1.0000      0.8162
+Hybrid + CE rank fusion w=0.5               0.2750      0.5750      0.7417      0.8333      0.7129
+BGE + CE rank fusion w=1                    0.3833      0.6250      0.7917      1.0000      0.8152
+Hybrid + CE rank fusion w=1                 0.3083      0.6000      0.7667      0.8833      0.7500
+BGE + CE rank fusion w=1.5                  0.3333      0.6250      0.7667      0.9500      0.7757
+Hybrid + CE rank fusion w=1.5               0.3333      0.6250      0.7667      0.9500      0.7706
+BGE + CE rank fusion w=2                    0.3333      0.6250      0.7667      0.9500      0.7757
+Hybrid + CE rank fusion w=2                 0.3333      0.6250      0.7667      0.9500      0.7728
+
+exact
+System                                    recall@1    recall@3    recall@5         mrr      ndcg@5
+BGE + FAISS                                 1.0000      1.0000      1.0000      1.0000      1.0000
+BGE + FAISS + Reranker                      0.9750      1.0000      1.0000      0.9875      0.9908
+Hybrid + Reranker                           0.9750      1.0000      1.0000      0.9875      0.9908
+Hybrid RRF (before reranking)               1.0000      1.0000      1.0000      1.0000      1.0000
+BGE + CE rank fusion w=0.5                  1.0000      1.0000      1.0000      1.0000      1.0000
+Hybrid + CE rank fusion w=0.5               1.0000      1.0000      1.0000      1.0000      1.0000
+BGE + CE rank fusion w=1                    1.0000      1.0000      1.0000      1.0000      1.0000
+Hybrid + CE rank fusion w=1                 1.0000      1.0000      1.0000      1.0000      1.0000
+BGE + CE rank fusion w=1.5                  0.9750      1.0000      1.0000      0.9875      0.9908
+Hybrid + CE rank fusion w=1.5               0.9750      1.0000      1.0000      0.9875      0.9908
+BGE + CE rank fusion w=2                    0.9750      1.0000      1.0000      0.9875      0.9908
+Hybrid + CE rank fusion w=2                 0.9750      1.0000      1.0000      0.9875      0.9908
+
+near_confuser
+System                                    recall@1    recall@3    recall@5         mrr      ndcg@5
+BGE + FAISS                                 1.0000      1.0000      1.0000      1.0000      0.9847
+BGE + FAISS + Reranker                      1.0000      1.0000      1.0000      1.0000      0.9872
+Hybrid + Reranker                           1.0000      1.0000      1.0000      1.0000      0.9872
+Hybrid RRF (before reranking)               1.0000      1.0000      1.0000      1.0000      0.9817
+BGE + CE rank fusion w=0.5                  1.0000      1.0000      1.0000      1.0000      0.9813
+Hybrid + CE rank fusion w=0.5               1.0000      1.0000      1.0000      1.0000      0.9817
+BGE + CE rank fusion w=1                    1.0000      1.0000      1.0000      1.0000      0.9847
+Hybrid + CE rank fusion w=1                 1.0000      1.0000      1.0000      1.0000      0.9851
+BGE + CE rank fusion w=1.5                  1.0000      1.0000      1.0000      1.0000      0.9855
+Hybrid + CE rank fusion w=1.5               1.0000      1.0000      1.0000      1.0000      0.9855
+BGE + CE rank fusion w=2                    1.0000      1.0000      1.0000      1.0000      0.9855
+Hybrid + CE rank fusion w=2                 1.0000      1.0000      1.0000      1.0000      0.9855
+
+out_of_domain
+System                                    recall@1    recall@3    recall@5         mrr      ndcg@5
+BGE + FAISS                                    n/a         n/a         n/a         n/a         n/a
+BGE + FAISS + Reranker                         n/a         n/a         n/a         n/a         n/a
+Hybrid + Reranker                              n/a         n/a         n/a         n/a         n/a
+Hybrid RRF (before reranking)                  n/a         n/a         n/a         n/a         n/a
+BGE + CE rank fusion w=0.5                     n/a         n/a         n/a         n/a         n/a
+Hybrid + CE rank fusion w=0.5                  n/a         n/a         n/a         n/a         n/a
+BGE + CE rank fusion w=1                       n/a         n/a         n/a         n/a         n/a
+Hybrid + CE rank fusion w=1                    n/a         n/a         n/a         n/a         n/a
+BGE + CE rank fusion w=1.5                     n/a         n/a         n/a         n/a         n/a
+Hybrid + CE rank fusion w=1.5                  n/a         n/a         n/a         n/a         n/a
+BGE + CE rank fusion w=2                       n/a         n/a         n/a         n/a         n/a
+Hybrid + CE rank fusion w=2                    n/a         n/a         n/a         n/a         n/a
+
+semantic_paraphrase
+System                                    recall@1    recall@3    recall@5         mrr      ndcg@5
+BGE + FAISS                                 0.9333      1.0000      1.0000      0.9667      0.9754
+BGE + FAISS + Reranker                      1.0000      1.0000      1.0000      1.0000      1.0000
+Hybrid + Reranker                           1.0000      1.0000      1.0000      1.0000      1.0000
+Hybrid RRF (before reranking)               1.0000      1.0000      1.0000      1.0000      1.0000
+BGE + CE rank fusion w=0.5                  0.9333      1.0000      1.0000      0.9667      0.9754
+Hybrid + CE rank fusion w=0.5               1.0000      1.0000      1.0000      1.0000      1.0000
+BGE + CE rank fusion w=1                    0.9333      1.0000      1.0000      0.9667      0.9754
+Hybrid + CE rank fusion w=1                 1.0000      1.0000      1.0000      1.0000      1.0000
+BGE + CE rank fusion w=1.5                  1.0000      1.0000      1.0000      1.0000      1.0000
+Hybrid + CE rank fusion w=1.5               1.0000      1.0000      1.0000      1.0000      1.0000
+BGE + CE rank fusion w=2                    1.0000      1.0000      1.0000      1.0000      1.0000
+Hybrid + CE rank fusion w=2                 1.0000      1.0000      1.0000      1.0000      1.0000
+
+technical
+System                                    recall@1    recall@3    recall@5         mrr      ndcg@5
+BGE + FAISS                                 1.0000      1.0000      1.0000      1.0000      1.0000
+BGE + FAISS + Reranker                      1.0000      1.0000      1.0000      1.0000      1.0000
+Hybrid + Reranker                           1.0000      1.0000      1.0000      1.0000      1.0000
+Hybrid RRF (before reranking)               1.0000      1.0000      1.0000      1.0000      1.0000
+BGE + CE rank fusion w=0.5                  1.0000      1.0000      1.0000      1.0000      1.0000
+Hybrid + CE rank fusion w=0.5               1.0000      1.0000      1.0000      1.0000      1.0000
+BGE + CE rank fusion w=1                    1.0000      1.0000      1.0000      1.0000      1.0000
+Hybrid + CE rank fusion w=1                 1.0000      1.0000      1.0000      1.0000      1.0000
+BGE + CE rank fusion w=1.5                  1.0000      1.0000      1.0000      1.0000      1.0000
+Hybrid + CE rank fusion w=1.5               1.0000      1.0000      1.0000      1.0000      1.0000
+BGE + CE rank fusion w=2                    1.0000      1.0000      1.0000      1.0000      1.0000
+Hybrid + CE rank fusion w=2                 1.0000      1.0000      1.0000      1.0000      1.0000

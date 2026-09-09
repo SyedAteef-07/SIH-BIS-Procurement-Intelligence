@@ -1,4 +1,6 @@
+from typing import Literal
 from pydantic import BaseModel, Field, AliasChoices, field_validator
+from app.config import DEFAULT_FINAL_K
 from app.nlp.preprocess import clean_text
 
 
@@ -13,14 +15,19 @@ class Standard(BaseModel):
     source: str | None = None
     is_mock: bool = False
 
+    def to_retrieval_text(self) -> str:
+        parts = [self.title, self.scope, self.abstract, " ".join(self.keywords)]
+        return clean_text(". ".join(part.strip().rstrip(".") for part in parts if part.strip()))
+
     @property
     def document_text(self) -> str:
-        return clean_text(f"Standard: {self.id}\nTitle: {self.title}\nScope: {self.scope}\nAbstract: {self.abstract}\nKeywords: {', '.join(self.keywords)}")
+        """Compatibility alias; all retrievers use the same content-only text."""
+        return self.to_retrieval_text()
 
 
 class RecommendationRequest(BaseModel):
     text: str = Field(min_length=1, max_length=2000)
-    top_k: int = Field(default=5, ge=1, le=50)
+    top_k: int = Field(default=DEFAULT_FINAL_K, ge=1, le=50)
 
     @field_validator("text")
     @classmethod
@@ -35,6 +42,7 @@ class Recommendation(BaseModel):
     standard: Standard
     retrieval_score: float
     reranker_score: float
+    retrieval_score_type: Literal["cosine", "rrf"] = "cosine"
     supporting_evidence: list[str]
     validity: str = "unverified"
 
@@ -42,6 +50,9 @@ class Recommendation(BaseModel):
 class RecommendationResponse(BaseModel):
     query: str
     recommendations: list[Recommendation]
+    has_reliable_match: bool | None = None
+    match_status: Literal["NOT_ASSESSED", "MATCH", "NO_RELIABLE_MATCH"] = "NOT_ASSESSED"
+    warning: str | None = None
     warnings: list[str] = Field(default_factory=lambda: [
         "Scores are uncalibrated relevance scores, not probabilities.",
         "Status and revision are dataset metadata, not verification of current validity. Human review is required.",

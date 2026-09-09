@@ -1,12 +1,564 @@
-[
- {"id":"IS-DEMO-001","title":"Distribution Transformers","scope":"Requirements for oil immersed three phase distribution transformers supplying low voltage electricity from medium voltage networks, including insulation and temperature rise tests.","keywords":["transformer","electrical distribution","11 kV","433 V"],"is_mock":true},
- {"id":"IS-DEMO-002","title":"Portland Cement","scope":"Requirements for Portland cement used as a binder in concrete construction, including compressive strength, setting time and soundness.","keywords":["cement","concrete","construction"],"is_mock":true},
- {"id":"IS-DEMO-003","title":"LED Road Luminaires","scope":"Performance and electrical safety requirements for outdoor LED street lighting fixtures used to illuminate roads and public areas.","keywords":["LED","street lighting","luminaire"],"is_mock":true},
- {"id":"IS-DEMO-004","title":"Industrial Protective Helmets","scope":"Protective headgear for industrial and construction workers, including resistance to impact from falling objects and penetration.","keywords":["helmet","head protection","worker safety"],"is_mock":true},
- {"id":"IS-DEMO-005","title":"Insulated Power Cables","scope":"Requirements for insulated copper and aluminium conductors for electrical power distribution, including insulation resistance and voltage testing.","keywords":["cable","conductor","insulation"],"is_mock":true},
- {"id":"IS-DEMO-006","title":"Steel Reinforcing Bars","scope":"Requirements for steel reinforcement bars used in concrete structures, including tensile strength, ductility and bend testing.","keywords":["steel","rebar","reinforcement"],"is_mock":true},
- {"id":"IS-DEMO-007","title":"Drinking Water Quality","scope":"Quality parameters and sampling requirements for water intended for human consumption, including chemical and microbiological testing.","keywords":["potable water","drinking","water quality"],"is_mock":true},
- {"id":"IS-DEMO-008","title":"Centrifugal Water Pumps","scope":"Performance requirements for centrifugal pumps used to transfer water, including flow rate, head and efficiency testing.","keywords":["pump","water supply","flow"],"is_mock":true},
- {"id":"IS-DEMO-009","title":"Portable Fire Extinguishers","scope":"Requirements for portable firefighting appliances, including extinguishing performance, pressure resistance and discharge operation.","keywords":["fire","extinguisher","safety"],"is_mock":true},
- {"id":"IS-DEMO-010","title":"PVC Water Supply Pipes","scope":"Requirements for rigid plastic pipes used in pressurized water supply systems, including dimensions and hydrostatic pressure resistance.","keywords":["PVC","pipe","plumbing"],"is_mock":true}
+﻿[
+  {
+    "id": "IS-DEMO-001",
+    "title": "Distribution Transformers",
+    "scope": "Oil immersed three phase distribution transformers supplying low voltage electricity from medium voltage networks.",
+    "abstract": "Outdoor 11 kV / 433 V, 50 Hz local distribution equipment; covers ratings, losses and temperature rise.",
+    "keywords": [
+      "transformer",
+      "electrical distribution",
+      "oil immersed",
+      "11 kV",
+      "433 V"
+    ],
+    "is_mock": true,
+    "source": "Fictional development fixture; not a BIS publication"
+  },
+  {
+    "id": "IS-DEMO-002",
+    "title": "Portland Cement",
+    "scope": "Portland cement used as a binder in concrete construction.",
+    "abstract": "Covers compressive strength, setting time and soundness of cement supplied in bags or bulk.",
+    "keywords": [
+      "cement",
+      "concrete",
+      "binder",
+      "construction"
+    ],
+    "is_mock": true,
+    "source": "Fictional development fixture; not a BIS publication"
+  },
+  {
+    "id": "IS-DEMO-003",
+    "title": "LED Road Luminaires",
+    "scope": "Outdoor LED street lighting fixtures used to illuminate roads and public areas.",
+    "abstract": "Covers light output, energy performance and fixture operation on streets, not roadway layout design.",
+    "keywords": [
+      "LED",
+      "street lighting",
+      "road luminaire",
+      "50 Hz"
+    ],
+    "is_mock": true,
+    "source": "Fictional development fixture; not a BIS publication"
+  },
+  {
+    "id": "IS-DEMO-004",
+    "title": "Industrial Protective Helmets",
+    "scope": "Protective headgear for industrial and construction workers exposed to falling objects.",
+    "abstract": "Covers impact absorption, penetration resistance and retention of safety helmets.",
+    "keywords": [
+      "helmet",
+      "head protection",
+      "worker safety"
+    ],
+    "is_mock": true,
+    "source": "Fictional development fixture; not a BIS publication"
+  },
+  {
+    "id": "IS-DEMO-005",
+    "title": "Insulated Power Cables",
+    "scope": "Insulated copper and aluminium conductors for electrical power distribution.",
+    "abstract": "General cable construction and insulation testing; covers supply cables without a specific voltage class.",
+    "keywords": [
+      "cable",
+      "conductor",
+      "power",
+      "insulation"
+    ],
+    "is_mock": true,
+    "source": "Fictional development fixture; not a BIS publication"
+  },
+  {
+    "id": "IS-DEMO-006",
+    "title": "Steel Reinforcing Bars",
+    "scope": "Steel reinforcement bars used inside concrete structures.",
+    "abstract": "Covers tensile strength, ductility and bend testing of ribbed reinforcement bars.",
+    "keywords": [
+      "steel",
+      "rebar",
+      "reinforcement",
+      "concrete"
+    ],
+    "is_mock": true,
+    "source": "Fictional development fixture; not a BIS publication"
+  },
+  {
+    "id": "IS-DEMO-007",
+    "title": "Drinking Water Quality",
+    "scope": "Water quality parameters for water intended for human consumption.",
+    "abstract": "Covers chemical and microbiological sampling and testing, rather than water-treatment equipment.",
+    "keywords": [
+      "potable water",
+      "drinking",
+      "water quality"
+    ],
+    "is_mock": true,
+    "source": "Fictional development fixture; not a BIS publication"
+  },
+  {
+    "id": "IS-DEMO-008",
+    "title": "Centrifugal Water Pumps",
+    "scope": "Centrifugal pumps used to transfer water in supply installations.",
+    "abstract": "Covers discharge flow, head and hydraulic efficiency of rotating impeller pumps.",
+    "keywords": [
+      "pump",
+      "water supply",
+      "flow",
+      "head"
+    ],
+    "is_mock": true,
+    "source": "Fictional development fixture; not a BIS publication"
+  },
+  {
+    "id": "IS-DEMO-009",
+    "title": "Portable Fire Extinguishers",
+    "scope": "Portable firefighting appliances for controlling small fires.",
+    "abstract": "Covers discharge operation, pressure resistance and extinguishing performance of handheld units.",
+    "keywords": [
+      "fire",
+      "extinguisher",
+      "safety"
+    ],
+    "is_mock": true,
+    "source": "Fictional development fixture; not a BIS publication"
+  },
+  {
+    "id": "IS-DEMO-010",
+    "title": "PVC Water Supply Pipes",
+    "scope": "Rigid PVC plastic pipes used in pressurized potable water supply systems.",
+    "abstract": "Covers pipe dimensions, joints and hydrostatic pressure resistance for municipal drinking water networks.",
+    "keywords": [
+      "PVC",
+      "pipe",
+      "plumbing",
+      "pressure",
+      "water"
+    ],
+    "is_mock": true,
+    "source": "Fictional development fixture; not a BIS publication"
+  },
+  {
+    "id": "IS-DEMO-011",
+    "title": "Power Transformers",
+    "scope": "High capacity power transformers used in transmission substations.",
+    "abstract": "Covers large MVA units transferring power between high voltage networks, including winding insulation.",
+    "keywords": [
+      "power transformer",
+      "transmission",
+      "substation",
+      "132 kV"
+    ],
+    "is_mock": true,
+    "source": "Fictional development fixture; not a BIS publication"
+  },
+  {
+    "id": "IS-DEMO-012",
+    "title": "Dry-Type Transformers",
+    "scope": "Dry-type electrical transformers with air cooling and solid or cast resin insulation.",
+    "abstract": "Covers indoor installations without a liquid insulating medium, including thermal performance.",
+    "keywords": [
+      "dry transformer",
+      "cast resin",
+      "air cooled",
+      "indoor"
+    ],
+    "is_mock": true,
+    "source": "Fictional development fixture; not a BIS publication"
+  },
+  {
+    "id": "IS-DEMO-013",
+    "title": "Instrument Transformers",
+    "scope": "Current and voltage instrument transformers for measurement and protective relaying.",
+    "abstract": "Covers metering accuracy, ratios and burden of CT and VT devices, not bulk power distribution.",
+    "keywords": [
+      "instrument transformer",
+      "CT",
+      "VT",
+      "metering",
+      "protection"
+    ],
+    "is_mock": true,
+    "source": "Fictional development fixture; not a BIS publication"
+  },
+  {
+    "id": "IS-DEMO-014",
+    "title": "Transformer Insulating Oil",
+    "scope": "Mineral insulating oil used as the dielectric and cooling medium in oil-filled transformers.",
+    "abstract": "Covers fluid breakdown voltage, moisture and acidity; applies to supplied oil rather than complete transformers.",
+    "keywords": [
+      "transformer oil",
+      "dielectric",
+      "insulating liquid",
+      "cooling"
+    ],
+    "is_mock": true,
+    "source": "Fictional development fixture; not a BIS publication"
+  },
+  {
+    "id": "IS-DEMO-015",
+    "title": "Transformer Test Methods",
+    "scope": "Methods for electrical and thermal testing of power and distribution transformers.",
+    "abstract": "Covers ratio, winding resistance, losses, temperature rise and applied voltage test procedures.",
+    "keywords": [
+      "transformer testing",
+      "test methods",
+      "winding resistance",
+      "losses"
+    ],
+    "is_mock": true,
+    "source": "Fictional development fixture; not a BIS publication"
+  },
+  {
+    "id": "IS-DEMO-016",
+    "title": "Transformer Bushings",
+    "scope": "Insulated bushings carrying electrical conductors through grounded transformer tanks.",
+    "abstract": "Covers terminals, dielectric withstand and mechanical performance at tank penetrations.",
+    "keywords": [
+      "transformer bushing",
+      "insulated terminal",
+      "feedthrough"
+    ],
+    "is_mock": true,
+    "source": "Fictional development fixture; not a BIS publication"
+  },
+  {
+    "id": "IS-DEMO-017",
+    "title": "Solid Electrical Insulation",
+    "scope": "Solid insulating materials used to separate live electrical parts.",
+    "abstract": "Covers dielectric strength and resistance of sheets and molded insulating components, excluding liquid oil.",
+    "keywords": [
+      "electrical insulation",
+      "dielectric",
+      "solid material"
+    ],
+    "is_mock": true,
+    "source": "Fictional development fixture; not a BIS publication"
+  },
+  {
+    "id": "IS-DEMO-018",
+    "title": "Indoor LED Luminaires",
+    "scope": "LED ceiling panels and indoor light fittings for offices and buildings.",
+    "abstract": "Covers interior lighting fixture performance, glare and normal operation in enclosed rooms.",
+    "keywords": [
+      "LED",
+      "indoor",
+      "ceiling panel",
+      "office lighting"
+    ],
+    "is_mock": true,
+    "source": "Fictional development fixture; not a BIS publication"
+  },
+  {
+    "id": "IS-DEMO-019",
+    "title": "Emergency Lighting Units",
+    "scope": "Battery-backed emergency lighting for escape routes when normal power fails.",
+    "abstract": "Covers automatic changeover, operating duration and visibility during evacuation.",
+    "keywords": [
+      "emergency light",
+      "battery",
+      "escape route",
+      "backup"
+    ],
+    "is_mock": true,
+    "source": "Fictional development fixture; not a BIS publication"
+  },
+  {
+    "id": "IS-DEMO-020",
+    "title": "Road Lighting Design",
+    "scope": "Design and layout of lighting installations along roads.",
+    "abstract": "Covers pole spacing, illumination uniformity and glare assessment for roadway projects, not individual fixtures.",
+    "keywords": [
+      "road lighting",
+      "design",
+      "pole spacing",
+      "uniformity"
+    ],
+    "is_mock": true,
+    "source": "Fictional development fixture; not a BIS publication"
+  },
+  {
+    "id": "IS-DEMO-021",
+    "title": "Outdoor Luminaire Safety",
+    "scope": "Safety requirements for electrically powered outdoor luminaires.",
+    "abstract": "Covers electric shock protection, thermal hazards and wiring safety of outdoor lighting fixtures.",
+    "keywords": [
+      "outdoor luminaire",
+      "safety",
+      "electric shock"
+    ],
+    "is_mock": true,
+    "source": "Fictional development fixture; not a BIS publication"
+  },
+  {
+    "id": "IS-DEMO-022",
+    "title": "Luminaire Enclosure Protection",
+    "scope": "Protection of lighting enclosures against dust and water ingress.",
+    "abstract": "Covers IP65 and other ingress protection tests for housings, seals and covers.",
+    "keywords": [
+      "luminaire",
+      "enclosure",
+      "IP65",
+      "dust",
+      "water ingress"
+    ],
+    "is_mock": true,
+    "source": "Fictional development fixture; not a BIS publication"
+  },
+  {
+    "id": "IS-DEMO-023",
+    "title": "Low-Voltage PVC Cables",
+    "scope": "PVC insulated low-voltage electrical cables for building wiring and supply circuits.",
+    "abstract": "Covers 450/750 V and 1.1 kV cable construction and insulation tests for 50 Hz circuits.",
+    "keywords": [
+      "low voltage",
+      "PVC",
+      "cable",
+      "50 Hz",
+      "1.1 kV"
+    ],
+    "is_mock": true,
+    "source": "Fictional development fixture; not a BIS publication"
+  },
+  {
+    "id": "IS-DEMO-024",
+    "title": "High-Voltage XLPE Cables",
+    "scope": "XLPE insulated high-voltage power cables for underground feeders.",
+    "abstract": "Covers 11 kV and 33 kV cable insulation, screens and dielectric testing.",
+    "keywords": [
+      "high voltage",
+      "XLPE",
+      "cable",
+      "11 kV",
+      "33 kV"
+    ],
+    "is_mock": true,
+    "source": "Fictional development fixture; not a BIS publication"
+  },
+  {
+    "id": "IS-DEMO-025",
+    "title": "Electrical Installation Safety",
+    "scope": "Safe electrical installations in buildings and industrial facilities.",
+    "abstract": "Covers protection against shock, isolation, live-part barriers and safe inspection practices.",
+    "keywords": [
+      "electrical safety",
+      "installation",
+      "electric shock",
+      "isolation"
+    ],
+    "is_mock": true,
+    "source": "Fictional development fixture; not a BIS publication"
+  },
+  {
+    "id": "IS-DEMO-026",
+    "title": "Low-Voltage Circuit Breakers",
+    "scope": "Low-voltage circuit breakers that interrupt overload and short-circuit currents.",
+    "abstract": "Covers trip operation and breaking capacity of individual protective switching devices.",
+    "keywords": [
+      "circuit breaker",
+      "overload",
+      "short circuit",
+      "MCB",
+      "MCCB"
+    ],
+    "is_mock": true,
+    "source": "Fictional development fixture; not a BIS publication"
+  },
+  {
+    "id": "IS-DEMO-027",
+    "title": "Switchgear Assemblies",
+    "scope": "Metal-enclosed switchgear assemblies for electrical distribution.",
+    "abstract": "Covers assembled panels, busbars, interlocks and enclosure performance in distribution switchboards.",
+    "keywords": [
+      "switchgear",
+      "panel",
+      "busbar",
+      "switchboard"
+    ],
+    "is_mock": true,
+    "source": "Fictional development fixture; not a BIS publication"
+  },
+  {
+    "id": "IS-DEMO-028",
+    "title": "Earthing Systems",
+    "scope": "Earthing and bonding systems for electrical installations.",
+    "abstract": "Covers earth electrodes, protective conductors and resistance measurements to safely conduct fault current.",
+    "keywords": [
+      "earthing",
+      "grounding",
+      "bonding",
+      "earth electrode"
+    ],
+    "is_mock": true,
+    "source": "Fictional development fixture; not a BIS publication"
+  },
+  {
+    "id": "IS-DEMO-029",
+    "title": "Structural Steel Sections",
+    "scope": "Steel beams, columns and rolled sections for load-bearing structures.",
+    "abstract": "Covers structural strength, dimensional tolerances and material quality of fabricated frames.",
+    "keywords": [
+      "structural steel",
+      "beam",
+      "column",
+      "section"
+    ],
+    "is_mock": true,
+    "source": "Fictional development fixture; not a BIS publication"
+  },
+  {
+    "id": "IS-DEMO-030",
+    "title": "Concrete Masonry Blocks",
+    "scope": "Precast concrete blocks used in masonry walls.",
+    "abstract": "Covers dimensions, compressive strength and water absorption of hollow and solid building blocks.",
+    "keywords": [
+      "concrete block",
+      "masonry",
+      "wall",
+      "hollow block"
+    ],
+    "is_mock": true,
+    "source": "Fictional development fixture; not a BIS publication"
+  },
+  {
+    "id": "IS-DEMO-031",
+    "title": "Industrial Protective Footwear",
+    "scope": "Safety footwear protecting workers feet from impact, compression and puncture.",
+    "abstract": "Covers toe protection, sole penetration resistance and slip resistance for industrial boots.",
+    "keywords": [
+      "safety footwear",
+      "boots",
+      "toe cap",
+      "puncture"
+    ],
+    "is_mock": true,
+    "source": "Fictional development fixture; not a BIS publication"
+  },
+  {
+    "id": "IS-DEMO-032",
+    "title": "Water Pipeline Valves",
+    "scope": "Valves controlling or isolating flow in water supply pipelines.",
+    "abstract": "Covers shutoff operation, leakage and pressure resistance of gate and check valves.",
+    "keywords": [
+      "valve",
+      "water",
+      "isolation",
+      "gate",
+      "check valve"
+    ],
+    "is_mock": true,
+    "source": "Fictional development fixture; not a BIS publication"
+  },
+  {
+    "id": "IS-DEMO-033",
+    "title": "Water Storage Tanks",
+    "scope": "Tanks used to store water for domestic and community supply.",
+    "abstract": "Covers capacity, structural integrity, leak resistance and hygienic storage surfaces.",
+    "keywords": [
+      "water tank",
+      "storage",
+      "capacity",
+      "leak"
+    ],
+    "is_mock": true,
+    "source": "Fictional development fixture; not a BIS publication"
+  },
+  {
+    "id": "IS-DEMO-034",
+    "title": "Water Flow Meters",
+    "scope": "Meters measuring the volume of water delivered through pipelines.",
+    "abstract": "Covers measurement accuracy, pressure loss and calibration of water consumption meters.",
+    "keywords": [
+      "water meter",
+      "flow",
+      "volume",
+      "measurement"
+    ],
+    "is_mock": true,
+    "source": "Fictional development fixture; not a BIS publication"
+  },
+  {
+    "id": "IS-DEMO-035",
+    "title": "Fire Hose Assemblies",
+    "scope": "Flexible hoses and couplings used to deliver firefighting water.",
+    "abstract": "Covers pressure resistance, hose durability and coupling leakage under firefighting service.",
+    "keywords": [
+      "fire hose",
+      "coupling",
+      "firefighting",
+      "water delivery"
+    ],
+    "is_mock": true,
+    "source": "Fictional development fixture; not a BIS publication"
+  },
+  {
+    "id": "IS-DEMO-036",
+    "title": "Electrical Insulating Gloves",
+    "scope": "Insulating gloves for workers handling energized electrical equipment.",
+    "abstract": "Covers dielectric testing, physical integrity and voltage class of protective rubber gloves.",
+    "keywords": [
+      "insulating glove",
+      "electrical PPE",
+      "rubber",
+      "dielectric"
+    ],
+    "is_mock": true,
+    "source": "Fictional development fixture; not a BIS publication"
+  },
+  {
+    "id": "IS-DEMO-037",
+    "title": "Surge Protective Devices",
+    "scope": "Devices limiting transient overvoltages in electrical installations.",
+    "abstract": "Covers surge discharge performance and protection against lightning-induced voltage transients.",
+    "keywords": [
+      "surge protector",
+      "lightning",
+      "overvoltage",
+      "SPD"
+    ],
+    "is_mock": true,
+    "source": "Fictional development fixture; not a BIS publication"
+  },
+  {
+    "id": "IS-DEMO-038",
+    "title": "Three-Phase Induction Motors",
+    "scope": "Three-phase induction motors driving industrial mechanical loads.",
+    "abstract": "Covers efficiency, temperature rise and electrical ratings of 415 V 50 Hz rotating motors.",
+    "keywords": [
+      "induction motor",
+      "three phase",
+      "415 V",
+      "50 Hz"
+    ],
+    "is_mock": true,
+    "source": "Fictional development fixture; not a BIS publication"
+  },
+  {
+    "id": "IS-DEMO-039",
+    "title": "Pump Mechanical Seals",
+    "scope": "Mechanical shaft seals preventing leakage from rotating water pumps.",
+    "abstract": "Covers sealing faces, leakage performance and compatibility of pump seal assemblies.",
+    "keywords": [
+      "pump seal",
+      "shaft",
+      "mechanical seal",
+      "leakage"
+    ],
+    "is_mock": true,
+    "source": "Fictional development fixture; not a BIS publication"
+  },
+  {
+    "id": "IS-DEMO-040",
+    "title": "Water Purification Units",
+    "scope": "Equipment for treating water using filtration and disinfection.",
+    "abstract": "Covers treatment-unit performance and removal of contaminants, rather than defining drinking-water quality limits.",
+    "keywords": [
+      "water purification",
+      "filter",
+      "disinfection",
+      "treatment"
+    ],
+    "is_mock": true,
+    "source": "Fictional development fixture; not a BIS publication"
+  }
 ]

@@ -1,0 +1,970 @@
+{
+  "distributions": {
+    "in_domain": {
+      "top_semantic_score": {
+        "count": 90,
+        "min": 0.6591818332672119,
+        "p05": 0.6911441534757614,
+        "p10": 0.7051512241363526,
+        "median": 0.7751074433326721,
+        "p90": 0.8365092098712922,
+        "p95": 0.8542752474546432,
+        "max": 0.8898077607154846
+      },
+      "top_reranker_score": {
+        "count": 90,
+        "min": -5.271080017089844,
+        "p05": -2.03269619345665,
+        "p10": -1.3412102818489073,
+        "median": 2.7684868574142456,
+        "p90": 8.099376201629639,
+        "p95": 8.799418592453003,
+        "max": 9.870622634887695
+      },
+      "top_hybrid_reranker_score": {
+        "count": 90,
+        "min": -5.271080017089844,
+        "p05": -2.03269619345665,
+        "p10": -1.3412102818489073,
+        "median": 2.7684868574142456,
+        "p90": 8.099376201629639,
+        "p95": 8.799418592453003,
+        "max": 9.870622634887695
+      }
+    },
+    "out_of_domain": {
+      "top_semantic_score": {
+        "count": 10,
+        "min": 0.4490623474121094,
+        "p05": 0.46898906826972964,
+        "p10": 0.48891578912734984,
+        "median": 0.5187309980392456,
+        "p90": 0.5634028673171997,
+        "p95": 0.5649933099746705,
+        "max": 0.5665837526321411
+      },
+      "top_reranker_score": {
+        "count": 10,
+        "min": -11.186368942260742,
+        "p05": -11.165632677078246,
+        "p10": -11.144896411895752,
+        "median": -11.09581995010376,
+        "p90": -10.210132884979249,
+        "p95": -10.102051877975464,
+        "max": -9.99397087097168
+      },
+      "top_hybrid_reranker_score": {
+        "count": 10,
+        "min": -11.186368942260742,
+        "p05": -11.165632677078246,
+        "p10": -11.144896411895752,
+        "median": -11.09581995010376,
+        "p90": -10.210132884979249,
+        "p95": -10.102051877975464,
+        "max": -9.99397087097168
+      }
+    }
+  },
+  "queries": [
+    {
+      "query_id": "Q001",
+      "query": "Procurement requirements for distribution transformers",
+      "category": "exact",
+      "in_domain": true,
+      "top_semantic_score": 0.6999619007110596,
+      "top_reranker_score": -1.3291246891021729,
+      "top_hybrid_reranker_score": -1.3291246891021729
+    },
+    {
+      "query_id": "Q002",
+      "query": "Procurement requirements for portland cement",
+      "category": "exact",
+      "in_domain": true,
+      "top_semantic_score": 0.7300511002540588,
+      "top_reranker_score": -0.5255741477012634,
+      "top_hybrid_reranker_score": -0.5255741477012634
+    },
+    {
+      "query_id": "Q003",
+      "query": "Procurement requirements for led road luminaires",
+      "category": "exact",
+      "in_domain": true,
+      "top_semantic_score": 0.7676934599876404,
+      "top_reranker_score": 1.7503114938735962,
+      "top_hybrid_reranker_score": 1.7503114938735962
+    },
+    {
+      "query_id": "Q004",
+      "query": "Procurement requirements for industrial protective helmets",
+      "category": "exact",
+      "in_domain": true,
+      "top_semantic_score": 0.7749212980270386,
+      "top_reranker_score": 2.551558017730713,
+      "top_hybrid_reranker_score": 2.551558017730713
+    },
+    {
+      "query_id": "Q005",
+      "query": "Procurement requirements for insulated power cables",
+      "category": "exact",
+      "in_domain": true,
+      "top_semantic_score": 0.743719220161438,
+      "top_reranker_score": 2.186410903930664,
+      "top_hybrid_reranker_score": 2.186410903930664
+    },
+    {
+      "query_id": "Q006",
+      "query": "Procurement requirements for steel reinforcing bars",
+      "category": "exact",
+      "in_domain": true,
+      "top_semantic_score": 0.781479001045227,
+      "top_reranker_score": 1.3636589050292969,
+      "top_hybrid_reranker_score": 1.3636589050292969
+    },
+    {
+      "query_id": "Q007",
+      "query": "Procurement requirements for drinking water quality",
+      "category": "exact",
+      "in_domain": true,
+      "top_semantic_score": 0.7420065402984619,
+      "top_reranker_score": 0.18586643040180206,
+      "top_hybrid_reranker_score": 0.18586643040180206
+    },
+    {
+      "query_id": "Q008",
+      "query": "Procurement requirements for centrifugal water pumps",
+      "category": "exact",
+      "in_domain": true,
+      "top_semantic_score": 0.7704668045043945,
+      "top_reranker_score": 2.890967845916748,
+      "top_hybrid_reranker_score": 2.890967845916748
+    },
+    {
+      "query_id": "Q009",
+      "query": "Procurement requirements for portable fire extinguishers",
+      "category": "exact",
+      "in_domain": true,
+      "top_semantic_score": 0.776077151298523,
+      "top_reranker_score": 1.5775341987609863,
+      "top_hybrid_reranker_score": 1.5775341987609863
+    },
+    {
+      "query_id": "Q010",
+      "query": "Procurement requirements for pvc water supply pipes",
+      "category": "exact",
+      "in_domain": true,
+      "top_semantic_score": 0.7963619232177734,
+      "top_reranker_score": 2.4603705406188965,
+      "top_hybrid_reranker_score": 2.4603705406188965
+    },
+    {
+      "query_id": "Q011",
+      "query": "Procurement requirements for power transformers",
+      "category": "exact",
+      "in_domain": true,
+      "top_semantic_score": 0.7130330204963684,
+      "top_reranker_score": -1.5245184898376465,
+      "top_hybrid_reranker_score": -1.5245184898376465
+    },
+    {
+      "query_id": "Q012",
+      "query": "Procurement requirements for dry-type transformers",
+      "category": "exact",
+      "in_domain": true,
+      "top_semantic_score": 0.7759588360786438,
+      "top_reranker_score": 2.2941176891326904,
+      "top_hybrid_reranker_score": 2.2941176891326904
+    },
+    {
+      "query_id": "Q013",
+      "query": "Procurement requirements for instrument transformers",
+      "category": "exact",
+      "in_domain": true,
+      "top_semantic_score": 0.727562427520752,
+      "top_reranker_score": 0.2502587139606476,
+      "top_hybrid_reranker_score": 0.2502587139606476
+    },
+    {
+      "query_id": "Q014",
+      "query": "Procurement requirements for transformer insulating oil",
+      "category": "exact",
+      "in_domain": true,
+      "top_semantic_score": 0.7243225574493408,
+      "top_reranker_score": 1.792587399482727,
+      "top_hybrid_reranker_score": 1.792587399482727
+    },
+    {
+      "query_id": "Q015",
+      "query": "Procurement requirements for transformer test methods",
+      "category": "exact",
+      "in_domain": true,
+      "top_semantic_score": 0.732829749584198,
+      "top_reranker_score": 2.1624443531036377,
+      "top_hybrid_reranker_score": 2.1624443531036377
+    },
+    {
+      "query_id": "Q016",
+      "query": "Procurement requirements for transformer bushings",
+      "category": "exact",
+      "in_domain": true,
+      "top_semantic_score": 0.770553469657898,
+      "top_reranker_score": 0.7761736512184143,
+      "top_hybrid_reranker_score": 0.7761736512184143
+    },
+    {
+      "query_id": "Q017",
+      "query": "Procurement requirements for solid electrical insulation",
+      "category": "exact",
+      "in_domain": true,
+      "top_semantic_score": 0.7393884658813477,
+      "top_reranker_score": 1.5503511428833008,
+      "top_hybrid_reranker_score": 1.5503511428833008
+    },
+    {
+      "query_id": "Q018",
+      "query": "Procurement requirements for indoor led luminaires",
+      "category": "exact",
+      "in_domain": true,
+      "top_semantic_score": 0.7989970445632935,
+      "top_reranker_score": 2.791048765182495,
+      "top_hybrid_reranker_score": 2.791048765182495
+    },
+    {
+      "query_id": "Q019",
+      "query": "Procurement requirements for emergency lighting units",
+      "category": "exact",
+      "in_domain": true,
+      "top_semantic_score": 0.7289700508117676,
+      "top_reranker_score": 0.08218356966972351,
+      "top_hybrid_reranker_score": 0.08218356966972351
+    },
+    {
+      "query_id": "Q020",
+      "query": "Procurement requirements for road lighting design",
+      "category": "exact",
+      "in_domain": true,
+      "top_semantic_score": 0.7696446180343628,
+      "top_reranker_score": 1.1928212642669678,
+      "top_hybrid_reranker_score": 1.1928212642669678
+    },
+    {
+      "query_id": "Q021",
+      "query": "Procurement requirements for outdoor luminaire safety",
+      "category": "exact",
+      "in_domain": true,
+      "top_semantic_score": 0.8100610971450806,
+      "top_reranker_score": 5.883340835571289,
+      "top_hybrid_reranker_score": 5.883340835571289
+    },
+    {
+      "query_id": "Q022",
+      "query": "Procurement requirements for luminaire enclosure protection",
+      "category": "exact",
+      "in_domain": true,
+      "top_semantic_score": 0.7793723940849304,
+      "top_reranker_score": 3.8530197143554688,
+      "top_hybrid_reranker_score": 3.8530197143554688
+    },
+    {
+      "query_id": "Q023",
+      "query": "Procurement requirements for low-voltage pvc cables",
+      "category": "exact",
+      "in_domain": true,
+      "top_semantic_score": 0.8113014101982117,
+      "top_reranker_score": 4.513128280639648,
+      "top_hybrid_reranker_score": 4.513128280639648
+    },
+    {
+      "query_id": "Q024",
+      "query": "Procurement requirements for high-voltage xlpe cables",
+      "category": "exact",
+      "in_domain": true,
+      "top_semantic_score": 0.8176867961883545,
+      "top_reranker_score": 4.0345048904418945,
+      "top_hybrid_reranker_score": 4.0345048904418945
+    },
+    {
+      "query_id": "Q025",
+      "query": "Procurement requirements for electrical installation safety",
+      "category": "exact",
+      "in_domain": true,
+      "top_semantic_score": 0.8225492238998413,
+      "top_reranker_score": 2.7459685802459717,
+      "top_hybrid_reranker_score": 2.7459685802459717
+    },
+    {
+      "query_id": "Q026",
+      "query": "Procurement requirements for low-voltage circuit breakers",
+      "category": "exact",
+      "in_domain": true,
+      "top_semantic_score": 0.758170485496521,
+      "top_reranker_score": 2.3318822383880615,
+      "top_hybrid_reranker_score": 2.3318822383880615
+    },
+    {
+      "query_id": "Q027",
+      "query": "Procurement requirements for switchgear assemblies",
+      "category": "exact",
+      "in_domain": true,
+      "top_semantic_score": 0.761435329914093,
+      "top_reranker_score": 2.0344936847686768,
+      "top_hybrid_reranker_score": 2.0344936847686768
+    },
+    {
+      "query_id": "Q028",
+      "query": "Procurement requirements for earthing systems",
+      "category": "exact",
+      "in_domain": true,
+      "top_semantic_score": 0.7532801628112793,
+      "top_reranker_score": -2.068678617477417,
+      "top_hybrid_reranker_score": -2.068678617477417
+    },
+    {
+      "query_id": "Q029",
+      "query": "Procurement requirements for structural steel sections",
+      "category": "exact",
+      "in_domain": true,
+      "top_semantic_score": 0.7834342122077942,
+      "top_reranker_score": 1.820257544517517,
+      "top_hybrid_reranker_score": 1.820257544517517
+    },
+    {
+      "query_id": "Q030",
+      "query": "Procurement requirements for concrete masonry blocks",
+      "category": "exact",
+      "in_domain": true,
+      "top_semantic_score": 0.7493403553962708,
+      "top_reranker_score": 0.5391793251037598,
+      "top_hybrid_reranker_score": 0.5391793251037598
+    },
+    {
+      "query_id": "Q031",
+      "query": "Procurement requirements for industrial protective footwear",
+      "category": "exact",
+      "in_domain": true,
+      "top_semantic_score": 0.8163750171661377,
+      "top_reranker_score": 2.20975661277771,
+      "top_hybrid_reranker_score": 2.20975661277771
+    },
+    {
+      "query_id": "Q032",
+      "query": "Procurement requirements for water pipeline valves",
+      "category": "exact",
+      "in_domain": true,
+      "top_semantic_score": 0.7446309328079224,
+      "top_reranker_score": 1.2071423530578613,
+      "top_hybrid_reranker_score": 1.2071423530578613
+    },
+    {
+      "query_id": "Q033",
+      "query": "Procurement requirements for water storage tanks",
+      "category": "exact",
+      "in_domain": true,
+      "top_semantic_score": 0.7490972876548767,
+      "top_reranker_score": 0.7023317813873291,
+      "top_hybrid_reranker_score": 0.7023317813873291
+    },
+    {
+      "query_id": "Q034",
+      "query": "Procurement requirements for water flow meters",
+      "category": "exact",
+      "in_domain": true,
+      "top_semantic_score": 0.7655817270278931,
+      "top_reranker_score": 1.2425494194030762,
+      "top_hybrid_reranker_score": 1.2425494194030762
+    },
+    {
+      "query_id": "Q035",
+      "query": "Procurement requirements for fire hose assemblies",
+      "category": "exact",
+      "in_domain": true,
+      "top_semantic_score": 0.786886990070343,
+      "top_reranker_score": 2.800682544708252,
+      "top_hybrid_reranker_score": 2.800682544708252
+    },
+    {
+      "query_id": "Q036",
+      "query": "Procurement requirements for electrical insulating gloves",
+      "category": "exact",
+      "in_domain": true,
+      "top_semantic_score": 0.7877708673477173,
+      "top_reranker_score": 3.596799850463867,
+      "top_hybrid_reranker_score": 3.596799850463867
+    },
+    {
+      "query_id": "Q037",
+      "query": "Procurement requirements for surge protective devices",
+      "category": "exact",
+      "in_domain": true,
+      "top_semantic_score": 0.7593441009521484,
+      "top_reranker_score": 1.4316980838775635,
+      "top_hybrid_reranker_score": 1.4316980838775635
+    },
+    {
+      "query_id": "Q038",
+      "query": "Procurement requirements for three-phase induction motors",
+      "category": "exact",
+      "in_domain": true,
+      "top_semantic_score": 0.7576116323471069,
+      "top_reranker_score": 3.249128818511963,
+      "top_hybrid_reranker_score": 3.249128818511963
+    },
+    {
+      "query_id": "Q039",
+      "query": "Procurement requirements for pump mechanical seals",
+      "category": "exact",
+      "in_domain": true,
+      "top_semantic_score": 0.7673556208610535,
+      "top_reranker_score": 2.184994697570801,
+      "top_hybrid_reranker_score": 2.184994697570801
+    },
+    {
+      "query_id": "Q040",
+      "query": "Procurement requirements for water purification units",
+      "category": "exact",
+      "in_domain": true,
+      "top_semantic_score": 0.7458360195159912,
+      "top_reranker_score": 0.7932363748550415,
+      "top_hybrid_reranker_score": 0.7932363748550415
+    },
+    {
+      "query_id": "Q041",
+      "query": "equipment for reducing 11kV supply for neighbourhood distribution",
+      "category": "semantic_paraphrase",
+      "in_domain": true,
+      "top_semantic_score": 0.6979779005050659,
+      "top_reranker_score": -2.8464598655700684,
+      "top_hybrid_reranker_score": -2.8464598655700684
+    },
+    {
+      "query_id": "Q042",
+      "query": "protective headwear against falling construction debris",
+      "category": "semantic_paraphrase",
+      "in_domain": true,
+      "top_semantic_score": 0.7931201457977295,
+      "top_reranker_score": 6.548165321350098,
+      "top_hybrid_reranker_score": 6.548165321350098
+    },
+    {
+      "query_id": "Q043",
+      "query": "plastic pressure pipe for potable municipal water",
+      "category": "semantic_paraphrase",
+      "in_domain": true,
+      "top_semantic_score": 0.8149999976158142,
+      "top_reranker_score": 8.093853950500488,
+      "top_hybrid_reranker_score": 8.093853950500488
+    },
+    {
+      "query_id": "Q044",
+      "query": "energy efficient fixtures to illuminate roads at night",
+      "category": "semantic_paraphrase",
+      "in_domain": true,
+      "top_semantic_score": 0.7998632788658142,
+      "top_reranker_score": 3.131049633026123,
+      "top_hybrid_reranker_score": 3.131049633026123
+    },
+    {
+      "query_id": "Q045",
+      "query": "a binding powder that hardens when mixed with water for concrete",
+      "category": "semantic_paraphrase",
+      "in_domain": true,
+      "top_semantic_score": 0.7057278156280518,
+      "top_reranker_score": -1.0679490566253662,
+      "top_hybrid_reranker_score": -1.0679490566253662
+    },
+    {
+      "query_id": "Q046",
+      "query": "ribbed metal rods embedded inside concrete to carry tension",
+      "category": "semantic_paraphrase",
+      "in_domain": true,
+      "top_semantic_score": 0.71121746301651,
+      "top_reranker_score": -1.449980616569519,
+      "top_hybrid_reranker_score": -1.449980616569519
+    },
+    {
+      "query_id": "Q047",
+      "query": "checking whether supplied water is fit for people to drink",
+      "category": "semantic_paraphrase",
+      "in_domain": true,
+      "top_semantic_score": 0.6898713111877441,
+      "top_reranker_score": -5.271080017089844,
+      "top_hybrid_reranker_score": -5.271080017089844
+    },
+    {
+      "query_id": "Q048",
+      "query": "an impeller driven machine to move water up to a higher reservoir",
+      "category": "semantic_paraphrase",
+      "in_domain": true,
+      "top_semantic_score": 0.671919584274292,
+      "top_reranker_score": -1.5031954050064087,
+      "top_hybrid_reranker_score": -1.5031954050064087
+    },
+    {
+      "query_id": "Q049",
+      "query": "handheld equipment for putting out a small fire",
+      "category": "semantic_paraphrase",
+      "in_domain": true,
+      "top_semantic_score": 0.8109568357467651,
+      "top_reranker_score": 6.566588401794434,
+      "top_hybrid_reranker_score": 6.566588401794434
+    },
+    {
+      "query_id": "Q050",
+      "query": "a cast resin voltage conversion unit for installation inside a building",
+      "category": "semantic_paraphrase",
+      "in_domain": true,
+      "top_semantic_score": 0.6965784430503845,
+      "top_reranker_score": -1.9887176752090454,
+      "top_hybrid_reranker_score": -1.9887176752090454
+    },
+    {
+      "query_id": "Q051",
+      "query": "a sensor transformer that scales current down for a protection relay",
+      "category": "semantic_paraphrase",
+      "in_domain": true,
+      "top_semantic_score": 0.7522900104522705,
+      "top_reranker_score": 2.2471671104431152,
+      "top_hybrid_reranker_score": 2.2471671104431152
+    },
+    {
+      "query_id": "Q052",
+      "query": "lights that stay on along an exit corridor during a blackout",
+      "category": "semantic_paraphrase",
+      "in_domain": true,
+      "top_semantic_score": 0.7300359010696411,
+      "top_reranker_score": -2.365581750869751,
+      "top_hybrid_reranker_score": -2.365581750869751
+    },
+    {
+      "query_id": "Q053",
+      "query": "conductive rods buried in the ground to carry electrical fault currents",
+      "category": "semantic_paraphrase",
+      "in_domain": true,
+      "top_semantic_score": 0.6926998496055603,
+      "top_reranker_score": -0.7851898670196533,
+      "top_hybrid_reranker_score": -0.7851898670196533
+    },
+    {
+      "query_id": "Q054",
+      "query": "boots with reinforced toes for factory workers",
+      "category": "semantic_paraphrase",
+      "in_domain": true,
+      "top_semantic_score": 0.7836736440658569,
+      "top_reranker_score": 2.875960350036621,
+      "top_hybrid_reranker_score": 2.875960350036621
+    },
+    {
+      "query_id": "Q055",
+      "query": "a unit that removes contaminants and disinfects the incoming water",
+      "category": "semantic_paraphrase",
+      "in_domain": true,
+      "top_semantic_score": 0.8359956741333008,
+      "top_reranker_score": 5.755279541015625,
+      "top_hybrid_reranker_score": 5.755279541015625
+    },
+    {
+      "query_id": "Q056",
+      "query": "oil used for electrical insulation and cooling in transformers",
+      "category": "near_confuser",
+      "in_domain": true,
+      "top_semantic_score": 0.8548491597175598,
+      "top_reranker_score": 7.618463516235352,
+      "top_hybrid_reranker_score": 7.618463516235352
+    },
+    {
+      "query_id": "Q057",
+      "query": "test procedures for transformer winding resistance and voltage ratio",
+      "category": "near_confuser",
+      "in_domain": true,
+      "top_semantic_score": 0.8335102796554565,
+      "top_reranker_score": 8.34648323059082,
+      "top_hybrid_reranker_score": 8.34648323059082
+    },
+    {
+      "query_id": "Q058",
+      "query": "insulated feedthrough for a conductor passing through a transformer tank",
+      "category": "near_confuser",
+      "in_domain": true,
+      "top_semantic_score": 0.7488312125205994,
+      "top_reranker_score": 7.377518653869629,
+      "top_hybrid_reranker_score": 7.377518653869629
+    },
+    {
+      "query_id": "Q059",
+      "query": "solid dielectric sheets separating live electrical components",
+      "category": "near_confuser",
+      "in_domain": true,
+      "top_semantic_score": 0.8241618871688843,
+      "top_reranker_score": 7.166225433349609,
+      "top_hybrid_reranker_score": 7.166225433349609
+    },
+    {
+      "query_id": "Q060",
+      "query": "cast resin air cooled transformer with no insulating oil",
+      "category": "near_confuser",
+      "in_domain": true,
+      "top_semantic_score": 0.770639181137085,
+      "top_reranker_score": 4.739526748657227,
+      "top_hybrid_reranker_score": 4.739526748657227
+    },
+    {
+      "query_id": "Q061",
+      "query": "metering accuracy of a current transformer used with relays",
+      "category": "near_confuser",
+      "in_domain": true,
+      "top_semantic_score": 0.7763168811798096,
+      "top_reranker_score": 4.495171546936035,
+      "top_hybrid_reranker_score": 4.495171546936035
+    },
+    {
+      "query_id": "Q062",
+      "query": "high capacity transformer for a transmission substation rather than a local feeder",
+      "category": "near_confuser",
+      "in_domain": true,
+      "top_semantic_score": 0.8089357614517212,
+      "top_reranker_score": 4.815819263458252,
+      "top_hybrid_reranker_score": 4.815819263458252
+    },
+    {
+      "query_id": "Q063",
+      "query": "ceiling LED panels for indoor office rooms",
+      "category": "near_confuser",
+      "in_domain": true,
+      "top_semantic_score": 0.8535737991333008,
+      "top_reranker_score": 8.691036224365234,
+      "top_hybrid_reranker_score": 8.691036224365234
+    },
+    {
+      "query_id": "Q064",
+      "query": "pole spacing and illumination uniformity along a road",
+      "category": "near_confuser",
+      "in_domain": true,
+      "top_semantic_score": 0.8570897579193115,
+      "top_reranker_score": 6.869467735290527,
+      "top_hybrid_reranker_score": 6.869467735290527
+    },
+    {
+      "query_id": "Q065",
+      "query": "IP65 dust and water ingress testing of lighting housings",
+      "category": "near_confuser",
+      "in_domain": true,
+      "top_semantic_score": 0.8240765333175659,
+      "top_reranker_score": 7.391935348510742,
+      "top_hybrid_reranker_score": 7.391935348510742
+    },
+    {
+      "query_id": "Q066",
+      "query": "trip capacity of an individual low voltage circuit breaker",
+      "category": "near_confuser",
+      "in_domain": true,
+      "top_semantic_score": 0.7859574556350708,
+      "top_reranker_score": 6.352190971374512,
+      "top_hybrid_reranker_score": 6.352190971374512
+    },
+    {
+      "query_id": "Q067",
+      "query": "assembled switchboard busbars and metal enclosure interlocks",
+      "category": "near_confuser",
+      "in_domain": true,
+      "top_semantic_score": 0.8343119025230408,
+      "top_reranker_score": 7.400399208068848,
+      "top_hybrid_reranker_score": 7.400399208068848
+    },
+    {
+      "query_id": "Q068",
+      "query": "steel beams and columns for a factory frame, not reinforcing rods",
+      "category": "near_confuser",
+      "in_domain": true,
+      "top_semantic_score": 0.6888715028762817,
+      "top_reranker_score": 2.7910051345825195,
+      "top_hybrid_reranker_score": 2.7910051345825195
+    },
+    {
+      "query_id": "Q069",
+      "query": "replacement mechanical shaft seals for a centrifugal pump",
+      "category": "near_confuser",
+      "in_domain": true,
+      "top_semantic_score": 0.8137177228927612,
+      "top_reranker_score": 2.2695987224578857,
+      "top_hybrid_reranker_score": 2.2695987224578857
+    },
+    {
+      "query_id": "Q070",
+      "query": "accuracy calibration of a meter measuring water consumption",
+      "category": "near_confuser",
+      "in_domain": true,
+      "top_semantic_score": 0.7856378555297852,
+      "top_reranker_score": 5.360268592834473,
+      "top_hybrid_reranker_score": 5.360268592834473
+    },
+    {
+      "query_id": "Q071",
+      "query": "11 kV 433 V three phase outdoor oil immersed transformer at 50 Hz",
+      "category": "technical",
+      "in_domain": true,
+      "top_semantic_score": 0.8746569752693176,
+      "top_reranker_score": 9.231208801269531,
+      "top_hybrid_reranker_score": 9.231208801269531
+    },
+    {
+      "query_id": "Q072",
+      "query": "50 Hz 1.1 kV low voltage PVC insulated cable",
+      "category": "technical",
+      "in_domain": true,
+      "top_semantic_score": 0.8898077607154846,
+      "top_reranker_score": 9.870622634887695,
+      "top_hybrid_reranker_score": 9.870622634887695
+    },
+    {
+      "query_id": "Q073",
+      "query": "33 kV XLPE screened underground power cable",
+      "category": "technical",
+      "in_domain": true,
+      "top_semantic_score": 0.8531570434570312,
+      "top_reranker_score": 8.823997497558594,
+      "top_hybrid_reranker_score": 8.823997497558594
+    },
+    {
+      "query_id": "Q074",
+      "query": "IP65 LED housing resistance to dust and water jets",
+      "category": "technical",
+      "in_domain": true,
+      "top_semantic_score": 0.7389857769012451,
+      "top_reranker_score": 4.257359504699707,
+      "top_hybrid_reranker_score": 4.257359504699707
+    },
+    {
+      "query_id": "Q075",
+      "query": "415 V 50 Hz three phase induction motor efficiency",
+      "category": "technical",
+      "in_domain": true,
+      "top_semantic_score": 0.8411310315132141,
+      "top_reranker_score": 9.065711975097656,
+      "top_hybrid_reranker_score": 9.065711975097656
+    },
+    {
+      "query_id": "Q076",
+      "query": "450/750 V PVC wire for building circuits",
+      "category": "technical",
+      "in_domain": true,
+      "top_semantic_score": 0.8164182305335999,
+      "top_reranker_score": 9.129396438598633,
+      "top_hybrid_reranker_score": 9.129396438598633
+    },
+    {
+      "query_id": "Q077",
+      "query": "132 kV high MVA transmission power transformer",
+      "category": "technical",
+      "in_domain": true,
+      "top_semantic_score": 0.809226393699646,
+      "top_reranker_score": 8.149076461791992,
+      "top_hybrid_reranker_score": 8.149076461791992
+    },
+    {
+      "query_id": "Q078",
+      "query": "11kV XLPE underground feeder insulation test",
+      "category": "technical",
+      "in_domain": true,
+      "top_semantic_score": 0.8607789874076843,
+      "top_reranker_score": 6.3520426750183105,
+      "top_hybrid_reranker_score": 6.3520426750183105
+    },
+    {
+      "query_id": "Q079",
+      "query": "11kV/433V oil filled unit for local electricity distribution",
+      "category": "technical",
+      "in_domain": true,
+      "top_semantic_score": 0.7832438945770264,
+      "top_reranker_score": 6.129494667053223,
+      "top_hybrid_reranker_score": 6.129494667053223
+    },
+    {
+      "query_id": "Q080",
+      "query": "PVC pressure pipes for municipal drinking water hydrostatic tests",
+      "category": "technical",
+      "in_domain": true,
+      "top_semantic_score": 0.8295207023620605,
+      "top_reranker_score": 6.42728328704834,
+      "top_hybrid_reranker_score": 6.42728328704834
+    },
+    {
+      "query_id": "Q081",
+      "query": "road lighting equipment",
+      "category": "ambiguous",
+      "in_domain": true,
+      "top_semantic_score": 0.8021571636199951,
+      "top_reranker_score": 5.9992852210998535,
+      "top_hybrid_reranker_score": 5.9992852210998535
+    },
+    {
+      "query_id": "Q082",
+      "query": "electrical cables for power supply",
+      "category": "ambiguous",
+      "in_domain": true,
+      "top_semantic_score": 0.7917252779006958,
+      "top_reranker_score": 7.399229049682617,
+      "top_hybrid_reranker_score": 7.399229049682617
+    },
+    {
+      "query_id": "Q083",
+      "query": "transformer procurement and acceptance testing",
+      "category": "ambiguous",
+      "in_domain": true,
+      "top_semantic_score": 0.7196377515792847,
+      "top_reranker_score": 1.1333812475204468,
+      "top_hybrid_reranker_score": 1.1333812475204468
+    },
+    {
+      "query_id": "Q084",
+      "query": "worker protection on a construction site",
+      "category": "ambiguous",
+      "in_domain": true,
+      "top_semantic_score": 0.7331098318099976,
+      "top_reranker_score": 4.056022644042969,
+      "top_hybrid_reranker_score": 4.056022644042969
+    },
+    {
+      "query_id": "Q085",
+      "query": "water distribution infrastructure",
+      "category": "ambiguous",
+      "in_domain": true,
+      "top_semantic_score": 0.6815420389175415,
+      "top_reranker_score": -4.875880718231201,
+      "top_hybrid_reranker_score": -4.875880718231201
+    },
+    {
+      "query_id": "Q086",
+      "query": "electrical installation protection",
+      "category": "ambiguous",
+      "in_domain": true,
+      "top_semantic_score": 0.8464474678039551,
+      "top_reranker_score": 8.769377708435059,
+      "top_hybrid_reranker_score": 8.769377708435059
+    },
+    {
+      "query_id": "Q087",
+      "query": "lighting for a public building",
+      "category": "ambiguous",
+      "in_domain": true,
+      "top_semantic_score": 0.6591818332672119,
+      "top_reranker_score": 1.517073154449463,
+      "top_hybrid_reranker_score": 1.517073154449463
+    },
+    {
+      "query_id": "Q088",
+      "query": "steel for building construction",
+      "category": "ambiguous",
+      "in_domain": true,
+      "top_semantic_score": 0.7062426209449768,
+      "top_reranker_score": 1.0953516960144043,
+      "top_hybrid_reranker_score": 1.0953516960144043
+    },
+    {
+      "query_id": "Q089",
+      "query": "firefighting water equipment",
+      "category": "ambiguous",
+      "in_domain": true,
+      "top_semantic_score": 0.7723026871681213,
+      "top_reranker_score": 6.55634880065918,
+      "top_hybrid_reranker_score": 6.55634880065918
+    },
+    {
+      "query_id": "Q090",
+      "query": "insulation for electrical equipment",
+      "category": "ambiguous",
+      "in_domain": true,
+      "top_semantic_score": 0.7752935886383057,
+      "top_reranker_score": 6.712630271911621,
+      "top_hybrid_reranker_score": 6.712630271911621
+    },
+    {
+      "query_id": "Q091",
+      "query": "ergonomic office chair",
+      "category": "out_of_domain",
+      "in_domain": false,
+      "top_semantic_score": 0.5630494356155396,
+      "top_reranker_score": -11.140288352966309,
+      "top_hybrid_reranker_score": -11.140288352966309
+    },
+    {
+      "query_id": "Q092",
+      "query": "wireless mouse",
+      "category": "out_of_domain",
+      "in_domain": false,
+      "top_semantic_score": 0.5210943222045898,
+      "top_reranker_score": -10.95070743560791,
+      "top_hybrid_reranker_score": -10.95070743560791
+    },
+    {
+      "query_id": "Q093",
+      "query": "coffee machine",
+      "category": "out_of_domain",
+      "in_domain": false,
+      "top_semantic_score": 0.5163676738739014,
+      "top_reranker_score": -11.079821586608887,
+      "top_hybrid_reranker_score": -11.079821586608887
+    },
+    {
+      "query_id": "Q094",
+      "query": "laptop docking station",
+      "category": "out_of_domain",
+      "in_domain": false,
+      "top_semantic_score": 0.5086683034896851,
+      "top_reranker_score": -11.111818313598633,
+      "top_hybrid_reranker_score": -11.111818313598633
+    },
+    {
+      "query_id": "Q095",
+      "query": "cotton bedsheets",
+      "category": "out_of_domain",
+      "in_domain": false,
+      "top_semantic_score": 0.5128374099731445,
+      "top_reranker_score": -11.186368942260742,
+      "top_hybrid_reranker_score": -11.186368942260742
+    },
+    {
+      "query_id": "Q096",
+      "query": "payroll accounting software",
+      "category": "out_of_domain",
+      "in_domain": false,
+      "top_semantic_score": 0.4490623474121094,
+      "top_reranker_score": -11.125129699707031,
+      "top_hybrid_reranker_score": -11.125129699707031
+    },
+    {
+      "query_id": "Q097",
+      "query": "ceramic dinner plates",
+      "category": "out_of_domain",
+      "in_domain": false,
+      "top_semantic_score": 0.49334394931793213,
+      "top_reranker_score": -11.130943298339844,
+      "top_hybrid_reranker_score": -11.130943298339844
+    },
+    {
+      "query_id": "Q098",
+      "query": "wooden office desk",
+      "category": "out_of_domain",
+      "in_domain": false,
+      "top_semantic_score": 0.5403757095336914,
+      "top_reranker_score": -10.234150886535645,
+      "top_hybrid_reranker_score": -10.234150886535645
+    },
+    {
+      "query_id": "Q099",
+      "query": "refrigerated food delivery service",
+      "category": "out_of_domain",
+      "in_domain": false,
+      "top_semantic_score": 0.5665837526321411,
+      "top_reranker_score": -9.99397087097168,
+      "top_hybrid_reranker_score": -9.99397087097168
+    },
+    {
+      "query_id": "Q100",
+      "query": "wireless headphones",
+      "category": "out_of_domain",
+      "in_domain": false,
+      "top_semantic_score": 0.5359600782394409,
+      "top_reranker_score": -10.522483825683594,
+      "top_hybrid_reranker_score": -10.522483825683594
+    }
+  ]
+}

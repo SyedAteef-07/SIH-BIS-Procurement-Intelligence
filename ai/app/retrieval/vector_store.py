@@ -1,5 +1,6 @@
 import faiss
 import numpy as np
+from app.config import DEFAULT_RETRIEVAL_K
 
 
 class VectorStore:
@@ -26,7 +27,7 @@ class VectorStore:
         self.index.add(vectors)
         self.documents.extend(documents)
 
-    def search(self, query_embedding, top_k=20):
+    def search(self, query_embedding, top_k=DEFAULT_RETRIEVAL_K):
         if top_k < 1:
             raise ValueError("top_k must be positive")
         if self.index is None:
