@@ -12,6 +12,8 @@ class Settings:
     )
     qdrant_url: str = os.getenv("QDRANT_URL", "http://localhost:6333")
     neo4j_uri: str = os.getenv("NEO4J_URI", "bolt://localhost:7687")
+    neo4j_user: str = os.getenv("NEO4J_USER", "neo4j")
+    neo4j_password: str = os.getenv("NEO4J_PASSWORD", "bisdev123")
     llm_provider: str = os.getenv("LLM_PROVIDER", "disabled")
     llm_model: str = os.getenv("LLM_MODEL", "")
 

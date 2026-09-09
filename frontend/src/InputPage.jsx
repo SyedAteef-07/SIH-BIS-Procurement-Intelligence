@@ -2,16 +2,50 @@ import { useRef, useState } from 'react';
 import { ArrowUp, Check, FileText, Search, Share2, ShieldCheck, Sparkles, UploadCloud } from 'lucide-react';
 import Navbar from './components/Navbar';
 
-const examples = ['Industrial Safety Helmets', 'LED Street Lighting', 'Electrical Cables'];
+const examples = ['53 grade cement for concrete construction', 'PVC insulated cable rated 1100V', 'Helmets for two-wheeler riders'];
 
-export default function InputPage() {
+export default function InputPage({ onAnalyze }) {
   const [selectedExample, setSelectedExample] = useState('');
+  const [description, setDescription] = useState('');
   const [fileName, setFileName] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState('');
   const fileInputRef = useRef(null);
 
   function handleFileChange(event) {
     const file = event.target.files?.[0];
     if (file) setFileName(file.name);
+  }
+
+  async function handleAnalyze() {
+    const inputText = (description || selectedExample || '').trim();
+    if (!inputText) {
+      setError('Please enter a product or tender requirement to analyze.');
+      return;
+    }
+
+    setIsLoading(true);
+    setError('');
+
+    try {
+      const response = await fetch('http://localhost:8000/api/analyze', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ description: inputText, limit: 5 }),
+      });
+
+      if (!response.ok) {
+        const body = await response.json().catch(() => ({}));
+        throw new Error(body.detail || 'Unable to analyze the requirement right now.');
+      }
+
+      const result = await response.json();
+      onAnalyze?.(inputText, result);
+    } catch (fetchError) {
+      setError(fetchError.message || 'Something went wrong while connecting to the analysis service.');
+    } finally {
+      setIsLoading(false);
+    }
   }
 
   return (
@@ -35,16 +69,46 @@ export default function InputPage() {
             <small>Supports PDF (Max 10 MB)</small>
             <input ref={fileInputRef} type="file" accept="application/pdf" onChange={handleFileChange} hidden />
           </div>
+          <textarea
+            className="requirement-textarea"
+            aria-label="Tender requirement or product description"
+            value={description}
+            onChange={(event) => {
+              setDescription(event.target.value);
+              if (error) setError('');
+            }}
+            placeholder="Describe the requirement or paste tender text..."
+            rows={5}
+          />
         </div>
 
         <div className="examples-row">
           <strong>Try an example:</strong>
           <div className="example-buttons">
-            {examples.map((example) => <button className={selectedExample === example ? 'example-button selected' : 'example-button'} type="button" key={example} onClick={() => setSelectedExample(example)}>{example}</button>)}
+            {examples.map((example) => (
+              <button
+                className={selectedExample === example ? 'example-button selected' : 'example-button'}
+                type="button"
+                key={example}
+                onClick={() => {
+                  setSelectedExample(example);
+                  setDescription(example);
+                  setError('');
+                }}
+              >
+                {example}
+              </button>
+            ))}
           </div>
         </div>
 
-        <button className="analyze-button" type="button"><Search size={18} />Analyze Requirement<ArrowUp size={16} /></button>
+        {error ? <div className="analysis-error">{error}</div> : null}
+
+        <button className="analyze-button" type="button" onClick={handleAnalyze} disabled={isLoading}>
+          <Search size={18} />
+          {isLoading ? 'Analyzing...' : 'Analyze Requirement'}
+          <ArrowUp size={16} />
+        </button>
       </section>
 
       <section className="feature-grid" aria-label="Product features">

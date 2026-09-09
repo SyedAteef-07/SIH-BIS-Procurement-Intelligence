@@ -4,6 +4,7 @@ import re
 from dataclasses import asdict
 
 from .catalog import BY_NUMBER, STANDARDS, Standard
+from .services import graph_service
 
 
 def _terms(text: str) -> set[str]:
@@ -54,6 +55,8 @@ def recommend(text: str, limit: int = 5) -> dict:
     ranked.sort(key=lambda item: item[0], reverse=True)
     recommendations = [_standard_result(item[1], item[0], item[2]) for item in ranked[:limit]]
     related_numbers = {number for item in ranked[:limit] for number in item[1].related}
+    for item in ranked[:limit]:
+        related_numbers.update(graph_service.related_numbers(item[1].number))
     recommended_numbers = {item["number"] for item in recommendations}
     related = []
     for number in sorted(related_numbers):
