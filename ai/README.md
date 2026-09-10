@@ -15,7 +15,7 @@ From the repository root in PowerShell:
 cd ai
 py -3.12 -m venv .venv
 .venv/Scripts/python -m pip install -r requirements-dev.txt
-.venv/Scripts/python -m uvicorn app.main:app --reload
+.venv/Scripts/python -m uvicorn app.main:app --reload --port 8001
 ```
 
 If the virtual environment already exists, only install the updated dependencies.
@@ -29,7 +29,10 @@ external LLM APIs. Startup initializes the models and rebuilds the in-memory
 indexes before serving requests. Model/dataset failures fail startup visibly.
 Strict offline model provisioning is not implemented in this phase.
 
-Open http://127.0.0.1:8000/docs, expand `POST /recommend`, and select Try it out.
+Open http://127.0.0.1:8001/docs, expand `POST /recommend`, and select Try it out.
+The main backend runs separately on 8000 and calls this service using
+`AI_SERVICE_URL`. React calls the main backend only. See the root README for
+PostgreSQL migrations, seeding and the complete startup sequence.
 
 ```json
 {
@@ -41,7 +44,7 @@ Open http://127.0.0.1:8000/docs, expand `POST /recommend`, and select Try it out
 Or in PowerShell:
 
 ```powershell
-Invoke-RestMethod http://127.0.0.1:8000/recommend -Method Post -ContentType 'application/json' -Body '{"text":"three phase oil immersed distribution transformer","top_k":5}'
+Invoke-RestMethod http://127.0.0.1:8001/recommend -Method Post -ContentType 'application/json' -Body '{"text":"three phase oil immersed distribution transformer","top_k":5}'
 ```
 
 ## Retrieval and response contract
@@ -305,7 +308,9 @@ See [the NLP evaluation report](evaluation/NLP_ENRICHMENT_REPORT.md) for finding
 
 ## Scope
 
-The frontend remains a static mockup; use Swagger or an HTTP client. This phase
+The frontend calls the main backend, which enriches AI IDs with PostgreSQL
+metadata. The AI service itself continues to index the shared JSON fixture.
+This phase
 does not add RAG, external LLM APIs, PDF/OCR processing, trained NER,
 Neo4j, cloud deployment, custom training or standards-version verification.
 The roadmap files are at the repository root, not duplicated under `ai/`.
