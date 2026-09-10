@@ -18,6 +18,13 @@ def optional_score():
     return None if value.lower() in {"", "null", "none"} else float(value)
 
 
+def enrichment_enabled():
+    value = os.getenv("QUERY_ENRICHMENT", "false").strip().lower()
+    if value not in {"true", "false", "1", "0"}:
+        raise ValueError("QUERY_ENRICHMENT must be true, false, 1, or 0")
+    return value in {"true", "1"}
+
+
 @dataclass(frozen=True)
 class Settings:
     embedding_model: str = field(default_factory=lambda: os.getenv("EMBEDDING_MODEL", DEFAULT_EMBEDDING_MODEL))
@@ -29,6 +36,7 @@ class Settings:
     retrieval_mode: str = field(default_factory=lambda: os.getenv("RETRIEVAL_MODE", "hybrid"))
     min_reranker_score: float | None = field(default_factory=optional_score)
     device: str = field(default_factory=lambda: os.getenv("MODEL_DEVICE", "cpu"))
+    query_enrichment: bool = field(default_factory=enrichment_enabled)
 
     def __post_init__(self):
         if self.retrieval_mode not in {"semantic", "hybrid"}:

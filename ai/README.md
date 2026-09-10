@@ -234,10 +234,79 @@ These are in-sample exploratory findings. Ten OOD examples cannot establish a
 returned standard is correct. Select any threshold manually after independent
 validation. See [the calibration report](evaluation/CALIBRATION_REPORT.md).
 
+## Deterministic requirement extraction
+
+This is a deterministic MVP extraction layer, not a trained domain-specific
+NER model. Regex and configurable product aliases make the small fictional
+catalogue's extraction rules reproducible, inexpensive, and independently
+testable. No dependency or model was added.
+
+`RequirementExtractor.extract(text)` returns a Pydantic `ExtractedRequirements`:
+product and matched phrase; product types; materials; voltage, frequency, power
+and dimensions (explicit diameter); phase; IP rating; technical classes;
+installation/environment; testing, safety, performance, installation, material
+and certification requirements. Quantities retain their units and raw spelling.
+Evidence includes source substrings and character offsets into the supplied
+text. Negated attribute matches are recorded as evidence but excluded from
+positive fields. A certification requirement is not evidence of certification.
+
+```python
+from app.nlp.extractor import RequirementExtractor
+from app.nlp.query_builder import QueryBuilder
+
+text = "11KV/433V three phase oil immersed distribution transformer for outdoor installation"
+requirements = RequirementExtractor().extract(text)
+print(requirements.model_dump(exclude_none=True))
+print(QueryBuilder().build(text, requirements))
+```
+
+The example identifies `distribution transformer`, `oil immersed`,
+`three_phase`, `11 kV`, `433 V`, and `outdoor`. Product aliases are configurable
+through `ProductMatcher(aliases=...)`, injected into `RequirementExtractor`.
+Unknown products return `None`; multiple distinct product matches also leave
+the singular product unset. Longer overlapping aliases take precedence.
+
+Extraction runs before retrieval. **Query enrichment is off by default**
+(`QUERY_ENRICHMENT=false`). For an explicit experiment, set it to `true` in
+the environment or pass `Settings(query_enrichment=True)`. Enrichment appends
+nonempty, positive fields to the entire cleaned original query for BGE and
+BM25. The CrossEncoder always receives the original cleaned query. The engine
+checks the BGE tokenizer budget, including its query prefix, and omits trailing
+enrichment fields that would exceed it; original text is never shortened.
+An original query exceeding the budget retains the existing validation error.
+The API request/response schemas and ranking defaults remain unchanged.
+Logging records only product presence, attribute count and enrichment use.
+
+Limitations: the alias vocabulary is finite and English-focused. The extractor
+does not infer an unspecified transformer subtype, resolve coreferences, attach
+attributes to individual products, convert units, or interpret measurement
+ranges/tolerances. Local negation rules are conservative, not a grammatical
+parser. Unit spelling is case-insensitive for the supported procurement units;
+ambiguous SI spellings require review. Ordinary unitless numbers are ignored.
+Evidence offsets refer to input characters, not document pages.
+
+From `ai/`, run:
+
+```powershell
+.venv/Scripts/python -m pytest tests/test_extractor.py tests/test_normalization.py tests/test_product_matcher.py tests/test_query_builder.py -v
+.venv/Scripts/python -m pytest -v
+.venv/Scripts/python -m evaluation.evaluate_enrichment
+```
+
+The enrichment evaluation holds models, indexes, candidate depths and reranker
+query fixed. It compares raw/enriched semantic and hybrid retrieval both before
+and after reranking, using existing metrics and query labels. Results go to
+`evaluation/results/nlp_enrichment.json`; two extraction/ranking examples per
+category plus selected regressions go to `nlp_enrichment_diagnostics.json`.
+MRR uses the full candidate
+ranking; stored predictions are limited to final K. OOD has no ranking labels
+and is excluded from ranking means. Thresholding is disabled in this comparison.
+See [the NLP evaluation report](evaluation/NLP_ENRICHMENT_REPORT.md) for findings.
+
 ## Scope
 
 The frontend remains a static mockup; use Swagger or an HTTP client. This phase
-does not add RAG, external LLM APIs, PDF/OCR processing, entity extraction,
+does not add RAG, external LLM APIs, PDF/OCR processing, trained NER,
 Neo4j, cloud deployment, custom training or standards-version verification.
 The roadmap files are at the repository root, not duplicated under `ai/`.
 

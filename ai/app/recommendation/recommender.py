@@ -2,7 +2,8 @@ import logging
 import math
 from threading import Lock
 from app.config import Settings
-from app.nlp.preprocess import clean_text
+from app.nlp.extractor import RequirementExtractor
+from app.nlp.query_builder import QueryBuilder
 from app.retrieval.bm25_store import BM25Store
 from app.retrieval.hybrid_search import HybridRetriever
 from app.retrieval.vector_store import VectorStore
@@ -15,6 +16,8 @@ class RecommendationEngine:
         self.settings = settings or Settings()
         self.embedder = embedder
         self.reranker = reranker
+        self.extractor = RequirementExtractor()
+        self.query_builder = QueryBuilder()
         self.store = VectorStore()
         self.store.add(embedder.encode([s.to_retrieval_text() for s in standards]), standards)
         self.bm25 = BM25Store(standards) if self.settings.retrieval_mode == "hybrid" else None
@@ -34,6 +37,22 @@ class RecommendationEngine:
             return self.hybrid.search(query, top_k)
         return self.store.search(self.embedder.encode_query(query), top_k)
 
+    def prepare_query(self, query, use_enrichment=None):
+        extracted = self.extractor.extract(query)
+        original = extracted.cleaned_text
+        enabled = self.settings.query_enrichment if use_enrichment is None else use_enrichment
+        retrieval_text = original
+        if enabled:
+            model = getattr(self.embedder, "model", None)
+            limits = {}
+            if model is not None and hasattr(model, "tokenizer") and hasattr(model, "max_seq_length"):
+                limits = {"token_count": lambda text: len(model.tokenizer.encode(
+                    self.embedder.query_prefix + text, truncation=False)), "max_tokens": model.max_seq_length}
+            retrieval_text = self.query_builder.build(query, extracted, **limits)
+        logger.info("extraction product_identified=%s technical_attributes=%d enrichment_used=%s",
+                    extracted.product is not None, extracted.technical_attribute_count, retrieval_text != original)
+        return original, extracted, retrieval_text
+
     @staticmethod
     def rank_candidates(candidates, scores, score_type="cosine"):
         if len(scores) != len(candidates) or not all(math.isfinite(score) for score in scores):
@@ -47,13 +66,13 @@ class RecommendationEngine:
     def recommend(self, query: str, retrieval_k: int | None = None, final_k: int | None = None):
         retrieval_k = self.settings.retrieval_k if retrieval_k is None else retrieval_k
         final_k = self.settings.final_k if final_k is None else final_k
-        query = clean_text(query)
+        query, _, retrieval_text = self.prepare_query(query)
         if not query:
             raise ValueError("Query must not be empty")
         if not 1 <= final_k <= retrieval_k:
             raise ValueError("Require 1 <= final_k <= retrieval_k")
         with self._lock:
-            candidates = self.retrieve(query, retrieval_k)
+            candidates = self.retrieve(retrieval_text, retrieval_k)
             logger.info("retrieval mode=%s candidates=%d reranking_count=%d", self.settings.retrieval_mode, len(candidates), len(candidates))
             scores = self.reranker.score(query, [s.to_retrieval_text() for s, _ in candidates])
         score_type = "rrf" if self.hybrid is not None else "cosine"
