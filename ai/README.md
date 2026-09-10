@@ -173,6 +173,67 @@ Measured results and known ranking failures are documented in
 [evaluation/README.md](evaluation/README.md); the complete report is
 [evaluation/results/latest.json](evaluation/results/latest.json).
 
+## Calibration and ranking-fusion experiments
+
+The evaluation now compares the three existing systems, raw hybrid retrieval,
+and evaluation-only weighted rank fusion at weights 0.5, 1.0, 1.5 and 2.0.
+Production still uses the existing cross-encoder ordering and disabled threshold.
+No production configuration, model, API schema or retriever is changed by these
+experiments. The same 40 standards and 100 labels are reused without relabelling.
+
+```powershell
+.venv/Scripts/python -u -m evaluation.evaluate
+# Add/highlight a weight; defaults still evaluate 0.5, 1.0, 1.5, 2.0:
+.venv/Scripts/python -u -m evaluation.evaluate --reranker-fusion-weight 0.75
+# Override the experiment sweep or the experiment-only RRF constant:
+.venv/Scripts/python -u -m evaluation.evaluate --fusion-weights 0.5 1 1.5 2 --fusion-rrf-k 60
+# Recalculate threshold candidates from saved query scores; no model loading:
+.venv/Scripts/python -m evaluation.calibration evaluation/results/latest.json --score-field top_hybrid_reranker_score
+```
+
+`RERANKER_FUSION_WEIGHT` is an optional environment default for the CLI's
+`--reranker-fusion-weight`. It is consumed only by evaluation. Every weight in
+the sweep gets a separate overall and per-category result. The configured
+weight is also included in the sweep and recorded in experiment_configuration.
+
+Semantic fusion combines FAISS ranks with cross-encoder ranks on the same
+semantic candidate pool. Hybrid fusion combines the hybrid RRF ranks with
+cross-encoder ranks on the same hybrid candidate pool. Both use
+`1/(k + base_rank) + weight/(k + reranker_rank)` with one-based ranks. Ties retain
+base rank, then reranker rank, then ID. Zero weight preserves the base ranking.
+Raw model scores are never added to each other.
+
+The evaluator writes these files under the output report's directory:
+
+- `latest.json`: full metrics, predictions, diagnostics and settings.
+- `comparison.txt`: all systems and weights, overall and by category.
+- `regressions.json` / `regressions.txt`: first-relevant-rank improvements,
+  regressions, unchanged cases, and the ten largest changes in each direction.
+- `hybrid_diagnostics.json`: candidate IDs, overlap, RRF and final rankings.
+- `query_scores.json`: one maximum per query/system and domain-group percentiles.
+- `threshold_analysis.json`: all observed threshold boundaries and candidates.
+- `ambiguous_queries.json` / `ambiguous_queries.txt`: graded labels, all top-five
+  rankings and NDCG@5/Recall@5 for each ambiguous query.
+
+Regression deltas are baseline rank minus comparison rank: positive is better.
+Missing ranks remain null and use one rank below both lists only for the delta.
+OOD cases are not included in improvement/regression counts. Ordered top-five
+comparisons detect both membership and ordering changes. Overlap@K is the
+intersection size divided by configured K, even when BM25 returns fewer entries.
+
+Threshold analysis uses query maxima, not individual candidate pairs. The
+positive class is in-domain; acceptance is score >= threshold, matching the API.
+The sweep covers every distinct observed decision boundary plus a reject-all
+boundary, and reports acceptance/rejection rates, confusion counts, precision,
+recall and F1. Separate analyses cover semantic and hybrid candidate pools.
+Recommended candidates maximize F1, or satisfy empirical recall/rejection
+constraints with explicit tie-breaking. No settings are written automatically.
+
+These are in-sample exploratory findings. Ten OOD examples cannot establish a
+99% population rejection rate. Domain detection also does not prove that a
+returned standard is correct. Select any threshold manually after independent
+validation. See [the calibration report](evaluation/CALIBRATION_REPORT.md).
+
 ## Scope
 
 The frontend remains a static mockup; use Swagger or an HTTP client. This phase

@@ -1,5 +1,9 @@
 # Retrieval evaluation results
 
+The subsequent calibration and rank-fusion experiments are documented in
+[CALIBRATION_REPORT.md](CALIBRATION_REPORT.md). The latest JSON now includes
+those experiments alongside the three baseline systems described below.
+
 Measured on 2026-09-09 with 40 fictional standards and 100 authored queries.
 The full rankings, scores, category metrics, settings and dataset hashes are in
 [results/latest.json](results/latest.json). Run instructions and metric
