@@ -4,7 +4,7 @@ from fastapi import FastAPI, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
 from .catalog import STANDARDS
 from .catalog import BY_NUMBER
-from .schemas import AnalyzeRequest, AnalysisResponse, StandardDetail, StandardSummary
+from .schemas import AnalyzeRequest, AnalyzeResponse
 from .service import recommend
 
 app = FastAPI(
@@ -26,7 +26,7 @@ def health() -> dict[str, str]:
     return {"status": "ok"}
 
 
-@app.get("/api/standards", response_model=list[StandardSummary])
+@app.get("/api/standards")
 def list_standards(search: str | None = Query(default=None, min_length=1)) -> list[dict]:
     values = STANDARDS
     if search:
@@ -47,7 +47,7 @@ def list_standards(search: str | None = Query(default=None, min_length=1)) -> li
     ]
 
 
-@app.get("/api/standards/{standard_number:path}", response_model=StandardDetail)
+@app.get("/api/standards/{standard_number:path}")
 def get_standard(standard_number: str) -> dict:
     standard = BY_NUMBER.get(standard_number)
     if standard is None:
@@ -65,7 +65,7 @@ def get_standard(standard_number: str) -> dict:
     }
 
 
-@app.post("/api/analyze", response_model=AnalysisResponse)
+@app.post("/api/analyze", response_model=AnalyzeResponse)
 def analyze(request: AnalyzeRequest) -> dict:
     try:
         return recommend(request.description, request.limit)

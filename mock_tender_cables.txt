@@ -1,0 +1,20 @@
+GOVERNMENT OF INDIA
+CENTRAL PUBLIC WORKS DEPARTMENT (CPWD)
+NOTICE INVITING TENDER (NIT)
+
+Tender Reference Number: CPWD/ELEC/2026/089
+Date: 11-09-2026
+
+1. NAME OF WORK: 
+Supply, installation, testing, and commissioning of electrical wiring for the new administrative block.
+
+2. TECHNICAL SPECIFICATIONS FOR CABLES:
+The contractor shall supply PVC insulated cables for power and lighting installations. 
+The cables must be rated for working voltages up to and including 1100V.
+All wiring materials must meet the required conductor resistance and insulation resistance metrics. 
+The cables must be sheathed and highly durable. 
+A standard voltage test must be conducted prior to final commissioning.
+
+3. COMPLIANCE & SAFETY:
+All electrical wiring installations must strictly follow the standard code of practice. 
+The supplier must ensure the products carry the mandatory BIS ISI marking as required by the relevant Quality Control Orders (QCO) for Scheme-I product certification.

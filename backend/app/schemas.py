@@ -1,42 +1,54 @@
-"""Public API schemas shared by the FastAPI routes and clients."""
-
+from typing import List, Optional, Literal
 from pydantic import BaseModel, Field
 
-
 class AnalyzeRequest(BaseModel):
-    description: str = Field(
-        ...,
-        min_length=3,
-        max_length=50_000,
-        description="Product, specification, or tender text",
-    )
+    description: str = Field(..., min_length=3, max_length=50_000, description="Product, specification, or tender text")
     limit: int = Field(default=5, ge=1, le=20)
 
+class Requirement(BaseModel):
+    id: str
+    text: str
+    type: Optional[str] = None
 
-class StandardSummary(BaseModel):
+class Standard(BaseModel):
+    id: str
     number: str
     title: str
-    scope: str
-    edition: str
+    relevanceScore: float
     status: str
+    reason: Optional[str] = None
 
+class GapItem(BaseModel):
+    requirement: str
+    coverage: Literal["COVERED", "PARTIAL", "NOT_COVERED"]
+    explanation: Optional[str] = None
 
-class StandardDetail(StandardSummary):
-    keywords: list[str]
-    related: list[str]
-    certification: str | None
-    requirements: list[str]
+class Evidence(BaseModel):
+    id: str
+    title: str
+    sourceType: Optional[str] = None
+    excerpt: Optional[str] = None
+    sourceUrl: Optional[str] = None
+    relevanceScore: Optional[float] = None
 
+class Certification(BaseModel):
+    name: str
+    applicable: bool
+    description: Optional[str] = None
+    authority: Optional[str] = None
+    source: Optional[str] = None
 
-class Recommendation(StandardDetail):
-    score: float = Field(ge=0, le=1)
-    matched_terms: list[str]
+class RecommendationInfo(BaseModel):
+    text: str
+    confidence: float
 
-
-class AnalysisResponse(BaseModel):
-    input: str
-    recommendations: list[Recommendation]
-    related_standards: list[Recommendation]
-    certifications: list[str]
-    gaps: list[str]
+class AnalyzeResponse(BaseModel):
+    query: str
+    requirements: List[Requirement]
+    recommendedStandards: List[Standard]
+    relatedStandards: List[Standard]
+    certifications: List[Certification]
+    gapAnalysis: List[GapItem]
+    recommendation: RecommendationInfo
+    evidence: List[Evidence]
     explanation: str
