@@ -5,7 +5,9 @@ from dataclasses import asdict
 
 from .catalog import BY_NUMBER, STANDARDS, Standard
 from .services import graph_service
-
+from .config import settings
+from .mock_catalog import load_mock_standards
+_ALL_STANDARDS = STANDARDS + (load_mock_standards() if settings.include_mock_standards else ())
 
 def _terms(text: str) -> set[str]:
     return {term for term in re.findall(r"[\w]+", text.casefold()) if len(term) > 2}
