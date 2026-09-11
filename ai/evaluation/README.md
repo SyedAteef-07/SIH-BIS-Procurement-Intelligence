@@ -1,5 +1,9 @@
 # Retrieval evaluation results
 
+The subsequent calibration and rank-fusion experiments are documented in
+[CALIBRATION_REPORT.md](CALIBRATION_REPORT.md). The latest JSON now includes
+those experiments alongside the three baseline systems described below.
+
 Measured on 2026-09-09 with 40 fictional standards and 100 authored queries.
 The full rankings, scores, category metrics, settings and dataset hashes are in
 [results/latest.json](results/latest.json). Run instructions and metric
@@ -62,3 +66,11 @@ retrieved candidate pairs, not every possible corpus pair.
 
 This report belongs to the code's evaluation fixtures. No model training,
 threshold fitting, PDF processing or RAG was performed.
+# NLP enrichment comparison
+
+Run `python -m evaluation.evaluate_enrichment` from `ai/` to compare raw queries
+with appended deterministic requirements. Models, indexes, candidate depths,
+RRF and original CrossEncoder queries are held fixed. This separate experiment
+does not overwrite calibration reports or change production defaults.
+See [NLP_ENRICHMENT_REPORT.md](NLP_ENRICHMENT_REPORT.md) and the extraction
+documentation in [../README.md](../README.md).

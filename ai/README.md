@@ -15,7 +15,7 @@ From the repository root in PowerShell:
 cd ai
 py -3.12 -m venv .venv
 .venv/Scripts/python -m pip install -r requirements-dev.txt
-.venv/Scripts/python -m uvicorn app.main:app --reload
+.venv/Scripts/python -m uvicorn app.main:app --reload --port 8001
 ```
 
 If the virtual environment already exists, only install the updated dependencies.
@@ -26,10 +26,14 @@ are recorded in `requirements-lock.txt` for reproducible installation.
 First startup downloads the public pretrained models from Hugging Face; later
 starts reuse the model cache. Inference and both indexes run locally without
 external LLM APIs. Startup initializes the models and rebuilds the in-memory
-indexes before serving requests. Model/dataset failures fail startup visibly.
+indexes when absent, or validates and loads the selected model's cache, before
+serving requests. Model/dataset failures fail startup visibly.
 Strict offline model provisioning is not implemented in this phase.
 
-Open http://127.0.0.1:8000/docs, expand `POST /recommend`, and select Try it out.
+Open http://127.0.0.1:8001/docs, expand `POST /recommend`, and select Try it out.
+The main backend runs separately on 8000 and calls this service using
+`AI_SERVICE_URL`. React calls the main backend only. See the root README for
+PostgreSQL migrations, seeding and the complete startup sequence.
 
 ```json
 {
@@ -41,10 +45,97 @@ Open http://127.0.0.1:8000/docs, expand `POST /recommend`, and select Try it out
 Or in PowerShell:
 
 ```powershell
-Invoke-RestMethod http://127.0.0.1:8000/recommend -Method Post -ContentType 'application/json' -Body '{"text":"three phase oil immersed distribution transformer","top_k":5}'
+Invoke-RestMethod http://127.0.0.1:8001/recommend -Method Post -ContentType 'application/json' -Body '{"text":"three phase oil immersed distribution transformer","top_k":5}'
 ```
 
-## Retrieval and response contract
+## Optional multilingual demo
+
+Multilingual mode is an experimental hackathon demo mode and has not yet
+been production-calibrated. The normal default remains `EMBEDDING_MODE=english`
+with `BAAI/bge-small-en-v1.5`, FAISS, BM25/RRF and the existing CrossEncoder.
+`EMBEDDING_MODEL` overrides continue to work for English mode. Multilingual
+mode always selects `BAAI/bge-m3`, even if an older `.env` still names BGE-small.
+
+From `ai/` in PowerShell, preload both modes while keeping English the default:
+
+```powershell
+$env:EMBEDDING_MODE='english'
+$env:MULTILINGUAL_ENABLED='true'
+.venv/Scripts/python -m uvicorn app.main:app --reload --port 8001
+```
+
+For omitted-mode direct AI requests to default to multilingual, set
+`$env:EMBEDDING_MODE='multilingual'` before the same startup command. This also
+loads the English engine for explicit English requests. No setting is changed
+automatically. Restore `EMBEDDING_MODE=english` and `MULTILINGUAL_ENABLED=false`
+for normal startup. Model loading occurs at startup, never as a surprise
+download during a request. Requesting an unloaded mode returns 503.
+
+The frontend's small Language mode selector defaults to English. The backend
+always forwards its selected/default mode to `/recommend`; React continues to
+call only port 8000. Existing AI requests without `embedding_mode` use the
+configured service default. Allowed explicit values are `english` and
+`multilingual`. Responses add `embedding_mode`, `detected_language`, and
+`reranking_applied`. Non-English demo results use `reranker_score: null`.
+
+The model/index cache is separate:
+
+- `ai/indexes/bge-small/index.faiss` and `manifest.json` for BGE-small (384 dimensions).
+- `ai/indexes/bge-m3/index.faiss` and `manifest.json` for BGE-M3 (1024 dimensions).
+- English custom models get a model-name hash directory.
+
+Startup builds an absent index or loads a compatible existing one. Manifest
+checks cover exact model name, dimension, ordered IDs and corpus hash; FAISS
+type, dimension and count are checked independently. Incompatible/incomplete
+indexes fail clearly. After a deliberate corpus/model change, rebuild only
+the selected model's index using `python -m scripts.build_index --rebuild`.
+Index files are generated artifacts and remain git-ignored. Never copy vectors
+between the two model directories. Each enabled mode holds its own model/index
+in memory, so enabling the demo requires substantially more memory and disk.
+
+BGE-M3 dense embeddings use no query instruction prefix, as specified by its
+[model documentation](https://huggingface.co/BAAI/bge-m3). The existing English
+BGE-small instruction is preserved. No translation API or additional language
+model is used.
+
+The lightweight detector counts letters in the Devanagari and Kannada Unicode
+blocks. Dominant Kannada maps to Kannada; otherwise Devanagari maps to Hindi;
+other scripts default to English. A tie favors Hindi. This is a script hint,
+not reliable identification of every language (e.g. Devanagari also represents
+Marathi). Mixed text with these scripts follows the non-English policy.
+
+For multilingual Hindi/Kannada input, first-stage ranking uses BGE-M3/FAISS
+directly. BM25, English-only enrichment and English CrossEncoder reranking are
+skipped to avoid promoting incidental technical-token overlap or unreliable
+cross-language reranker scores. No translation or technical-unit rewrite is
+performed. The existing conservative cleaning still applies. The English
+reranker cutoff is not applied to cosine scores; these results are explicitly
+`NOT_ASSESSED` with warnings. English text in multilingual mode retains the
+configured semantic/hybrid retrieval and existing reranker. English production
+threshold and enrichment settings are unchanged.
+
+Run the real-model demo separately from ordinary unit tests:
+
+```powershell
+.venv/Scripts/python -m scripts.test_multilingual_demo
+```
+
+It runs these exact examples and writes `evaluation/results/multilingual_demo.json`:
+
+- English: `11 kV three phase distribution transformer for outdoor use`
+- Hindi: `बाहरी उपयोग के लिए 11 केवी तीन फेज वितरण ट्रांसफॉर्मर`
+- Kannada: `ಹೊರಾಂಗಣ ಬಳಕೆಗೆ 11 ಕೆವಿ ಮೂರು ಹಂತದ ವಿತರಣಾ ಟ್ರಾನ್ಸ್‌ಫಾರ್ಮರ್`
+- English: `33 kV XLPE power cable`
+- Hindi: `33 केवी एक्सएलपीई पावर केबल`
+- Kannada: `33 ಕೆವಿ ಎಕ್ಸ್‌ಎಲ್‌ಪಿಇ ಪವರ್ ಕೇಬಲ್`
+
+Example AI request: `{"text":"33 केवी एक्सएलपीई पावर केबल","top_k":5,"embedding_mode":"multilingual"}`.
+For `/api/analyze`, use `description` and `limit` instead of `text` and `top_k`.
+Expected transformer ID is `IS-DEMO-001`; cable targets are `IS-DEMO-005` or
+`IS-DEMO-024`. These examples are demo checks, not a multilingual benchmark.
+See [the multilingual report](evaluation/MULTILINGUAL_REPORT.md) for observed results.
+
+## Retrieval and response contract (English default)
 
 1. Conservative cleaning preserves units, numbers, technical wording and negation.
 2. BGE generates normalized embeddings; FAISS uses inner-product/cosine search.
@@ -173,10 +264,142 @@ Measured results and known ranking failures are documented in
 [evaluation/README.md](evaluation/README.md); the complete report is
 [evaluation/results/latest.json](evaluation/results/latest.json).
 
+## Calibration and ranking-fusion experiments
+
+The evaluation now compares the three existing systems, raw hybrid retrieval,
+and evaluation-only weighted rank fusion at weights 0.5, 1.0, 1.5 and 2.0.
+Production still uses the existing cross-encoder ordering and disabled threshold.
+No production configuration, model, API schema or retriever is changed by these
+experiments. The same 40 standards and 100 labels are reused without relabelling.
+
+```powershell
+.venv/Scripts/python -u -m evaluation.evaluate
+# Add/highlight a weight; defaults still evaluate 0.5, 1.0, 1.5, 2.0:
+.venv/Scripts/python -u -m evaluation.evaluate --reranker-fusion-weight 0.75
+# Override the experiment sweep or the experiment-only RRF constant:
+.venv/Scripts/python -u -m evaluation.evaluate --fusion-weights 0.5 1 1.5 2 --fusion-rrf-k 60
+# Recalculate threshold candidates from saved query scores; no model loading:
+.venv/Scripts/python -m evaluation.calibration evaluation/results/latest.json --score-field top_hybrid_reranker_score
+```
+
+`RERANKER_FUSION_WEIGHT` is an optional environment default for the CLI's
+`--reranker-fusion-weight`. It is consumed only by evaluation. Every weight in
+the sweep gets a separate overall and per-category result. The configured
+weight is also included in the sweep and recorded in experiment_configuration.
+
+Semantic fusion combines FAISS ranks with cross-encoder ranks on the same
+semantic candidate pool. Hybrid fusion combines the hybrid RRF ranks with
+cross-encoder ranks on the same hybrid candidate pool. Both use
+`1/(k + base_rank) + weight/(k + reranker_rank)` with one-based ranks. Ties retain
+base rank, then reranker rank, then ID. Zero weight preserves the base ranking.
+Raw model scores are never added to each other.
+
+The evaluator writes these files under the output report's directory:
+
+- `latest.json`: full metrics, predictions, diagnostics and settings.
+- `comparison.txt`: all systems and weights, overall and by category.
+- `regressions.json` / `regressions.txt`: first-relevant-rank improvements,
+  regressions, unchanged cases, and the ten largest changes in each direction.
+- `hybrid_diagnostics.json`: candidate IDs, overlap, RRF and final rankings.
+- `query_scores.json`: one maximum per query/system and domain-group percentiles.
+- `threshold_analysis.json`: all observed threshold boundaries and candidates.
+- `ambiguous_queries.json` / `ambiguous_queries.txt`: graded labels, all top-five
+  rankings and NDCG@5/Recall@5 for each ambiguous query.
+
+Regression deltas are baseline rank minus comparison rank: positive is better.
+Missing ranks remain null and use one rank below both lists only for the delta.
+OOD cases are not included in improvement/regression counts. Ordered top-five
+comparisons detect both membership and ordering changes. Overlap@K is the
+intersection size divided by configured K, even when BM25 returns fewer entries.
+
+Threshold analysis uses query maxima, not individual candidate pairs. The
+positive class is in-domain; acceptance is score >= threshold, matching the API.
+The sweep covers every distinct observed decision boundary plus a reject-all
+boundary, and reports acceptance/rejection rates, confusion counts, precision,
+recall and F1. Separate analyses cover semantic and hybrid candidate pools.
+Recommended candidates maximize F1, or satisfy empirical recall/rejection
+constraints with explicit tie-breaking. No settings are written automatically.
+
+These are in-sample exploratory findings. Ten OOD examples cannot establish a
+99% population rejection rate. Domain detection also does not prove that a
+returned standard is correct. Select any threshold manually after independent
+validation. See [the calibration report](evaluation/CALIBRATION_REPORT.md).
+
+## Deterministic requirement extraction
+
+This is a deterministic MVP extraction layer, not a trained domain-specific
+NER model. Regex and configurable product aliases make the small fictional
+catalogue's extraction rules reproducible, inexpensive, and independently
+testable. No dependency or model was added.
+
+`RequirementExtractor.extract(text)` returns a Pydantic `ExtractedRequirements`:
+product and matched phrase; product types; materials; voltage, frequency, power
+and dimensions (explicit diameter); phase; IP rating; technical classes;
+installation/environment; testing, safety, performance, installation, material
+and certification requirements. Quantities retain their units and raw spelling.
+Evidence includes source substrings and character offsets into the supplied
+text. Negated attribute matches are recorded as evidence but excluded from
+positive fields. A certification requirement is not evidence of certification.
+
+```python
+from app.nlp.extractor import RequirementExtractor
+from app.nlp.query_builder import QueryBuilder
+
+text = "11KV/433V three phase oil immersed distribution transformer for outdoor installation"
+requirements = RequirementExtractor().extract(text)
+print(requirements.model_dump(exclude_none=True))
+print(QueryBuilder().build(text, requirements))
+```
+
+The example identifies `distribution transformer`, `oil immersed`,
+`three_phase`, `11 kV`, `433 V`, and `outdoor`. Product aliases are configurable
+through `ProductMatcher(aliases=...)`, injected into `RequirementExtractor`.
+Unknown products return `None`; multiple distinct product matches also leave
+the singular product unset. Longer overlapping aliases take precedence.
+
+Extraction runs before retrieval. **Query enrichment is off by default**
+(`QUERY_ENRICHMENT=false`). For an explicit experiment, set it to `true` in
+the environment or pass `Settings(query_enrichment=True)`. Enrichment appends
+nonempty, positive fields to the entire cleaned original query for BGE and
+BM25. The CrossEncoder always receives the original cleaned query. The engine
+checks the BGE tokenizer budget, including its query prefix, and omits trailing
+enrichment fields that would exceed it; original text is never shortened.
+An original query exceeding the budget retains the existing validation error.
+The API request/response schemas and ranking defaults remain unchanged.
+Logging records only product presence, attribute count and enrichment use.
+
+Limitations: the alias vocabulary is finite and English-focused. The extractor
+does not infer an unspecified transformer subtype, resolve coreferences, attach
+attributes to individual products, convert units, or interpret measurement
+ranges/tolerances. Local negation rules are conservative, not a grammatical
+parser. Unit spelling is case-insensitive for the supported procurement units;
+ambiguous SI spellings require review. Ordinary unitless numbers are ignored.
+Evidence offsets refer to input characters, not document pages.
+
+From `ai/`, run:
+
+```powershell
+.venv/Scripts/python -m pytest tests/test_extractor.py tests/test_normalization.py tests/test_product_matcher.py tests/test_query_builder.py -v
+.venv/Scripts/python -m pytest -v
+.venv/Scripts/python -m evaluation.evaluate_enrichment
+```
+
+The enrichment evaluation holds models, indexes, candidate depths and reranker
+query fixed. It compares raw/enriched semantic and hybrid retrieval both before
+and after reranking, using existing metrics and query labels. Results go to
+`evaluation/results/nlp_enrichment.json`; two extraction/ranking examples per
+category plus selected regressions go to `nlp_enrichment_diagnostics.json`.
+MRR uses the full candidate
+ranking; stored predictions are limited to final K. OOD has no ranking labels
+and is excluded from ranking means. Thresholding is disabled in this comparison.
+See [the NLP evaluation report](evaluation/NLP_ENRICHMENT_REPORT.md) for findings.
+
 ## Scope
 
-The frontend remains a static mockup; use Swagger or an HTTP client. This phase
-does not add RAG, external LLM APIs, PDF/OCR processing, entity extraction,
+The frontend calls the main backend, which enriches AI IDs with PostgreSQL
+metadata. The AI service itself continues to index the shared JSON fixture.
+This phase
+does not add RAG, external LLM APIs, PDF/OCR processing, trained NER,
 Neo4j, cloud deployment, custom training or standards-version verification.
 The roadmap files are at the repository root, not duplicated under `ai/`.
 

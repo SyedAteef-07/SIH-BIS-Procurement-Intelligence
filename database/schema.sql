@@ -1,3 +1,6 @@
+-- Legacy bootstrap reference only. Not mounted by Docker Compose.
+-- New metadata schema is managed by backend/alembic; use alembic upgrade head.
+-- Do not run this file against the new bis_procurement database.
 CREATE TABLE IF NOT EXISTS standards (
     number TEXT PRIMARY KEY,
     title TEXT NOT NULL,

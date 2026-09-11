@@ -206653,7 +206653,7 @@
     "production_configuration_changed": false
   },
   "metadata": {
-    "created_at": "2026-09-09T16:21:52.244620+00:00",
+    "created_at": "2026-09-10T02:45:51.198910+00:00",
     "embedding_model": "BAAI/bge-small-en-v1.5",
     "reranker_model": "cross-encoder/ms-marco-MiniLM-L-6-v2",
     "retrieval_k": 20,
@@ -206670,8 +206670,8 @@
       "ambiguous": 10,
       "out_of_domain": 10
     },
-    "dataset_sha256": "7c5087cbe2bcb5c81208a1fe6e4c86c8156a3811a272c0769225d80ce85db5a4",
-    "queries_sha256": "3b379330f8acc6d4bbead58f54bbc87b792308a88c4de26e4a1b29c7f11c9945",
+    "dataset_sha256": "a3d06f440dc7f1d152d3ad21b23438191abae74eb3f33640f094267f4fcbece4",
+    "queries_sha256": "46e80d08147da47d320f8437824c3449e22e1bd7236e6def4921881b26734997",
     "ranking_policy": "Unfiltered rankings; MRR over retrieval_k candidates; binary relevance is grade >= 2; NDCG includes grade 1.",
     "limitations": "Authored synthetic queries and fictional standards, not a held-out production benchmark. Thresholds are exploratory in-sample candidates only; production settings remain unchanged. Candidate score samples cover retrieved pairs; query_scores contain one maximum per query and system."
   }

@@ -219,13 +219,13 @@ pip freeze > requirements.txt
 After `app/main.py` is implemented:
 
 ```bash
-uvicorn app.main:app --reload
+uvicorn app.main:app --reload --port 8001
 ```
 
 Open:
 
 ```text
-http://127.0.0.1:8000/docs
+http://127.0.0.1:8001/docs
 ```
 
 ## Development Principles

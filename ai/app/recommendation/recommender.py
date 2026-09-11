@@ -2,7 +2,9 @@ import logging
 import math
 from threading import Lock
 from app.config import Settings
-from app.nlp.preprocess import clean_text
+from app.nlp.extractor import RequirementExtractor
+from app.nlp.query_builder import QueryBuilder
+from app.nlp.language import detect_language
 from app.retrieval.bm25_store import BM25Store
 from app.retrieval.hybrid_search import HybridRetriever
 from app.retrieval.vector_store import VectorStore
@@ -11,12 +13,15 @@ logger = logging.getLogger(__name__)
 
 
 class RecommendationEngine:
-    def __init__(self, standards, embedder, reranker, settings=None):
+    def __init__(self, standards, embedder, reranker, settings=None, store=None):
         self.settings = settings or Settings()
         self.embedder = embedder
         self.reranker = reranker
-        self.store = VectorStore()
-        self.store.add(embedder.encode([s.to_retrieval_text() for s in standards]), standards)
+        self.extractor = RequirementExtractor()
+        self.query_builder = QueryBuilder()
+        self.store = store if store is not None else VectorStore()
+        if store is None:
+            self.store.add(embedder.encode([s.to_retrieval_text() for s in standards]), standards)
         self.bm25 = BM25Store(standards) if self.settings.retrieval_mode == "hybrid" else None
         self.hybrid = HybridRetriever(embedder, self.store, self.bm25, self.settings.rrf_k) if self.bm25 else None
         self._lock = Lock()
@@ -30,9 +35,31 @@ class RecommendationEngine:
                              and len(self.bm25.documents) == len(self.store.documents))))
 
     def retrieve(self, query, top_k):
+        if self.skip_reranking(query):
+            # Non-Latin script lexical overlap with English metadata can be misleading.
+            return self.store.search(self.embedder.encode_query(query), top_k)
         if self.hybrid is not None:
             return self.hybrid.search(query, top_k)
         return self.store.search(self.embedder.encode_query(query), top_k)
+
+    def skip_reranking(self, query):
+        return self.settings.embedding_mode == "multilingual" and detect_language(query) != "english"
+
+    def prepare_query(self, query, use_enrichment=None):
+        extracted = self.extractor.extract(query)
+        original = extracted.cleaned_text
+        enabled = (self.settings.query_enrichment if use_enrichment is None else use_enrichment) and not self.skip_reranking(query)
+        retrieval_text = original
+        if enabled:
+            model = getattr(self.embedder, "model", None)
+            limits = {}
+            if model is not None and hasattr(model, "tokenizer") and hasattr(model, "max_seq_length"):
+                limits = {"token_count": lambda text: len(model.tokenizer.encode(
+                    self.embedder.query_prefix + text, truncation=False)), "max_tokens": model.max_seq_length}
+            retrieval_text = self.query_builder.build(query, extracted, **limits)
+        logger.info("extraction product_identified=%s technical_attributes=%d enrichment_used=%s",
+                    extracted.product is not None, extracted.technical_attribute_count, retrieval_text != original)
+        return original, extracted, retrieval_text
 
     @staticmethod
     def rank_candidates(candidates, scores, score_type="cosine"):
@@ -47,13 +74,20 @@ class RecommendationEngine:
     def recommend(self, query: str, retrieval_k: int | None = None, final_k: int | None = None):
         retrieval_k = self.settings.retrieval_k if retrieval_k is None else retrieval_k
         final_k = self.settings.final_k if final_k is None else final_k
-        query = clean_text(query)
+        query, _, retrieval_text = self.prepare_query(query)
         if not query:
             raise ValueError("Query must not be empty")
         if not 1 <= final_k <= retrieval_k:
             raise ValueError("Require 1 <= final_k <= retrieval_k")
+        skip_reranker = self.skip_reranking(query)
         with self._lock:
-            candidates = self.retrieve(query, retrieval_k)
+            candidates = self.retrieve(retrieval_text, retrieval_k)
+            if skip_reranker:
+                logger.info("retrieval embedding_mode=multilingual language=%s reranking_applied=false candidates=%d",
+                            detect_language(query), len(candidates))
+                return [Recommendation(standard=s, retrieval_score=score, retrieval_score_type="cosine",
+                                       reranker_score=None, supporting_evidence=[s.scope])
+                        for s, score in candidates[:final_k]]
             logger.info("retrieval mode=%s candidates=%d reranking_count=%d", self.settings.retrieval_mode, len(candidates), len(candidates))
             scores = self.reranker.score(query, [s.to_retrieval_text() for s, _ in candidates])
         score_type = "rrf" if self.hybrid is not None else "cosine"
@@ -70,4 +104,8 @@ def build_engine(settings):
     from app.nlp.embeddings import EmbeddingModel
     from app.nlp.reranker import Reranker
     from app.retrieval.search import load_standards
-    return RecommendationEngine(load_standards(settings.dataset_path), EmbeddingModel(settings.embedding_model, settings.device), Reranker(settings.reranker_model, settings.device), settings)
+    from app.retrieval.index_cache import build_or_load_index
+    standards = load_standards(settings.dataset_path)
+    embedder = EmbeddingModel(settings.embedding_model, settings.device)
+    store = build_or_load_index(standards, embedder, settings)
+    return RecommendationEngine(standards, embedder, Reranker(settings.reranker_model, settings.device), settings, store=store)
