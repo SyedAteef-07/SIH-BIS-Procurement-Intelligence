@@ -26,6 +26,7 @@ class Standard(BaseModel):
 
 
 class RecommendationRequest(BaseModel):
+    embedding_mode: Literal["english", "multilingual"] | None = None
     text: str = Field(min_length=1, max_length=2000)
     top_k: int = Field(default=DEFAULT_FINAL_K, ge=1, le=50)
 
@@ -41,13 +42,16 @@ class RecommendationRequest(BaseModel):
 class Recommendation(BaseModel):
     standard: Standard
     retrieval_score: float
-    reranker_score: float
+    reranker_score: float | None
     retrieval_score_type: Literal["cosine", "rrf"] = "cosine"
     supporting_evidence: list[str]
     validity: str = "unverified"
 
 
 class RecommendationResponse(BaseModel):
+    embedding_mode: Literal["english", "multilingual"] = "english"
+    detected_language: Literal["english", "hindi", "kannada"] = "english"
+    reranking_applied: bool = True
     query: str
     recommendations: list[Recommendation]
     has_reliable_match: bool | None = None

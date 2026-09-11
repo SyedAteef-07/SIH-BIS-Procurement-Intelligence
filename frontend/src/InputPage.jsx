@@ -1,6 +1,7 @@
 import { useRef, useState } from 'react';
 import { ArrowUp, Check, FileText, Search, Share2, ShieldCheck, Sparkles, UploadCloud } from 'lucide-react';
 import Navbar from './components/Navbar';
+import { analyzeRequirement } from './api';
 
 const examples = ['53 grade cement for concrete construction', 'PVC insulated cable rated 1100V', 'Helmets for two-wheeler riders'];
 
@@ -10,6 +11,7 @@ export default function InputPage({ onAnalyze }) {
   const [fileName, setFileName] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
+  const [embeddingMode, setEmbeddingMode] = useState('english');
   const fileInputRef = useRef(null);
 
   function handleFileChange(event) {
@@ -28,18 +30,7 @@ export default function InputPage({ onAnalyze }) {
     setError('');
 
     try {
-      const response = await fetch('http://localhost:8000/api/analyze', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ description: inputText, limit: 5 }),
-      });
-
-      if (!response.ok) {
-        const body = await response.json().catch(() => ({}));
-        throw new Error(body.detail || 'Unable to analyze the requirement right now.');
-      }
-
-      const result = await response.json();
+      const result = await analyzeRequirement(inputText, fetch, embeddingMode);
       onAnalyze?.(inputText, result);
     } catch (fetchError) {
       setError(fetchError.message || 'Something went wrong while connecting to the analysis service.');
@@ -79,7 +70,15 @@ export default function InputPage({ onAnalyze }) {
             }}
             placeholder="Describe the requirement or paste tender text..."
             rows={5}
+            maxLength={2000}
           />
+          <label style={{ display: 'block', padding: '12px' }}>
+            Language mode: {' '}
+            <select value={embeddingMode} onChange={(event) => setEmbeddingMode(event.target.value)} disabled={isLoading}>
+              <option value="english">English</option>
+              <option value="multilingual">Multilingual (English / Hindi / Kannada demo)</option>
+            </select>
+          </label>
         </div>
 
         <div className="examples-row">

@@ -16,6 +16,7 @@ import {
   ShieldCheck,
 } from 'lucide-react';
 import Navbar from './components/Navbar';
+import { relevanceLabel } from './relevance';
 
 const tabs = ['Recommended Standard', 'Related / Normative Standards', 'Status & Amendments', 'Gap Analysis', 'Certification'];
 
@@ -28,8 +29,8 @@ export default function ResultsPage({ result, onNewSearch, initialQuery }) {
   const productName = primary ? `${primary.title}` : (initialQuery || 'Requirement analysis');
   const standardCode = primary ? primary.number : 'No standard identified';
   const standardName = primary ? primary.title : 'Add more detail to improve ranking';
-  const standardRevision = primary ? `Edition ${primary.edition}` : 'N/A';
-  const confidence = primary ? `${Math.round((primary.score || 0) * 100)}% match` : 'Low confidence';
+  const standardRevision = primary?.edition ? `Edition ${primary.edition}` : 'Edition unverified';
+  const relevance = relevanceLabel(primary);
   const requirements = primary?.requirements?.length ? primary.requirements : ['No explicit requirements were returned for this item.'];
 
   return (
@@ -49,14 +50,23 @@ export default function ResultsPage({ result, onNewSearch, initialQuery }) {
           <p>Here are the relevant Indian Standards and insights based on your requirement.</p>
         </header>
 
+        <section aria-label="Analysis status" role="status">
+          {result?.embedding_mode === 'multilingual' ? <p>Multilingual demo · {result.detected_language} · {result.reranking_applied ? 'Reranked' : 'Semantic retrieval; English reranker skipped'}</p> : null}
+          <p>{result?.degraded ? 'Incomplete results — some metadata is unavailable.'
+            : result?.match_status === 'NO_RELIABLE_MATCH' ? 'No sufficiently reliable match was identified.'
+            : result?.match_status === 'MATCH' ? 'Candidates pass the configured relevance cutoff; validity is unverified.'
+            : 'Candidate relevance has not been assessed against a reliability threshold.'}</p>
+          {result?.warnings?.length ? <ul>{result.warnings.map((warning, index) => <li key={index}>{warning}</li>)}</ul> : null}
+        </section>
+
         <section className="product-summary" aria-label="Identified product and extracted requirements">
           <div className="product-identity">
             <div className="product-visual"><HardHat size={65} strokeWidth={1.25} /></div>
             <div>
               <span className="section-kicker">Product Identified</span>
               <h2>{productName}</h2>
-              <span className="confidence"><CheckCircle2 size={14} /> {confidence}</span>
-              <small>Based on your tender document</small>
+              <span className="confidence"><Info size={14} /> {relevance}</span>
+              <small>Based on your requirement text</small>
             </div>
           </div>
           <div className="requirements-box">
@@ -82,9 +92,7 @@ export default function ResultsPage({ result, onNewSearch, initialQuery }) {
           <div className="standard-checks">
             <div className="why-standard">
               <h3>Why this standard?</h3>
-              <p><CheckCircle2 size={15} /> Product match</p>
-              <p><CheckCircle2 size={15} /> Scope match</p>
-              <p><CheckCircle2 size={15} /> Relevant to identified requirements</p>
+              {primary?.supporting_evidence?.map((evidence, index) => <p key={index}><Info size={15} /> {evidence}</p>)}
             </div>
             <div className="status-box">
               <h3>Standard Status</h3>
