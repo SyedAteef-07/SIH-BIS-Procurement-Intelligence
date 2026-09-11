@@ -86,6 +86,13 @@ include `standard_code`, `revision`, dates, source URL, `is_mock`, `validity`,
 `supporting_evidence`, `relevance_label` and named raw retrieval/reranker scores.
 The old normalized `score` is removed: these scores are not probabilities.
 
+Optional request field `embedding_mode` accepts `english` (default) or
+`multilingual` and is forwarded unchanged to the AI service. Responses preserve
+`embedding_mode`, `detected_language` and `reranking_applied`; skipped reranking
+is represented by nullable `reranker_score`, never a fabricated zero score.
+The backend validates Hindi/Kannada words without splitting combining marks.
+Enable the demo at AI startup; requesting a mode that is not loaded returns 503.
+
 The response includes `recommendation_source=ai_service`, `match_status`,
 `ai_match_status`, `has_reliable_match`, `warnings`, `degraded`, and
 `missing_standard_codes`. Missing identifiers are omitted from recommendations

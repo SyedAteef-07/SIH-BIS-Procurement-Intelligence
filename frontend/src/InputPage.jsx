@@ -11,6 +11,7 @@ export default function InputPage({ onAnalyze }) {
   const [fileName, setFileName] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
+  const [embeddingMode, setEmbeddingMode] = useState('english');
   const fileInputRef = useRef(null);
 
   function handleFileChange(event) {
@@ -29,7 +30,7 @@ export default function InputPage({ onAnalyze }) {
     setError('');
 
     try {
-      const result = await analyzeRequirement(inputText);
+      const result = await analyzeRequirement(inputText, fetch, embeddingMode);
       onAnalyze?.(inputText, result);
     } catch (fetchError) {
       setError(fetchError.message || 'Something went wrong while connecting to the analysis service.');
@@ -71,6 +72,13 @@ export default function InputPage({ onAnalyze }) {
             rows={5}
             maxLength={2000}
           />
+          <label style={{ display: 'block', padding: '12px' }}>
+            Language mode: {' '}
+            <select value={embeddingMode} onChange={(event) => setEmbeddingMode(event.target.value)} disabled={isLoading}>
+              <option value="english">English</option>
+              <option value="multilingual">Multilingual (English / Hindi / Kannada demo)</option>
+            </select>
+          </label>
         </div>
 
         <div className="examples-row">

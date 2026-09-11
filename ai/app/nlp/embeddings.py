@@ -1,12 +1,12 @@
 import numpy as np
 from sentence_transformers import SentenceTransformer
-from app.config import DEFAULT_EMBEDDING_MODEL
+from app.config import DEFAULT_EMBEDDING_MODEL, MULTILINGUAL_EMBEDDING_MODEL
 
 
 class EmbeddingModel:
     def __init__(self, model_name=DEFAULT_EMBEDDING_MODEL, device="cpu"):
         self.model = SentenceTransformer(model_name, device=device)
-        self.query_prefix = "Represent this sentence for searching relevant passages: " if model_name.startswith("BAAI/bge-") else ""
+        self.query_prefix = "Represent this sentence for searching relevant passages: " if model_name.startswith("BAAI/bge-") and model_name != MULTILINGUAL_EMBEDDING_MODEL else ""
 
     def encode(self, texts):
         texts = list(texts)

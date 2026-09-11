@@ -24,7 +24,7 @@ class FakeAI:
         self.error = None
         self.calls = []
 
-    async def recommend(self, text, top_k):
+    async def recommend(self, text, top_k, embedding_mode="english"):
         self.calls.append((text, top_k))
         if self.error:
             raise self.error

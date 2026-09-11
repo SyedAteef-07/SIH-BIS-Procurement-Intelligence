@@ -120,6 +120,9 @@ Start in this order:
    ```
 
 Open http://localhost:5173 or backend docs at http://127.0.0.1:8000/docs.
+For the optional English/Hindi/Kannada BGE-M3 demo, preload multilingual mode
+using the [AI startup instructions](ai/README.md#optional-multilingual-demo),
+then choose Multilingual in the existing input page. English remains the default.
 AI docs are at http://127.0.0.1:8001/docs. The two Python services both use an
 `app` package, so run them from separate directories/environments.
 

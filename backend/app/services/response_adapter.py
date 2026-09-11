@@ -39,6 +39,8 @@ def adapt_analysis(text, ai_response, session):
     if missing:
         warnings.append("Some AI identifiers are missing from the metadata database; results are incomplete. Check the dataset and seed version.")
     return dict(input=text, recommendations=recommendations, related_standards=[], certifications=[], gaps=[],
+                embedding_mode=ai_response.embedding_mode, detected_language=ai_response.detected_language,
+                reranking_applied=ai_response.reranking_applied,
                 explanation="AI service ranking enriched with database metadata. Related standards, gap analysis and certification checks were not performed.",
                 recommendation_source="ai_service", degraded=bool(missing), missing_standard_codes=missing,
                 match_status="NOT_ASSESSED" if missing else ai_response.match_status,

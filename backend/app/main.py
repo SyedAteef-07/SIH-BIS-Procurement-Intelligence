@@ -51,7 +51,7 @@ def get_standard(standard_number: str, db: Session = Depends(get_db)) -> dict:
 @app.post("/api/analyze", response_model=AnalysisResponse)
 async def analyze(request: AnalyzeRequest, db: Session = Depends(get_db), ai=Depends(get_ai_client)) -> dict:
     try:
-        response = await ai.recommend(request.description, request.limit)
+        response = await ai.recommend(request.description, request.limit, embedding_mode=request.embedding_mode)
     except AIServiceError as error:
         raise HTTPException(status_code=error.status_code, detail=str(error)) from error
     return await run_in_threadpool(adapt_analysis, request.description, response, db)

@@ -51,6 +51,7 @@ export default function ResultsPage({ result, onNewSearch, initialQuery }) {
         </header>
 
         <section aria-label="Analysis status" role="status">
+          {result?.embedding_mode === 'multilingual' ? <p>Multilingual demo · {result.detected_language} · {result.reranking_applied ? 'Reranked' : 'Semantic retrieval; English reranker skipped'}</p> : null}
           <p>{result?.degraded ? 'Incomplete results — some metadata is unavailable.'
             : result?.match_status === 'NO_RELIABLE_MATCH' ? 'No sufficiently reliable match was identified.'
             : result?.match_status === 'MATCH' ? 'Candidates pass the configured relevance cutoff; validity is unverified.'

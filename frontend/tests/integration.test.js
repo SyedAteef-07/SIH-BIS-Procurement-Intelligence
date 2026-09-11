@@ -4,6 +4,16 @@ import { readFileSync } from 'node:fs';
 import { analyzeRequirement } from '../src/api.js';
 import { relevanceLabel } from '../src/relevance.js';
 
+test('selector mode passes through the backend only', async () => {
+  for (const mode of ['english', 'multilingual']) {
+    await analyzeRequirement('11 kV transformer', async (url, options) => {
+      assert.equal(url, 'http://localhost:8000/api/analyze');
+      assert.equal(JSON.parse(options.body).embedding_mode, mode);
+      return { ok: true, json: async () => ({}) };
+    }, mode);
+  }
+});
+
 test('frontend calls the backend with the existing contract', async () => {
   const result = await analyzeRequirement('water pump', async (url, options) => {
     assert.equal(url, 'http://localhost:8000/api/analyze');

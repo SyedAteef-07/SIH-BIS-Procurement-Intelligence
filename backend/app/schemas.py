@@ -7,6 +7,7 @@ from pydantic import BaseModel, Field, field_validator
 
 
 class AnalyzeRequest(BaseModel):
+    embedding_mode: Literal["english", "multilingual"] = "english"
     description: str = Field(
         ...,
         min_length=3,
@@ -18,7 +19,8 @@ class AnalyzeRequest(BaseModel):
     @field_validator("description")
     @classmethod
     def meaningful_text(cls, value):
-        if not any(len(term) > 2 for term in re.findall(r"\w+", value)):
+        # Keep Devanagari/Kannada combining signs attached to their words.
+        if not any(len(term) > 2 for term in re.findall(r"[\w\u0900-\u097f\u0c80-\u0cff]+", value)):
             raise ValueError("description must contain at least one meaningful word")
         return value.strip()
 
@@ -52,11 +54,14 @@ class Recommendation(StandardDetail):
     matched_terms: list[str] = Field(default_factory=list)
     supporting_evidence: list[str] = Field(default_factory=list)
     retrieval_score: float = Field(allow_inf_nan=False)
-    reranker_score: float = Field(allow_inf_nan=False)
+    reranker_score: float | None = Field(allow_inf_nan=False)
     retrieval_score_type: Literal["cosine", "rrf"]
 
 
 class AnalysisResponse(BaseModel):
+    embedding_mode: Literal["english", "multilingual"] = "english"
+    detected_language: Literal["english", "hindi", "kannada"] = "english"
+    reranking_applied: bool = True
     input: str
     recommendations: list[Recommendation]
     related_standards: list[Recommendation]

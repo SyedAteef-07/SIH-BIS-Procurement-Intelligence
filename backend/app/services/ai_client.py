@@ -19,13 +19,16 @@ class CandidateStandard(BaseModel):
 class Candidate(BaseModel):
     standard: CandidateStandard
     retrieval_score: float = Field(allow_inf_nan=False)
-    reranker_score: float = Field(allow_inf_nan=False)
+    reranker_score: float | None = Field(allow_inf_nan=False)
     retrieval_score_type: Literal["cosine", "rrf"]
     supporting_evidence: list[str]
     validity: str = "unverified"
 
 
 class AIResponse(BaseModel):
+    embedding_mode: Literal["english", "multilingual"] = "english"
+    detected_language: Literal["english", "hindi", "kannada"] = "english"
+    reranking_applied: bool = True
     recommendations: list[Candidate] = Field(max_length=50)
     match_status: Literal["NOT_ASSESSED", "MATCH", "NO_RELIABLE_MATCH"]
     has_reliable_match: bool | None = None
@@ -34,6 +37,8 @@ class AIResponse(BaseModel):
 
     @model_validator(mode="after")
     def consistent(self):
+        if self.reranking_applied and any(c.reranker_score is None for c in self.recommendations):
+            raise ValueError("Missing scores for applied reranking")
         codes = [r.standard.id for r in self.recommendations]
         if len(codes) != len(set(codes)):
             raise ValueError("Duplicate AI identifiers")
@@ -69,10 +74,15 @@ class AIClient:
         except ValueError as exc:
             raise AIServiceError("AI service returned invalid JSON", 502) from exc
 
-    async def recommend(self, text, top_k):
-        payload = await self._request("POST", "recommend", json={"text": text, "top_k": top_k})
+    async def recommend(self, text, top_k, embedding_mode=None):
+        body = {"text": text, "top_k": top_k}
+        if embedding_mode is not None:
+            body["embedding_mode"] = embedding_mode
+        payload = await self._request("POST", "recommend", json=body)
         try:
             result = AIResponse.model_validate(payload)
+            if embedding_mode is not None and result.embedding_mode != embedding_mode:
+                raise ValueError("AI response used a different embedding mode")
             if len(result.recommendations) > top_k:
                 raise ValueError("Too many candidates")
             return result
