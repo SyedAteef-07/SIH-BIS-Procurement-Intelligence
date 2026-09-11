@@ -13,6 +13,10 @@ from .database.repositories.standards import StandardRepository
 from .services.ai_client import AIServiceError, get_ai_client
 from .services.response_adapter import adapt_analysis, standard_detail
 from .schemas import AnalyzeRequest, AnalysisResponse, StandardDetail, StandardSummary
+from .catalog import STANDARDS
+from .catalog import BY_NUMBER
+from .schemas import AnalyzeRequest, AnalyzeResponse
+from .service import recommend
 
 app = FastAPI(
     title="BIS Procurement Intelligence",
@@ -43,6 +47,30 @@ def list_standards(search: str | None = Query(default=None, min_length=1, max_le
 @app.get("/api/standards/{standard_number:path}", response_model=StandardDetail)
 def get_standard(standard_number: str, db: Session = Depends(get_db)) -> dict:
     standard = StandardRepository(db).get_by_code(standard_number)
+@app.get("/api/standards")
+def list_standards(search: str | None = Query(default=None, min_length=1)) -> list[dict]:
+    values = STANDARDS
+    if search:
+        needle = search.casefold()
+        values = tuple(
+            standard for standard in values
+            if needle in f"{standard.number} {standard.title} {standard.scope}".casefold()
+        )
+    return [
+        {
+            "number": standard.number,
+            "title": standard.title,
+            "scope": standard.scope,
+            "edition": standard.edition,
+            "status": standard.status,
+        }
+        for standard in values
+    ]
+
+
+@app.get("/api/standards/{standard_number:path}")
+def get_standard(standard_number: str) -> dict:
+    standard = BY_NUMBER.get(standard_number)
     if standard is None:
         raise HTTPException(status_code=404, detail="standard not found")
     return standard_detail(standard)
@@ -50,6 +78,8 @@ def get_standard(standard_number: str, db: Session = Depends(get_db)) -> dict:
 
 @app.post("/api/analyze", response_model=AnalysisResponse)
 async def analyze(request: AnalyzeRequest, db: Session = Depends(get_db), ai=Depends(get_ai_client)) -> dict:
+@app.post("/api/analyze", response_model=AnalyzeResponse)
+def analyze(request: AnalyzeRequest) -> dict:
     try:
         response = await ai.recommend(request.description, request.limit, embedding_mode=request.embedding_mode)
     except AIServiceError as error:

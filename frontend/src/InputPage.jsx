@@ -11,24 +11,94 @@ const examples = ['53 grade cement for concrete construction', 'PVC insulated ca
 
 export default function InputPage({ onAnalyze, onNavigate }) {
   const [inputMode, setInputMode] = useState('upload');
+export default function InputPage({ onAnalyze }) {
+  const [activeTab, setActiveTab] = useState(0); // 0 = Upload, 1 = Text
   const [selectedExample, setSelectedExample] = useState('');
   const [description, setDescription] = useState('');
   const [fileName, setFileName] = useState('');
+  const [fileContent, setFileContent] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
   const [embeddingMode, setEmbeddingMode] = useState('english');
   const fileInputRef = useRef(null);
+  const dropZoneRef = useRef(null);
+
+  function handleTabClick(tabIndex) {
+    setActiveTab(tabIndex);
+    setError('');
+  }
 
   function handleFileChange(event) {
     const file = event.target.files?.[0];
-    if (file) setFileName(file.name);
+    if (!file) return;
+    if (file.size > 10 * 1024 * 1024) {
+      setError('File is too large. Maximum size is 10 MB.');
+      return;
+    }
+    setFileName(file.name);
+    setError('');
+    // For MVP: read text from the file name as placeholder content
+    // In production this would use a PDF parser
+    const reader = new FileReader();
+    reader.onload = () => {
+      const text = reader.result;
+      if (typeof text === 'string') {
+        setFileContent(text.substring(0, 5000));
+      }
+    };
+    reader.onerror = () => {
+      setError('Could not read the file.');
+    };
+    // Try reading as text; for PDFs this won't produce useful text
+    // but demonstrates the flow
+    reader.readAsText(file);
+  }
+
+  function handleDragOver(event) {
+    event.preventDefault();
+    event.stopPropagation();
+    if (dropZoneRef.current) dropZoneRef.current.style.borderColor = '#0564d7';
+  }
+
+  function handleDragLeave(event) {
+    event.preventDefault();
+    event.stopPropagation();
+    if (dropZoneRef.current) dropZoneRef.current.style.borderColor = '#adc8e7';
+  }
+
+  function handleDrop(event) {
+    event.preventDefault();
+    event.stopPropagation();
+    if (dropZoneRef.current) dropZoneRef.current.style.borderColor = '#adc8e7';
+    const file = event.dataTransfer?.files?.[0];
+    if (file) {
+      // Simulate a file input change
+      const dataTransfer = new DataTransfer();
+      dataTransfer.items.add(file);
+      if (fileInputRef.current) {
+        fileInputRef.current.files = dataTransfer.files;
+        handleFileChange({ target: fileInputRef.current });
+      }
+    }
   }
 
   async function handleAnalyze() {
-    const inputText = (description || selectedExample || '').trim();
-    if (!inputText) {
-      setError('Please enter a product or tender requirement to analyze.');
-      return;
+    // Determine the input text based on active tab
+    let inputText = '';
+    if (activeTab === 0) {
+      // Upload tab — use file content or file name as fallback
+      inputText = fileContent || fileName || '';
+      if (!inputText.trim()) {
+        setError('Please upload a tender document first.');
+        return;
+      }
+    } else {
+      // Text tab
+      inputText = (description || selectedExample || '').trim();
+      if (!inputText) {
+        setError('Please enter a product or tender requirement to analyze.');
+        return;
+      }
     }
 
     setIsLoading(true);
@@ -87,6 +157,87 @@ export default function InputPage({ onAnalyze, onNavigate }) {
               <option value="multilingual">Multilingual (English / Hindi / Kannada demo)</option>
             </select>
           </label>
+    <main id="top" className="page-shell">
+      <Navbar />
+      <section className="hero" aria-labelledby="hero-title">
+        <div className="eyebrow"><Sparkles size={14} /> PROCURE SMARTER. COMPLY EASIER.</div>
+        <h1 id="hero-title">Find the Right Indian Standards<br /><span>for Your Procurement</span></h1>
+        <p>Upload a tender document or describe your requirement, and get<br className="desktop-break" /> AI-powered, standards-backed recommendations.</p>
+
+        <div className="input-panel">
+          <div className="input-tabs" role="tablist" aria-label="Requirement input type">
+            <button
+              className={activeTab === 0 ? 'input-tab active' : 'input-tab'}
+              type="button"
+              role="tab"
+              aria-selected={activeTab === 0}
+              onClick={() => handleTabClick(0)}
+            >
+              <UploadCloud size={18} />Upload Tender Document
+            </button>
+            <button
+              className={activeTab === 1 ? 'input-tab active' : 'input-tab'}
+              type="button"
+              role="tab"
+              aria-selected={activeTab === 1}
+              onClick={() => handleTabClick(1)}
+            >
+              <FileText size={18} />Enter Requirement (Text)
+            </button>
+          </div>
+
+          {activeTab === 0 && (
+            <div
+              ref={dropZoneRef}
+              className="drop-zone"
+              onClick={() => fileInputRef.current?.click()}
+              onDragOver={handleDragOver}
+              onDragLeave={handleDragLeave}
+              onDrop={handleDrop}
+              role="button"
+              tabIndex={0}
+              onKeyDown={(event) => event.key === 'Enter' && fileInputRef.current?.click()}
+            >
+              <UploadCloud className="upload-icon" size={38} strokeWidth={1.8} />
+              <strong>{fileName || 'Drag and drop your PDF here'}</strong>
+              <span>or</span>
+              <button className="choose-file" type="button" onClick={(e) => { e.stopPropagation(); fileInputRef.current?.click(); }}>
+                <FileText size={16} />Choose File
+              </button>
+              <small>Supports PDF (Max 10 MB)</small>
+              <input ref={fileInputRef} type="file" accept="application/pdf,.txt,.doc,.docx" onChange={handleFileChange} hidden />
+            </div>
+          )}
+
+          {activeTab === 1 && (
+            <textarea
+              className="requirement-textarea"
+              aria-label="Tender requirement or product description"
+              value={description}
+              onChange={(event) => {
+                setDescription(event.target.value);
+                if (error) setError('');
+              }}
+              placeholder="Describe the requirement or paste tender text..."
+              rows={5}
+              style={{
+                width: '100%',
+                minHeight: '180px',
+                padding: '16px',
+                margin: '16px 0',
+                border: '1px solid #adc8e7',
+                borderRadius: '6px',
+                background: 'rgba(250, 253, 255, .7)',
+                color: '#182d62',
+                fontSize: '15px',
+                fontFamily: 'inherit',
+                resize: 'vertical',
+                outline: 'none',
+              }}
+              onFocus={(e) => { e.target.style.borderColor = '#0564d7'; e.target.style.boxShadow = '0 0 0 3px rgba(5,100,215,0.1)'; }}
+              onBlur={(e) => { e.target.style.borderColor = '#adc8e7'; e.target.style.boxShadow = 'none'; }}
+            />
+          )}
         </div>
 
         <div className="examples-row">
@@ -100,6 +251,7 @@ export default function InputPage({ onAnalyze, onNavigate }) {
                 onClick={() => {
                   setSelectedExample(example);
                   setDescription(example);
+                  setActiveTab(1); // Switch to text tab when example is clicked
                   setError('');
                 }}
               >
@@ -109,12 +261,12 @@ export default function InputPage({ onAnalyze, onNavigate }) {
           </div>
         </div>
 
-        {error ? <div className="analysis-error">{error}</div> : null}
+        {error ? <div className="analysis-error" style={{ marginTop: '16px', padding: '12px 18px', background: '#fff0f0', border: '1px solid #f5c6cb', borderRadius: '8px', color: '#a94442', fontSize: '14px', maxWidth: '790px', margin: '16px auto 0' }}>{error}</div> : null}
 
         <button className="analyze-button" type="button" onClick={handleAnalyze} disabled={isLoading}>
           <Search size={18} />
           {isLoading ? 'Analyzing...' : 'Analyze Requirement'}
-          <ArrowUp size={16} />
+          {!isLoading && <ArrowUp size={16} />}
         </button>
       </section>
 
