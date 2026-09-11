@@ -89,3 +89,28 @@ h1 span { color: #1264d5; }
 .insight-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 11px; margin-top: 12px; }.insight-card { display: flex; gap: 11px; padding: 14px; min-height: 91px; border: 1px solid #d7e7f8; border-radius: 8px; background: rgba(255,255,255,.68); }.insight-icon { display: grid; place-items: center; flex: 0 0 34px; height: 34px; border-radius: 50%; }.insight-icon.blue { color: #1376e4; background: #e3f1ff; }.insight-icon.amber { color: #efa91e; background: #fff4d8; }.insight-icon.green { color: #0aaa72; background: #dcf8eb; }.insight-card h3 { margin: 2px 0 7px; color: #405577; font-size: 10px; font-weight: 600; }.insight-card strong { display: block; max-width: 130px; min-height: 23px; color: #172e65; font-size: 20px; line-height: 1.1; }.insight-card a { margin-top: 8px; }
 .supporting-sections { display: grid; grid-template-columns: repeat(3, 1fr); gap: 11px; margin-top: 14px; }.supporting-sections article { padding: 15px; border: 1px solid #d7e7f8; border-radius: 8px; background: rgba(255,255,255,.55); }.supporting-sections h2, .evidence-panel h2 { display: flex; align-items: center; gap: 7px; margin: 0 0 8px; color: #173a78; font-size: 11px; }.supporting-sections h2 svg, .evidence-panel h2 svg { color: #1672dc; }.supporting-sections p, .evidence-panel p { margin: 0; color: #617493; font-size: 10px; line-height: 1.55; }.evidence-panel { margin-top: 14px; padding: 15px; }.evidence-panel a { margin-top: 10px; }.disclaimer { display: flex; align-items: flex-start; gap: 9px; margin-top: 13px; padding: 12px 14px; color: #126cdd; background: #e9f5ff; }.disclaimer p { margin: 0; color: #4d668e; font-size: 9px; line-height: 1.5; }.disclaimer strong { color: #31537e; }
 
+@media (max-width: 700px) {
+  .results-container { width: min(100% - 28px, 560px); padding-top: 18px; }.product-summary { align-items: stretch; flex-direction: column; }.requirements-box { width: 100%; }.standard-header { align-items: flex-start; flex-wrap: wrap; }.standard-actions { width: 100%; margin-left: 46px; }.standard-checks, .insight-grid, .supporting-sections { grid-template-columns: 1fr; }.toolbar-actions .outline-button { padding: 0 8px; }.toolbar-actions .outline-button:first-child { font-size: 0; }.toolbar-actions .outline-button:first-child svg { margin: 0; }
+}
+
+.brand, .nav-links, .profile-button { font-size: 14px; }
+.hero h1, .results-heading h1 { font-size: clamp(32px, 4vw, 40px); }
+.hero > p, .results-heading p, .feature-card p, .supporting-sections p, .evidence-panel p { font-size: 16px; }
+.eyebrow, .section-kicker, .drop-zone > span, .drop-zone small, .confidence, .requirements-box ul, .product-identity small, .result-tab, .status-box a, .insight-card a, .evidence-panel a { font-size: 14px; }
+.input-tab, .result-tab { font-size: 15px; }
+.example-button, .choose-file, .analyze-button, .outline-button, .primary-small-button, .outline-small-button { font-size: 15px; }
+.drop-zone strong { font-size: 16px; }
+.feature-card h2, .requirements-box h3, .why-standard h3, .status-box h3, .insight-card h3 { font-size: 18px; }
+.choose-file, .analyze-button, .outline-button, .primary-small-button, .outline-small-button { font-size: 15px; }
+.examples-row > strong { font-size: 15px; }
+.product-identity h2, .insight-card strong { font-size: 20px; }
+.standard-copy h2 { font-size: 24px; }
+.standard-copy p, .why-standard p, .status-box p { font-size: 16px; }
+.supporting-sections h2, .evidence-panel h2 { font-size: 22px; }
+.disclaimer p { font-size: 14px; }
+
+@media (max-width: 700px) {
+  .hero h1, .results-heading h1 { font-size: 32px; }
+  .nav-links { gap: 11px; }
+  .toolbar-actions .outline-button:first-child { font-size: 14px; }
+}
