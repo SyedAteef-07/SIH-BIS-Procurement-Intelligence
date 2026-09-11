@@ -1,0 +1,20 @@
+import { BarChart3, CheckCircle2, CircleAlert, FileCheck2, ShieldCheck } from 'lucide-react';
+import AppShell from './components/AppShell';
+import StatCard from './components/StatCard';
+import StatusBadge from './components/StatusBadge';
+import { analyticsStats, analysisTrend, commonGaps, complianceDistribution, referencedStandards } from './analyticsData';
+import './operations.css';
+
+export default function AnalyticsPage({ onNavigate }) {
+  const maxTrend = Math.max(...analysisTrend.map((item) => item.value));
+  const maxReference = Math.max(...referencedStandards.map((item) => item.count));
+  return <AppShell activePage="analytics" currentPage="Analytics" onNavigate={onNavigate}>
+    <main className="operations-workspace analytics-workspace" aria-labelledby="analytics-title">
+      <header className="operations-header"><div><span className="operations-kicker">PERFORMANCE INTELLIGENCE</span><h1 id="analytics-title">Procurement Analytics</h1><p>Monitor tender analysis activity, BIS standards alignment, compliance trends, and procurement intelligence performance.</p></div><div className="analytics-range" role="group" aria-label="Analytics date range"><button type="button">Last 7 Days</button><button className="is-active" type="button">Last 30 Days</button><button type="button">Last 90 Days</button><button type="button">This Year</button></div></header>
+      <section className="operations-stats">{analyticsStats.map((stat, index) => <StatCard key={stat.label} {...stat} icon={[BarChart3, FileCheck2, ShieldCheck, FileCheck2][index]} />)}</section>
+      <div className="analytics-grid"><section className="operations-panel trend-panel" aria-labelledby="trend-title"><div className="operations-panel-heading"><div><h2 id="trend-title">Tender Analysis Trend</h2><p>Daily analysis volume for the selected period.</p></div><BarChart3 size={19} /></div><div className="trend-chart" aria-label="Tender analysis volume chart">{analysisTrend.map((item) => <div className="trend-column" key={item.label}><span style={{ height: `${(item.value / maxTrend) * 100}%` }} /><strong>{item.value}</strong><small>{item.label}</small></div>)}</div></section><section className="operations-panel" aria-labelledby="distribution-title"><div className="operations-panel-heading"><div><h2 id="distribution-title">Compliance Distribution</h2><p>Current analysis outcome mix.</p></div><CheckCircle2 size={19} /></div><div className="distribution-list">{complianceDistribution.map((item) => <div className="distribution-row" key={item.label}><div><StatusBadge status={item.label} /><strong>{item.value}%</strong></div><span className={`distribution-bar ${item.className}`} style={{ width: `${item.value}%` }} /></div>)}</div></section></div>
+      <div className="analytics-grid"><section className="operations-panel" aria-labelledby="referenced-title"><div className="operations-panel-heading"><div><h2 id="referenced-title">Most Referenced BIS Standards</h2><p>Standards appearing most often in completed analyses.</p></div><ShieldCheck size={19} /></div><div className="ranked-list">{referencedStandards.map((item) => <div className="ranked-row" key={item.number}><div><strong>{item.number}</strong><span>{item.count} references</span></div><div className="ranked-track"><span style={{ width: `${(item.count / maxReference) * 100}%` }} /></div></div>)}</div></section><section className="operations-panel" aria-labelledby="gaps-summary-title"><div className="operations-panel-heading"><div><h2 id="gaps-summary-title">Common Compliance Gaps</h2><p>Frequently missing specification details.</p></div><CircleAlert size={19} /></div><div className="gap-summary-list">{commonGaps.map((item) => <div className="gap-summary-row" key={item.label}><span>{item.label}</span><div><span style={{ width: `${item.value}%` }} /><strong>{item.value}%</strong></div></div>)}</div></section></div>
+      <p className="operations-data-note"><ShieldCheck size={15} /> Analytics visualizations use isolated frontend presentation data until a dedicated analytics API is available.</p>
+    </main>
+  </AppShell>;
+}
