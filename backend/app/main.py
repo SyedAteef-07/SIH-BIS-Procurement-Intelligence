@@ -109,6 +109,7 @@ async def analyze_pdf(
     analysis_text = text[:MAX_ANALYSIS_CHARS]
     result = await _analyze_text(analysis_text, limit, embedding_mode, db, ai)
     if was_truncated:
+        result["gap_analysis"]["scope"] = "Only the first 2,000 extracted PDF characters were checked. Missing details may appear elsewhere in the document. A mention does not establish compliance."
         result["warnings"] = list(result.get("warnings", [])) + [
             "PDF text exceeded 2,000 characters; this demo analyzed only the first 2,000 extracted characters."
         ]

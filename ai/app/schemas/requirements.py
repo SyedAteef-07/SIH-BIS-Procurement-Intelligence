@@ -20,6 +20,9 @@ class EvidenceItem(BaseModel):
 
 
 class ExtractedRequirements(BaseModel):
+    pressure_ratings: list[str] = Field(default_factory=list)
+    joints: list[str] = Field(default_factory=list)
+    water_use: list[str] = Field(default_factory=list)
     cleaned_text: str = ""
     product: str | None = None
     product_evidence: str | None = None

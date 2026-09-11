@@ -4,6 +4,7 @@ import logging
 from fastapi import FastAPI, HTTPException, Request
 from app.config import Settings, DEFAULT_EMBEDDING_MODEL
 from app.nlp.language import detect_language
+from app.nlp.extractor import RequirementExtractor
 from app.recommendation.recommender import build_engine
 from app.schemas.recommendation import RecommendationRequest, RecommendationResponse
 logger = logging.getLogger(__name__)
@@ -75,6 +76,7 @@ def create_app(engine=None, settings=None, multilingual_engine=None):
         skipped = current.skip_reranking(body.text)
         response = RecommendationResponse(query=body.text, recommendations=results, embedding_mode=mode,
                                           detected_language=detect_language(body.text), reranking_applied=not skipped)
+        response.extracted_requirements = RequirementExtractor().extract(body.text)
         if not results:
             response.has_reliable_match = False
             response.match_status = "NO_RELIABLE_MATCH"

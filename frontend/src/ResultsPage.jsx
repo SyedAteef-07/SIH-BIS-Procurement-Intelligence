@@ -1,263 +1,79 @@
 import { useState } from 'react';
-import {
-  ArrowLeft,
-  Award,
-  CheckCircle2,
-  Download,
-  ExternalLink,
-  FileCheck2,
-  Info,
-  Link2,
-  Share2,
-  ShieldCheck,
-} from 'lucide-react';
-import AppShell from './components/AppShell';
+import { ArrowLeft, Award, Download, FileCheck2, Info, Link2, Share2, ShieldCheck, Package, CircleAlert } from 'lucide-react';
+import BrandHeader from './components/BrandHeader';
 import { relevanceLabel } from './relevance';
 import './results.css';
 
-const tabs = [
-  { id: 'recommended', label: 'Recommended Standards' },
-  { id: 'related', label: 'Related Standards' },
-  { id: 'amendments', label: 'Status & Revisions' },
-  { id: 'gaps', label: 'Gap Analysis' },
-  { id: 'certification', label: 'Certification' },
-];
-
-function EmptyState({ children }) {
-  return <p className="results-empty-state">{children}</p>;
+const tabs = [['recommended', 'Recommended Standard'], ['related', 'Related / Normative Standards'], ['status', 'Status & Amendments'], ['gaps', 'Gap Analysis'], ['certification', 'Certification']];
+const strings = value => Array.isArray(value) ? value.filter(item => typeof item === 'string' && item.trim()) : [];
+const code = standard => standard.number || standard.standard_code || 'Identifier unavailable';
+function EmptyState({ children }) { return <p className="empty-state">{children}</p>; }
+function TextList({ items, empty }) { return items.length ? <ul className="evidence-list">{items.map((item, index) => <li key={index}>{item}</li>)}</ul> : <EmptyState>{empty}</EmptyState>; }
+function SafeSource({ url, children }) {
+  try { if (!['https:', 'http:'].includes(new URL(url).protocol)) return null; } catch { return null; }
+  return <a href={url} target="_blank" rel="noreferrer">{children}</a>;
 }
-
-function StandardCard({ standard, primary = false }) {
-  const label = relevanceLabel(standard);
-  return (
-    <article className={primary ? 'result-standard-card is-primary' : 'result-standard-card'}>
-      <div className="result-standard-topline">
-        <span className="result-standard-icon"><Award size={18} /></span>
-        <div className="result-standard-heading">
-          <span className="results-kicker">{primary ? 'Primary recommendation' : 'Alternative recommendation'}</span>
-          <h3>{standard.number}</h3>
-          <p>{standard.title}</p>
-        </div>
-        <span className="results-match-badge"><CheckCircle2 size={14} /> {label}</span>
-      </div>
-
-      {standard.scope ? <p className="result-standard-scope">{standard.scope}</p> : null}
-
-      <div className="result-standard-meta">
-        <span><strong>Status:</strong> {standard.status || 'unverified'}</span>
-        <span><strong>Edition:</strong> {standard.edition || standard.revision || 'unverified'}</span>
-        <span><strong>Validity:</strong> {standard.validity || 'unverified'}</span>
-      </div>
-
-      {standard.supporting_evidence?.length ? (
-        <div className="standard-requirements">
-          <strong>Why it matched</strong>
-          <ul>{standard.supporting_evidence.map((item, index) => <li key={index}>{item}</li>)}</ul>
-        </div>
-      ) : null}
-    </article>
-  );
+function StandardCard({ standard }) {
+  return <article className="other-standard"><div><strong>{code(standard)}</strong><h3>{standard.title}</h3><p>{standard.scope}</p></div><span className="neutral-label">{relevanceLabel(standard)}</span></article>;
 }
-
-export default function ResultsPage({ result, onNewSearch, onNavigate, initialQuery }) {
+export default function ResultsPage({ result, initialQuery, onNewSearch }) {
   const [activeTab, setActiveTab] = useState('recommended');
-
+  const [shareNotice, setShareNotice] = useState('');
   const recommendations = result?.recommendations ?? [];
   const relatedStandards = result?.related_standards ?? [];
-  const gaps = result?.gaps ?? [];
-  const certifications = result?.certifications ?? [];
-  const warnings = result?.warnings ?? [];
+  const gaps = strings(result?.gaps);
+  const gapAnalysis = result?.gap_analysis;
+  const certifications = strings(result?.certifications);
+  const warnings = strings(result?.warnings);
   const primary = recommendations[0] ?? null;
-  const analyzedInput = result?.input || initialQuery || 'Requirement analysis';
-  const requirements = primary?.requirements ?? [];
-
-  function handleDownloadReport() {
-    const lines = [
-      'BIS Procurement Intelligence — Demo Analysis',
-      '=============================================',
-      '',
-      `Input: ${analyzedInput}`,
-      '',
-      'Recommended standards:',
-      ...recommendations.map((item, index) => `${index + 1}. ${item.number} — ${item.title}`),
-      '',
-      'Warnings:',
-      ...warnings.map((warning) => `- ${warning}`),
-      '',
-      'Verify all cited standards and editions against official BIS sources.',
-    ];
-    const blob = new Blob([lines.join('\n')], { type: 'text/plain' });
-    const url = URL.createObjectURL(blob);
-    const anchor = document.createElement('a');
-    anchor.href = url;
-    anchor.download = 'bis-procurement-analysis.txt';
-    anchor.click();
-    URL.revokeObjectURL(url);
+  const analyzedInput = result?.input || initialQuery || '';
+  const requirements = strings(result?.extracted_requirements).length ? strings(result.extracted_requirements) : strings(primary?.requirements);
+  const evidence = strings(primary?.supporting_evidence);
+  const allStandards = [...new Map([...recommendations, ...relatedStandards].map(s => [code(s), s])).values()];
+  function downloadReport() {
+    const lines = ['BIS Procurement Intelligence — Analysis', '', analyzedInput, '', ...recommendations.flatMap((s, i) => [`${i + 1}. ${code(s)} — ${s.title}`, relevanceLabel(s), `Status: ${s.status || 'unverified'}; edition: ${s.edition || s.revision || 'unverified'}`, ...strings(s.supporting_evidence), '']), result?.explanation || '', 'Gap Analysis', gapAnalysis?.scope || '', ...(gapAnalysis?.checks || []).flatMap(c => [c.label + ': ' + c.status, c.action, ...c.evidence, 'Metadata context: ' + c.source_evidence]), ...gaps, 'Warnings', ...warnings, 'Metadata validity is unverified.'];
+    const url = URL.createObjectURL(new Blob([lines.join('\n')], { type: 'text/plain;charset=utf-8' }));
+    const anchor = document.createElement('a'); anchor.href = url; anchor.download = 'procurement-analysis.txt'; anchor.click();
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
   }
-
-  function handleShare() {
-    const text = primary
-      ? `BIS Procurement Analysis: ${primary.number} — ${primary.title}. ${relevanceLabel(primary)}.`
-      : 'BIS Procurement Analysis: no recommendation available.';
-    if (navigator.share) {
-      navigator.share({ title: 'BIS Procurement Analysis', text }).catch(() => {});
-    } else if (navigator.clipboard) {
-      navigator.clipboard.writeText(text).catch(() => {});
-    }
+  async function share() {
+    const text = primary ? `${code(primary)} — ${primary.title}. ${relevanceLabel(primary)}` : 'No recommendation available.';
+    try {
+      if (navigator.share) { await navigator.share({ title: 'Procurement analysis', text }); setShareNotice('Shared successfully.'); }
+      else if (navigator.clipboard) { await navigator.clipboard.writeText(text); setShareNotice('Summary copied to clipboard.'); }
+      else setShareNotice('Sharing is unavailable in this browser. Use Download Report instead.');
+    } catch (err) { if (err.name !== 'AbortError') setShareNotice('Could not share. Use Download Report instead.'); }
   }
-
-  return (
-    <AppShell activePage="analyze" currentPage="Analysis Results" onNavigate={onNavigate}>
-      <main className="results-workspace" id="results-top">
-        <div className="results-toolbar">
-          <button className="results-back-button" type="button" onClick={onNewSearch}>
-            <ArrowLeft size={15} /> New Search
-          </button>
-          <div className="results-toolbar-actions">
-            <button className="results-secondary-button" type="button" onClick={handleDownloadReport}>
-              <Download size={15} /> Download Report
-            </button>
-            <button className="results-secondary-button" type="button" onClick={handleShare}>
-              <Share2 size={15} /> Share
-            </button>
-          </div>
-        </div>
-
-        <header className="results-page-header">
-          <div>
-            <span className="results-kicker">PROCUREMENT INTELLIGENCE REPORT</span>
-            <h1>Analysis Results</h1>
-            <p>{analyzedInput}</p>
-          </div>
-          <div className="results-header-status">
-            <span>{result?.degraded ? 'Analysis incomplete' : 'Analysis complete'}</span>
-            <CheckCircle2 size={16} />
-          </div>
-        </header>
-
-        <section className="results-summary-grid" aria-label="Analysis summary">
-          <article className="results-summary-card results-requirement-card">
-            <span className="results-kicker">Top recommendation</span>
-            <h2>{primary ? `${primary.number} — ${primary.title}` : 'No reliable standard identified'}</h2>
-            <p>{relevanceLabel(primary)}</p>
-          </article>
-          <article className="results-summary-card">
-            <span className="results-kicker">Standards identified</span>
-            <strong>{recommendations.length}</strong>
-            <p>Ranked candidates returned by the AI service</p>
-          </article>
-          <article className="results-summary-card">
-            <span className="results-kicker">Language</span>
-            <strong style={{ fontSize: '18px' }}>{result?.detected_language || 'english'}</strong>
-            <p>{result?.reranking_applied ? 'CrossEncoder reranking applied' : 'Semantic ranking only'}</p>
-          </article>
-        </section>
-
-        <section className="results-requirements-panel">
-          <div>
-            <h2><FileCheck2 size={18} /> Supporting evidence</h2>
-            <p>Evidence attached to the leading recommendation.</p>
-          </div>
-          {primary?.supporting_evidence?.length ? (
-            <ul>{primary.supporting_evidence.map((item, index) => <li key={index}>{item}</li>)}</ul>
-          ) : (
-            <EmptyState>No supporting evidence was returned.</EmptyState>
-          )}
-        </section>
-
-        <nav className="results-tabs" aria-label="Analysis result sections" role="tablist">
-          {tabs.map((tab) => (
-            <button
-              className={activeTab === tab.id ? 'results-tab is-active' : 'results-tab'}
-              type="button"
-              role="tab"
-              aria-selected={activeTab === tab.id}
-              key={tab.id}
-              onClick={() => setActiveTab(tab.id)}
-            >
-              {tab.label}
-            </button>
-          ))}
-        </nav>
-
-        {activeTab === 'recommended' ? (
-          <section className="results-section">
-            <div className="results-section-heading">
-              <div><span className="results-kicker">Ranked recommendations</span><h2>Recommended Standards</h2></div>
-              <span className="results-count">{recommendations.length} found</span>
-            </div>
-            {recommendations.length ? (
-              <div className="standards-list">
-                {recommendations.map((standard, index) => (
-                  <StandardCard key={`${standard.number}-${index}`} standard={standard} primary={index === 0} />
-                ))}
-              </div>
-            ) : <EmptyState>No recommendation was returned for this requirement.</EmptyState>}
-          </section>
-        ) : null}
-
-        {activeTab === 'related' ? (
-          <section className="results-section">
-            <div className="results-section-heading"><div><h2><Link2 size={18} /> Related Standards</h2></div></div>
-            {relatedStandards.length ? (
-              <div className="related-list">{relatedStandards.map((standard) => <StandardCard key={standard.number} standard={standard} />)}</div>
-            ) : <EmptyState>Related/normative relationships are not available in this demo response.</EmptyState>}
-          </section>
-        ) : null}
-
-        {activeTab === 'amendments' ? (
-          <section className="results-section">
-            <div className="results-section-heading"><div><h2>Status & Revisions</h2></div></div>
-            {recommendations.length ? (
-              <div className="amendments-list">
-                {recommendations.map((standard) => (
-                  <div className="amendment-row" key={standard.number}>
-                    <div><strong>{standard.number}</strong><span>{standard.title}</span></div>
-                    <span className="amendment-status">{standard.status || 'unverified'}</span>
-                    <span className="amendment-edition">{standard.edition || standard.revision || 'unverified'}</span>
-                  </div>
-                ))}
-              </div>
-            ) : <EmptyState>No revision information was returned.</EmptyState>}
-          </section>
-        ) : null}
-
-        {activeTab === 'gaps' ? (
-          <section className="results-section">
-            <div className="results-section-heading"><div><h2>Gap Analysis</h2></div></div>
-            {gaps.length ? (
-              <ul className="results-gap-list">{gaps.map((gap, index) => <li key={index}><Info size={15} /><span>{gap}</span></li>)}</ul>
-            ) : <EmptyState>Gap analysis is not performed by the current integrated pipeline.</EmptyState>}
-          </section>
-        ) : null}
-
-        {activeTab === 'certification' ? (
-          <section className="results-section">
-            <div className="results-section-heading"><div><h2><ShieldCheck size={18} /> Certification</h2></div></div>
-            {certifications.length ? (
-              <ul className="certification-list">{certifications.map((item, index) => <li key={index}><ShieldCheck size={17} /><span>{item}</span></li>)}</ul>
-            ) : <EmptyState>Certification checks are not performed by the current integrated pipeline.</EmptyState>}
-          </section>
-        ) : null}
-
-        <section className="results-evidence-panel">
-          <div>
-            <h2><ExternalLink size={18} /> Explanation</h2>
-            <p>{result?.explanation || 'No explanation was returned.'}</p>
-          </div>
-          <span className="evidence-note">Verify standard numbers, editions and status against official BIS sources before procurement.</span>
-        </section>
-
-        {warnings.length ? (
-          <aside className="results-disclaimer">
-            <Info size={17} />
-            <div>
-              <strong>Demo warnings</strong>
-              {warnings.map((warning, index) => <p key={index}>{warning}</p>)}
-            </div>
-          </aside>
-        ) : null}
-      </main>
-    </AppShell>
-  );
+  return <div className="page-shell"><BrandHeader /><main className="results-main">
+    <div className="results-toolbar"><button className="text-button" onClick={onNewSearch}><ArrowLeft size={16} />New Search</button><div><button className="outline-button" onClick={downloadReport}><Download size={16} />Download Report</button><button className="outline-button" onClick={share}><Share2 size={16} />Share</button></div></div>
+    {shareNotice && <p role="status">{shareNotice}</p>}
+    <header className="results-heading"><h1>Analysis Results</h1><p>Here are the relevant Indian Standards and insights based on your requirement.</p></header>
+    <section className="product-summary" aria-label="Requirement summary">
+      <div className="product-identity"><div className="product-icon"><Package size={48} strokeWidth={1.4} /></div><div><span className="kicker">Product Identified</span><h2>{primary?.title || 'No standard identified'}</h2><span className="neutral-label">{relevanceLabel(primary)}</span><p className="query-preview">{analyzedInput}</p></div></div>
+      <div className="summary-evidence"><h3><FileCheck2 size={19} />{requirements.length ? 'Extracted Requirements' : 'Supporting Evidence'}</h3><TextList items={requirements.length ? requirements : evidence} empty="No supporting evidence was returned for this recommendation." /></div>
+    </section>
+    <nav className="result-tabs" role="tablist" aria-label="Analysis result sections">{tabs.map(([id, label]) => <button key={id} role="tab" id={'tab-' + id} aria-controls="result-panel" aria-selected={activeTab === id} className={activeTab === id ? 'active' : ''} onClick={() => setActiveTab(id)}>{label}</button>)}</nav>
+    <section id="result-panel" role="tabpanel" aria-labelledby={'tab-' + activeTab} className="result-panel">
+      {activeTab === 'recommended' && (primary ? <>
+        <div className="standard-header"><div className="standard-emblem"><Award size={29} /></div><div><span className="kicker">Primary Recommended Standard</span><h2>{code(primary)}</h2><p>{primary.title}</p><small>Edition: {primary.edition || primary.revision || 'Unverified'}</small></div></div>
+        <div className="standard-checks"><div><h3>Why this standard?</h3><TextList items={evidence} empty="No supporting evidence was returned." />{primary.scope && <p className="scope"><strong>Scope:</strong> {primary.scope}</p>}</div><div className="status-box"><h3>Standard Status</h3><span className="neutral-label">{primary.status || 'unverified'}</span><p>Edition: {primary.edition || primary.revision || 'Unverified'}</p><p>Validity: {primary.validity || 'unverified'}</p><button className="text-button" onClick={() => setActiveTab('status')}>View status & amendments →</button></div></div>
+        {recommendations.length > 1 && <div className="other-standards"><h3>Other matching standards</h3>{recommendations.slice(1).map((s, i) => <StandardCard key={i} standard={s} />)}</div>}
+      </> : <EmptyState>No recommendation was returned. Try a more specific requirement.</EmptyState>)}
+      {activeTab === 'related' && <><h2>Related / Normative Standards</h2>{relatedStandards.length ? relatedStandards.map((s, i) => <StandardCard key={i} standard={s} />) : <EmptyState>No related or normative standards found for this recommendation.</EmptyState>}</>}
+      {activeTab === 'status' && <><h2>Status & Amendments</h2>{allStandards.length ? allStandards.map((s, i) => <article className="status-row" key={i}><div><strong>{code(s)}</strong><p>{s.title}</p></div><div>Status: {s.status || 'unverified'}<br />Edition: {s.edition || s.revision || 'Unverified'}<br /><small>{relevanceLabel(s)}</small></div></article>) : <EmptyState>No standard status information was returned.</EmptyState>}<p className="muted">Amendment history was not provided in this response.</p></>}
+      {activeTab === 'gaps' && <><h2>Gap Analysis</h2>{gapAnalysis ? <>
+        <p>{gapAnalysis.summary}</p><p className="empty-state">{gapAnalysis.scope}</p>
+        {gapAnalysis.standard_code && <p className="muted">Checklist context: {gapAnalysis.standard_code}</p>}
+        <div className="gap-checks">{(gapAnalysis.checks || []).map((check, i) => <article className="gap-check" key={i}>
+          <div className="gap-check-heading"><h3>{check.label}</h3><span className="neutral-label">{check.status === 'mentioned' ? 'Detail found' : check.status === 'needs_review' ? 'Review exclusion' : 'Not found in analyzed text'}</span></div>
+          <p>{check.action}</p>{check.evidence?.length > 0 && <><strong>Tender wording</strong><TextList items={strings(check.evidence)} /></>}
+          <p className="muted"><strong>Metadata context:</strong> {check.source_evidence}</p>
+        </article>)}</div>
+      </> : <TextList items={gaps} empty="Gap analysis is not available in the current integrated pipeline." />}</>}
+      {activeTab === 'certification' && <><h2>Certification</h2><TextList items={certifications} empty="Certification information is not available in the current integrated pipeline." /></>}
+    </section>
+    <section className="insight-grid" aria-label="Analysis summary">{[[Link2, 'Related Standards', relatedStandards.length, 'related'], [CircleAlert, 'Potential Gaps', gapAnalysis?.status === 'assessed' ? gaps.length : gaps.length || 'Not assessed', 'gaps'], [ShieldCheck, 'Certification', certifications.length ? certifications.length + ' returned' : 'Not available', 'certification']].map(([Icon, label, value, id]) => <button key={id} onClick={() => { setActiveTab(id); document.getElementById('result-panel')?.scrollIntoView({ behavior: 'smooth', block: 'nearest' }); }}><span className="feature-icon"><Icon size={24} /></span><span><span className="muted">{label}</span><strong>{value}</strong><small>View details →</small></span></button>)}</section>
+    <section className="sources"><h2><Link2 size={19} />Evidence & Sources</h2><p>{result?.explanation || 'No explanation was returned.'}</p><TextList items={evidence} empty="No supporting evidence was returned." />{allStandards.filter(s => s.source_url).map((s, i) => <SafeSource key={i} url={s.source_url}>Source for {code(s)}</SafeSource>)}</section>
+    <aside className="disclaimer" aria-label="Warnings and limitations"><Info size={20} /><div><strong>Review before use</strong><p>Recommendation relevance does not verify a standard’s current validity. Demo metadata is not an official BIS publication.</p>{result?.degraded && <p>Results are incomplete. Some standard metadata is unavailable.</p>}{result?.missing_standard_codes?.length > 0 && <p>Missing metadata: {result.missing_standard_codes.join(', ')}</p>}{result?.match_status === 'NO_RELIABLE_MATCH' && <p>No sufficiently reliable match was identified.</p>}{result?.embedding_mode === 'multilingual' && <p>Multilingual demo · {result.detected_language || 'Language unspecified'} · {result.reranking_applied ? 'Reranking applied' : 'English reranker skipped'}</p>}<TextList items={warnings} empty="No additional warnings were returned." /></div></aside>
+  </main></div>;
 }

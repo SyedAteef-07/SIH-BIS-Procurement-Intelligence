@@ -31,7 +31,7 @@ DEFAULT_ALIASES = {
     "safety helmet": ["safety helmet", "protective headgear", "protective headwear", "industrial helmet", "industrial protective helmet"],
     "protective footwear": ["protective footwear", "safety footwear", "safety boot"],
     "insulating glove": ["insulating glove"],
-    "PVC water pipe": ["PVC water pipe", "plastic pressure pipe", "PVC pressure pipe", "PVC water supply pipe"],
+    "PVC water pipe": ["PVC pipe", "PVC plastic pipe", "PVC water pipe", "plastic pressure pipe", "PVC pressure pipe", "PVC water supply pipe"],
     "pump": ["pump", "water pump", "centrifugal pump", "centrifugal water pump"],
     "pump mechanical seal": ["pump mechanical seal", "pump seal", "mechanical shaft seal"],
     "water valve": ["water valve", "water pipeline valve", "gate valve", "check valve"],

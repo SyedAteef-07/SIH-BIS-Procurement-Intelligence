@@ -41,7 +41,10 @@ class RequirementExtractor:
                 if not negated:
                     getattr(result, field).append(value)
 
-        fields = [("phase", patterns.PHASE, normalize_phase),
+        fields = [("pressure_ratings", re.compile(r"\b(?:\d+(?:\.\d+)?\s*(?:bar|MPa|psi)|PN\s*\d+)\b", re.I), normalize_phrase),
+                  ("joints", re.compile(r"\b(?:solvent[ -]weld(?:ed)?|rubber[ -]ring|threaded|flanged|socket(?:ed)?)\s*(?:joints?|connections?)?\b", re.I), normalize_phrase),
+                  ("water_use", re.compile(r"\b(?:potable|drinking)\s+water\b", re.I), normalize_phrase),
+                  ("phase", patterns.PHASE, normalize_phase),
                   ("ip_ratings", patterns.IP_RATING, normalize_ip_rating),
                   ("technical_classes", patterns.TECHNICAL_CLASS, lambda s: "Class " + s[-1].upper()),
                   ("materials", patterns.MATERIAL, lambda s: s.upper() if s.lower() in {"pvc", "xlpe"} else s.lower().replace("aluminum", "aluminium")),

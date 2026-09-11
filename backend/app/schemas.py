@@ -4,6 +4,7 @@ import re
 from datetime import date
 from typing import Literal
 from pydantic import BaseModel, Field, field_validator
+from app.services.gap_analysis import GapAnalysis
 
 
 class AnalyzeRequest(BaseModel):
@@ -58,6 +59,8 @@ class Recommendation(StandardDetail):
 
 
 class AnalysisResponse(BaseModel):
+    gap_analysis: GapAnalysis = Field(default_factory=GapAnalysis)
+    extracted_requirements: list[str] = Field(default_factory=list)
     embedding_mode: Literal["english", "multilingual"] = "english"
     detected_language: Literal["english", "hindi", "kannada"] = "english"
     reranking_applied: bool = True

@@ -3,6 +3,7 @@ from typing import Literal
 import httpx
 from pydantic import BaseModel, Field, ValidationError, model_validator
 from app.config import settings
+from app.services.gap_analysis import ExtractedInput
 
 
 class AIServiceError(Exception):
@@ -26,6 +27,7 @@ class Candidate(BaseModel):
 
 
 class AIResponse(BaseModel):
+    extracted_requirements: ExtractedInput | None = None
     embedding_mode: Literal["english", "multilingual"] = "english"
     detected_language: Literal["english", "hindi", "kannada"] = "english"
     reranking_applied: bool = True

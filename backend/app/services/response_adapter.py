@@ -1,5 +1,6 @@
 """Metadata is database-owned; candidate ordering is AI-owned."""
 from app.database.repositories.standards import StandardRepository
+from app.services.gap_analysis import analyze_gaps
 
 
 def standard_detail(standard):
@@ -38,10 +39,17 @@ def adapt_analysis(text, ai_response, session):
         warnings.append("Fictional IS-DEMO development metadata; these are not official BIS standards.")
     if missing:
         warnings.append("Some AI identifiers are missing from the metadata database; results are incomplete. Check the dataset and seed version.")
-    return dict(input=text, recommendations=recommendations, related_standards=[], certifications=[], gaps=[],
+    analysis = analyze_gaps(text, ai_response.extracted_requirements, ai_response.detected_language,
+                            metadata.get(codes[0]) if codes else None)
+    extracted = ai_response.extracted_requirements
+    details = list(dict.fromkeys(e.evidence for entries in extracted.evidence.values() for e in entries
+                               if not e.negated and e.evidence and e.evidence in text)) if extracted else []
+    return dict(input=text, recommendations=recommendations, related_standards=[], certifications=[],
+                gaps=[f"{c.label}: {c.action}" for c in analysis.checks if c.status != "mentioned"],
+                gap_analysis=analysis.model_dump(), extracted_requirements=details,
                 embedding_mode=ai_response.embedding_mode, detected_language=ai_response.detected_language,
                 reranking_applied=ai_response.reranking_applied,
-                explanation="AI service ranking enriched with database metadata. Related standards, gap analysis and certification checks were not performed.",
+                explanation="AI service ranking enriched with database metadata. " + analysis.summary + " Related/normative relationships and certification obligations have not been verified.",
                 recommendation_source="ai_service", degraded=bool(missing), missing_standard_codes=missing,
                 match_status="NOT_ASSESSED" if missing else ai_response.match_status,
                 ai_match_status=ai_response.match_status,

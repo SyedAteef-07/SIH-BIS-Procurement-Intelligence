@@ -2,6 +2,7 @@ from typing import Literal
 from pydantic import BaseModel, Field, AliasChoices, field_validator
 from app.config import DEFAULT_FINAL_K
 from app.nlp.preprocess import clean_text
+from app.schemas.requirements import ExtractedRequirements
 
 
 class Standard(BaseModel):
@@ -49,6 +50,7 @@ class Recommendation(BaseModel):
 
 
 class RecommendationResponse(BaseModel):
+    extracted_requirements: ExtractedRequirements | None = None
     embedding_mode: Literal["english", "multilingual"] = "english"
     detected_language: Literal["english", "hindi", "kannada"] = "english"
     reranking_applied: bool = True
