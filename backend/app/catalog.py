@@ -18,6 +18,7 @@ class Standard:
     related: tuple[str, ...] = ()
     certification: str | None = None
     requirements: tuple[str, ...] = ()
+    is_mock: bool = False
 
 
 STANDARDS = (

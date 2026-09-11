@@ -1,0 +1,5337 @@
+[
+  {
+    "query_id": "Q081",
+    "query": "road lighting equipment",
+    "relevance": {
+      "IS-DEMO-003": 3,
+      "IS-DEMO-021": 2,
+      "IS-DEMO-022": 2,
+      "IS-DEMO-020": 1
+    },
+    "top5_by_system": {
+      "semantic": [
+        {
+          "standard_id": "IS-DEMO-003",
+          "retrieval_score": 0.8021571636199951,
+          "reranker_score": null,
+          "relevance_grade": 3
+        },
+        {
+          "standard_id": "IS-DEMO-020",
+          "retrieval_score": 0.7463456988334656,
+          "reranker_score": null,
+          "relevance_grade": 1
+        },
+        {
+          "standard_id": "IS-DEMO-019",
+          "retrieval_score": 0.6901230216026306,
+          "reranker_score": null,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-018",
+          "retrieval_score": 0.6815266609191895,
+          "reranker_score": null,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-021",
+          "retrieval_score": 0.6585502624511719,
+          "reranker_score": null,
+          "relevance_grade": 2
+        }
+      ],
+      "semantic_rerank": [
+        {
+          "standard_id": "IS-DEMO-003",
+          "retrieval_score": 0.8021571636199951,
+          "reranker_score": 5.9992852210998535,
+          "relevance_grade": 3
+        },
+        {
+          "standard_id": "IS-DEMO-020",
+          "retrieval_score": 0.7463456988334656,
+          "reranker_score": 4.314196586608887,
+          "relevance_grade": 1
+        },
+        {
+          "standard_id": "IS-DEMO-019",
+          "retrieval_score": 0.6901230216026306,
+          "reranker_score": -0.2888563871383667,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-018",
+          "retrieval_score": 0.6815266609191895,
+          "reranker_score": -5.009095191955566,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-021",
+          "retrieval_score": 0.6585502624511719,
+          "reranker_score": -5.47264289855957,
+          "relevance_grade": 2
+        }
+      ],
+      "hybrid_rerank": [
+        {
+          "standard_id": "IS-DEMO-003",
+          "retrieval_score": 0.03252247488101534,
+          "reranker_score": 5.9992852210998535,
+          "relevance_grade": 3
+        },
+        {
+          "standard_id": "IS-DEMO-020",
+          "retrieval_score": 0.03252247488101534,
+          "reranker_score": 4.314196586608887,
+          "relevance_grade": 1
+        },
+        {
+          "standard_id": "IS-DEMO-019",
+          "retrieval_score": 0.031746031746031744,
+          "reranker_score": -0.2888563871383667,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-018",
+          "retrieval_score": 0.03125,
+          "reranker_score": -5.009095191955566,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-021",
+          "retrieval_score": 0.030090497737556562,
+          "reranker_score": -5.47264289855957,
+          "relevance_grade": 2
+        }
+      ],
+      "hybrid": [
+        {
+          "standard_id": "IS-DEMO-003",
+          "retrieval_score": 0.03252247488101534,
+          "reranker_score": null,
+          "relevance_grade": 3
+        },
+        {
+          "standard_id": "IS-DEMO-020",
+          "retrieval_score": 0.03252247488101534,
+          "reranker_score": null,
+          "relevance_grade": 1
+        },
+        {
+          "standard_id": "IS-DEMO-019",
+          "retrieval_score": 0.031746031746031744,
+          "reranker_score": null,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-018",
+          "retrieval_score": 0.03125,
+          "reranker_score": null,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-021",
+          "retrieval_score": 0.030090497737556562,
+          "reranker_score": null,
+          "relevance_grade": 2
+        }
+      ],
+      "semantic_fusion_0.5": [
+        {
+          "standard_id": "IS-DEMO-003",
+          "retrieval_score": 0.8021571636199951,
+          "reranker_score": 5.9992852210998535,
+          "rank_fusion_score": 0.02459016393442623,
+          "relevance_grade": 3
+        },
+        {
+          "standard_id": "IS-DEMO-020",
+          "retrieval_score": 0.7463456988334656,
+          "reranker_score": 4.314196586608887,
+          "rank_fusion_score": 0.024193548387096774,
+          "relevance_grade": 1
+        },
+        {
+          "standard_id": "IS-DEMO-019",
+          "retrieval_score": 0.6901230216026306,
+          "reranker_score": -0.2888563871383667,
+          "rank_fusion_score": 0.023809523809523808,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-018",
+          "retrieval_score": 0.6815266609191895,
+          "reranker_score": -5.009095191955566,
+          "rank_fusion_score": 0.0234375,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-021",
+          "retrieval_score": 0.6585502624511719,
+          "reranker_score": -5.47264289855957,
+          "rank_fusion_score": 0.023076923076923078,
+          "relevance_grade": 2
+        }
+      ],
+      "hybrid_fusion_0.5": [
+        {
+          "standard_id": "IS-DEMO-003",
+          "retrieval_score": 0.03252247488101534,
+          "reranker_score": 5.9992852210998535,
+          "rank_fusion_score": 0.02459016393442623,
+          "relevance_grade": 3
+        },
+        {
+          "standard_id": "IS-DEMO-020",
+          "retrieval_score": 0.03252247488101534,
+          "reranker_score": 4.314196586608887,
+          "rank_fusion_score": 0.024193548387096774,
+          "relevance_grade": 1
+        },
+        {
+          "standard_id": "IS-DEMO-019",
+          "retrieval_score": 0.031746031746031744,
+          "reranker_score": -0.2888563871383667,
+          "rank_fusion_score": 0.023809523809523808,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-018",
+          "retrieval_score": 0.03125,
+          "reranker_score": -5.009095191955566,
+          "rank_fusion_score": 0.0234375,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-021",
+          "retrieval_score": 0.030090497737556562,
+          "reranker_score": -5.47264289855957,
+          "rank_fusion_score": 0.023076923076923078,
+          "relevance_grade": 2
+        }
+      ],
+      "semantic_fusion_1": [
+        {
+          "standard_id": "IS-DEMO-003",
+          "retrieval_score": 0.8021571636199951,
+          "reranker_score": 5.9992852210998535,
+          "rank_fusion_score": 0.03278688524590164,
+          "relevance_grade": 3
+        },
+        {
+          "standard_id": "IS-DEMO-020",
+          "retrieval_score": 0.7463456988334656,
+          "reranker_score": 4.314196586608887,
+          "rank_fusion_score": 0.03225806451612903,
+          "relevance_grade": 1
+        },
+        {
+          "standard_id": "IS-DEMO-019",
+          "retrieval_score": 0.6901230216026306,
+          "reranker_score": -0.2888563871383667,
+          "rank_fusion_score": 0.031746031746031744,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-018",
+          "retrieval_score": 0.6815266609191895,
+          "reranker_score": -5.009095191955566,
+          "rank_fusion_score": 0.03125,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-021",
+          "retrieval_score": 0.6585502624511719,
+          "reranker_score": -5.47264289855957,
+          "rank_fusion_score": 0.03076923076923077,
+          "relevance_grade": 2
+        }
+      ],
+      "hybrid_fusion_1": [
+        {
+          "standard_id": "IS-DEMO-003",
+          "retrieval_score": 0.03252247488101534,
+          "reranker_score": 5.9992852210998535,
+          "rank_fusion_score": 0.03278688524590164,
+          "relevance_grade": 3
+        },
+        {
+          "standard_id": "IS-DEMO-020",
+          "retrieval_score": 0.03252247488101534,
+          "reranker_score": 4.314196586608887,
+          "rank_fusion_score": 0.03225806451612903,
+          "relevance_grade": 1
+        },
+        {
+          "standard_id": "IS-DEMO-019",
+          "retrieval_score": 0.031746031746031744,
+          "reranker_score": -0.2888563871383667,
+          "rank_fusion_score": 0.031746031746031744,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-018",
+          "retrieval_score": 0.03125,
+          "reranker_score": -5.009095191955566,
+          "rank_fusion_score": 0.03125,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-021",
+          "retrieval_score": 0.030090497737556562,
+          "reranker_score": -5.47264289855957,
+          "rank_fusion_score": 0.03076923076923077,
+          "relevance_grade": 2
+        }
+      ],
+      "semantic_fusion_1.5": [
+        {
+          "standard_id": "IS-DEMO-003",
+          "retrieval_score": 0.8021571636199951,
+          "reranker_score": 5.9992852210998535,
+          "rank_fusion_score": 0.04098360655737705,
+          "relevance_grade": 3
+        },
+        {
+          "standard_id": "IS-DEMO-020",
+          "retrieval_score": 0.7463456988334656,
+          "reranker_score": 4.314196586608887,
+          "rank_fusion_score": 0.04032258064516129,
+          "relevance_grade": 1
+        },
+        {
+          "standard_id": "IS-DEMO-019",
+          "retrieval_score": 0.6901230216026306,
+          "reranker_score": -0.2888563871383667,
+          "rank_fusion_score": 0.03968253968253968,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-018",
+          "retrieval_score": 0.6815266609191895,
+          "reranker_score": -5.009095191955566,
+          "rank_fusion_score": 0.0390625,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-021",
+          "retrieval_score": 0.6585502624511719,
+          "reranker_score": -5.47264289855957,
+          "rank_fusion_score": 0.038461538461538464,
+          "relevance_grade": 2
+        }
+      ],
+      "hybrid_fusion_1.5": [
+        {
+          "standard_id": "IS-DEMO-003",
+          "retrieval_score": 0.03252247488101534,
+          "reranker_score": 5.9992852210998535,
+          "rank_fusion_score": 0.04098360655737705,
+          "relevance_grade": 3
+        },
+        {
+          "standard_id": "IS-DEMO-020",
+          "retrieval_score": 0.03252247488101534,
+          "reranker_score": 4.314196586608887,
+          "rank_fusion_score": 0.04032258064516129,
+          "relevance_grade": 1
+        },
+        {
+          "standard_id": "IS-DEMO-019",
+          "retrieval_score": 0.031746031746031744,
+          "reranker_score": -0.2888563871383667,
+          "rank_fusion_score": 0.03968253968253968,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-018",
+          "retrieval_score": 0.03125,
+          "reranker_score": -5.009095191955566,
+          "rank_fusion_score": 0.0390625,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-021",
+          "retrieval_score": 0.030090497737556562,
+          "reranker_score": -5.47264289855957,
+          "rank_fusion_score": 0.038461538461538464,
+          "relevance_grade": 2
+        }
+      ],
+      "semantic_fusion_2": [
+        {
+          "standard_id": "IS-DEMO-003",
+          "retrieval_score": 0.8021571636199951,
+          "reranker_score": 5.9992852210998535,
+          "rank_fusion_score": 0.04918032786885246,
+          "relevance_grade": 3
+        },
+        {
+          "standard_id": "IS-DEMO-020",
+          "retrieval_score": 0.7463456988334656,
+          "reranker_score": 4.314196586608887,
+          "rank_fusion_score": 0.04838709677419355,
+          "relevance_grade": 1
+        },
+        {
+          "standard_id": "IS-DEMO-019",
+          "retrieval_score": 0.6901230216026306,
+          "reranker_score": -0.2888563871383667,
+          "rank_fusion_score": 0.047619047619047616,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-018",
+          "retrieval_score": 0.6815266609191895,
+          "reranker_score": -5.009095191955566,
+          "rank_fusion_score": 0.046875,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-021",
+          "retrieval_score": 0.6585502624511719,
+          "reranker_score": -5.47264289855957,
+          "rank_fusion_score": 0.046153846153846156,
+          "relevance_grade": 2
+        }
+      ],
+      "hybrid_fusion_2": [
+        {
+          "standard_id": "IS-DEMO-003",
+          "retrieval_score": 0.03252247488101534,
+          "reranker_score": 5.9992852210998535,
+          "rank_fusion_score": 0.04918032786885246,
+          "relevance_grade": 3
+        },
+        {
+          "standard_id": "IS-DEMO-020",
+          "retrieval_score": 0.03252247488101534,
+          "reranker_score": 4.314196586608887,
+          "rank_fusion_score": 0.04838709677419355,
+          "relevance_grade": 1
+        },
+        {
+          "standard_id": "IS-DEMO-019",
+          "retrieval_score": 0.031746031746031744,
+          "reranker_score": -0.2888563871383667,
+          "rank_fusion_score": 0.047619047619047616,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-018",
+          "retrieval_score": 0.03125,
+          "reranker_score": -5.009095191955566,
+          "rank_fusion_score": 0.046875,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-021",
+          "retrieval_score": 0.030090497737556562,
+          "reranker_score": -5.47264289855957,
+          "rank_fusion_score": 0.046153846153846156,
+          "relevance_grade": 2
+        }
+      ]
+    },
+    "metrics_by_system": {
+      "semantic": {
+        "recall@1": 0.3333333333333333,
+        "recall@3": 0.3333333333333333,
+        "recall@5": 0.6666666666666666,
+        "precision@5": 0.4,
+        "mrr": 1.0,
+        "ndcg@5": 0.812261832066259
+      },
+      "semantic_rerank": {
+        "recall@1": 0.3333333333333333,
+        "recall@3": 0.3333333333333333,
+        "recall@5": 0.6666666666666666,
+        "precision@5": 0.4,
+        "mrr": 1.0,
+        "ndcg@5": 0.812261832066259
+      },
+      "hybrid_rerank": {
+        "recall@1": 0.3333333333333333,
+        "recall@3": 0.3333333333333333,
+        "recall@5": 0.6666666666666666,
+        "precision@5": 0.4,
+        "mrr": 1.0,
+        "ndcg@5": 0.812261832066259
+      },
+      "hybrid": {
+        "recall@1": 0.3333333333333333,
+        "recall@3": 0.3333333333333333,
+        "recall@5": 0.6666666666666666,
+        "precision@5": 0.4,
+        "mrr": 1.0,
+        "ndcg@5": 0.812261832066259
+      },
+      "semantic_fusion_0.5": {
+        "recall@1": 0.3333333333333333,
+        "recall@3": 0.3333333333333333,
+        "recall@5": 0.6666666666666666,
+        "precision@5": 0.4,
+        "mrr": 1.0,
+        "ndcg@5": 0.812261832066259
+      },
+      "hybrid_fusion_0.5": {
+        "recall@1": 0.3333333333333333,
+        "recall@3": 0.3333333333333333,
+        "recall@5": 0.6666666666666666,
+        "precision@5": 0.4,
+        "mrr": 1.0,
+        "ndcg@5": 0.812261832066259
+      },
+      "semantic_fusion_1": {
+        "recall@1": 0.3333333333333333,
+        "recall@3": 0.3333333333333333,
+        "recall@5": 0.6666666666666666,
+        "precision@5": 0.4,
+        "mrr": 1.0,
+        "ndcg@5": 0.812261832066259
+      },
+      "hybrid_fusion_1": {
+        "recall@1": 0.3333333333333333,
+        "recall@3": 0.3333333333333333,
+        "recall@5": 0.6666666666666666,
+        "precision@5": 0.4,
+        "mrr": 1.0,
+        "ndcg@5": 0.812261832066259
+      },
+      "semantic_fusion_1.5": {
+        "recall@1": 0.3333333333333333,
+        "recall@3": 0.3333333333333333,
+        "recall@5": 0.6666666666666666,
+        "precision@5": 0.4,
+        "mrr": 1.0,
+        "ndcg@5": 0.812261832066259
+      },
+      "hybrid_fusion_1.5": {
+        "recall@1": 0.3333333333333333,
+        "recall@3": 0.3333333333333333,
+        "recall@5": 0.6666666666666666,
+        "precision@5": 0.4,
+        "mrr": 1.0,
+        "ndcg@5": 0.812261832066259
+      },
+      "semantic_fusion_2": {
+        "recall@1": 0.3333333333333333,
+        "recall@3": 0.3333333333333333,
+        "recall@5": 0.6666666666666666,
+        "precision@5": 0.4,
+        "mrr": 1.0,
+        "ndcg@5": 0.812261832066259
+      },
+      "hybrid_fusion_2": {
+        "recall@1": 0.3333333333333333,
+        "recall@3": 0.3333333333333333,
+        "recall@5": 0.6666666666666666,
+        "precision@5": 0.4,
+        "mrr": 1.0,
+        "ndcg@5": 0.812261832066259
+      }
+    }
+  },
+  {
+    "query_id": "Q082",
+    "query": "electrical cables for power supply",
+    "relevance": {
+      "IS-DEMO-005": 3,
+      "IS-DEMO-023": 2,
+      "IS-DEMO-024": 2
+    },
+    "top5_by_system": {
+      "semantic": [
+        {
+          "standard_id": "IS-DEMO-005",
+          "retrieval_score": 0.7917252779006958,
+          "reranker_score": null,
+          "relevance_grade": 3
+        },
+        {
+          "standard_id": "IS-DEMO-023",
+          "retrieval_score": 0.7501343488693237,
+          "reranker_score": null,
+          "relevance_grade": 2
+        },
+        {
+          "standard_id": "IS-DEMO-024",
+          "retrieval_score": 0.7447876334190369,
+          "reranker_score": null,
+          "relevance_grade": 2
+        },
+        {
+          "standard_id": "IS-DEMO-016",
+          "retrieval_score": 0.6485188007354736,
+          "reranker_score": null,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-025",
+          "retrieval_score": 0.6385519504547119,
+          "reranker_score": null,
+          "relevance_grade": 0
+        }
+      ],
+      "semantic_rerank": [
+        {
+          "standard_id": "IS-DEMO-005",
+          "retrieval_score": 0.7917252779006958,
+          "reranker_score": 7.399229049682617,
+          "relevance_grade": 3
+        },
+        {
+          "standard_id": "IS-DEMO-023",
+          "retrieval_score": 0.7501343488693237,
+          "reranker_score": 6.575531005859375,
+          "relevance_grade": 2
+        },
+        {
+          "standard_id": "IS-DEMO-024",
+          "retrieval_score": 0.7447876334190369,
+          "reranker_score": 2.257563591003418,
+          "relevance_grade": 2
+        },
+        {
+          "standard_id": "IS-DEMO-011",
+          "retrieval_score": 0.6157437562942505,
+          "reranker_score": -4.391332149505615,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-001",
+          "retrieval_score": 0.6367887258529663,
+          "reranker_score": -4.717201232910156,
+          "relevance_grade": 0
+        }
+      ],
+      "hybrid_rerank": [
+        {
+          "standard_id": "IS-DEMO-005",
+          "retrieval_score": 0.03278688524590164,
+          "reranker_score": 7.399229049682617,
+          "relevance_grade": 3
+        },
+        {
+          "standard_id": "IS-DEMO-023",
+          "retrieval_score": 0.03225806451612903,
+          "reranker_score": 6.575531005859375,
+          "relevance_grade": 2
+        },
+        {
+          "standard_id": "IS-DEMO-024",
+          "retrieval_score": 0.031746031746031744,
+          "reranker_score": 2.257563591003418,
+          "relevance_grade": 2
+        },
+        {
+          "standard_id": "IS-DEMO-011",
+          "retrieval_score": 0.029910714285714284,
+          "reranker_score": -4.391332149505615,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-001",
+          "retrieval_score": 0.015151515151515152,
+          "reranker_score": -4.717201232910156,
+          "relevance_grade": 0
+        }
+      ],
+      "hybrid": [
+        {
+          "standard_id": "IS-DEMO-005",
+          "retrieval_score": 0.03278688524590164,
+          "reranker_score": null,
+          "relevance_grade": 3
+        },
+        {
+          "standard_id": "IS-DEMO-023",
+          "retrieval_score": 0.03225806451612903,
+          "reranker_score": null,
+          "relevance_grade": 2
+        },
+        {
+          "standard_id": "IS-DEMO-024",
+          "retrieval_score": 0.031746031746031744,
+          "reranker_score": null,
+          "relevance_grade": 2
+        },
+        {
+          "standard_id": "IS-DEMO-011",
+          "retrieval_score": 0.029910714285714284,
+          "reranker_score": null,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-010",
+          "retrieval_score": 0.02871794871794872,
+          "reranker_score": null,
+          "relevance_grade": 0
+        }
+      ],
+      "semantic_fusion_0.5": [
+        {
+          "standard_id": "IS-DEMO-005",
+          "retrieval_score": 0.7917252779006958,
+          "reranker_score": 7.399229049682617,
+          "rank_fusion_score": 0.02459016393442623,
+          "relevance_grade": 3
+        },
+        {
+          "standard_id": "IS-DEMO-023",
+          "retrieval_score": 0.7501343488693237,
+          "reranker_score": 6.575531005859375,
+          "rank_fusion_score": 0.024193548387096774,
+          "relevance_grade": 2
+        },
+        {
+          "standard_id": "IS-DEMO-024",
+          "retrieval_score": 0.7447876334190369,
+          "reranker_score": 2.257563591003418,
+          "rank_fusion_score": 0.023809523809523808,
+          "relevance_grade": 2
+        },
+        {
+          "standard_id": "IS-DEMO-001",
+          "retrieval_score": 0.6367887258529663,
+          "reranker_score": -4.717201232910156,
+          "rank_fusion_score": 0.022843822843822845,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-016",
+          "retrieval_score": 0.6485188007354736,
+          "reranker_score": -8.711526870727539,
+          "rank_fusion_score": 0.022767857142857142,
+          "relevance_grade": 0
+        }
+      ],
+      "hybrid_fusion_0.5": [
+        {
+          "standard_id": "IS-DEMO-005",
+          "retrieval_score": 0.03278688524590164,
+          "reranker_score": 7.399229049682617,
+          "rank_fusion_score": 0.02459016393442623,
+          "relevance_grade": 3
+        },
+        {
+          "standard_id": "IS-DEMO-023",
+          "retrieval_score": 0.03225806451612903,
+          "reranker_score": 6.575531005859375,
+          "rank_fusion_score": 0.024193548387096774,
+          "relevance_grade": 2
+        },
+        {
+          "standard_id": "IS-DEMO-024",
+          "retrieval_score": 0.031746031746031744,
+          "reranker_score": 2.257563591003418,
+          "rank_fusion_score": 0.023809523809523808,
+          "relevance_grade": 2
+        },
+        {
+          "standard_id": "IS-DEMO-011",
+          "retrieval_score": 0.029910714285714284,
+          "reranker_score": -4.391332149505615,
+          "rank_fusion_score": 0.0234375,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-025",
+          "retrieval_score": 0.02871794871794872,
+          "reranker_score": -9.094627380371094,
+          "rank_fusion_score": 0.022000830220008302,
+          "relevance_grade": 0
+        }
+      ],
+      "semantic_fusion_1": [
+        {
+          "standard_id": "IS-DEMO-005",
+          "retrieval_score": 0.7917252779006958,
+          "reranker_score": 7.399229049682617,
+          "rank_fusion_score": 0.03278688524590164,
+          "relevance_grade": 3
+        },
+        {
+          "standard_id": "IS-DEMO-023",
+          "retrieval_score": 0.7501343488693237,
+          "reranker_score": 6.575531005859375,
+          "rank_fusion_score": 0.03225806451612903,
+          "relevance_grade": 2
+        },
+        {
+          "standard_id": "IS-DEMO-024",
+          "retrieval_score": 0.7447876334190369,
+          "reranker_score": 2.257563591003418,
+          "rank_fusion_score": 0.031746031746031744,
+          "relevance_grade": 2
+        },
+        {
+          "standard_id": "IS-DEMO-001",
+          "retrieval_score": 0.6367887258529663,
+          "reranker_score": -4.717201232910156,
+          "rank_fusion_score": 0.030536130536130537,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-016",
+          "retrieval_score": 0.6485188007354736,
+          "reranker_score": -8.711526870727539,
+          "rank_fusion_score": 0.029910714285714284,
+          "relevance_grade": 0
+        }
+      ],
+      "hybrid_fusion_1": [
+        {
+          "standard_id": "IS-DEMO-005",
+          "retrieval_score": 0.03278688524590164,
+          "reranker_score": 7.399229049682617,
+          "rank_fusion_score": 0.03278688524590164,
+          "relevance_grade": 3
+        },
+        {
+          "standard_id": "IS-DEMO-023",
+          "retrieval_score": 0.03225806451612903,
+          "reranker_score": 6.575531005859375,
+          "rank_fusion_score": 0.03225806451612903,
+          "relevance_grade": 2
+        },
+        {
+          "standard_id": "IS-DEMO-024",
+          "retrieval_score": 0.031746031746031744,
+          "reranker_score": 2.257563591003418,
+          "rank_fusion_score": 0.031746031746031744,
+          "relevance_grade": 2
+        },
+        {
+          "standard_id": "IS-DEMO-011",
+          "retrieval_score": 0.029910714285714284,
+          "reranker_score": -4.391332149505615,
+          "rank_fusion_score": 0.03125,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-025",
+          "retrieval_score": 0.02871794871794872,
+          "reranker_score": -9.094627380371094,
+          "rank_fusion_score": 0.028850145288501453,
+          "relevance_grade": 0
+        }
+      ],
+      "semantic_fusion_1.5": [
+        {
+          "standard_id": "IS-DEMO-005",
+          "retrieval_score": 0.7917252779006958,
+          "reranker_score": 7.399229049682617,
+          "rank_fusion_score": 0.04098360655737705,
+          "relevance_grade": 3
+        },
+        {
+          "standard_id": "IS-DEMO-023",
+          "retrieval_score": 0.7501343488693237,
+          "reranker_score": 6.575531005859375,
+          "rank_fusion_score": 0.04032258064516129,
+          "relevance_grade": 2
+        },
+        {
+          "standard_id": "IS-DEMO-024",
+          "retrieval_score": 0.7447876334190369,
+          "reranker_score": 2.257563591003418,
+          "rank_fusion_score": 0.03968253968253968,
+          "relevance_grade": 2
+        },
+        {
+          "standard_id": "IS-DEMO-001",
+          "retrieval_score": 0.6367887258529663,
+          "reranker_score": -4.717201232910156,
+          "rank_fusion_score": 0.03822843822843823,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-011",
+          "retrieval_score": 0.6157437562942505,
+          "reranker_score": -4.391332149505615,
+          "rank_fusion_score": 0.037723214285714284,
+          "relevance_grade": 0
+        }
+      ],
+      "hybrid_fusion_1.5": [
+        {
+          "standard_id": "IS-DEMO-005",
+          "retrieval_score": 0.03278688524590164,
+          "reranker_score": 7.399229049682617,
+          "rank_fusion_score": 0.04098360655737705,
+          "relevance_grade": 3
+        },
+        {
+          "standard_id": "IS-DEMO-023",
+          "retrieval_score": 0.03225806451612903,
+          "reranker_score": 6.575531005859375,
+          "rank_fusion_score": 0.04032258064516129,
+          "relevance_grade": 2
+        },
+        {
+          "standard_id": "IS-DEMO-024",
+          "retrieval_score": 0.031746031746031744,
+          "reranker_score": 2.257563591003418,
+          "rank_fusion_score": 0.03968253968253968,
+          "relevance_grade": 2
+        },
+        {
+          "standard_id": "IS-DEMO-011",
+          "retrieval_score": 0.029910714285714284,
+          "reranker_score": -4.391332149505615,
+          "rank_fusion_score": 0.0390625,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-027",
+          "retrieval_score": 0.027212143650499815,
+          "reranker_score": -6.720943450927734,
+          "rank_fusion_score": 0.03642590286425903,
+          "relevance_grade": 0
+        }
+      ],
+      "semantic_fusion_2": [
+        {
+          "standard_id": "IS-DEMO-005",
+          "retrieval_score": 0.7917252779006958,
+          "reranker_score": 7.399229049682617,
+          "rank_fusion_score": 0.04918032786885246,
+          "relevance_grade": 3
+        },
+        {
+          "standard_id": "IS-DEMO-023",
+          "retrieval_score": 0.7501343488693237,
+          "reranker_score": 6.575531005859375,
+          "rank_fusion_score": 0.04838709677419355,
+          "relevance_grade": 2
+        },
+        {
+          "standard_id": "IS-DEMO-024",
+          "retrieval_score": 0.7447876334190369,
+          "reranker_score": 2.257563591003418,
+          "rank_fusion_score": 0.047619047619047616,
+          "relevance_grade": 2
+        },
+        {
+          "standard_id": "IS-DEMO-001",
+          "retrieval_score": 0.6367887258529663,
+          "reranker_score": -4.717201232910156,
+          "rank_fusion_score": 0.04592074592074592,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-011",
+          "retrieval_score": 0.6157437562942505,
+          "reranker_score": -4.391332149505615,
+          "rank_fusion_score": 0.045535714285714284,
+          "relevance_grade": 0
+        }
+      ],
+      "hybrid_fusion_2": [
+        {
+          "standard_id": "IS-DEMO-005",
+          "retrieval_score": 0.03278688524590164,
+          "reranker_score": 7.399229049682617,
+          "rank_fusion_score": 0.04918032786885246,
+          "relevance_grade": 3
+        },
+        {
+          "standard_id": "IS-DEMO-023",
+          "retrieval_score": 0.03225806451612903,
+          "reranker_score": 6.575531005859375,
+          "rank_fusion_score": 0.04838709677419355,
+          "relevance_grade": 2
+        },
+        {
+          "standard_id": "IS-DEMO-024",
+          "retrieval_score": 0.031746031746031744,
+          "reranker_score": 2.257563591003418,
+          "rank_fusion_score": 0.047619047619047616,
+          "relevance_grade": 2
+        },
+        {
+          "standard_id": "IS-DEMO-011",
+          "retrieval_score": 0.029910714285714284,
+          "reranker_score": -4.391332149505615,
+          "rank_fusion_score": 0.046875,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-001",
+          "retrieval_score": 0.015151515151515152,
+          "reranker_score": -4.717201232910156,
+          "rank_fusion_score": 0.04410256410256411,
+          "relevance_grade": 0
+        }
+      ]
+    },
+    "metrics_by_system": {
+      "semantic": {
+        "recall@1": 0.3333333333333333,
+        "recall@3": 1.0,
+        "recall@5": 1.0,
+        "precision@5": 0.6,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      "semantic_rerank": {
+        "recall@1": 0.3333333333333333,
+        "recall@3": 1.0,
+        "recall@5": 1.0,
+        "precision@5": 0.6,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      "hybrid_rerank": {
+        "recall@1": 0.3333333333333333,
+        "recall@3": 1.0,
+        "recall@5": 1.0,
+        "precision@5": 0.6,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      "hybrid": {
+        "recall@1": 0.3333333333333333,
+        "recall@3": 1.0,
+        "recall@5": 1.0,
+        "precision@5": 0.6,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      "semantic_fusion_0.5": {
+        "recall@1": 0.3333333333333333,
+        "recall@3": 1.0,
+        "recall@5": 1.0,
+        "precision@5": 0.6,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      "hybrid_fusion_0.5": {
+        "recall@1": 0.3333333333333333,
+        "recall@3": 1.0,
+        "recall@5": 1.0,
+        "precision@5": 0.6,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      "semantic_fusion_1": {
+        "recall@1": 0.3333333333333333,
+        "recall@3": 1.0,
+        "recall@5": 1.0,
+        "precision@5": 0.6,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      "hybrid_fusion_1": {
+        "recall@1": 0.3333333333333333,
+        "recall@3": 1.0,
+        "recall@5": 1.0,
+        "precision@5": 0.6,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      "semantic_fusion_1.5": {
+        "recall@1": 0.3333333333333333,
+        "recall@3": 1.0,
+        "recall@5": 1.0,
+        "precision@5": 0.6,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      "hybrid_fusion_1.5": {
+        "recall@1": 0.3333333333333333,
+        "recall@3": 1.0,
+        "recall@5": 1.0,
+        "precision@5": 0.6,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      "semantic_fusion_2": {
+        "recall@1": 0.3333333333333333,
+        "recall@3": 1.0,
+        "recall@5": 1.0,
+        "precision@5": 0.6,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      },
+      "hybrid_fusion_2": {
+        "recall@1": 0.3333333333333333,
+        "recall@3": 1.0,
+        "recall@5": 1.0,
+        "precision@5": 0.6,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      }
+    }
+  },
+  {
+    "query_id": "Q083",
+    "query": "transformer procurement and acceptance testing",
+    "relevance": {
+      "IS-DEMO-001": 3,
+      "IS-DEMO-011": 2,
+      "IS-DEMO-015": 2,
+      "IS-DEMO-012": 1
+    },
+    "top5_by_system": {
+      "semantic": [
+        {
+          "standard_id": "IS-DEMO-015",
+          "retrieval_score": 0.7196377515792847,
+          "reranker_score": null,
+          "relevance_grade": 2
+        },
+        {
+          "standard_id": "IS-DEMO-013",
+          "retrieval_score": 0.6745232343673706,
+          "reranker_score": null,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-001",
+          "retrieval_score": 0.6522312164306641,
+          "reranker_score": null,
+          "relevance_grade": 3
+        },
+        {
+          "standard_id": "IS-DEMO-016",
+          "retrieval_score": 0.6487189531326294,
+          "reranker_score": null,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-011",
+          "retrieval_score": 0.6470023393630981,
+          "reranker_score": null,
+          "relevance_grade": 2
+        }
+      ],
+      "semantic_rerank": [
+        {
+          "standard_id": "IS-DEMO-015",
+          "retrieval_score": 0.7196377515792847,
+          "reranker_score": 1.1333812475204468,
+          "relevance_grade": 2
+        },
+        {
+          "standard_id": "IS-DEMO-016",
+          "retrieval_score": 0.6487189531326294,
+          "reranker_score": -6.739801406860352,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-014",
+          "retrieval_score": 0.6220502853393555,
+          "reranker_score": -7.686525344848633,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-013",
+          "retrieval_score": 0.6745232343673706,
+          "reranker_score": -8.732681274414062,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-001",
+          "retrieval_score": 0.6522312164306641,
+          "reranker_score": -9.46120834350586,
+          "relevance_grade": 3
+        }
+      ],
+      "hybrid_rerank": [
+        {
+          "standard_id": "IS-DEMO-015",
+          "retrieval_score": 0.03278688524590164,
+          "reranker_score": 1.1333812475204468,
+          "relevance_grade": 2
+        },
+        {
+          "standard_id": "IS-DEMO-016",
+          "retrieval_score": 0.031754032258064516,
+          "reranker_score": -6.739801406860352,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-014",
+          "retrieval_score": 0.031024531024531024,
+          "reranker_score": -7.686525344848633,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-013",
+          "retrieval_score": 0.0315136476426799,
+          "reranker_score": -8.732681274414062,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-001",
+          "retrieval_score": 0.029957522915269395,
+          "reranker_score": -9.46120834350586,
+          "relevance_grade": 3
+        }
+      ],
+      "hybrid": [
+        {
+          "standard_id": "IS-DEMO-015",
+          "retrieval_score": 0.03278688524590164,
+          "reranker_score": null,
+          "relevance_grade": 2
+        },
+        {
+          "standard_id": "IS-DEMO-016",
+          "retrieval_score": 0.031754032258064516,
+          "reranker_score": null,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-013",
+          "retrieval_score": 0.0315136476426799,
+          "reranker_score": null,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-014",
+          "retrieval_score": 0.031024531024531024,
+          "reranker_score": null,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-001",
+          "retrieval_score": 0.029957522915269395,
+          "reranker_score": null,
+          "relevance_grade": 3
+        }
+      ],
+      "semantic_fusion_0.5": [
+        {
+          "standard_id": "IS-DEMO-015",
+          "retrieval_score": 0.7196377515792847,
+          "reranker_score": 1.1333812475204468,
+          "rank_fusion_score": 0.02459016393442623,
+          "relevance_grade": 2
+        },
+        {
+          "standard_id": "IS-DEMO-013",
+          "retrieval_score": 0.6745232343673706,
+          "reranker_score": -8.732681274414062,
+          "rank_fusion_score": 0.023941532258064516,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-016",
+          "retrieval_score": 0.6487189531326294,
+          "reranker_score": -6.739801406860352,
+          "rank_fusion_score": 0.023689516129032258,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-001",
+          "retrieval_score": 0.6522312164306641,
+          "reranker_score": -9.46120834350586,
+          "rank_fusion_score": 0.023565323565323565,
+          "relevance_grade": 3
+        },
+        {
+          "standard_id": "IS-DEMO-014",
+          "retrieval_score": 0.6220502853393555,
+          "reranker_score": -7.686525344848633,
+          "rank_fusion_score": 0.023088023088023088,
+          "relevance_grade": 0
+        }
+      ],
+      "hybrid_fusion_0.5": [
+        {
+          "standard_id": "IS-DEMO-015",
+          "retrieval_score": 0.03278688524590164,
+          "reranker_score": 1.1333812475204468,
+          "rank_fusion_score": 0.02459016393442623,
+          "relevance_grade": 2
+        },
+        {
+          "standard_id": "IS-DEMO-016",
+          "retrieval_score": 0.031754032258064516,
+          "reranker_score": -6.739801406860352,
+          "rank_fusion_score": 0.024193548387096774,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-013",
+          "retrieval_score": 0.0315136476426799,
+          "reranker_score": -8.732681274414062,
+          "rank_fusion_score": 0.023685515873015872,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-014",
+          "retrieval_score": 0.031024531024531024,
+          "reranker_score": -7.686525344848633,
+          "rank_fusion_score": 0.023561507936507936,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-001",
+          "retrieval_score": 0.029957522915269395,
+          "reranker_score": -9.46120834350586,
+          "rank_fusion_score": 0.023076923076923078,
+          "relevance_grade": 3
+        }
+      ],
+      "semantic_fusion_1": [
+        {
+          "standard_id": "IS-DEMO-015",
+          "retrieval_score": 0.7196377515792847,
+          "reranker_score": 1.1333812475204468,
+          "rank_fusion_score": 0.03278688524590164,
+          "relevance_grade": 2
+        },
+        {
+          "standard_id": "IS-DEMO-013",
+          "retrieval_score": 0.6745232343673706,
+          "reranker_score": -8.732681274414062,
+          "rank_fusion_score": 0.031754032258064516,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-016",
+          "retrieval_score": 0.6487189531326294,
+          "reranker_score": -6.739801406860352,
+          "rank_fusion_score": 0.031754032258064516,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-001",
+          "retrieval_score": 0.6522312164306641,
+          "reranker_score": -9.46120834350586,
+          "rank_fusion_score": 0.03125763125763126,
+          "relevance_grade": 3
+        },
+        {
+          "standard_id": "IS-DEMO-014",
+          "retrieval_score": 0.6220502853393555,
+          "reranker_score": -7.686525344848633,
+          "rank_fusion_score": 0.031024531024531024,
+          "relevance_grade": 0
+        }
+      ],
+      "hybrid_fusion_1": [
+        {
+          "standard_id": "IS-DEMO-015",
+          "retrieval_score": 0.03278688524590164,
+          "reranker_score": 1.1333812475204468,
+          "rank_fusion_score": 0.03278688524590164,
+          "relevance_grade": 2
+        },
+        {
+          "standard_id": "IS-DEMO-016",
+          "retrieval_score": 0.031754032258064516,
+          "reranker_score": -6.739801406860352,
+          "rank_fusion_score": 0.03225806451612903,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-013",
+          "retrieval_score": 0.0315136476426799,
+          "reranker_score": -8.732681274414062,
+          "rank_fusion_score": 0.03149801587301587,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-014",
+          "retrieval_score": 0.031024531024531024,
+          "reranker_score": -7.686525344848633,
+          "rank_fusion_score": 0.03149801587301587,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-001",
+          "retrieval_score": 0.029957522915269395,
+          "reranker_score": -9.46120834350586,
+          "rank_fusion_score": 0.03076923076923077,
+          "relevance_grade": 3
+        }
+      ],
+      "semantic_fusion_1.5": [
+        {
+          "standard_id": "IS-DEMO-015",
+          "retrieval_score": 0.7196377515792847,
+          "reranker_score": 1.1333812475204468,
+          "rank_fusion_score": 0.04098360655737705,
+          "relevance_grade": 2
+        },
+        {
+          "standard_id": "IS-DEMO-016",
+          "retrieval_score": 0.6487189531326294,
+          "reranker_score": -6.739801406860352,
+          "rank_fusion_score": 0.039818548387096774,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-013",
+          "retrieval_score": 0.6745232343673706,
+          "reranker_score": -8.732681274414062,
+          "rank_fusion_score": 0.039566532258064516,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-014",
+          "retrieval_score": 0.6220502853393555,
+          "reranker_score": -7.686525344848633,
+          "rank_fusion_score": 0.03896103896103896,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-001",
+          "retrieval_score": 0.6522312164306641,
+          "reranker_score": -9.46120834350586,
+          "rank_fusion_score": 0.03894993894993895,
+          "relevance_grade": 3
+        }
+      ],
+      "hybrid_fusion_1.5": [
+        {
+          "standard_id": "IS-DEMO-015",
+          "retrieval_score": 0.03278688524590164,
+          "reranker_score": 1.1333812475204468,
+          "rank_fusion_score": 0.04098360655737705,
+          "relevance_grade": 2
+        },
+        {
+          "standard_id": "IS-DEMO-016",
+          "retrieval_score": 0.031754032258064516,
+          "reranker_score": -6.739801406860352,
+          "rank_fusion_score": 0.04032258064516129,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-014",
+          "retrieval_score": 0.031024531024531024,
+          "reranker_score": -7.686525344848633,
+          "rank_fusion_score": 0.03943452380952381,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-013",
+          "retrieval_score": 0.0315136476426799,
+          "reranker_score": -8.732681274414062,
+          "rank_fusion_score": 0.03931051587301587,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-001",
+          "retrieval_score": 0.029957522915269395,
+          "reranker_score": -9.46120834350586,
+          "rank_fusion_score": 0.038461538461538464,
+          "relevance_grade": 3
+        }
+      ],
+      "semantic_fusion_2": [
+        {
+          "standard_id": "IS-DEMO-015",
+          "retrieval_score": 0.7196377515792847,
+          "reranker_score": 1.1333812475204468,
+          "rank_fusion_score": 0.04918032786885246,
+          "relevance_grade": 2
+        },
+        {
+          "standard_id": "IS-DEMO-016",
+          "retrieval_score": 0.6487189531326294,
+          "reranker_score": -6.739801406860352,
+          "rank_fusion_score": 0.04788306451612903,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-013",
+          "retrieval_score": 0.6745232343673706,
+          "reranker_score": -8.732681274414062,
+          "rank_fusion_score": 0.047379032258064516,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-014",
+          "retrieval_score": 0.6220502853393555,
+          "reranker_score": -7.686525344848633,
+          "rank_fusion_score": 0.046897546897546896,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-001",
+          "retrieval_score": 0.6522312164306641,
+          "reranker_score": -9.46120834350586,
+          "rank_fusion_score": 0.04664224664224664,
+          "relevance_grade": 3
+        }
+      ],
+      "hybrid_fusion_2": [
+        {
+          "standard_id": "IS-DEMO-015",
+          "retrieval_score": 0.03278688524590164,
+          "reranker_score": 1.1333812475204468,
+          "rank_fusion_score": 0.04918032786885246,
+          "relevance_grade": 2
+        },
+        {
+          "standard_id": "IS-DEMO-016",
+          "retrieval_score": 0.031754032258064516,
+          "reranker_score": -6.739801406860352,
+          "rank_fusion_score": 0.04838709677419355,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-014",
+          "retrieval_score": 0.031024531024531024,
+          "reranker_score": -7.686525344848633,
+          "rank_fusion_score": 0.047371031746031744,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-013",
+          "retrieval_score": 0.0315136476426799,
+          "reranker_score": -8.732681274414062,
+          "rank_fusion_score": 0.04712301587301587,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-001",
+          "retrieval_score": 0.029957522915269395,
+          "reranker_score": -9.46120834350586,
+          "rank_fusion_score": 0.046153846153846156,
+          "relevance_grade": 3
+        }
+      ]
+    },
+    "metrics_by_system": {
+      "semantic": {
+        "recall@1": 0.3333333333333333,
+        "recall@3": 0.6666666666666666,
+        "recall@5": 1.0,
+        "precision@5": 0.6,
+        "mrr": 1.0,
+        "ndcg@5": 0.7077731430912036
+      },
+      "semantic_rerank": {
+        "recall@1": 0.3333333333333333,
+        "recall@3": 0.3333333333333333,
+        "recall@5": 0.6666666666666666,
+        "precision@5": 0.4,
+        "mrr": 1.0,
+        "ndcg@5": 0.5273698597295601
+      },
+      "hybrid_rerank": {
+        "recall@1": 0.3333333333333333,
+        "recall@3": 0.3333333333333333,
+        "recall@5": 0.6666666666666666,
+        "precision@5": 0.4,
+        "mrr": 1.0,
+        "ndcg@5": 0.5273698597295601
+      },
+      "hybrid": {
+        "recall@1": 0.3333333333333333,
+        "recall@3": 0.3333333333333333,
+        "recall@5": 0.6666666666666666,
+        "precision@5": 0.4,
+        "mrr": 1.0,
+        "ndcg@5": 0.5273698597295601
+      },
+      "semantic_fusion_0.5": {
+        "recall@1": 0.3333333333333333,
+        "recall@3": 0.3333333333333333,
+        "recall@5": 0.6666666666666666,
+        "precision@5": 0.4,
+        "mrr": 1.0,
+        "ndcg@5": 0.5557125607652545
+      },
+      "hybrid_fusion_0.5": {
+        "recall@1": 0.3333333333333333,
+        "recall@3": 0.3333333333333333,
+        "recall@5": 0.6666666666666666,
+        "precision@5": 0.4,
+        "mrr": 1.0,
+        "ndcg@5": 0.5273698597295601
+      },
+      "semantic_fusion_1": {
+        "recall@1": 0.3333333333333333,
+        "recall@3": 0.3333333333333333,
+        "recall@5": 0.6666666666666666,
+        "precision@5": 0.4,
+        "mrr": 1.0,
+        "ndcg@5": 0.5557125607652545
+      },
+      "hybrid_fusion_1": {
+        "recall@1": 0.3333333333333333,
+        "recall@3": 0.3333333333333333,
+        "recall@5": 0.6666666666666666,
+        "precision@5": 0.4,
+        "mrr": 1.0,
+        "ndcg@5": 0.5273698597295601
+      },
+      "semantic_fusion_1.5": {
+        "recall@1": 0.3333333333333333,
+        "recall@3": 0.3333333333333333,
+        "recall@5": 0.6666666666666666,
+        "precision@5": 0.4,
+        "mrr": 1.0,
+        "ndcg@5": 0.5273698597295601
+      },
+      "hybrid_fusion_1.5": {
+        "recall@1": 0.3333333333333333,
+        "recall@3": 0.3333333333333333,
+        "recall@5": 0.6666666666666666,
+        "precision@5": 0.4,
+        "mrr": 1.0,
+        "ndcg@5": 0.5273698597295601
+      },
+      "semantic_fusion_2": {
+        "recall@1": 0.3333333333333333,
+        "recall@3": 0.3333333333333333,
+        "recall@5": 0.6666666666666666,
+        "precision@5": 0.4,
+        "mrr": 1.0,
+        "ndcg@5": 0.5273698597295601
+      },
+      "hybrid_fusion_2": {
+        "recall@1": 0.3333333333333333,
+        "recall@3": 0.3333333333333333,
+        "recall@5": 0.6666666666666666,
+        "precision@5": 0.4,
+        "mrr": 1.0,
+        "ndcg@5": 0.5273698597295601
+      }
+    }
+  },
+  {
+    "query_id": "Q084",
+    "query": "worker protection on a construction site",
+    "relevance": {
+      "IS-DEMO-004": 3,
+      "IS-DEMO-031": 2,
+      "IS-DEMO-036": 1
+    },
+    "top5_by_system": {
+      "semantic": [
+        {
+          "standard_id": "IS-DEMO-004",
+          "retrieval_score": 0.7331098318099976,
+          "reranker_score": null,
+          "relevance_grade": 3
+        },
+        {
+          "standard_id": "IS-DEMO-031",
+          "retrieval_score": 0.695215106010437,
+          "reranker_score": null,
+          "relevance_grade": 2
+        },
+        {
+          "standard_id": "IS-DEMO-022",
+          "retrieval_score": 0.6360069513320923,
+          "reranker_score": null,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-025",
+          "retrieval_score": 0.6232205629348755,
+          "reranker_score": null,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-021",
+          "retrieval_score": 0.609634518623352,
+          "reranker_score": null,
+          "relevance_grade": 0
+        }
+      ],
+      "semantic_rerank": [
+        {
+          "standard_id": "IS-DEMO-004",
+          "retrieval_score": 0.7331098318099976,
+          "reranker_score": 4.056022644042969,
+          "relevance_grade": 3
+        },
+        {
+          "standard_id": "IS-DEMO-031",
+          "retrieval_score": 0.695215106010437,
+          "reranker_score": -2.9529552459716797,
+          "relevance_grade": 2
+        },
+        {
+          "standard_id": "IS-DEMO-025",
+          "retrieval_score": 0.6232205629348755,
+          "reranker_score": -5.840269565582275,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-036",
+          "retrieval_score": 0.5918489098548889,
+          "reranker_score": -6.055668830871582,
+          "relevance_grade": 1
+        },
+        {
+          "standard_id": "IS-DEMO-022",
+          "retrieval_score": 0.6360069513320923,
+          "reranker_score": -8.26698112487793,
+          "relevance_grade": 0
+        }
+      ],
+      "hybrid_rerank": [
+        {
+          "standard_id": "IS-DEMO-004",
+          "retrieval_score": 0.03278688524590164,
+          "reranker_score": 4.056022644042969,
+          "relevance_grade": 3
+        },
+        {
+          "standard_id": "IS-DEMO-031",
+          "retrieval_score": 0.03021353930031804,
+          "reranker_score": -2.9529552459716797,
+          "relevance_grade": 2
+        },
+        {
+          "standard_id": "IS-DEMO-025",
+          "retrieval_score": 0.029910714285714284,
+          "reranker_score": -5.840269565582275,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-036",
+          "retrieval_score": 0.014925373134328358,
+          "reranker_score": -6.055668830871582,
+          "relevance_grade": 1
+        },
+        {
+          "standard_id": "IS-DEMO-022",
+          "retrieval_score": 0.03125763125763126,
+          "reranker_score": -8.26698112487793,
+          "relevance_grade": 0
+        }
+      ],
+      "hybrid": [
+        {
+          "standard_id": "IS-DEMO-004",
+          "retrieval_score": 0.03278688524590164,
+          "reranker_score": null,
+          "relevance_grade": 3
+        },
+        {
+          "standard_id": "IS-DEMO-022",
+          "retrieval_score": 0.03125763125763126,
+          "reranker_score": null,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-002",
+          "retrieval_score": 0.030834914611005692,
+          "reranker_score": null,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-031",
+          "retrieval_score": 0.03021353930031804,
+          "reranker_score": null,
+          "relevance_grade": 2
+        },
+        {
+          "standard_id": "IS-DEMO-025",
+          "retrieval_score": 0.029910714285714284,
+          "reranker_score": null,
+          "relevance_grade": 0
+        }
+      ],
+      "semantic_fusion_0.5": [
+        {
+          "standard_id": "IS-DEMO-004",
+          "retrieval_score": 0.7331098318099976,
+          "reranker_score": 4.056022644042969,
+          "rank_fusion_score": 0.02459016393442623,
+          "relevance_grade": 3
+        },
+        {
+          "standard_id": "IS-DEMO-031",
+          "retrieval_score": 0.695215106010437,
+          "reranker_score": -2.9529552459716797,
+          "rank_fusion_score": 0.024193548387096774,
+          "relevance_grade": 2
+        },
+        {
+          "standard_id": "IS-DEMO-022",
+          "retrieval_score": 0.6360069513320923,
+          "reranker_score": -8.26698112487793,
+          "rank_fusion_score": 0.023565323565323565,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-025",
+          "retrieval_score": 0.6232205629348755,
+          "reranker_score": -5.840269565582275,
+          "rank_fusion_score": 0.023561507936507936,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-036",
+          "retrieval_score": 0.5918489098548889,
+          "reranker_score": -6.055668830871582,
+          "rank_fusion_score": 0.02273787313432836,
+          "relevance_grade": 1
+        }
+      ],
+      "hybrid_fusion_0.5": [
+        {
+          "standard_id": "IS-DEMO-004",
+          "retrieval_score": 0.03278688524590164,
+          "reranker_score": 4.056022644042969,
+          "rank_fusion_score": 0.02459016393442623,
+          "relevance_grade": 3
+        },
+        {
+          "standard_id": "IS-DEMO-022",
+          "retrieval_score": 0.03125763125763126,
+          "reranker_score": -8.26698112487793,
+          "rank_fusion_score": 0.02382133995037221,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-031",
+          "retrieval_score": 0.03021353930031804,
+          "reranker_score": -2.9529552459716797,
+          "rank_fusion_score": 0.023689516129032258,
+          "relevance_grade": 2
+        },
+        {
+          "standard_id": "IS-DEMO-002",
+          "retrieval_score": 0.030834914611005692,
+          "reranker_score": -10.40885066986084,
+          "rank_fusion_score": 0.023335702440180052,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-025",
+          "retrieval_score": 0.029910714285714284,
+          "reranker_score": -5.840269565582275,
+          "rank_fusion_score": 0.02332112332112332,
+          "relevance_grade": 0
+        }
+      ],
+      "semantic_fusion_1": [
+        {
+          "standard_id": "IS-DEMO-004",
+          "retrieval_score": 0.7331098318099976,
+          "reranker_score": 4.056022644042969,
+          "rank_fusion_score": 0.03278688524590164,
+          "relevance_grade": 3
+        },
+        {
+          "standard_id": "IS-DEMO-031",
+          "retrieval_score": 0.695215106010437,
+          "reranker_score": -2.9529552459716797,
+          "rank_fusion_score": 0.03225806451612903,
+          "relevance_grade": 2
+        },
+        {
+          "standard_id": "IS-DEMO-025",
+          "retrieval_score": 0.6232205629348755,
+          "reranker_score": -5.840269565582275,
+          "rank_fusion_score": 0.03149801587301587,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-022",
+          "retrieval_score": 0.6360069513320923,
+          "reranker_score": -8.26698112487793,
+          "rank_fusion_score": 0.03125763125763126,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-036",
+          "retrieval_score": 0.5918489098548889,
+          "reranker_score": -6.055668830871582,
+          "rank_fusion_score": 0.03055037313432836,
+          "relevance_grade": 1
+        }
+      ],
+      "hybrid_fusion_1": [
+        {
+          "standard_id": "IS-DEMO-004",
+          "retrieval_score": 0.03278688524590164,
+          "reranker_score": 4.056022644042969,
+          "rank_fusion_score": 0.03278688524590164,
+          "relevance_grade": 3
+        },
+        {
+          "standard_id": "IS-DEMO-031",
+          "retrieval_score": 0.03021353930031804,
+          "reranker_score": -2.9529552459716797,
+          "rank_fusion_score": 0.031754032258064516,
+          "relevance_grade": 2
+        },
+        {
+          "standard_id": "IS-DEMO-022",
+          "retrieval_score": 0.03125763125763126,
+          "reranker_score": -8.26698112487793,
+          "rank_fusion_score": 0.0315136476426799,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-025",
+          "retrieval_score": 0.029910714285714284,
+          "reranker_score": -5.840269565582275,
+          "rank_fusion_score": 0.03125763125763126,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-002",
+          "retrieval_score": 0.030834914611005692,
+          "reranker_score": -10.40885066986084,
+          "rank_fusion_score": 0.030798389007344232,
+          "relevance_grade": 0
+        }
+      ],
+      "semantic_fusion_1.5": [
+        {
+          "standard_id": "IS-DEMO-004",
+          "retrieval_score": 0.7331098318099976,
+          "reranker_score": 4.056022644042969,
+          "rank_fusion_score": 0.04098360655737705,
+          "relevance_grade": 3
+        },
+        {
+          "standard_id": "IS-DEMO-031",
+          "retrieval_score": 0.695215106010437,
+          "reranker_score": -2.9529552459716797,
+          "rank_fusion_score": 0.04032258064516129,
+          "relevance_grade": 2
+        },
+        {
+          "standard_id": "IS-DEMO-025",
+          "retrieval_score": 0.6232205629348755,
+          "reranker_score": -5.840269565582275,
+          "rank_fusion_score": 0.03943452380952381,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-022",
+          "retrieval_score": 0.6360069513320923,
+          "reranker_score": -8.26698112487793,
+          "rank_fusion_score": 0.03894993894993895,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-036",
+          "retrieval_score": 0.5918489098548889,
+          "reranker_score": -6.055668830871582,
+          "rank_fusion_score": 0.03836287313432836,
+          "relevance_grade": 1
+        }
+      ],
+      "hybrid_fusion_1.5": [
+        {
+          "standard_id": "IS-DEMO-004",
+          "retrieval_score": 0.03278688524590164,
+          "reranker_score": 4.056022644042969,
+          "rank_fusion_score": 0.04098360655737705,
+          "relevance_grade": 3
+        },
+        {
+          "standard_id": "IS-DEMO-031",
+          "retrieval_score": 0.03021353930031804,
+          "reranker_score": -2.9529552459716797,
+          "rank_fusion_score": 0.039818548387096774,
+          "relevance_grade": 2
+        },
+        {
+          "standard_id": "IS-DEMO-022",
+          "retrieval_score": 0.03125763125763126,
+          "reranker_score": -8.26698112487793,
+          "rank_fusion_score": 0.039205955334987594,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-025",
+          "retrieval_score": 0.029910714285714284,
+          "reranker_score": -5.840269565582275,
+          "rank_fusion_score": 0.039194139194139194,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-002",
+          "retrieval_score": 0.030834914611005692,
+          "reranker_score": -10.40885066986084,
+          "rank_fusion_score": 0.038261075574508405,
+          "relevance_grade": 0
+        }
+      ],
+      "semantic_fusion_2": [
+        {
+          "standard_id": "IS-DEMO-004",
+          "retrieval_score": 0.7331098318099976,
+          "reranker_score": 4.056022644042969,
+          "rank_fusion_score": 0.04918032786885246,
+          "relevance_grade": 3
+        },
+        {
+          "standard_id": "IS-DEMO-031",
+          "retrieval_score": 0.695215106010437,
+          "reranker_score": -2.9529552459716797,
+          "rank_fusion_score": 0.04838709677419355,
+          "relevance_grade": 2
+        },
+        {
+          "standard_id": "IS-DEMO-025",
+          "retrieval_score": 0.6232205629348755,
+          "reranker_score": -5.840269565582275,
+          "rank_fusion_score": 0.047371031746031744,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-022",
+          "retrieval_score": 0.6360069513320923,
+          "reranker_score": -8.26698112487793,
+          "rank_fusion_score": 0.04664224664224664,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-036",
+          "retrieval_score": 0.5918489098548889,
+          "reranker_score": -6.055668830871582,
+          "rank_fusion_score": 0.04617537313432836,
+          "relevance_grade": 1
+        }
+      ],
+      "hybrid_fusion_2": [
+        {
+          "standard_id": "IS-DEMO-004",
+          "retrieval_score": 0.03278688524590164,
+          "reranker_score": 4.056022644042969,
+          "rank_fusion_score": 0.04918032786885246,
+          "relevance_grade": 3
+        },
+        {
+          "standard_id": "IS-DEMO-031",
+          "retrieval_score": 0.03021353930031804,
+          "reranker_score": -2.9529552459716797,
+          "rank_fusion_score": 0.04788306451612903,
+          "relevance_grade": 2
+        },
+        {
+          "standard_id": "IS-DEMO-025",
+          "retrieval_score": 0.029910714285714284,
+          "reranker_score": -5.840269565582275,
+          "rank_fusion_score": 0.04713064713064713,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-022",
+          "retrieval_score": 0.03125763125763126,
+          "reranker_score": -8.26698112487793,
+          "rank_fusion_score": 0.04689826302729529,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-002",
+          "retrieval_score": 0.030834914611005692,
+          "reranker_score": -10.40885066986084,
+          "rank_fusion_score": 0.04572376214167259,
+          "relevance_grade": 0
+        }
+      ]
+    },
+    "metrics_by_system": {
+      "semantic": {
+        "recall@1": 0.5,
+        "recall@3": 1.0,
+        "recall@5": 1.0,
+        "precision@5": 0.4,
+        "mrr": 1.0,
+        "ndcg@5": 0.9467676761267002
+      },
+      "semantic_rerank": {
+        "recall@1": 0.5,
+        "recall@3": 1.0,
+        "recall@5": 1.0,
+        "precision@5": 0.4,
+        "mrr": 1.0,
+        "ndcg@5": 0.992619504174702
+      },
+      "hybrid_rerank": {
+        "recall@1": 0.5,
+        "recall@3": 1.0,
+        "recall@5": 1.0,
+        "precision@5": 0.4,
+        "mrr": 1.0,
+        "ndcg@5": 0.992619504174702
+      },
+      "hybrid": {
+        "recall@1": 0.5,
+        "recall@3": 0.5,
+        "recall@5": 1.0,
+        "precision@5": 0.4,
+        "mrr": 1.0,
+        "ndcg@5": 0.882808018370203
+      },
+      "semantic_fusion_0.5": {
+        "recall@1": 0.5,
+        "recall@3": 1.0,
+        "recall@5": 1.0,
+        "precision@5": 0.4,
+        "mrr": 1.0,
+        "ndcg@5": 0.9879538239787089
+      },
+      "hybrid_fusion_0.5": {
+        "recall@1": 0.5,
+        "recall@3": 1.0,
+        "recall@5": 1.0,
+        "precision@5": 0.4,
+        "mrr": 1.0,
+        "ndcg@5": 0.9049495058460971
+      },
+      "semantic_fusion_1": {
+        "recall@1": 0.5,
+        "recall@3": 1.0,
+        "recall@5": 1.0,
+        "precision@5": 0.4,
+        "mrr": 1.0,
+        "ndcg@5": 0.9879538239787089
+      },
+      "hybrid_fusion_1": {
+        "recall@1": 0.5,
+        "recall@3": 1.0,
+        "recall@5": 1.0,
+        "precision@5": 0.4,
+        "mrr": 1.0,
+        "ndcg@5": 0.9467676761267002
+      },
+      "semantic_fusion_1.5": {
+        "recall@1": 0.5,
+        "recall@3": 1.0,
+        "recall@5": 1.0,
+        "precision@5": 0.4,
+        "mrr": 1.0,
+        "ndcg@5": 0.9879538239787089
+      },
+      "hybrid_fusion_1.5": {
+        "recall@1": 0.5,
+        "recall@3": 1.0,
+        "recall@5": 1.0,
+        "precision@5": 0.4,
+        "mrr": 1.0,
+        "ndcg@5": 0.9467676761267002
+      },
+      "semantic_fusion_2": {
+        "recall@1": 0.5,
+        "recall@3": 1.0,
+        "recall@5": 1.0,
+        "precision@5": 0.4,
+        "mrr": 1.0,
+        "ndcg@5": 0.9879538239787089
+      },
+      "hybrid_fusion_2": {
+        "recall@1": 0.5,
+        "recall@3": 1.0,
+        "recall@5": 1.0,
+        "precision@5": 0.4,
+        "mrr": 1.0,
+        "ndcg@5": 0.9467676761267002
+      }
+    }
+  },
+  {
+    "query_id": "Q085",
+    "query": "water distribution infrastructure",
+    "relevance": {
+      "IS-DEMO-010": 3,
+      "IS-DEMO-032": 2,
+      "IS-DEMO-033": 2,
+      "IS-DEMO-008": 2,
+      "IS-DEMO-034": 1
+    },
+    "top5_by_system": {
+      "semantic": [
+        {
+          "standard_id": "IS-DEMO-033",
+          "retrieval_score": 0.6815420389175415,
+          "reranker_score": null,
+          "relevance_grade": 2
+        },
+        {
+          "standard_id": "IS-DEMO-001",
+          "retrieval_score": 0.6736931204795837,
+          "reranker_score": null,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-008",
+          "retrieval_score": 0.6671324968338013,
+          "reranker_score": null,
+          "relevance_grade": 2
+        },
+        {
+          "standard_id": "IS-DEMO-032",
+          "retrieval_score": 0.6658991575241089,
+          "reranker_score": null,
+          "relevance_grade": 2
+        },
+        {
+          "standard_id": "IS-DEMO-034",
+          "retrieval_score": 0.6617365479469299,
+          "reranker_score": null,
+          "relevance_grade": 1
+        }
+      ],
+      "semantic_rerank": [
+        {
+          "standard_id": "IS-DEMO-033",
+          "retrieval_score": 0.6815420389175415,
+          "reranker_score": -4.875880718231201,
+          "relevance_grade": 2
+        },
+        {
+          "standard_id": "IS-DEMO-001",
+          "retrieval_score": 0.6736931204795837,
+          "reranker_score": -5.567234039306641,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-010",
+          "retrieval_score": 0.6601451635360718,
+          "reranker_score": -6.126003265380859,
+          "relevance_grade": 3
+        },
+        {
+          "standard_id": "IS-DEMO-008",
+          "retrieval_score": 0.6671324968338013,
+          "reranker_score": -6.321231365203857,
+          "relevance_grade": 2
+        },
+        {
+          "standard_id": "IS-DEMO-034",
+          "retrieval_score": 0.6617365479469299,
+          "reranker_score": -6.610339164733887,
+          "relevance_grade": 1
+        }
+      ],
+      "hybrid_rerank": [
+        {
+          "standard_id": "IS-DEMO-033",
+          "retrieval_score": 0.03047794966520434,
+          "reranker_score": -4.875880718231201,
+          "relevance_grade": 2
+        },
+        {
+          "standard_id": "IS-DEMO-001",
+          "retrieval_score": 0.03252247488101534,
+          "reranker_score": -5.567234039306641,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-010",
+          "retrieval_score": 0.02964426877470356,
+          "reranker_score": -6.126003265380859,
+          "relevance_grade": 3
+        },
+        {
+          "standard_id": "IS-DEMO-008",
+          "retrieval_score": 0.030158730158730156,
+          "reranker_score": -6.321231365203857,
+          "relevance_grade": 2
+        },
+        {
+          "standard_id": "IS-DEMO-034",
+          "retrieval_score": 0.030309988518943745,
+          "reranker_score": -6.610339164733887,
+          "relevance_grade": 1
+        }
+      ],
+      "hybrid": [
+        {
+          "standard_id": "IS-DEMO-001",
+          "retrieval_score": 0.03252247488101534,
+          "reranker_score": null,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-033",
+          "retrieval_score": 0.03047794966520434,
+          "reranker_score": null,
+          "relevance_grade": 2
+        },
+        {
+          "standard_id": "IS-DEMO-034",
+          "retrieval_score": 0.030309988518943745,
+          "reranker_score": null,
+          "relevance_grade": 1
+        },
+        {
+          "standard_id": "IS-DEMO-008",
+          "retrieval_score": 0.030158730158730156,
+          "reranker_score": null,
+          "relevance_grade": 2
+        },
+        {
+          "standard_id": "IS-DEMO-005",
+          "retrieval_score": 0.029910714285714284,
+          "reranker_score": null,
+          "relevance_grade": 0
+        }
+      ],
+      "semantic_fusion_0.5": [
+        {
+          "standard_id": "IS-DEMO-033",
+          "retrieval_score": 0.6815420389175415,
+          "reranker_score": -4.875880718231201,
+          "rank_fusion_score": 0.02459016393442623,
+          "relevance_grade": 2
+        },
+        {
+          "standard_id": "IS-DEMO-001",
+          "retrieval_score": 0.6736931204795837,
+          "reranker_score": -5.567234039306641,
+          "rank_fusion_score": 0.024193548387096774,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-008",
+          "retrieval_score": 0.6671324968338013,
+          "reranker_score": -6.321231365203857,
+          "rank_fusion_score": 0.023685515873015872,
+          "relevance_grade": 2
+        },
+        {
+          "standard_id": "IS-DEMO-032",
+          "retrieval_score": 0.6658991575241089,
+          "reranker_score": -6.624986171722412,
+          "rank_fusion_score": 0.023200757575757576,
+          "relevance_grade": 2
+        },
+        {
+          "standard_id": "IS-DEMO-010",
+          "retrieval_score": 0.6601451635360718,
+          "reranker_score": -6.126003265380859,
+          "rank_fusion_score": 0.023088023088023088,
+          "relevance_grade": 3
+        }
+      ],
+      "hybrid_fusion_0.5": [
+        {
+          "standard_id": "IS-DEMO-001",
+          "retrieval_score": 0.03252247488101534,
+          "reranker_score": -5.567234039306641,
+          "rank_fusion_score": 0.02445795875198308,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-033",
+          "retrieval_score": 0.03047794966520434,
+          "reranker_score": -4.875880718231201,
+          "rank_fusion_score": 0.024325753569539928,
+          "relevance_grade": 2
+        },
+        {
+          "standard_id": "IS-DEMO-034",
+          "retrieval_score": 0.030309988518943745,
+          "reranker_score": -6.610339164733887,
+          "rank_fusion_score": 0.023565323565323565,
+          "relevance_grade": 1
+        },
+        {
+          "standard_id": "IS-DEMO-008",
+          "retrieval_score": 0.030158730158730156,
+          "reranker_score": -6.321231365203857,
+          "rank_fusion_score": 0.0234375,
+          "relevance_grade": 2
+        },
+        {
+          "standard_id": "IS-DEMO-010",
+          "retrieval_score": 0.02964426877470356,
+          "reranker_score": -6.126003265380859,
+          "rank_fusion_score": 0.022861881070836296,
+          "relevance_grade": 3
+        }
+      ],
+      "semantic_fusion_1": [
+        {
+          "standard_id": "IS-DEMO-033",
+          "retrieval_score": 0.6815420389175415,
+          "reranker_score": -4.875880718231201,
+          "rank_fusion_score": 0.03278688524590164,
+          "relevance_grade": 2
+        },
+        {
+          "standard_id": "IS-DEMO-001",
+          "retrieval_score": 0.6736931204795837,
+          "reranker_score": -5.567234039306641,
+          "rank_fusion_score": 0.03225806451612903,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-008",
+          "retrieval_score": 0.6671324968338013,
+          "reranker_score": -6.321231365203857,
+          "rank_fusion_score": 0.03149801587301587,
+          "relevance_grade": 2
+        },
+        {
+          "standard_id": "IS-DEMO-010",
+          "retrieval_score": 0.6601451635360718,
+          "reranker_score": -6.126003265380859,
+          "rank_fusion_score": 0.031024531024531024,
+          "relevance_grade": 3
+        },
+        {
+          "standard_id": "IS-DEMO-032",
+          "retrieval_score": 0.6658991575241089,
+          "reranker_score": -6.624986171722412,
+          "rank_fusion_score": 0.030776515151515152,
+          "relevance_grade": 2
+        }
+      ],
+      "hybrid_fusion_1": [
+        {
+          "standard_id": "IS-DEMO-001",
+          "retrieval_score": 0.03252247488101534,
+          "reranker_score": -5.567234039306641,
+          "rank_fusion_score": 0.03252247488101534,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-033",
+          "retrieval_score": 0.03047794966520434,
+          "reranker_score": -4.875880718231201,
+          "rank_fusion_score": 0.03252247488101534,
+          "relevance_grade": 2
+        },
+        {
+          "standard_id": "IS-DEMO-034",
+          "retrieval_score": 0.030309988518943745,
+          "reranker_score": -6.610339164733887,
+          "rank_fusion_score": 0.03125763125763126,
+          "relevance_grade": 1
+        },
+        {
+          "standard_id": "IS-DEMO-008",
+          "retrieval_score": 0.030158730158730156,
+          "reranker_score": -6.321231365203857,
+          "rank_fusion_score": 0.03125,
+          "relevance_grade": 2
+        },
+        {
+          "standard_id": "IS-DEMO-010",
+          "retrieval_score": 0.02964426877470356,
+          "reranker_score": -6.126003265380859,
+          "rank_fusion_score": 0.030798389007344232,
+          "relevance_grade": 3
+        }
+      ],
+      "semantic_fusion_1.5": [
+        {
+          "standard_id": "IS-DEMO-033",
+          "retrieval_score": 0.6815420389175415,
+          "reranker_score": -4.875880718231201,
+          "rank_fusion_score": 0.04098360655737705,
+          "relevance_grade": 2
+        },
+        {
+          "standard_id": "IS-DEMO-001",
+          "retrieval_score": 0.6736931204795837,
+          "reranker_score": -5.567234039306641,
+          "rank_fusion_score": 0.04032258064516129,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-008",
+          "retrieval_score": 0.6671324968338013,
+          "reranker_score": -6.321231365203857,
+          "rank_fusion_score": 0.03931051587301587,
+          "relevance_grade": 2
+        },
+        {
+          "standard_id": "IS-DEMO-010",
+          "retrieval_score": 0.6601451635360718,
+          "reranker_score": -6.126003265380859,
+          "rank_fusion_score": 0.03896103896103896,
+          "relevance_grade": 3
+        },
+        {
+          "standard_id": "IS-DEMO-034",
+          "retrieval_score": 0.6617365479469299,
+          "reranker_score": -6.610339164733887,
+          "rank_fusion_score": 0.038461538461538464,
+          "relevance_grade": 1
+        }
+      ],
+      "hybrid_fusion_1.5": [
+        {
+          "standard_id": "IS-DEMO-033",
+          "retrieval_score": 0.03047794966520434,
+          "reranker_score": -4.875880718231201,
+          "rank_fusion_score": 0.040719196192490745,
+          "relevance_grade": 2
+        },
+        {
+          "standard_id": "IS-DEMO-001",
+          "retrieval_score": 0.03252247488101534,
+          "reranker_score": -5.567234039306641,
+          "rank_fusion_score": 0.04058699101004759,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-008",
+          "retrieval_score": 0.030158730158730156,
+          "reranker_score": -6.321231365203857,
+          "rank_fusion_score": 0.0390625,
+          "relevance_grade": 2
+        },
+        {
+          "standard_id": "IS-DEMO-034",
+          "retrieval_score": 0.030309988518943745,
+          "reranker_score": -6.610339164733887,
+          "rank_fusion_score": 0.03894993894993895,
+          "relevance_grade": 1
+        },
+        {
+          "standard_id": "IS-DEMO-010",
+          "retrieval_score": 0.02964426877470356,
+          "reranker_score": -6.126003265380859,
+          "rank_fusion_score": 0.03873489694385217,
+          "relevance_grade": 3
+        }
+      ],
+      "semantic_fusion_2": [
+        {
+          "standard_id": "IS-DEMO-033",
+          "retrieval_score": 0.6815420389175415,
+          "reranker_score": -4.875880718231201,
+          "rank_fusion_score": 0.04918032786885246,
+          "relevance_grade": 2
+        },
+        {
+          "standard_id": "IS-DEMO-001",
+          "retrieval_score": 0.6736931204795837,
+          "reranker_score": -5.567234039306641,
+          "rank_fusion_score": 0.04838709677419355,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-008",
+          "retrieval_score": 0.6671324968338013,
+          "reranker_score": -6.321231365203857,
+          "rank_fusion_score": 0.04712301587301587,
+          "relevance_grade": 2
+        },
+        {
+          "standard_id": "IS-DEMO-010",
+          "retrieval_score": 0.6601451635360718,
+          "reranker_score": -6.126003265380859,
+          "rank_fusion_score": 0.046897546897546896,
+          "relevance_grade": 3
+        },
+        {
+          "standard_id": "IS-DEMO-034",
+          "retrieval_score": 0.6617365479469299,
+          "reranker_score": -6.610339164733887,
+          "rank_fusion_score": 0.046153846153846156,
+          "relevance_grade": 1
+        }
+      ],
+      "hybrid_fusion_2": [
+        {
+          "standard_id": "IS-DEMO-033",
+          "retrieval_score": 0.03047794966520434,
+          "reranker_score": -4.875880718231201,
+          "rank_fusion_score": 0.04891591750396616,
+          "relevance_grade": 2
+        },
+        {
+          "standard_id": "IS-DEMO-001",
+          "retrieval_score": 0.03252247488101534,
+          "reranker_score": -5.567234039306641,
+          "rank_fusion_score": 0.048651507139079855,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-008",
+          "retrieval_score": 0.030158730158730156,
+          "reranker_score": -6.321231365203857,
+          "rank_fusion_score": 0.046875,
+          "relevance_grade": 2
+        },
+        {
+          "standard_id": "IS-DEMO-010",
+          "retrieval_score": 0.02964426877470356,
+          "reranker_score": -6.126003265380859,
+          "rank_fusion_score": 0.046671404880360104,
+          "relevance_grade": 3
+        },
+        {
+          "standard_id": "IS-DEMO-034",
+          "retrieval_score": 0.030309988518943745,
+          "reranker_score": -6.610339164733887,
+          "rank_fusion_score": 0.04664224664224664,
+          "relevance_grade": 1
+        }
+      ]
+    },
+    "metrics_by_system": {
+      "semantic": {
+        "recall@1": 0.25,
+        "recall@3": 0.5,
+        "recall@5": 0.75,
+        "precision@5": 0.6,
+        "mrr": 1.0,
+        "ndcg@5": 0.5118497763545442
+      },
+      "semantic_rerank": {
+        "recall@1": 0.25,
+        "recall@3": 0.5,
+        "recall@5": 0.75,
+        "precision@5": 0.6,
+        "mrr": 1.0,
+        "ndcg@5": 0.677526912273801
+      },
+      "hybrid_rerank": {
+        "recall@1": 0.25,
+        "recall@3": 0.5,
+        "recall@5": 0.75,
+        "precision@5": 0.6,
+        "mrr": 1.0,
+        "ndcg@5": 0.677526912273801
+      },
+      "hybrid": {
+        "recall@1": 0.0,
+        "recall@3": 0.25,
+        "recall@5": 0.5,
+        "precision@5": 0.4,
+        "mrr": 0.5,
+        "ndcg@5": 0.3052451237605014
+      },
+      "semantic_fusion_0.5": {
+        "recall@1": 0.25,
+        "recall@3": 0.5,
+        "recall@5": 1.0,
+        "precision@5": 0.8,
+        "mrr": 1.0,
+        "ndcg@5": 0.7041277717293738
+      },
+      "hybrid_fusion_0.5": {
+        "recall@1": 0.0,
+        "recall@3": 0.25,
+        "recall@5": 0.75,
+        "precision@5": 0.6,
+        "mrr": 0.5,
+        "ndcg@5": 0.5295694516978026
+      },
+      "semantic_fusion_1": {
+        "recall@1": 0.25,
+        "recall@3": 0.5,
+        "recall@5": 1.0,
+        "precision@5": 0.8,
+        "mrr": 1.0,
+        "ndcg@5": 0.7186489587778138
+      },
+      "hybrid_fusion_1": {
+        "recall@1": 0.0,
+        "recall@3": 0.25,
+        "recall@5": 0.75,
+        "precision@5": 0.6,
+        "mrr": 0.5,
+        "ndcg@5": 0.5295694516978026
+      },
+      "semantic_fusion_1.5": {
+        "recall@1": 0.25,
+        "recall@3": 0.5,
+        "recall@5": 0.75,
+        "precision@5": 0.6,
+        "mrr": 1.0,
+        "ndcg@5": 0.6545562936528706
+      },
+      "hybrid_fusion_1.5": {
+        "recall@1": 0.25,
+        "recall@3": 0.5,
+        "recall@5": 0.75,
+        "precision@5": 0.6,
+        "mrr": 1.0,
+        "ndcg@5": 0.6327745130802105
+      },
+      "semantic_fusion_2": {
+        "recall@1": 0.25,
+        "recall@3": 0.5,
+        "recall@5": 0.75,
+        "precision@5": 0.6,
+        "mrr": 1.0,
+        "ndcg@5": 0.6545562936528706
+      },
+      "hybrid_fusion_2": {
+        "recall@1": 0.25,
+        "recall@3": 0.5,
+        "recall@5": 0.75,
+        "precision@5": 0.6,
+        "mrr": 1.0,
+        "ndcg@5": 0.6545562936528706
+      }
+    }
+  },
+  {
+    "query_id": "Q086",
+    "query": "electrical installation protection",
+    "relevance": {
+      "IS-DEMO-025": 3,
+      "IS-DEMO-028": 2,
+      "IS-DEMO-026": 2,
+      "IS-DEMO-037": 2,
+      "IS-DEMO-027": 1
+    },
+    "top5_by_system": {
+      "semantic": [
+        {
+          "standard_id": "IS-DEMO-025",
+          "retrieval_score": 0.8464474678039551,
+          "reranker_score": null,
+          "relevance_grade": 3
+        },
+        {
+          "standard_id": "IS-DEMO-037",
+          "retrieval_score": 0.7709127068519592,
+          "reranker_score": null,
+          "relevance_grade": 2
+        },
+        {
+          "standard_id": "IS-DEMO-021",
+          "retrieval_score": 0.745916485786438,
+          "reranker_score": null,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-022",
+          "retrieval_score": 0.7320593595504761,
+          "reranker_score": null,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-028",
+          "retrieval_score": 0.7244442701339722,
+          "reranker_score": null,
+          "relevance_grade": 2
+        }
+      ],
+      "semantic_rerank": [
+        {
+          "standard_id": "IS-DEMO-025",
+          "retrieval_score": 0.8464474678039551,
+          "reranker_score": 8.769377708435059,
+          "relevance_grade": 3
+        },
+        {
+          "standard_id": "IS-DEMO-037",
+          "retrieval_score": 0.7709127068519592,
+          "reranker_score": 6.175776958465576,
+          "relevance_grade": 2
+        },
+        {
+          "standard_id": "IS-DEMO-028",
+          "retrieval_score": 0.7244442701339722,
+          "reranker_score": 3.644246816635132,
+          "relevance_grade": 2
+        },
+        {
+          "standard_id": "IS-DEMO-036",
+          "retrieval_score": 0.7084139585494995,
+          "reranker_score": -1.2104599475860596,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-012",
+          "retrieval_score": 0.6484256982803345,
+          "reranker_score": -2.6191067695617676,
+          "relevance_grade": 0
+        }
+      ],
+      "hybrid_rerank": [
+        {
+          "standard_id": "IS-DEMO-025",
+          "retrieval_score": 0.03278688524590164,
+          "reranker_score": 8.769377708435059,
+          "relevance_grade": 3
+        },
+        {
+          "standard_id": "IS-DEMO-037",
+          "retrieval_score": 0.03200204813108039,
+          "reranker_score": 6.175776958465576,
+          "relevance_grade": 2
+        },
+        {
+          "standard_id": "IS-DEMO-028",
+          "retrieval_score": 0.029273504273504274,
+          "reranker_score": 3.644246816635132,
+          "relevance_grade": 2
+        },
+        {
+          "standard_id": "IS-DEMO-036",
+          "retrieval_score": 0.029857397504456328,
+          "reranker_score": -1.2104599475860596,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-012",
+          "retrieval_score": 0.0259915611814346,
+          "reranker_score": -2.6191067695617676,
+          "relevance_grade": 0
+        }
+      ],
+      "hybrid": [
+        {
+          "standard_id": "IS-DEMO-025",
+          "retrieval_score": 0.03278688524590164,
+          "reranker_score": null,
+          "relevance_grade": 3
+        },
+        {
+          "standard_id": "IS-DEMO-037",
+          "retrieval_score": 0.03200204813108039,
+          "reranker_score": null,
+          "relevance_grade": 2
+        },
+        {
+          "standard_id": "IS-DEMO-022",
+          "retrieval_score": 0.031754032258064516,
+          "reranker_score": null,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-021",
+          "retrieval_score": 0.03149801587301587,
+          "reranker_score": null,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-036",
+          "retrieval_score": 0.029857397504456328,
+          "reranker_score": null,
+          "relevance_grade": 0
+        }
+      ],
+      "semantic_fusion_0.5": [
+        {
+          "standard_id": "IS-DEMO-025",
+          "retrieval_score": 0.8464474678039551,
+          "reranker_score": 8.769377708435059,
+          "rank_fusion_score": 0.02459016393442623,
+          "relevance_grade": 3
+        },
+        {
+          "standard_id": "IS-DEMO-037",
+          "retrieval_score": 0.7709127068519592,
+          "reranker_score": 6.175776958465576,
+          "rank_fusion_score": 0.024193548387096774,
+          "relevance_grade": 2
+        },
+        {
+          "standard_id": "IS-DEMO-021",
+          "retrieval_score": 0.745916485786438,
+          "reranker_score": -3.089120626449585,
+          "rank_fusion_score": 0.023448773448773448,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-028",
+          "retrieval_score": 0.7244442701339722,
+          "reranker_score": 3.644246816635132,
+          "rank_fusion_score": 0.02332112332112332,
+          "relevance_grade": 2
+        },
+        {
+          "standard_id": "IS-DEMO-036",
+          "retrieval_score": 0.7084139585494995,
+          "reranker_score": -1.2104599475860596,
+          "rank_fusion_score": 0.022964015151515152,
+          "relevance_grade": 0
+        }
+      ],
+      "hybrid_fusion_0.5": [
+        {
+          "standard_id": "IS-DEMO-025",
+          "retrieval_score": 0.03278688524590164,
+          "reranker_score": 8.769377708435059,
+          "rank_fusion_score": 0.02459016393442623,
+          "relevance_grade": 3
+        },
+        {
+          "standard_id": "IS-DEMO-037",
+          "retrieval_score": 0.03200204813108039,
+          "reranker_score": 6.175776958465576,
+          "rank_fusion_score": 0.024193548387096774,
+          "relevance_grade": 2
+        },
+        {
+          "standard_id": "IS-DEMO-021",
+          "retrieval_score": 0.03149801587301587,
+          "reranker_score": -3.089120626449585,
+          "rank_fusion_score": 0.023200757575757576,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-036",
+          "retrieval_score": 0.029857397504456328,
+          "reranker_score": -1.2104599475860596,
+          "rank_fusion_score": 0.023197115384615385,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-022",
+          "retrieval_score": 0.031754032258064516,
+          "reranker_score": -5.934512138366699,
+          "rank_fusion_score": 0.023119392684610076,
+          "relevance_grade": 0
+        }
+      ],
+      "semantic_fusion_1": [
+        {
+          "standard_id": "IS-DEMO-025",
+          "retrieval_score": 0.8464474678039551,
+          "reranker_score": 8.769377708435059,
+          "rank_fusion_score": 0.03278688524590164,
+          "relevance_grade": 3
+        },
+        {
+          "standard_id": "IS-DEMO-037",
+          "retrieval_score": 0.7709127068519592,
+          "reranker_score": 6.175776958465576,
+          "rank_fusion_score": 0.03225806451612903,
+          "relevance_grade": 2
+        },
+        {
+          "standard_id": "IS-DEMO-028",
+          "retrieval_score": 0.7244442701339722,
+          "reranker_score": 3.644246816635132,
+          "rank_fusion_score": 0.03125763125763126,
+          "relevance_grade": 2
+        },
+        {
+          "standard_id": "IS-DEMO-021",
+          "retrieval_score": 0.745916485786438,
+          "reranker_score": -3.089120626449585,
+          "rank_fusion_score": 0.031024531024531024,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-036",
+          "retrieval_score": 0.7084139585494995,
+          "reranker_score": -1.2104599475860596,
+          "rank_fusion_score": 0.030776515151515152,
+          "relevance_grade": 0
+        }
+      ],
+      "hybrid_fusion_1": [
+        {
+          "standard_id": "IS-DEMO-025",
+          "retrieval_score": 0.03278688524590164,
+          "reranker_score": 8.769377708435059,
+          "rank_fusion_score": 0.03278688524590164,
+          "relevance_grade": 3
+        },
+        {
+          "standard_id": "IS-DEMO-037",
+          "retrieval_score": 0.03200204813108039,
+          "reranker_score": 6.175776958465576,
+          "rank_fusion_score": 0.03225806451612903,
+          "relevance_grade": 2
+        },
+        {
+          "standard_id": "IS-DEMO-028",
+          "retrieval_score": 0.029273504273504274,
+          "reranker_score": 3.644246816635132,
+          "rank_fusion_score": 0.031024531024531024,
+          "relevance_grade": 2
+        },
+        {
+          "standard_id": "IS-DEMO-036",
+          "retrieval_score": 0.029857397504456328,
+          "reranker_score": -1.2104599475860596,
+          "rank_fusion_score": 0.031009615384615385,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-021",
+          "retrieval_score": 0.03149801587301587,
+          "reranker_score": -3.089120626449585,
+          "rank_fusion_score": 0.030776515151515152,
+          "relevance_grade": 0
+        }
+      ],
+      "semantic_fusion_1.5": [
+        {
+          "standard_id": "IS-DEMO-025",
+          "retrieval_score": 0.8464474678039551,
+          "reranker_score": 8.769377708435059,
+          "rank_fusion_score": 0.04098360655737705,
+          "relevance_grade": 3
+        },
+        {
+          "standard_id": "IS-DEMO-037",
+          "retrieval_score": 0.7709127068519592,
+          "reranker_score": 6.175776958465576,
+          "rank_fusion_score": 0.04032258064516129,
+          "relevance_grade": 2
+        },
+        {
+          "standard_id": "IS-DEMO-028",
+          "retrieval_score": 0.7244442701339722,
+          "reranker_score": 3.644246816635132,
+          "rank_fusion_score": 0.039194139194139194,
+          "relevance_grade": 2
+        },
+        {
+          "standard_id": "IS-DEMO-021",
+          "retrieval_score": 0.745916485786438,
+          "reranker_score": -3.089120626449585,
+          "rank_fusion_score": 0.0386002886002886,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-036",
+          "retrieval_score": 0.7084139585494995,
+          "reranker_score": -1.2104599475860596,
+          "rank_fusion_score": 0.03858901515151515,
+          "relevance_grade": 0
+        }
+      ],
+      "hybrid_fusion_1.5": [
+        {
+          "standard_id": "IS-DEMO-025",
+          "retrieval_score": 0.03278688524590164,
+          "reranker_score": 8.769377708435059,
+          "rank_fusion_score": 0.04098360655737705,
+          "relevance_grade": 3
+        },
+        {
+          "standard_id": "IS-DEMO-037",
+          "retrieval_score": 0.03200204813108039,
+          "reranker_score": 6.175776958465576,
+          "rank_fusion_score": 0.04032258064516129,
+          "relevance_grade": 2
+        },
+        {
+          "standard_id": "IS-DEMO-028",
+          "retrieval_score": 0.029273504273504274,
+          "reranker_score": 3.644246816635132,
+          "rank_fusion_score": 0.03896103896103896,
+          "relevance_grade": 2
+        },
+        {
+          "standard_id": "IS-DEMO-036",
+          "retrieval_score": 0.029857397504456328,
+          "reranker_score": -1.2104599475860596,
+          "rank_fusion_score": 0.038822115384615385,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-021",
+          "retrieval_score": 0.03149801587301587,
+          "reranker_score": -3.089120626449585,
+          "rank_fusion_score": 0.03835227272727273,
+          "relevance_grade": 0
+        }
+      ],
+      "semantic_fusion_2": [
+        {
+          "standard_id": "IS-DEMO-025",
+          "retrieval_score": 0.8464474678039551,
+          "reranker_score": 8.769377708435059,
+          "rank_fusion_score": 0.04918032786885246,
+          "relevance_grade": 3
+        },
+        {
+          "standard_id": "IS-DEMO-037",
+          "retrieval_score": 0.7709127068519592,
+          "reranker_score": 6.175776958465576,
+          "rank_fusion_score": 0.04838709677419355,
+          "relevance_grade": 2
+        },
+        {
+          "standard_id": "IS-DEMO-028",
+          "retrieval_score": 0.7244442701339722,
+          "reranker_score": 3.644246816635132,
+          "rank_fusion_score": 0.04713064713064713,
+          "relevance_grade": 2
+        },
+        {
+          "standard_id": "IS-DEMO-036",
+          "retrieval_score": 0.7084139585494995,
+          "reranker_score": -1.2104599475860596,
+          "rank_fusion_score": 0.04640151515151515,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-021",
+          "retrieval_score": 0.745916485786438,
+          "reranker_score": -3.089120626449585,
+          "rank_fusion_score": 0.046176046176046176,
+          "relevance_grade": 0
+        }
+      ],
+      "hybrid_fusion_2": [
+        {
+          "standard_id": "IS-DEMO-025",
+          "retrieval_score": 0.03278688524590164,
+          "reranker_score": 8.769377708435059,
+          "rank_fusion_score": 0.04918032786885246,
+          "relevance_grade": 3
+        },
+        {
+          "standard_id": "IS-DEMO-037",
+          "retrieval_score": 0.03200204813108039,
+          "reranker_score": 6.175776958465576,
+          "rank_fusion_score": 0.04838709677419355,
+          "relevance_grade": 2
+        },
+        {
+          "standard_id": "IS-DEMO-028",
+          "retrieval_score": 0.029273504273504274,
+          "reranker_score": 3.644246816635132,
+          "rank_fusion_score": 0.046897546897546896,
+          "relevance_grade": 2
+        },
+        {
+          "standard_id": "IS-DEMO-036",
+          "retrieval_score": 0.029857397504456328,
+          "reranker_score": -1.2104599475860596,
+          "rank_fusion_score": 0.046634615384615385,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-021",
+          "retrieval_score": 0.03149801587301587,
+          "reranker_score": -3.089120626449585,
+          "rank_fusion_score": 0.045928030303030304,
+          "relevance_grade": 0
+        }
+      ]
+    },
+    "metrics_by_system": {
+      "semantic": {
+        "recall@1": 0.25,
+        "recall@3": 0.5,
+        "recall@5": 0.75,
+        "precision@5": 0.6,
+        "mrr": 1.0,
+        "ndcg@5": 0.8328049252117559
+      },
+      "semantic_rerank": {
+        "recall@1": 0.25,
+        "recall@3": 0.75,
+        "recall@5": 0.75,
+        "precision@5": 0.6,
+        "mrr": 1.0,
+        "ndcg@5": 0.8609237794637837
+      },
+      "hybrid_rerank": {
+        "recall@1": 0.25,
+        "recall@3": 0.75,
+        "recall@5": 0.75,
+        "precision@5": 0.6,
+        "mrr": 1.0,
+        "ndcg@5": 0.8609237794637837
+      },
+      "hybrid": {
+        "recall@1": 0.25,
+        "recall@3": 0.5,
+        "recall@5": 0.5,
+        "precision@5": 0.4,
+        "mrr": 1.0,
+        "ndcg@5": 0.7366659275243411
+      },
+      "semantic_fusion_0.5": {
+        "recall@1": 0.25,
+        "recall@3": 0.5,
+        "recall@5": 0.75,
+        "precision@5": 0.6,
+        "mrr": 1.0,
+        "ndcg@5": 0.8436958154980859
+      },
+      "hybrid_fusion_0.5": {
+        "recall@1": 0.25,
+        "recall@3": 0.5,
+        "recall@5": 0.5,
+        "precision@5": 0.4,
+        "mrr": 1.0,
+        "ndcg@5": 0.7366659275243411
+      },
+      "semantic_fusion_1": {
+        "recall@1": 0.25,
+        "recall@3": 0.75,
+        "recall@5": 0.75,
+        "precision@5": 0.6,
+        "mrr": 1.0,
+        "ndcg@5": 0.8609237794637837
+      },
+      "hybrid_fusion_1": {
+        "recall@1": 0.25,
+        "recall@3": 0.75,
+        "recall@5": 0.75,
+        "precision@5": 0.6,
+        "mrr": 1.0,
+        "ndcg@5": 0.8609237794637837
+      },
+      "semantic_fusion_1.5": {
+        "recall@1": 0.25,
+        "recall@3": 0.75,
+        "recall@5": 0.75,
+        "precision@5": 0.6,
+        "mrr": 1.0,
+        "ndcg@5": 0.8609237794637837
+      },
+      "hybrid_fusion_1.5": {
+        "recall@1": 0.25,
+        "recall@3": 0.75,
+        "recall@5": 0.75,
+        "precision@5": 0.6,
+        "mrr": 1.0,
+        "ndcg@5": 0.8609237794637837
+      },
+      "semantic_fusion_2": {
+        "recall@1": 0.25,
+        "recall@3": 0.75,
+        "recall@5": 0.75,
+        "precision@5": 0.6,
+        "mrr": 1.0,
+        "ndcg@5": 0.8609237794637837
+      },
+      "hybrid_fusion_2": {
+        "recall@1": 0.25,
+        "recall@3": 0.75,
+        "recall@5": 0.75,
+        "precision@5": 0.6,
+        "mrr": 1.0,
+        "ndcg@5": 0.8609237794637837
+      }
+    }
+  },
+  {
+    "query_id": "Q087",
+    "query": "lighting for a public building",
+    "relevance": {
+      "IS-DEMO-018": 3,
+      "IS-DEMO-019": 2
+    },
+    "top5_by_system": {
+      "semantic": [
+        {
+          "standard_id": "IS-DEMO-018",
+          "retrieval_score": 0.6591818332672119,
+          "reranker_score": null,
+          "relevance_grade": 3
+        },
+        {
+          "standard_id": "IS-DEMO-003",
+          "retrieval_score": 0.6502014994621277,
+          "reranker_score": null,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-020",
+          "retrieval_score": 0.6367596983909607,
+          "reranker_score": null,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-019",
+          "retrieval_score": 0.6052834987640381,
+          "reranker_score": null,
+          "relevance_grade": 2
+        },
+        {
+          "standard_id": "IS-DEMO-021",
+          "retrieval_score": 0.5999859571456909,
+          "reranker_score": null,
+          "relevance_grade": 0
+        }
+      ],
+      "semantic_rerank": [
+        {
+          "standard_id": "IS-DEMO-003",
+          "retrieval_score": 0.6502014994621277,
+          "reranker_score": 1.517073154449463,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-018",
+          "retrieval_score": 0.6591818332672119,
+          "reranker_score": 0.701680064201355,
+          "relevance_grade": 3
+        },
+        {
+          "standard_id": "IS-DEMO-020",
+          "retrieval_score": 0.6367596983909607,
+          "reranker_score": -6.071966171264648,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-022",
+          "retrieval_score": 0.5548132061958313,
+          "reranker_score": -6.609841346740723,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-019",
+          "retrieval_score": 0.6052834987640381,
+          "reranker_score": -6.76324462890625,
+          "relevance_grade": 2
+        }
+      ],
+      "hybrid_rerank": [
+        {
+          "standard_id": "IS-DEMO-003",
+          "retrieval_score": 0.03252247488101534,
+          "reranker_score": 1.517073154449463,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-018",
+          "retrieval_score": 0.031544957774465976,
+          "reranker_score": 0.701680064201355,
+          "relevance_grade": 3
+        },
+        {
+          "standard_id": "IS-DEMO-020",
+          "retrieval_score": 0.03200204813108039,
+          "reranker_score": -6.071966171264648,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-022",
+          "retrieval_score": 0.029418126757516764,
+          "reranker_score": -6.609841346740723,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-019",
+          "retrieval_score": 0.03149801587301587,
+          "reranker_score": -6.76324462890625,
+          "relevance_grade": 2
+        }
+      ],
+      "hybrid": [
+        {
+          "standard_id": "IS-DEMO-003",
+          "retrieval_score": 0.03252247488101534,
+          "reranker_score": null,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-020",
+          "retrieval_score": 0.03200204813108039,
+          "reranker_score": null,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-018",
+          "retrieval_score": 0.031544957774465976,
+          "reranker_score": null,
+          "relevance_grade": 3
+        },
+        {
+          "standard_id": "IS-DEMO-019",
+          "retrieval_score": 0.03149801587301587,
+          "reranker_score": null,
+          "relevance_grade": 2
+        },
+        {
+          "standard_id": "IS-DEMO-023",
+          "retrieval_score": 0.030330882352941176,
+          "reranker_score": null,
+          "relevance_grade": 0
+        }
+      ],
+      "semantic_fusion_0.5": [
+        {
+          "standard_id": "IS-DEMO-018",
+          "retrieval_score": 0.6591818332672119,
+          "reranker_score": 0.701680064201355,
+          "rank_fusion_score": 0.02445795875198308,
+          "relevance_grade": 3
+        },
+        {
+          "standard_id": "IS-DEMO-003",
+          "retrieval_score": 0.6502014994621277,
+          "reranker_score": 1.517073154449463,
+          "rank_fusion_score": 0.024325753569539928,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-020",
+          "retrieval_score": 0.6367596983909607,
+          "reranker_score": -6.071966171264648,
+          "rank_fusion_score": 0.023809523809523808,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-019",
+          "retrieval_score": 0.6052834987640381,
+          "reranker_score": -6.76324462890625,
+          "rank_fusion_score": 0.023317307692307693,
+          "relevance_grade": 2
+        },
+        {
+          "standard_id": "IS-DEMO-021",
+          "retrieval_score": 0.5999859571456909,
+          "reranker_score": -9.662513732910156,
+          "rank_fusion_score": 0.02296037296037296,
+          "relevance_grade": 0
+        }
+      ],
+      "hybrid_fusion_0.5": [
+        {
+          "standard_id": "IS-DEMO-003",
+          "retrieval_score": 0.03252247488101534,
+          "reranker_score": 1.517073154449463,
+          "rank_fusion_score": 0.02459016393442623,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-020",
+          "retrieval_score": 0.03200204813108039,
+          "reranker_score": -6.071966171264648,
+          "rank_fusion_score": 0.024065540194572452,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-018",
+          "retrieval_score": 0.031544957774465976,
+          "reranker_score": 0.701680064201355,
+          "rank_fusion_score": 0.02393753200204813,
+          "relevance_grade": 3
+        },
+        {
+          "standard_id": "IS-DEMO-019",
+          "retrieval_score": 0.03149801587301587,
+          "reranker_score": -6.76324462890625,
+          "rank_fusion_score": 0.023317307692307693,
+          "relevance_grade": 2
+        },
+        {
+          "standard_id": "IS-DEMO-022",
+          "retrieval_score": 0.029418126757516764,
+          "reranker_score": -6.609841346740723,
+          "rank_fusion_score": 0.02273787313432836,
+          "relevance_grade": 0
+        }
+      ],
+      "semantic_fusion_1": [
+        {
+          "standard_id": "IS-DEMO-018",
+          "retrieval_score": 0.6591818332672119,
+          "reranker_score": 0.701680064201355,
+          "rank_fusion_score": 0.03252247488101534,
+          "relevance_grade": 3
+        },
+        {
+          "standard_id": "IS-DEMO-003",
+          "retrieval_score": 0.6502014994621277,
+          "reranker_score": 1.517073154449463,
+          "rank_fusion_score": 0.03252247488101534,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-020",
+          "retrieval_score": 0.6367596983909607,
+          "reranker_score": -6.071966171264648,
+          "rank_fusion_score": 0.031746031746031744,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-019",
+          "retrieval_score": 0.6052834987640381,
+          "reranker_score": -6.76324462890625,
+          "rank_fusion_score": 0.031009615384615385,
+          "relevance_grade": 2
+        },
+        {
+          "standard_id": "IS-DEMO-022",
+          "retrieval_score": 0.5548132061958313,
+          "reranker_score": -6.609841346740723,
+          "rank_fusion_score": 0.03055037313432836,
+          "relevance_grade": 0
+        }
+      ],
+      "hybrid_fusion_1": [
+        {
+          "standard_id": "IS-DEMO-003",
+          "retrieval_score": 0.03252247488101534,
+          "reranker_score": 1.517073154449463,
+          "rank_fusion_score": 0.03278688524590164,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-020",
+          "retrieval_score": 0.03200204813108039,
+          "reranker_score": -6.071966171264648,
+          "rank_fusion_score": 0.03200204813108039,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-018",
+          "retrieval_score": 0.031544957774465976,
+          "reranker_score": 0.701680064201355,
+          "rank_fusion_score": 0.03200204813108039,
+          "relevance_grade": 3
+        },
+        {
+          "standard_id": "IS-DEMO-019",
+          "retrieval_score": 0.03149801587301587,
+          "reranker_score": -6.76324462890625,
+          "rank_fusion_score": 0.031009615384615385,
+          "relevance_grade": 2
+        },
+        {
+          "standard_id": "IS-DEMO-022",
+          "retrieval_score": 0.029418126757516764,
+          "reranker_score": -6.609841346740723,
+          "rank_fusion_score": 0.03055037313432836,
+          "relevance_grade": 0
+        }
+      ],
+      "semantic_fusion_1.5": [
+        {
+          "standard_id": "IS-DEMO-003",
+          "retrieval_score": 0.6502014994621277,
+          "reranker_score": 1.517073154449463,
+          "rank_fusion_score": 0.040719196192490745,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-018",
+          "retrieval_score": 0.6591818332672119,
+          "reranker_score": 0.701680064201355,
+          "rank_fusion_score": 0.04058699101004759,
+          "relevance_grade": 3
+        },
+        {
+          "standard_id": "IS-DEMO-020",
+          "retrieval_score": 0.6367596983909607,
+          "reranker_score": -6.071966171264648,
+          "rank_fusion_score": 0.03968253968253968,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-019",
+          "retrieval_score": 0.6052834987640381,
+          "reranker_score": -6.76324462890625,
+          "rank_fusion_score": 0.03870192307692308,
+          "relevance_grade": 2
+        },
+        {
+          "standard_id": "IS-DEMO-022",
+          "retrieval_score": 0.5548132061958313,
+          "reranker_score": -6.609841346740723,
+          "rank_fusion_score": 0.03836287313432836,
+          "relevance_grade": 0
+        }
+      ],
+      "hybrid_fusion_1.5": [
+        {
+          "standard_id": "IS-DEMO-003",
+          "retrieval_score": 0.03252247488101534,
+          "reranker_score": 1.517073154449463,
+          "rank_fusion_score": 0.04098360655737705,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-018",
+          "retrieval_score": 0.031544957774465976,
+          "reranker_score": 0.701680064201355,
+          "rank_fusion_score": 0.040066564260112646,
+          "relevance_grade": 3
+        },
+        {
+          "standard_id": "IS-DEMO-020",
+          "retrieval_score": 0.03200204813108039,
+          "reranker_score": -6.071966171264648,
+          "rank_fusion_score": 0.039938556067588324,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-019",
+          "retrieval_score": 0.03149801587301587,
+          "reranker_score": -6.76324462890625,
+          "rank_fusion_score": 0.03870192307692308,
+          "relevance_grade": 2
+        },
+        {
+          "standard_id": "IS-DEMO-022",
+          "retrieval_score": 0.029418126757516764,
+          "reranker_score": -6.609841346740723,
+          "rank_fusion_score": 0.03836287313432836,
+          "relevance_grade": 0
+        }
+      ],
+      "semantic_fusion_2": [
+        {
+          "standard_id": "IS-DEMO-003",
+          "retrieval_score": 0.6502014994621277,
+          "reranker_score": 1.517073154449463,
+          "rank_fusion_score": 0.04891591750396616,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-018",
+          "retrieval_score": 0.6591818332672119,
+          "reranker_score": 0.701680064201355,
+          "rank_fusion_score": 0.048651507139079855,
+          "relevance_grade": 3
+        },
+        {
+          "standard_id": "IS-DEMO-020",
+          "retrieval_score": 0.6367596983909607,
+          "reranker_score": -6.071966171264648,
+          "rank_fusion_score": 0.047619047619047616,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-019",
+          "retrieval_score": 0.6052834987640381,
+          "reranker_score": -6.76324462890625,
+          "rank_fusion_score": 0.04639423076923077,
+          "relevance_grade": 2
+        },
+        {
+          "standard_id": "IS-DEMO-022",
+          "retrieval_score": 0.5548132061958313,
+          "reranker_score": -6.609841346740723,
+          "rank_fusion_score": 0.04617537313432836,
+          "relevance_grade": 0
+        }
+      ],
+      "hybrid_fusion_2": [
+        {
+          "standard_id": "IS-DEMO-003",
+          "retrieval_score": 0.03252247488101534,
+          "reranker_score": 1.517073154449463,
+          "rank_fusion_score": 0.04918032786885246,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-018",
+          "retrieval_score": 0.031544957774465976,
+          "reranker_score": 0.701680064201355,
+          "rank_fusion_score": 0.048131080389144903,
+          "relevance_grade": 3
+        },
+        {
+          "standard_id": "IS-DEMO-020",
+          "retrieval_score": 0.03200204813108039,
+          "reranker_score": -6.071966171264648,
+          "rank_fusion_score": 0.04787506400409626,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-019",
+          "retrieval_score": 0.03149801587301587,
+          "reranker_score": -6.76324462890625,
+          "rank_fusion_score": 0.04639423076923077,
+          "relevance_grade": 2
+        },
+        {
+          "standard_id": "IS-DEMO-022",
+          "retrieval_score": 0.029418126757516764,
+          "reranker_score": -6.609841346740723,
+          "rank_fusion_score": 0.04617537313432836,
+          "relevance_grade": 0
+        }
+      ]
+    },
+    "metrics_by_system": {
+      "semantic": {
+        "recall@1": 0.5,
+        "recall@3": 0.5,
+        "recall@5": 1.0,
+        "precision@5": 0.4,
+        "mrr": 1.0,
+        "ndcg@5": 0.9324441894571632
+      },
+      "semantic_rerank": {
+        "recall@1": 0.0,
+        "recall@3": 0.5,
+        "recall@5": 1.0,
+        "precision@5": 0.4,
+        "mrr": 0.5,
+        "ndcg@5": 0.6271448173568673
+      },
+      "hybrid_rerank": {
+        "recall@1": 0.0,
+        "recall@3": 0.5,
+        "recall@5": 1.0,
+        "precision@5": 0.4,
+        "mrr": 0.5,
+        "ndcg@5": 0.6271448173568673
+      },
+      "hybrid": {
+        "recall@1": 0.0,
+        "recall@3": 0.5,
+        "recall@5": 1.0,
+        "precision@5": 0.4,
+        "mrr": 0.3333333333333333,
+        "ndcg@5": 0.5388668879616774
+      },
+      "semantic_fusion_0.5": {
+        "recall@1": 0.5,
+        "recall@3": 0.5,
+        "recall@5": 1.0,
+        "precision@5": 0.4,
+        "mrr": 1.0,
+        "ndcg@5": 0.9324441894571632
+      },
+      "hybrid_fusion_0.5": {
+        "recall@1": 0.0,
+        "recall@3": 0.5,
+        "recall@5": 1.0,
+        "precision@5": 0.4,
+        "mrr": 0.3333333333333333,
+        "ndcg@5": 0.5388668879616774
+      },
+      "semantic_fusion_1": {
+        "recall@1": 0.5,
+        "recall@3": 0.5,
+        "recall@5": 1.0,
+        "precision@5": 0.4,
+        "mrr": 1.0,
+        "ndcg@5": 0.9324441894571632
+      },
+      "hybrid_fusion_1": {
+        "recall@1": 0.0,
+        "recall@3": 0.5,
+        "recall@5": 1.0,
+        "precision@5": 0.4,
+        "mrr": 0.3333333333333333,
+        "ndcg@5": 0.5388668879616774
+      },
+      "semantic_fusion_1.5": {
+        "recall@1": 0.0,
+        "recall@3": 0.5,
+        "recall@5": 1.0,
+        "precision@5": 0.4,
+        "mrr": 0.5,
+        "ndcg@5": 0.6419288461539238
+      },
+      "hybrid_fusion_1.5": {
+        "recall@1": 0.0,
+        "recall@3": 0.5,
+        "recall@5": 1.0,
+        "precision@5": 0.4,
+        "mrr": 0.5,
+        "ndcg@5": 0.6419288461539238
+      },
+      "semantic_fusion_2": {
+        "recall@1": 0.0,
+        "recall@3": 0.5,
+        "recall@5": 1.0,
+        "precision@5": 0.4,
+        "mrr": 0.5,
+        "ndcg@5": 0.6419288461539238
+      },
+      "hybrid_fusion_2": {
+        "recall@1": 0.0,
+        "recall@3": 0.5,
+        "recall@5": 1.0,
+        "precision@5": 0.4,
+        "mrr": 0.5,
+        "ndcg@5": 0.6419288461539238
+      }
+    }
+  },
+  {
+    "query_id": "Q088",
+    "query": "steel for building construction",
+    "relevance": {
+      "IS-DEMO-006": 3,
+      "IS-DEMO-029": 2
+    },
+    "top5_by_system": {
+      "semantic": [
+        {
+          "standard_id": "IS-DEMO-029",
+          "retrieval_score": 0.7062426209449768,
+          "reranker_score": null,
+          "relevance_grade": 2
+        },
+        {
+          "standard_id": "IS-DEMO-006",
+          "retrieval_score": 0.7047492265701294,
+          "reranker_score": null,
+          "relevance_grade": 3
+        },
+        {
+          "standard_id": "IS-DEMO-005",
+          "retrieval_score": 0.6010865569114685,
+          "reranker_score": null,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-002",
+          "retrieval_score": 0.5939606428146362,
+          "reranker_score": null,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-027",
+          "retrieval_score": 0.5717679262161255,
+          "reranker_score": null,
+          "relevance_grade": 0
+        }
+      ],
+      "semantic_rerank": [
+        {
+          "standard_id": "IS-DEMO-029",
+          "retrieval_score": 0.7062426209449768,
+          "reranker_score": 1.0953516960144043,
+          "relevance_grade": 2
+        },
+        {
+          "standard_id": "IS-DEMO-006",
+          "retrieval_score": 0.7047492265701294,
+          "reranker_score": -1.350744605064392,
+          "relevance_grade": 3
+        },
+        {
+          "standard_id": "IS-DEMO-002",
+          "retrieval_score": 0.5939606428146362,
+          "reranker_score": -5.155317306518555,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-023",
+          "retrieval_score": 0.5579203367233276,
+          "reranker_score": -6.553229331970215,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-030",
+          "retrieval_score": 0.5699561834335327,
+          "reranker_score": -7.446789264678955,
+          "relevance_grade": 0
+        }
+      ],
+      "hybrid_rerank": [
+        {
+          "standard_id": "IS-DEMO-029",
+          "retrieval_score": 0.03278688524590164,
+          "reranker_score": 1.0953516960144043,
+          "relevance_grade": 2
+        },
+        {
+          "standard_id": "IS-DEMO-006",
+          "retrieval_score": 0.03200204813108039,
+          "reranker_score": -1.350744605064392,
+          "relevance_grade": 3
+        },
+        {
+          "standard_id": "IS-DEMO-002",
+          "retrieval_score": 0.03125,
+          "reranker_score": -5.155317306518555,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-023",
+          "retrieval_score": 0.030017921146953404,
+          "reranker_score": -6.553229331970215,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-030",
+          "retrieval_score": 0.029631255487269532,
+          "reranker_score": -7.446789264678955,
+          "relevance_grade": 0
+        }
+      ],
+      "hybrid": [
+        {
+          "standard_id": "IS-DEMO-029",
+          "retrieval_score": 0.03278688524590164,
+          "reranker_score": null,
+          "relevance_grade": 2
+        },
+        {
+          "standard_id": "IS-DEMO-006",
+          "retrieval_score": 0.03200204813108039,
+          "reranker_score": null,
+          "relevance_grade": 3
+        },
+        {
+          "standard_id": "IS-DEMO-002",
+          "retrieval_score": 0.03125,
+          "reranker_score": null,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-005",
+          "retrieval_score": 0.031024531024531024,
+          "reranker_score": null,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-023",
+          "retrieval_score": 0.030017921146953404,
+          "reranker_score": null,
+          "relevance_grade": 0
+        }
+      ],
+      "semantic_fusion_0.5": [
+        {
+          "standard_id": "IS-DEMO-029",
+          "retrieval_score": 0.7062426209449768,
+          "reranker_score": 1.0953516960144043,
+          "rank_fusion_score": 0.02459016393442623,
+          "relevance_grade": 2
+        },
+        {
+          "standard_id": "IS-DEMO-006",
+          "retrieval_score": 0.7047492265701294,
+          "reranker_score": -1.350744605064392,
+          "rank_fusion_score": 0.024193548387096774,
+          "relevance_grade": 3
+        },
+        {
+          "standard_id": "IS-DEMO-002",
+          "retrieval_score": 0.5939606428146362,
+          "reranker_score": -5.155317306518555,
+          "rank_fusion_score": 0.023561507936507936,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-005",
+          "retrieval_score": 0.6010865569114685,
+          "reranker_score": -7.8850626945495605,
+          "rank_fusion_score": 0.023448773448773448,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-027",
+          "retrieval_score": 0.5717679262161255,
+          "reranker_score": -10.42774772644043,
+          "rank_fusion_score": 0.022737556561085975,
+          "relevance_grade": 0
+        }
+      ],
+      "hybrid_fusion_0.5": [
+        {
+          "standard_id": "IS-DEMO-029",
+          "retrieval_score": 0.03278688524590164,
+          "reranker_score": 1.0953516960144043,
+          "rank_fusion_score": 0.02459016393442623,
+          "relevance_grade": 2
+        },
+        {
+          "standard_id": "IS-DEMO-006",
+          "retrieval_score": 0.03200204813108039,
+          "reranker_score": -1.350744605064392,
+          "rank_fusion_score": 0.024193548387096774,
+          "relevance_grade": 3
+        },
+        {
+          "standard_id": "IS-DEMO-002",
+          "retrieval_score": 0.03125,
+          "reranker_score": -5.155317306518555,
+          "rank_fusion_score": 0.023809523809523808,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-005",
+          "retrieval_score": 0.031024531024531024,
+          "reranker_score": -7.8850626945495605,
+          "rank_fusion_score": 0.023200757575757576,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-023",
+          "retrieval_score": 0.030017921146953404,
+          "reranker_score": -6.553229331970215,
+          "rank_fusion_score": 0.023197115384615385,
+          "relevance_grade": 0
+        }
+      ],
+      "semantic_fusion_1": [
+        {
+          "standard_id": "IS-DEMO-029",
+          "retrieval_score": 0.7062426209449768,
+          "reranker_score": 1.0953516960144043,
+          "rank_fusion_score": 0.03278688524590164,
+          "relevance_grade": 2
+        },
+        {
+          "standard_id": "IS-DEMO-006",
+          "retrieval_score": 0.7047492265701294,
+          "reranker_score": -1.350744605064392,
+          "rank_fusion_score": 0.03225806451612903,
+          "relevance_grade": 3
+        },
+        {
+          "standard_id": "IS-DEMO-002",
+          "retrieval_score": 0.5939606428146362,
+          "reranker_score": -5.155317306518555,
+          "rank_fusion_score": 0.03149801587301587,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-005",
+          "retrieval_score": 0.6010865569114685,
+          "reranker_score": -7.8850626945495605,
+          "rank_fusion_score": 0.031024531024531024,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-027",
+          "retrieval_score": 0.5717679262161255,
+          "reranker_score": -10.42774772644043,
+          "rank_fusion_score": 0.030090497737556562,
+          "relevance_grade": 0
+        }
+      ],
+      "hybrid_fusion_1": [
+        {
+          "standard_id": "IS-DEMO-029",
+          "retrieval_score": 0.03278688524590164,
+          "reranker_score": 1.0953516960144043,
+          "rank_fusion_score": 0.03278688524590164,
+          "relevance_grade": 2
+        },
+        {
+          "standard_id": "IS-DEMO-006",
+          "retrieval_score": 0.03200204813108039,
+          "reranker_score": -1.350744605064392,
+          "rank_fusion_score": 0.03225806451612903,
+          "relevance_grade": 3
+        },
+        {
+          "standard_id": "IS-DEMO-002",
+          "retrieval_score": 0.03125,
+          "reranker_score": -5.155317306518555,
+          "rank_fusion_score": 0.031746031746031744,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-023",
+          "retrieval_score": 0.030017921146953404,
+          "reranker_score": -6.553229331970215,
+          "rank_fusion_score": 0.031009615384615385,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-005",
+          "retrieval_score": 0.031024531024531024,
+          "reranker_score": -7.8850626945495605,
+          "rank_fusion_score": 0.030776515151515152,
+          "relevance_grade": 0
+        }
+      ],
+      "semantic_fusion_1.5": [
+        {
+          "standard_id": "IS-DEMO-029",
+          "retrieval_score": 0.7062426209449768,
+          "reranker_score": 1.0953516960144043,
+          "rank_fusion_score": 0.04098360655737705,
+          "relevance_grade": 2
+        },
+        {
+          "standard_id": "IS-DEMO-006",
+          "retrieval_score": 0.7047492265701294,
+          "reranker_score": -1.350744605064392,
+          "rank_fusion_score": 0.04032258064516129,
+          "relevance_grade": 3
+        },
+        {
+          "standard_id": "IS-DEMO-002",
+          "retrieval_score": 0.5939606428146362,
+          "reranker_score": -5.155317306518555,
+          "rank_fusion_score": 0.03943452380952381,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-005",
+          "retrieval_score": 0.6010865569114685,
+          "reranker_score": -7.8850626945495605,
+          "rank_fusion_score": 0.0386002886002886,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-030",
+          "retrieval_score": 0.5699561834335327,
+          "reranker_score": -7.446789264678955,
+          "rank_fusion_score": 0.03778280542986426,
+          "relevance_grade": 0
+        }
+      ],
+      "hybrid_fusion_1.5": [
+        {
+          "standard_id": "IS-DEMO-029",
+          "retrieval_score": 0.03278688524590164,
+          "reranker_score": 1.0953516960144043,
+          "rank_fusion_score": 0.04098360655737705,
+          "relevance_grade": 2
+        },
+        {
+          "standard_id": "IS-DEMO-006",
+          "retrieval_score": 0.03200204813108039,
+          "reranker_score": -1.350744605064392,
+          "rank_fusion_score": 0.04032258064516129,
+          "relevance_grade": 3
+        },
+        {
+          "standard_id": "IS-DEMO-002",
+          "retrieval_score": 0.03125,
+          "reranker_score": -5.155317306518555,
+          "rank_fusion_score": 0.03968253968253968,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-023",
+          "retrieval_score": 0.030017921146953404,
+          "reranker_score": -6.553229331970215,
+          "rank_fusion_score": 0.038822115384615385,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-005",
+          "retrieval_score": 0.031024531024531024,
+          "reranker_score": -7.8850626945495605,
+          "rank_fusion_score": 0.03835227272727273,
+          "relevance_grade": 0
+        }
+      ],
+      "semantic_fusion_2": [
+        {
+          "standard_id": "IS-DEMO-029",
+          "retrieval_score": 0.7062426209449768,
+          "reranker_score": 1.0953516960144043,
+          "rank_fusion_score": 0.04918032786885246,
+          "relevance_grade": 2
+        },
+        {
+          "standard_id": "IS-DEMO-006",
+          "retrieval_score": 0.7047492265701294,
+          "reranker_score": -1.350744605064392,
+          "rank_fusion_score": 0.04838709677419355,
+          "relevance_grade": 3
+        },
+        {
+          "standard_id": "IS-DEMO-002",
+          "retrieval_score": 0.5939606428146362,
+          "reranker_score": -5.155317306518555,
+          "rank_fusion_score": 0.047371031746031744,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-005",
+          "retrieval_score": 0.6010865569114685,
+          "reranker_score": -7.8850626945495605,
+          "rank_fusion_score": 0.046176046176046176,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-030",
+          "retrieval_score": 0.5699561834335327,
+          "reranker_score": -7.446789264678955,
+          "rank_fusion_score": 0.04547511312217195,
+          "relevance_grade": 0
+        }
+      ],
+      "hybrid_fusion_2": [
+        {
+          "standard_id": "IS-DEMO-029",
+          "retrieval_score": 0.03278688524590164,
+          "reranker_score": 1.0953516960144043,
+          "rank_fusion_score": 0.04918032786885246,
+          "relevance_grade": 2
+        },
+        {
+          "standard_id": "IS-DEMO-006",
+          "retrieval_score": 0.03200204813108039,
+          "reranker_score": -1.350744605064392,
+          "rank_fusion_score": 0.04838709677419355,
+          "relevance_grade": 3
+        },
+        {
+          "standard_id": "IS-DEMO-002",
+          "retrieval_score": 0.03125,
+          "reranker_score": -5.155317306518555,
+          "rank_fusion_score": 0.047619047619047616,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-023",
+          "retrieval_score": 0.030017921146953404,
+          "reranker_score": -6.553229331970215,
+          "rank_fusion_score": 0.046634615384615385,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-005",
+          "retrieval_score": 0.031024531024531024,
+          "reranker_score": -7.8850626945495605,
+          "rank_fusion_score": 0.045928030303030304,
+          "relevance_grade": 0
+        }
+      ]
+    },
+    "metrics_by_system": {
+      "semantic": {
+        "recall@1": 0.5,
+        "recall@3": 1.0,
+        "recall@5": 1.0,
+        "precision@5": 0.4,
+        "mrr": 1.0,
+        "ndcg@5": 0.8339912323981488
+      },
+      "semantic_rerank": {
+        "recall@1": 0.5,
+        "recall@3": 1.0,
+        "recall@5": 1.0,
+        "precision@5": 0.4,
+        "mrr": 1.0,
+        "ndcg@5": 0.8339912323981488
+      },
+      "hybrid_rerank": {
+        "recall@1": 0.5,
+        "recall@3": 1.0,
+        "recall@5": 1.0,
+        "precision@5": 0.4,
+        "mrr": 1.0,
+        "ndcg@5": 0.8339912323981488
+      },
+      "hybrid": {
+        "recall@1": 0.5,
+        "recall@3": 1.0,
+        "recall@5": 1.0,
+        "precision@5": 0.4,
+        "mrr": 1.0,
+        "ndcg@5": 0.8339912323981488
+      },
+      "semantic_fusion_0.5": {
+        "recall@1": 0.5,
+        "recall@3": 1.0,
+        "recall@5": 1.0,
+        "precision@5": 0.4,
+        "mrr": 1.0,
+        "ndcg@5": 0.8339912323981488
+      },
+      "hybrid_fusion_0.5": {
+        "recall@1": 0.5,
+        "recall@3": 1.0,
+        "recall@5": 1.0,
+        "precision@5": 0.4,
+        "mrr": 1.0,
+        "ndcg@5": 0.8339912323981488
+      },
+      "semantic_fusion_1": {
+        "recall@1": 0.5,
+        "recall@3": 1.0,
+        "recall@5": 1.0,
+        "precision@5": 0.4,
+        "mrr": 1.0,
+        "ndcg@5": 0.8339912323981488
+      },
+      "hybrid_fusion_1": {
+        "recall@1": 0.5,
+        "recall@3": 1.0,
+        "recall@5": 1.0,
+        "precision@5": 0.4,
+        "mrr": 1.0,
+        "ndcg@5": 0.8339912323981488
+      },
+      "semantic_fusion_1.5": {
+        "recall@1": 0.5,
+        "recall@3": 1.0,
+        "recall@5": 1.0,
+        "precision@5": 0.4,
+        "mrr": 1.0,
+        "ndcg@5": 0.8339912323981488
+      },
+      "hybrid_fusion_1.5": {
+        "recall@1": 0.5,
+        "recall@3": 1.0,
+        "recall@5": 1.0,
+        "precision@5": 0.4,
+        "mrr": 1.0,
+        "ndcg@5": 0.8339912323981488
+      },
+      "semantic_fusion_2": {
+        "recall@1": 0.5,
+        "recall@3": 1.0,
+        "recall@5": 1.0,
+        "precision@5": 0.4,
+        "mrr": 1.0,
+        "ndcg@5": 0.8339912323981488
+      },
+      "hybrid_fusion_2": {
+        "recall@1": 0.5,
+        "recall@3": 1.0,
+        "recall@5": 1.0,
+        "precision@5": 0.4,
+        "mrr": 1.0,
+        "ndcg@5": 0.8339912323981488
+      }
+    }
+  },
+  {
+    "query_id": "Q089",
+    "query": "firefighting water equipment",
+    "relevance": {
+      "IS-DEMO-035": 3,
+      "IS-DEMO-008": 2,
+      "IS-DEMO-032": 1
+    },
+    "top5_by_system": {
+      "semantic": [
+        {
+          "standard_id": "IS-DEMO-035",
+          "retrieval_score": 0.7723026871681213,
+          "reranker_score": null,
+          "relevance_grade": 3
+        },
+        {
+          "standard_id": "IS-DEMO-009",
+          "retrieval_score": 0.7051002979278564,
+          "reranker_score": null,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-040",
+          "retrieval_score": 0.6776861548423767,
+          "reranker_score": null,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-032",
+          "retrieval_score": 0.6689004898071289,
+          "reranker_score": null,
+          "relevance_grade": 1
+        },
+        {
+          "standard_id": "IS-DEMO-033",
+          "retrieval_score": 0.6374391913414001,
+          "reranker_score": null,
+          "relevance_grade": 0
+        }
+      ],
+      "semantic_rerank": [
+        {
+          "standard_id": "IS-DEMO-035",
+          "retrieval_score": 0.7723026871681213,
+          "reranker_score": 6.55634880065918,
+          "relevance_grade": 3
+        },
+        {
+          "standard_id": "IS-DEMO-009",
+          "retrieval_score": 0.7051002979278564,
+          "reranker_score": 2.4547629356384277,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-040",
+          "retrieval_score": 0.6776861548423767,
+          "reranker_score": -4.997091293334961,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-010",
+          "retrieval_score": 0.6260526776313782,
+          "reranker_score": -7.814988136291504,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-033",
+          "retrieval_score": 0.6374391913414001,
+          "reranker_score": -7.876747131347656,
+          "relevance_grade": 0
+        }
+      ],
+      "hybrid_rerank": [
+        {
+          "standard_id": "IS-DEMO-035",
+          "retrieval_score": 0.03278688524590164,
+          "reranker_score": 6.55634880065918,
+          "relevance_grade": 3
+        },
+        {
+          "standard_id": "IS-DEMO-009",
+          "retrieval_score": 0.031754032258064516,
+          "reranker_score": 2.4547629356384277,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-040",
+          "retrieval_score": 0.031746031746031744,
+          "reranker_score": -4.997091293334961,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-010",
+          "retrieval_score": 0.029857397504456328,
+          "reranker_score": -7.814988136291504,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-033",
+          "retrieval_score": 0.02967032967032967,
+          "reranker_score": -7.876747131347656,
+          "relevance_grade": 0
+        }
+      ],
+      "hybrid": [
+        {
+          "standard_id": "IS-DEMO-035",
+          "retrieval_score": 0.03278688524590164,
+          "reranker_score": null,
+          "relevance_grade": 3
+        },
+        {
+          "standard_id": "IS-DEMO-009",
+          "retrieval_score": 0.031754032258064516,
+          "reranker_score": null,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-040",
+          "retrieval_score": 0.031746031746031744,
+          "reranker_score": null,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-007",
+          "retrieval_score": 0.0304147465437788,
+          "reranker_score": null,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-034",
+          "retrieval_score": 0.03007688828584351,
+          "reranker_score": null,
+          "relevance_grade": 0
+        }
+      ],
+      "semantic_fusion_0.5": [
+        {
+          "standard_id": "IS-DEMO-035",
+          "retrieval_score": 0.7723026871681213,
+          "reranker_score": 6.55634880065918,
+          "rank_fusion_score": 0.02459016393442623,
+          "relevance_grade": 3
+        },
+        {
+          "standard_id": "IS-DEMO-009",
+          "retrieval_score": 0.7051002979278564,
+          "reranker_score": 2.4547629356384277,
+          "rank_fusion_score": 0.024193548387096774,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-040",
+          "retrieval_score": 0.6776861548423767,
+          "reranker_score": -4.997091293334961,
+          "rank_fusion_score": 0.023809523809523808,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-033",
+          "retrieval_score": 0.6374391913414001,
+          "reranker_score": -7.876747131347656,
+          "rank_fusion_score": 0.023076923076923078,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-032",
+          "retrieval_score": 0.6689004898071289,
+          "reranker_score": -9.273185729980469,
+          "rank_fusion_score": 0.02297794117647059,
+          "relevance_grade": 1
+        }
+      ],
+      "hybrid_fusion_0.5": [
+        {
+          "standard_id": "IS-DEMO-035",
+          "retrieval_score": 0.03278688524590164,
+          "reranker_score": 6.55634880065918,
+          "rank_fusion_score": 0.02459016393442623,
+          "relevance_grade": 3
+        },
+        {
+          "standard_id": "IS-DEMO-009",
+          "retrieval_score": 0.031754032258064516,
+          "reranker_score": 2.4547629356384277,
+          "rank_fusion_score": 0.024193548387096774,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-040",
+          "retrieval_score": 0.031746031746031744,
+          "reranker_score": -4.997091293334961,
+          "rank_fusion_score": 0.023809523809523808,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-007",
+          "retrieval_score": 0.0304147465437788,
+          "reranker_score": -9.204894065856934,
+          "rank_fusion_score": 0.02308768656716418,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-010",
+          "retrieval_score": 0.029857397504456328,
+          "reranker_score": -7.814988136291504,
+          "rank_fusion_score": 0.022964015151515152,
+          "relevance_grade": 0
+        }
+      ],
+      "semantic_fusion_1": [
+        {
+          "standard_id": "IS-DEMO-035",
+          "retrieval_score": 0.7723026871681213,
+          "reranker_score": 6.55634880065918,
+          "rank_fusion_score": 0.03278688524590164,
+          "relevance_grade": 3
+        },
+        {
+          "standard_id": "IS-DEMO-009",
+          "retrieval_score": 0.7051002979278564,
+          "reranker_score": 2.4547629356384277,
+          "rank_fusion_score": 0.03225806451612903,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-040",
+          "retrieval_score": 0.6776861548423767,
+          "reranker_score": -4.997091293334961,
+          "rank_fusion_score": 0.031746031746031744,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-010",
+          "retrieval_score": 0.6260526776313782,
+          "reranker_score": -7.814988136291504,
+          "rank_fusion_score": 0.030776515151515152,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-033",
+          "retrieval_score": 0.6374391913414001,
+          "reranker_score": -7.876747131347656,
+          "rank_fusion_score": 0.03076923076923077,
+          "relevance_grade": 0
+        }
+      ],
+      "hybrid_fusion_1": [
+        {
+          "standard_id": "IS-DEMO-035",
+          "retrieval_score": 0.03278688524590164,
+          "reranker_score": 6.55634880065918,
+          "rank_fusion_score": 0.03278688524590164,
+          "relevance_grade": 3
+        },
+        {
+          "standard_id": "IS-DEMO-009",
+          "retrieval_score": 0.031754032258064516,
+          "reranker_score": 2.4547629356384277,
+          "rank_fusion_score": 0.03225806451612903,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-040",
+          "retrieval_score": 0.031746031746031744,
+          "reranker_score": -4.997091293334961,
+          "rank_fusion_score": 0.031746031746031744,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-010",
+          "retrieval_score": 0.029857397504456328,
+          "reranker_score": -7.814988136291504,
+          "rank_fusion_score": 0.030776515151515152,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-007",
+          "retrieval_score": 0.0304147465437788,
+          "reranker_score": -9.204894065856934,
+          "rank_fusion_score": 0.03055037313432836,
+          "relevance_grade": 0
+        }
+      ],
+      "semantic_fusion_1.5": [
+        {
+          "standard_id": "IS-DEMO-035",
+          "retrieval_score": 0.7723026871681213,
+          "reranker_score": 6.55634880065918,
+          "rank_fusion_score": 0.04098360655737705,
+          "relevance_grade": 3
+        },
+        {
+          "standard_id": "IS-DEMO-009",
+          "retrieval_score": 0.7051002979278564,
+          "reranker_score": 2.4547629356384277,
+          "rank_fusion_score": 0.04032258064516129,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-040",
+          "retrieval_score": 0.6776861548423767,
+          "reranker_score": -4.997091293334961,
+          "rank_fusion_score": 0.03968253968253968,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-010",
+          "retrieval_score": 0.6260526776313782,
+          "reranker_score": -7.814988136291504,
+          "rank_fusion_score": 0.03858901515151515,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-033",
+          "retrieval_score": 0.6374391913414001,
+          "reranker_score": -7.876747131347656,
+          "rank_fusion_score": 0.038461538461538464,
+          "relevance_grade": 0
+        }
+      ],
+      "hybrid_fusion_1.5": [
+        {
+          "standard_id": "IS-DEMO-035",
+          "retrieval_score": 0.03278688524590164,
+          "reranker_score": 6.55634880065918,
+          "rank_fusion_score": 0.04098360655737705,
+          "relevance_grade": 3
+        },
+        {
+          "standard_id": "IS-DEMO-009",
+          "retrieval_score": 0.031754032258064516,
+          "reranker_score": 2.4547629356384277,
+          "rank_fusion_score": 0.04032258064516129,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-040",
+          "retrieval_score": 0.031746031746031744,
+          "reranker_score": -4.997091293334961,
+          "rank_fusion_score": 0.03968253968253968,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-010",
+          "retrieval_score": 0.029857397504456328,
+          "reranker_score": -7.814988136291504,
+          "rank_fusion_score": 0.03858901515151515,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-007",
+          "retrieval_score": 0.0304147465437788,
+          "reranker_score": -9.204894065856934,
+          "rank_fusion_score": 0.03801305970149253,
+          "relevance_grade": 0
+        }
+      ],
+      "semantic_fusion_2": [
+        {
+          "standard_id": "IS-DEMO-035",
+          "retrieval_score": 0.7723026871681213,
+          "reranker_score": 6.55634880065918,
+          "rank_fusion_score": 0.04918032786885246,
+          "relevance_grade": 3
+        },
+        {
+          "standard_id": "IS-DEMO-009",
+          "retrieval_score": 0.7051002979278564,
+          "reranker_score": 2.4547629356384277,
+          "rank_fusion_score": 0.04838709677419355,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-040",
+          "retrieval_score": 0.6776861548423767,
+          "reranker_score": -4.997091293334961,
+          "rank_fusion_score": 0.047619047619047616,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-010",
+          "retrieval_score": 0.6260526776313782,
+          "reranker_score": -7.814988136291504,
+          "rank_fusion_score": 0.04640151515151515,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-033",
+          "retrieval_score": 0.6374391913414001,
+          "reranker_score": -7.876747131347656,
+          "rank_fusion_score": 0.046153846153846156,
+          "relevance_grade": 0
+        }
+      ],
+      "hybrid_fusion_2": [
+        {
+          "standard_id": "IS-DEMO-035",
+          "retrieval_score": 0.03278688524590164,
+          "reranker_score": 6.55634880065918,
+          "rank_fusion_score": 0.04918032786885246,
+          "relevance_grade": 3
+        },
+        {
+          "standard_id": "IS-DEMO-009",
+          "retrieval_score": 0.031754032258064516,
+          "reranker_score": 2.4547629356384277,
+          "rank_fusion_score": 0.04838709677419355,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-040",
+          "retrieval_score": 0.031746031746031744,
+          "reranker_score": -4.997091293334961,
+          "rank_fusion_score": 0.047619047619047616,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-010",
+          "retrieval_score": 0.029857397504456328,
+          "reranker_score": -7.814988136291504,
+          "rank_fusion_score": 0.04640151515151515,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-007",
+          "retrieval_score": 0.0304147465437788,
+          "reranker_score": -9.204894065856934,
+          "rank_fusion_score": 0.04547574626865672,
+          "relevance_grade": 0
+        }
+      ]
+    },
+    "metrics_by_system": {
+      "semantic": {
+        "recall@1": 0.5,
+        "recall@3": 0.5,
+        "recall@5": 0.5,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 0.7911043622741993
+      },
+      "semantic_rerank": {
+        "recall@1": 0.5,
+        "recall@3": 0.5,
+        "recall@5": 0.5,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 0.7452525342261976
+      },
+      "hybrid_rerank": {
+        "recall@1": 0.5,
+        "recall@3": 0.5,
+        "recall@5": 0.5,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 0.7452525342261976
+      },
+      "hybrid": {
+        "recall@1": 0.5,
+        "recall@3": 0.5,
+        "recall@5": 0.5,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 0.7452525342261976
+      },
+      "semantic_fusion_0.5": {
+        "recall@1": 0.5,
+        "recall@3": 0.5,
+        "recall@5": 0.5,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 0.7864386820782063
+      },
+      "hybrid_fusion_0.5": {
+        "recall@1": 0.5,
+        "recall@3": 0.5,
+        "recall@5": 0.5,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 0.7452525342261976
+      },
+      "semantic_fusion_1": {
+        "recall@1": 0.5,
+        "recall@3": 0.5,
+        "recall@5": 0.5,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 0.7452525342261976
+      },
+      "hybrid_fusion_1": {
+        "recall@1": 0.5,
+        "recall@3": 0.5,
+        "recall@5": 0.5,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 0.7452525342261976
+      },
+      "semantic_fusion_1.5": {
+        "recall@1": 0.5,
+        "recall@3": 0.5,
+        "recall@5": 0.5,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 0.7452525342261976
+      },
+      "hybrid_fusion_1.5": {
+        "recall@1": 0.5,
+        "recall@3": 0.5,
+        "recall@5": 0.5,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 0.7452525342261976
+      },
+      "semantic_fusion_2": {
+        "recall@1": 0.5,
+        "recall@3": 0.5,
+        "recall@5": 0.5,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 0.7452525342261976
+      },
+      "hybrid_fusion_2": {
+        "recall@1": 0.5,
+        "recall@3": 0.5,
+        "recall@5": 0.5,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 0.7452525342261976
+      }
+    }
+  },
+  {
+    "query_id": "Q090",
+    "query": "insulation for electrical equipment",
+    "relevance": {
+      "IS-DEMO-017": 3,
+      "IS-DEMO-014": 2,
+      "IS-DEMO-016": 2,
+      "IS-DEMO-036": 1
+    },
+    "top5_by_system": {
+      "semantic": [
+        {
+          "standard_id": "IS-DEMO-017",
+          "retrieval_score": 0.7752935886383057,
+          "reranker_score": null,
+          "relevance_grade": 3
+        },
+        {
+          "standard_id": "IS-DEMO-036",
+          "retrieval_score": 0.7667242288589478,
+          "reranker_score": null,
+          "relevance_grade": 1
+        },
+        {
+          "standard_id": "IS-DEMO-005",
+          "retrieval_score": 0.7433825731277466,
+          "reranker_score": null,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-037",
+          "retrieval_score": 0.7252945303916931,
+          "reranker_score": null,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-024",
+          "retrieval_score": 0.7098647952079773,
+          "reranker_score": null,
+          "relevance_grade": 0
+        }
+      ],
+      "semantic_rerank": [
+        {
+          "standard_id": "IS-DEMO-017",
+          "retrieval_score": 0.7752935886383057,
+          "reranker_score": 6.712630271911621,
+          "relevance_grade": 3
+        },
+        {
+          "standard_id": "IS-DEMO-005",
+          "retrieval_score": 0.7433825731277466,
+          "reranker_score": 3.4161603450775146,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-036",
+          "retrieval_score": 0.7667242288589478,
+          "reranker_score": 3.1122264862060547,
+          "relevance_grade": 1
+        },
+        {
+          "standard_id": "IS-DEMO-012",
+          "retrieval_score": 0.6880536079406738,
+          "reranker_score": 2.187493085861206,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-023",
+          "retrieval_score": 0.6736761927604675,
+          "reranker_score": 2.174013376235962,
+          "relevance_grade": 0
+        }
+      ],
+      "hybrid_rerank": [
+        {
+          "standard_id": "IS-DEMO-017",
+          "retrieval_score": 0.032266458495966696,
+          "reranker_score": 6.712630271911621,
+          "relevance_grade": 3
+        },
+        {
+          "standard_id": "IS-DEMO-005",
+          "retrieval_score": 0.03200204813108039,
+          "reranker_score": 3.4161603450775146,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-036",
+          "retrieval_score": 0.03252247488101534,
+          "reranker_score": 3.1122264862060547,
+          "relevance_grade": 1
+        },
+        {
+          "standard_id": "IS-DEMO-012",
+          "retrieval_score": 0.028991596638655463,
+          "reranker_score": 2.187493085861206,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-023",
+          "retrieval_score": 0.029273504273504274,
+          "reranker_score": 2.174013376235962,
+          "relevance_grade": 0
+        }
+      ],
+      "hybrid": [
+        {
+          "standard_id": "IS-DEMO-036",
+          "retrieval_score": 0.03252247488101534,
+          "reranker_score": null,
+          "relevance_grade": 1
+        },
+        {
+          "standard_id": "IS-DEMO-017",
+          "retrieval_score": 0.032266458495966696,
+          "reranker_score": null,
+          "relevance_grade": 3
+        },
+        {
+          "standard_id": "IS-DEMO-005",
+          "retrieval_score": 0.03200204813108039,
+          "reranker_score": null,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-024",
+          "retrieval_score": 0.029877369007803793,
+          "reranker_score": null,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-001",
+          "retrieval_score": 0.029631255487269532,
+          "reranker_score": null,
+          "relevance_grade": 0
+        }
+      ],
+      "semantic_fusion_0.5": [
+        {
+          "standard_id": "IS-DEMO-017",
+          "retrieval_score": 0.7752935886383057,
+          "reranker_score": 6.712630271911621,
+          "rank_fusion_score": 0.02459016393442623,
+          "relevance_grade": 3
+        },
+        {
+          "standard_id": "IS-DEMO-036",
+          "retrieval_score": 0.7667242288589478,
+          "reranker_score": 3.1122264862060547,
+          "rank_fusion_score": 0.024065540194572452,
+          "relevance_grade": 1
+        },
+        {
+          "standard_id": "IS-DEMO-005",
+          "retrieval_score": 0.7433825731277466,
+          "reranker_score": 3.4161603450775146,
+          "rank_fusion_score": 0.02393753200204813,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-024",
+          "retrieval_score": 0.7098647952079773,
+          "reranker_score": -2.931607246398926,
+          "rank_fusion_score": 0.022847301951779565,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-025",
+          "retrieval_score": 0.7044436931610107,
+          "reranker_score": -2.74937105178833,
+          "rank_fusion_score": 0.022501130710085936,
+          "relevance_grade": 0
+        }
+      ],
+      "hybrid_fusion_0.5": [
+        {
+          "standard_id": "IS-DEMO-036",
+          "retrieval_score": 0.03252247488101534,
+          "reranker_score": 3.1122264862060547,
+          "rank_fusion_score": 0.024329950559458757,
+          "relevance_grade": 1
+        },
+        {
+          "standard_id": "IS-DEMO-017",
+          "retrieval_score": 0.032266458495966696,
+          "reranker_score": 6.712630271911621,
+          "rank_fusion_score": 0.024325753569539928,
+          "relevance_grade": 3
+        },
+        {
+          "standard_id": "IS-DEMO-005",
+          "retrieval_score": 0.03200204813108039,
+          "reranker_score": 3.4161603450775146,
+          "rank_fusion_score": 0.02393753200204813,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-024",
+          "retrieval_score": 0.029877369007803793,
+          "reranker_score": -2.931607246398926,
+          "rank_fusion_score": 0.02308768656716418,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-023",
+          "retrieval_score": 0.029273504273504274,
+          "reranker_score": 2.174013376235962,
+          "rank_fusion_score": 0.022843822843822845,
+          "relevance_grade": 0
+        }
+      ],
+      "semantic_fusion_1": [
+        {
+          "standard_id": "IS-DEMO-017",
+          "retrieval_score": 0.7752935886383057,
+          "reranker_score": 6.712630271911621,
+          "rank_fusion_score": 0.03278688524590164,
+          "relevance_grade": 3
+        },
+        {
+          "standard_id": "IS-DEMO-036",
+          "retrieval_score": 0.7667242288589478,
+          "reranker_score": 3.1122264862060547,
+          "rank_fusion_score": 0.03200204813108039,
+          "relevance_grade": 1
+        },
+        {
+          "standard_id": "IS-DEMO-005",
+          "retrieval_score": 0.7433825731277466,
+          "reranker_score": 3.4161603450775146,
+          "rank_fusion_score": 0.03200204813108039,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-024",
+          "retrieval_score": 0.7098647952079773,
+          "reranker_score": -2.931607246398926,
+          "rank_fusion_score": 0.030309988518943745,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-025",
+          "retrieval_score": 0.7044436931610107,
+          "reranker_score": -2.74937105178833,
+          "rank_fusion_score": 0.03007688828584351,
+          "relevance_grade": 0
+        }
+      ],
+      "hybrid_fusion_1": [
+        {
+          "standard_id": "IS-DEMO-017",
+          "retrieval_score": 0.032266458495966696,
+          "reranker_score": 6.712630271911621,
+          "rank_fusion_score": 0.03252247488101534,
+          "relevance_grade": 3
+        },
+        {
+          "standard_id": "IS-DEMO-036",
+          "retrieval_score": 0.03252247488101534,
+          "reranker_score": 3.1122264862060547,
+          "rank_fusion_score": 0.032266458495966696,
+          "relevance_grade": 1
+        },
+        {
+          "standard_id": "IS-DEMO-005",
+          "retrieval_score": 0.03200204813108039,
+          "reranker_score": 3.4161603450775146,
+          "rank_fusion_score": 0.03200204813108039,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-024",
+          "retrieval_score": 0.029877369007803793,
+          "reranker_score": -2.931607246398926,
+          "rank_fusion_score": 0.03055037313432836,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-012",
+          "retrieval_score": 0.028991596638655463,
+          "reranker_score": 2.187493085861206,
+          "rank_fusion_score": 0.03055037313432836,
+          "relevance_grade": 0
+        }
+      ],
+      "semantic_fusion_1.5": [
+        {
+          "standard_id": "IS-DEMO-017",
+          "retrieval_score": 0.7752935886383057,
+          "reranker_score": 6.712630271911621,
+          "rank_fusion_score": 0.04098360655737705,
+          "relevance_grade": 3
+        },
+        {
+          "standard_id": "IS-DEMO-005",
+          "retrieval_score": 0.7433825731277466,
+          "reranker_score": 3.4161603450775146,
+          "rank_fusion_score": 0.040066564260112646,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-036",
+          "retrieval_score": 0.7667242288589478,
+          "reranker_score": 3.1122264862060547,
+          "rank_fusion_score": 0.039938556067588324,
+          "relevance_grade": 1
+        },
+        {
+          "standard_id": "IS-DEMO-024",
+          "retrieval_score": 0.7098647952079773,
+          "reranker_score": -2.931607246398926,
+          "rank_fusion_score": 0.03777267508610792,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-012",
+          "retrieval_score": 0.6880536079406738,
+          "reranker_score": 2.187493085861206,
+          "rank_fusion_score": 0.037723214285714284,
+          "relevance_grade": 0
+        }
+      ],
+      "hybrid_fusion_1.5": [
+        {
+          "standard_id": "IS-DEMO-017",
+          "retrieval_score": 0.032266458495966696,
+          "reranker_score": 6.712630271911621,
+          "rank_fusion_score": 0.040719196192490745,
+          "relevance_grade": 3
+        },
+        {
+          "standard_id": "IS-DEMO-036",
+          "retrieval_score": 0.03252247488101534,
+          "reranker_score": 3.1122264862060547,
+          "rank_fusion_score": 0.04020296643247463,
+          "relevance_grade": 1
+        },
+        {
+          "standard_id": "IS-DEMO-005",
+          "retrieval_score": 0.03200204813108039,
+          "reranker_score": 3.4161603450775146,
+          "rank_fusion_score": 0.040066564260112646,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-012",
+          "retrieval_score": 0.028991596638655463,
+          "reranker_score": 2.187493085861206,
+          "rank_fusion_score": 0.03836287313432836,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-023",
+          "retrieval_score": 0.029273504273504274,
+          "reranker_score": 2.174013376235962,
+          "rank_fusion_score": 0.03822843822843823,
+          "relevance_grade": 0
+        }
+      ],
+      "semantic_fusion_2": [
+        {
+          "standard_id": "IS-DEMO-017",
+          "retrieval_score": 0.7752935886383057,
+          "reranker_score": 6.712630271911621,
+          "rank_fusion_score": 0.04918032786885246,
+          "relevance_grade": 3
+        },
+        {
+          "standard_id": "IS-DEMO-005",
+          "retrieval_score": 0.7433825731277466,
+          "reranker_score": 3.4161603450775146,
+          "rank_fusion_score": 0.048131080389144903,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-036",
+          "retrieval_score": 0.7667242288589478,
+          "reranker_score": 3.1122264862060547,
+          "rank_fusion_score": 0.04787506400409626,
+          "relevance_grade": 1
+        },
+        {
+          "standard_id": "IS-DEMO-012",
+          "retrieval_score": 0.6880536079406738,
+          "reranker_score": 2.187493085861206,
+          "rank_fusion_score": 0.045535714285714284,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-024",
+          "retrieval_score": 0.7098647952079773,
+          "reranker_score": -2.931607246398926,
+          "rank_fusion_score": 0.045235361653272105,
+          "relevance_grade": 0
+        }
+      ],
+      "hybrid_fusion_2": [
+        {
+          "standard_id": "IS-DEMO-017",
+          "retrieval_score": 0.032266458495966696,
+          "reranker_score": 6.712630271911621,
+          "rank_fusion_score": 0.04891591750396616,
+          "relevance_grade": 3
+        },
+        {
+          "standard_id": "IS-DEMO-036",
+          "retrieval_score": 0.03252247488101534,
+          "reranker_score": 3.1122264862060547,
+          "rank_fusion_score": 0.04813947436898257,
+          "relevance_grade": 1
+        },
+        {
+          "standard_id": "IS-DEMO-005",
+          "retrieval_score": 0.03200204813108039,
+          "reranker_score": 3.4161603450775146,
+          "rank_fusion_score": 0.048131080389144903,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-012",
+          "retrieval_score": 0.028991596638655463,
+          "reranker_score": 2.187493085861206,
+          "rank_fusion_score": 0.04617537313432836,
+          "relevance_grade": 0
+        },
+        {
+          "standard_id": "IS-DEMO-023",
+          "retrieval_score": 0.029273504273504274,
+          "reranker_score": 2.174013376235962,
+          "rank_fusion_score": 0.04592074592074592,
+          "relevance_grade": 0
+        }
+      ]
+    },
+    "metrics_by_system": {
+      "semantic": {
+        "recall@1": 0.3333333333333333,
+        "recall@3": 0.3333333333333333,
+        "recall@5": 0.3333333333333333,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 0.7050356957126813
+      },
+      "semantic_rerank": {
+        "recall@1": 0.3333333333333333,
+        "recall@3": 0.3333333333333333,
+        "recall@5": 0.3333333333333333,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 0.6929388539280299
+      },
+      "hybrid_rerank": {
+        "recall@1": 0.3333333333333333,
+        "recall@3": 0.3333333333333333,
+        "recall@5": 0.3333333333333333,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 0.6929388539280299
+      },
+      "hybrid": {
+        "recall@1": 0.0,
+        "recall@3": 0.3333333333333333,
+        "recall@5": 0.3333333333333333,
+        "precision@5": 0.2,
+        "mrr": 0.5,
+        "ndcg@5": 0.5004412048493774
+      },
+      "semantic_fusion_0.5": {
+        "recall@1": 0.3333333333333333,
+        "recall@3": 0.3333333333333333,
+        "recall@5": 0.3333333333333333,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 0.7050356957126813
+      },
+      "hybrid_fusion_0.5": {
+        "recall@1": 0.0,
+        "recall@3": 0.3333333333333333,
+        "recall@5": 0.3333333333333333,
+        "precision@5": 0.2,
+        "mrr": 0.5,
+        "ndcg@5": 0.5004412048493774
+      },
+      "semantic_fusion_1": {
+        "recall@1": 0.3333333333333333,
+        "recall@3": 0.3333333333333333,
+        "recall@5": 0.3333333333333333,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 0.7050356957126813
+      },
+      "hybrid_fusion_1": {
+        "recall@1": 0.3333333333333333,
+        "recall@3": 0.3333333333333333,
+        "recall@5": 0.3333333333333333,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 0.7050356957126813
+      },
+      "semantic_fusion_1.5": {
+        "recall@1": 0.3333333333333333,
+        "recall@3": 0.3333333333333333,
+        "recall@5": 0.3333333333333333,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 0.6929388539280299
+      },
+      "hybrid_fusion_1.5": {
+        "recall@1": 0.3333333333333333,
+        "recall@3": 0.3333333333333333,
+        "recall@5": 0.3333333333333333,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 0.7050356957126813
+      },
+      "semantic_fusion_2": {
+        "recall@1": 0.3333333333333333,
+        "recall@3": 0.3333333333333333,
+        "recall@5": 0.3333333333333333,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 0.6929388539280299
+      },
+      "hybrid_fusion_2": {
+        "recall@1": 0.3333333333333333,
+        "recall@3": 0.3333333333333333,
+        "recall@5": 0.3333333333333333,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 0.7050356957126813
+      }
+    }
+  }
+]

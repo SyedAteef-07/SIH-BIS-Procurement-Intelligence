@@ -1,0 +1,1110 @@
+[
+  {
+    "id": "Q001",
+    "query": "Procurement requirements for distribution transformers",
+    "relevant": [
+      "IS-DEMO-001"
+    ],
+    "relevance": {
+      "IS-DEMO-001": 3
+    },
+    "category": "exact"
+  },
+  {
+    "id": "Q002",
+    "query": "Procurement requirements for portland cement",
+    "relevant": [
+      "IS-DEMO-002"
+    ],
+    "relevance": {
+      "IS-DEMO-002": 3
+    },
+    "category": "exact"
+  },
+  {
+    "id": "Q003",
+    "query": "Procurement requirements for led road luminaires",
+    "relevant": [
+      "IS-DEMO-003"
+    ],
+    "relevance": {
+      "IS-DEMO-003": 3
+    },
+    "category": "exact"
+  },
+  {
+    "id": "Q004",
+    "query": "Procurement requirements for industrial protective helmets",
+    "relevant": [
+      "IS-DEMO-004"
+    ],
+    "relevance": {
+      "IS-DEMO-004": 3
+    },
+    "category": "exact"
+  },
+  {
+    "id": "Q005",
+    "query": "Procurement requirements for insulated power cables",
+    "relevant": [
+      "IS-DEMO-005"
+    ],
+    "relevance": {
+      "IS-DEMO-005": 3
+    },
+    "category": "exact"
+  },
+  {
+    "id": "Q006",
+    "query": "Procurement requirements for steel reinforcing bars",
+    "relevant": [
+      "IS-DEMO-006"
+    ],
+    "relevance": {
+      "IS-DEMO-006": 3
+    },
+    "category": "exact"
+  },
+  {
+    "id": "Q007",
+    "query": "Procurement requirements for drinking water quality",
+    "relevant": [
+      "IS-DEMO-007"
+    ],
+    "relevance": {
+      "IS-DEMO-007": 3
+    },
+    "category": "exact"
+  },
+  {
+    "id": "Q008",
+    "query": "Procurement requirements for centrifugal water pumps",
+    "relevant": [
+      "IS-DEMO-008"
+    ],
+    "relevance": {
+      "IS-DEMO-008": 3
+    },
+    "category": "exact"
+  },
+  {
+    "id": "Q009",
+    "query": "Procurement requirements for portable fire extinguishers",
+    "relevant": [
+      "IS-DEMO-009"
+    ],
+    "relevance": {
+      "IS-DEMO-009": 3
+    },
+    "category": "exact"
+  },
+  {
+    "id": "Q010",
+    "query": "Procurement requirements for pvc water supply pipes",
+    "relevant": [
+      "IS-DEMO-010"
+    ],
+    "relevance": {
+      "IS-DEMO-010": 3
+    },
+    "category": "exact"
+  },
+  {
+    "id": "Q011",
+    "query": "Procurement requirements for power transformers",
+    "relevant": [
+      "IS-DEMO-011"
+    ],
+    "relevance": {
+      "IS-DEMO-011": 3
+    },
+    "category": "exact"
+  },
+  {
+    "id": "Q012",
+    "query": "Procurement requirements for dry-type transformers",
+    "relevant": [
+      "IS-DEMO-012"
+    ],
+    "relevance": {
+      "IS-DEMO-012": 3
+    },
+    "category": "exact"
+  },
+  {
+    "id": "Q013",
+    "query": "Procurement requirements for instrument transformers",
+    "relevant": [
+      "IS-DEMO-013"
+    ],
+    "relevance": {
+      "IS-DEMO-013": 3
+    },
+    "category": "exact"
+  },
+  {
+    "id": "Q014",
+    "query": "Procurement requirements for transformer insulating oil",
+    "relevant": [
+      "IS-DEMO-014"
+    ],
+    "relevance": {
+      "IS-DEMO-014": 3
+    },
+    "category": "exact"
+  },
+  {
+    "id": "Q015",
+    "query": "Procurement requirements for transformer test methods",
+    "relevant": [
+      "IS-DEMO-015"
+    ],
+    "relevance": {
+      "IS-DEMO-015": 3
+    },
+    "category": "exact"
+  },
+  {
+    "id": "Q016",
+    "query": "Procurement requirements for transformer bushings",
+    "relevant": [
+      "IS-DEMO-016"
+    ],
+    "relevance": {
+      "IS-DEMO-016": 3
+    },
+    "category": "exact"
+  },
+  {
+    "id": "Q017",
+    "query": "Procurement requirements for solid electrical insulation",
+    "relevant": [
+      "IS-DEMO-017"
+    ],
+    "relevance": {
+      "IS-DEMO-017": 3
+    },
+    "category": "exact"
+  },
+  {
+    "id": "Q018",
+    "query": "Procurement requirements for indoor led luminaires",
+    "relevant": [
+      "IS-DEMO-018"
+    ],
+    "relevance": {
+      "IS-DEMO-018": 3
+    },
+    "category": "exact"
+  },
+  {
+    "id": "Q019",
+    "query": "Procurement requirements for emergency lighting units",
+    "relevant": [
+      "IS-DEMO-019"
+    ],
+    "relevance": {
+      "IS-DEMO-019": 3
+    },
+    "category": "exact"
+  },
+  {
+    "id": "Q020",
+    "query": "Procurement requirements for road lighting design",
+    "relevant": [
+      "IS-DEMO-020"
+    ],
+    "relevance": {
+      "IS-DEMO-020": 3
+    },
+    "category": "exact"
+  },
+  {
+    "id": "Q021",
+    "query": "Procurement requirements for outdoor luminaire safety",
+    "relevant": [
+      "IS-DEMO-021"
+    ],
+    "relevance": {
+      "IS-DEMO-021": 3
+    },
+    "category": "exact"
+  },
+  {
+    "id": "Q022",
+    "query": "Procurement requirements for luminaire enclosure protection",
+    "relevant": [
+      "IS-DEMO-022"
+    ],
+    "relevance": {
+      "IS-DEMO-022": 3
+    },
+    "category": "exact"
+  },
+  {
+    "id": "Q023",
+    "query": "Procurement requirements for low-voltage pvc cables",
+    "relevant": [
+      "IS-DEMO-023"
+    ],
+    "relevance": {
+      "IS-DEMO-023": 3
+    },
+    "category": "exact"
+  },
+  {
+    "id": "Q024",
+    "query": "Procurement requirements for high-voltage xlpe cables",
+    "relevant": [
+      "IS-DEMO-024"
+    ],
+    "relevance": {
+      "IS-DEMO-024": 3
+    },
+    "category": "exact"
+  },
+  {
+    "id": "Q025",
+    "query": "Procurement requirements for electrical installation safety",
+    "relevant": [
+      "IS-DEMO-025"
+    ],
+    "relevance": {
+      "IS-DEMO-025": 3
+    },
+    "category": "exact"
+  },
+  {
+    "id": "Q026",
+    "query": "Procurement requirements for low-voltage circuit breakers",
+    "relevant": [
+      "IS-DEMO-026"
+    ],
+    "relevance": {
+      "IS-DEMO-026": 3
+    },
+    "category": "exact"
+  },
+  {
+    "id": "Q027",
+    "query": "Procurement requirements for switchgear assemblies",
+    "relevant": [
+      "IS-DEMO-027"
+    ],
+    "relevance": {
+      "IS-DEMO-027": 3
+    },
+    "category": "exact"
+  },
+  {
+    "id": "Q028",
+    "query": "Procurement requirements for earthing systems",
+    "relevant": [
+      "IS-DEMO-028"
+    ],
+    "relevance": {
+      "IS-DEMO-028": 3
+    },
+    "category": "exact"
+  },
+  {
+    "id": "Q029",
+    "query": "Procurement requirements for structural steel sections",
+    "relevant": [
+      "IS-DEMO-029"
+    ],
+    "relevance": {
+      "IS-DEMO-029": 3
+    },
+    "category": "exact"
+  },
+  {
+    "id": "Q030",
+    "query": "Procurement requirements for concrete masonry blocks",
+    "relevant": [
+      "IS-DEMO-030"
+    ],
+    "relevance": {
+      "IS-DEMO-030": 3
+    },
+    "category": "exact"
+  },
+  {
+    "id": "Q031",
+    "query": "Procurement requirements for industrial protective footwear",
+    "relevant": [
+      "IS-DEMO-031"
+    ],
+    "relevance": {
+      "IS-DEMO-031": 3
+    },
+    "category": "exact"
+  },
+  {
+    "id": "Q032",
+    "query": "Procurement requirements for water pipeline valves",
+    "relevant": [
+      "IS-DEMO-032"
+    ],
+    "relevance": {
+      "IS-DEMO-032": 3
+    },
+    "category": "exact"
+  },
+  {
+    "id": "Q033",
+    "query": "Procurement requirements for water storage tanks",
+    "relevant": [
+      "IS-DEMO-033"
+    ],
+    "relevance": {
+      "IS-DEMO-033": 3
+    },
+    "category": "exact"
+  },
+  {
+    "id": "Q034",
+    "query": "Procurement requirements for water flow meters",
+    "relevant": [
+      "IS-DEMO-034"
+    ],
+    "relevance": {
+      "IS-DEMO-034": 3
+    },
+    "category": "exact"
+  },
+  {
+    "id": "Q035",
+    "query": "Procurement requirements for fire hose assemblies",
+    "relevant": [
+      "IS-DEMO-035"
+    ],
+    "relevance": {
+      "IS-DEMO-035": 3
+    },
+    "category": "exact"
+  },
+  {
+    "id": "Q036",
+    "query": "Procurement requirements for electrical insulating gloves",
+    "relevant": [
+      "IS-DEMO-036"
+    ],
+    "relevance": {
+      "IS-DEMO-036": 3
+    },
+    "category": "exact"
+  },
+  {
+    "id": "Q037",
+    "query": "Procurement requirements for surge protective devices",
+    "relevant": [
+      "IS-DEMO-037"
+    ],
+    "relevance": {
+      "IS-DEMO-037": 3
+    },
+    "category": "exact"
+  },
+  {
+    "id": "Q038",
+    "query": "Procurement requirements for three-phase induction motors",
+    "relevant": [
+      "IS-DEMO-038"
+    ],
+    "relevance": {
+      "IS-DEMO-038": 3
+    },
+    "category": "exact"
+  },
+  {
+    "id": "Q039",
+    "query": "Procurement requirements for pump mechanical seals",
+    "relevant": [
+      "IS-DEMO-039"
+    ],
+    "relevance": {
+      "IS-DEMO-039": 3
+    },
+    "category": "exact"
+  },
+  {
+    "id": "Q040",
+    "query": "Procurement requirements for water purification units",
+    "relevant": [
+      "IS-DEMO-040"
+    ],
+    "relevance": {
+      "IS-DEMO-040": 3
+    },
+    "category": "exact"
+  },
+  {
+    "id": "Q041",
+    "query": "equipment for reducing 11kV supply for neighbourhood distribution",
+    "relevant": [
+      "IS-DEMO-001"
+    ],
+    "relevance": {
+      "IS-DEMO-001": 3
+    },
+    "category": "semantic_paraphrase"
+  },
+  {
+    "id": "Q042",
+    "query": "protective headwear against falling construction debris",
+    "relevant": [
+      "IS-DEMO-004"
+    ],
+    "relevance": {
+      "IS-DEMO-004": 3
+    },
+    "category": "semantic_paraphrase"
+  },
+  {
+    "id": "Q043",
+    "query": "plastic pressure pipe for potable municipal water",
+    "relevant": [
+      "IS-DEMO-010"
+    ],
+    "relevance": {
+      "IS-DEMO-010": 3
+    },
+    "category": "semantic_paraphrase"
+  },
+  {
+    "id": "Q044",
+    "query": "energy efficient fixtures to illuminate roads at night",
+    "relevant": [
+      "IS-DEMO-003"
+    ],
+    "relevance": {
+      "IS-DEMO-003": 3
+    },
+    "category": "semantic_paraphrase"
+  },
+  {
+    "id": "Q045",
+    "query": "a binding powder that hardens when mixed with water for concrete",
+    "relevant": [
+      "IS-DEMO-002"
+    ],
+    "relevance": {
+      "IS-DEMO-002": 3
+    },
+    "category": "semantic_paraphrase"
+  },
+  {
+    "id": "Q046",
+    "query": "ribbed metal rods embedded inside concrete to carry tension",
+    "relevant": [
+      "IS-DEMO-006"
+    ],
+    "relevance": {
+      "IS-DEMO-006": 3
+    },
+    "category": "semantic_paraphrase"
+  },
+  {
+    "id": "Q047",
+    "query": "checking whether supplied water is fit for people to drink",
+    "relevant": [
+      "IS-DEMO-007"
+    ],
+    "relevance": {
+      "IS-DEMO-007": 3
+    },
+    "category": "semantic_paraphrase"
+  },
+  {
+    "id": "Q048",
+    "query": "an impeller driven machine to move water up to a higher reservoir",
+    "relevant": [
+      "IS-DEMO-008"
+    ],
+    "relevance": {
+      "IS-DEMO-008": 3
+    },
+    "category": "semantic_paraphrase"
+  },
+  {
+    "id": "Q049",
+    "query": "handheld equipment for putting out a small fire",
+    "relevant": [
+      "IS-DEMO-009"
+    ],
+    "relevance": {
+      "IS-DEMO-009": 3
+    },
+    "category": "semantic_paraphrase"
+  },
+  {
+    "id": "Q050",
+    "query": "a cast resin voltage conversion unit for installation inside a building",
+    "relevant": [
+      "IS-DEMO-012"
+    ],
+    "relevance": {
+      "IS-DEMO-012": 3
+    },
+    "category": "semantic_paraphrase"
+  },
+  {
+    "id": "Q051",
+    "query": "a sensor transformer that scales current down for a protection relay",
+    "relevant": [
+      "IS-DEMO-013"
+    ],
+    "relevance": {
+      "IS-DEMO-013": 3
+    },
+    "category": "semantic_paraphrase"
+  },
+  {
+    "id": "Q052",
+    "query": "lights that stay on along an exit corridor during a blackout",
+    "relevant": [
+      "IS-DEMO-019"
+    ],
+    "relevance": {
+      "IS-DEMO-019": 3
+    },
+    "category": "semantic_paraphrase"
+  },
+  {
+    "id": "Q053",
+    "query": "conductive rods buried in the ground to carry electrical fault currents",
+    "relevant": [
+      "IS-DEMO-028"
+    ],
+    "relevance": {
+      "IS-DEMO-028": 3
+    },
+    "category": "semantic_paraphrase"
+  },
+  {
+    "id": "Q054",
+    "query": "boots with reinforced toes for factory workers",
+    "relevant": [
+      "IS-DEMO-031"
+    ],
+    "relevance": {
+      "IS-DEMO-031": 3
+    },
+    "category": "semantic_paraphrase"
+  },
+  {
+    "id": "Q055",
+    "query": "a unit that removes contaminants and disinfects the incoming water",
+    "relevant": [
+      "IS-DEMO-040"
+    ],
+    "relevance": {
+      "IS-DEMO-040": 3
+    },
+    "category": "semantic_paraphrase"
+  },
+  {
+    "id": "Q056",
+    "query": "oil used for electrical insulation and cooling in transformers",
+    "relevant": [
+      "IS-DEMO-014"
+    ],
+    "relevance": {
+      "IS-DEMO-014": 3,
+      "IS-DEMO-017": 1
+    },
+    "category": "near_confuser"
+  },
+  {
+    "id": "Q057",
+    "query": "test procedures for transformer winding resistance and voltage ratio",
+    "relevant": [
+      "IS-DEMO-015"
+    ],
+    "relevance": {
+      "IS-DEMO-015": 3
+    },
+    "category": "near_confuser"
+  },
+  {
+    "id": "Q058",
+    "query": "insulated feedthrough for a conductor passing through a transformer tank",
+    "relevant": [
+      "IS-DEMO-016"
+    ],
+    "relevance": {
+      "IS-DEMO-016": 3,
+      "IS-DEMO-017": 1
+    },
+    "category": "near_confuser"
+  },
+  {
+    "id": "Q059",
+    "query": "solid dielectric sheets separating live electrical components",
+    "relevant": [
+      "IS-DEMO-017"
+    ],
+    "relevance": {
+      "IS-DEMO-017": 3
+    },
+    "category": "near_confuser"
+  },
+  {
+    "id": "Q060",
+    "query": "cast resin air cooled transformer with no insulating oil",
+    "relevant": [
+      "IS-DEMO-012"
+    ],
+    "relevance": {
+      "IS-DEMO-012": 3
+    },
+    "category": "near_confuser"
+  },
+  {
+    "id": "Q061",
+    "query": "metering accuracy of a current transformer used with relays",
+    "relevant": [
+      "IS-DEMO-013"
+    ],
+    "relevance": {
+      "IS-DEMO-013": 3
+    },
+    "category": "near_confuser"
+  },
+  {
+    "id": "Q062",
+    "query": "high capacity transformer for a transmission substation rather than a local feeder",
+    "relevant": [
+      "IS-DEMO-011"
+    ],
+    "relevance": {
+      "IS-DEMO-011": 3
+    },
+    "category": "near_confuser"
+  },
+  {
+    "id": "Q063",
+    "query": "ceiling LED panels for indoor office rooms",
+    "relevant": [
+      "IS-DEMO-018"
+    ],
+    "relevance": {
+      "IS-DEMO-018": 3
+    },
+    "category": "near_confuser"
+  },
+  {
+    "id": "Q064",
+    "query": "pole spacing and illumination uniformity along a road",
+    "relevant": [
+      "IS-DEMO-020"
+    ],
+    "relevance": {
+      "IS-DEMO-020": 3
+    },
+    "category": "near_confuser"
+  },
+  {
+    "id": "Q065",
+    "query": "IP65 dust and water ingress testing of lighting housings",
+    "relevant": [
+      "IS-DEMO-022"
+    ],
+    "relevance": {
+      "IS-DEMO-022": 3,
+      "IS-DEMO-021": 1
+    },
+    "category": "near_confuser"
+  },
+  {
+    "id": "Q066",
+    "query": "trip capacity of an individual low voltage circuit breaker",
+    "relevant": [
+      "IS-DEMO-026"
+    ],
+    "relevance": {
+      "IS-DEMO-026": 3
+    },
+    "category": "near_confuser"
+  },
+  {
+    "id": "Q067",
+    "query": "assembled switchboard busbars and metal enclosure interlocks",
+    "relevant": [
+      "IS-DEMO-027"
+    ],
+    "relevance": {
+      "IS-DEMO-027": 3,
+      "IS-DEMO-026": 1
+    },
+    "category": "near_confuser"
+  },
+  {
+    "id": "Q068",
+    "query": "steel beams and columns for a factory frame, not reinforcing rods",
+    "relevant": [
+      "IS-DEMO-029"
+    ],
+    "relevance": {
+      "IS-DEMO-029": 3
+    },
+    "category": "near_confuser"
+  },
+  {
+    "id": "Q069",
+    "query": "replacement mechanical shaft seals for a centrifugal pump",
+    "relevant": [
+      "IS-DEMO-039"
+    ],
+    "relevance": {
+      "IS-DEMO-039": 3,
+      "IS-DEMO-008": 1
+    },
+    "category": "near_confuser"
+  },
+  {
+    "id": "Q070",
+    "query": "accuracy calibration of a meter measuring water consumption",
+    "relevant": [
+      "IS-DEMO-034"
+    ],
+    "relevance": {
+      "IS-DEMO-034": 3
+    },
+    "category": "near_confuser"
+  },
+  {
+    "id": "Q071",
+    "query": "11 kV 433 V three phase outdoor oil immersed transformer at 50 Hz",
+    "relevant": [
+      "IS-DEMO-001"
+    ],
+    "relevance": {
+      "IS-DEMO-001": 3
+    },
+    "category": "technical"
+  },
+  {
+    "id": "Q072",
+    "query": "50 Hz 1.1 kV low voltage PVC insulated cable",
+    "relevant": [
+      "IS-DEMO-023"
+    ],
+    "relevance": {
+      "IS-DEMO-023": 3
+    },
+    "category": "technical"
+  },
+  {
+    "id": "Q073",
+    "query": "33 kV XLPE screened underground power cable",
+    "relevant": [
+      "IS-DEMO-024"
+    ],
+    "relevance": {
+      "IS-DEMO-024": 3
+    },
+    "category": "technical"
+  },
+  {
+    "id": "Q074",
+    "query": "IP65 LED housing resistance to dust and water jets",
+    "relevant": [
+      "IS-DEMO-022"
+    ],
+    "relevance": {
+      "IS-DEMO-022": 3
+    },
+    "category": "technical"
+  },
+  {
+    "id": "Q075",
+    "query": "415 V 50 Hz three phase induction motor efficiency",
+    "relevant": [
+      "IS-DEMO-038"
+    ],
+    "relevance": {
+      "IS-DEMO-038": 3
+    },
+    "category": "technical"
+  },
+  {
+    "id": "Q076",
+    "query": "450/750 V PVC wire for building circuits",
+    "relevant": [
+      "IS-DEMO-023"
+    ],
+    "relevance": {
+      "IS-DEMO-023": 3
+    },
+    "category": "technical"
+  },
+  {
+    "id": "Q077",
+    "query": "132 kV high MVA transmission power transformer",
+    "relevant": [
+      "IS-DEMO-011"
+    ],
+    "relevance": {
+      "IS-DEMO-011": 3
+    },
+    "category": "technical"
+  },
+  {
+    "id": "Q078",
+    "query": "11kV XLPE underground feeder insulation test",
+    "relevant": [
+      "IS-DEMO-024"
+    ],
+    "relevance": {
+      "IS-DEMO-024": 3
+    },
+    "category": "technical"
+  },
+  {
+    "id": "Q079",
+    "query": "11kV/433V oil filled unit for local electricity distribution",
+    "relevant": [
+      "IS-DEMO-001"
+    ],
+    "relevance": {
+      "IS-DEMO-001": 3
+    },
+    "category": "technical"
+  },
+  {
+    "id": "Q080",
+    "query": "PVC pressure pipes for municipal drinking water hydrostatic tests",
+    "relevant": [
+      "IS-DEMO-010"
+    ],
+    "relevance": {
+      "IS-DEMO-010": 3
+    },
+    "category": "technical"
+  },
+  {
+    "id": "Q081",
+    "query": "road lighting equipment",
+    "relevant": [
+      "IS-DEMO-003",
+      "IS-DEMO-021",
+      "IS-DEMO-022"
+    ],
+    "relevance": {
+      "IS-DEMO-003": 3,
+      "IS-DEMO-021": 2,
+      "IS-DEMO-022": 2,
+      "IS-DEMO-020": 1
+    },
+    "category": "ambiguous"
+  },
+  {
+    "id": "Q082",
+    "query": "electrical cables for power supply",
+    "relevant": [
+      "IS-DEMO-005",
+      "IS-DEMO-023",
+      "IS-DEMO-024"
+    ],
+    "relevance": {
+      "IS-DEMO-005": 3,
+      "IS-DEMO-023": 2,
+      "IS-DEMO-024": 2
+    },
+    "category": "ambiguous"
+  },
+  {
+    "id": "Q083",
+    "query": "transformer procurement and acceptance testing",
+    "relevant": [
+      "IS-DEMO-001",
+      "IS-DEMO-011",
+      "IS-DEMO-015"
+    ],
+    "relevance": {
+      "IS-DEMO-001": 3,
+      "IS-DEMO-011": 2,
+      "IS-DEMO-015": 2,
+      "IS-DEMO-012": 1
+    },
+    "category": "ambiguous"
+  },
+  {
+    "id": "Q084",
+    "query": "worker protection on a construction site",
+    "relevant": [
+      "IS-DEMO-004",
+      "IS-DEMO-031"
+    ],
+    "relevance": {
+      "IS-DEMO-004": 3,
+      "IS-DEMO-031": 2,
+      "IS-DEMO-036": 1
+    },
+    "category": "ambiguous"
+  },
+  {
+    "id": "Q085",
+    "query": "water distribution infrastructure",
+    "relevant": [
+      "IS-DEMO-010",
+      "IS-DEMO-032",
+      "IS-DEMO-033",
+      "IS-DEMO-008"
+    ],
+    "relevance": {
+      "IS-DEMO-010": 3,
+      "IS-DEMO-032": 2,
+      "IS-DEMO-033": 2,
+      "IS-DEMO-008": 2,
+      "IS-DEMO-034": 1
+    },
+    "category": "ambiguous"
+  },
+  {
+    "id": "Q086",
+    "query": "electrical installation protection",
+    "relevant": [
+      "IS-DEMO-025",
+      "IS-DEMO-028",
+      "IS-DEMO-026",
+      "IS-DEMO-037"
+    ],
+    "relevance": {
+      "IS-DEMO-025": 3,
+      "IS-DEMO-028": 2,
+      "IS-DEMO-026": 2,
+      "IS-DEMO-037": 2,
+      "IS-DEMO-027": 1
+    },
+    "category": "ambiguous"
+  },
+  {
+    "id": "Q087",
+    "query": "lighting for a public building",
+    "relevant": [
+      "IS-DEMO-018",
+      "IS-DEMO-019"
+    ],
+    "relevance": {
+      "IS-DEMO-018": 3,
+      "IS-DEMO-019": 2
+    },
+    "category": "ambiguous"
+  },
+  {
+    "id": "Q088",
+    "query": "steel for building construction",
+    "relevant": [
+      "IS-DEMO-006",
+      "IS-DEMO-029"
+    ],
+    "relevance": {
+      "IS-DEMO-006": 3,
+      "IS-DEMO-029": 2
+    },
+    "category": "ambiguous"
+  },
+  {
+    "id": "Q089",
+    "query": "firefighting water equipment",
+    "relevant": [
+      "IS-DEMO-035",
+      "IS-DEMO-008"
+    ],
+    "relevance": {
+      "IS-DEMO-035": 3,
+      "IS-DEMO-008": 2,
+      "IS-DEMO-032": 1
+    },
+    "category": "ambiguous"
+  },
+  {
+    "id": "Q090",
+    "query": "insulation for electrical equipment",
+    "relevant": [
+      "IS-DEMO-017",
+      "IS-DEMO-014",
+      "IS-DEMO-016"
+    ],
+    "relevance": {
+      "IS-DEMO-017": 3,
+      "IS-DEMO-014": 2,
+      "IS-DEMO-016": 2,
+      "IS-DEMO-036": 1
+    },
+    "category": "ambiguous"
+  },
+  {
+    "id": "Q091",
+    "query": "ergonomic office chair",
+    "relevant": [],
+    "relevance": {},
+    "category": "out_of_domain"
+  },
+  {
+    "id": "Q092",
+    "query": "wireless mouse",
+    "relevant": [],
+    "relevance": {},
+    "category": "out_of_domain"
+  },
+  {
+    "id": "Q093",
+    "query": "coffee machine",
+    "relevant": [],
+    "relevance": {},
+    "category": "out_of_domain"
+  },
+  {
+    "id": "Q094",
+    "query": "laptop docking station",
+    "relevant": [],
+    "relevance": {},
+    "category": "out_of_domain"
+  },
+  {
+    "id": "Q095",
+    "query": "cotton bedsheets",
+    "relevant": [],
+    "relevance": {},
+    "category": "out_of_domain"
+  },
+  {
+    "id": "Q096",
+    "query": "payroll accounting software",
+    "relevant": [],
+    "relevance": {},
+    "category": "out_of_domain"
+  },
+  {
+    "id": "Q097",
+    "query": "ceramic dinner plates",
+    "relevant": [],
+    "relevance": {},
+    "category": "out_of_domain"
+  },
+  {
+    "id": "Q098",
+    "query": "wooden office desk",
+    "relevant": [],
+    "relevance": {},
+    "category": "out_of_domain"
+  },
+  {
+    "id": "Q099",
+    "query": "refrigerated food delivery service",
+    "relevant": [],
+    "relevance": {},
+    "category": "out_of_domain"
+  },
+  {
+    "id": "Q100",
+    "query": "wireless headphones",
+    "relevant": [],
+    "relevance": {},
+    "category": "out_of_domain"
+  }
+]

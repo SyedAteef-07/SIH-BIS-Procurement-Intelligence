@@ -16,6 +16,7 @@ class Settings:
     neo4j_password: str = os.getenv("NEO4J_PASSWORD", "bisdev123")
     llm_provider: str = os.getenv("LLM_PROVIDER", "disabled")
     llm_model: str = os.getenv("LLM_MODEL", "")
+    include_mock_standards: bool = os.getenv("INCLUDE_MOCK_STANDARDS", "false").lower() == "true"
 
 
 settings = Settings()
