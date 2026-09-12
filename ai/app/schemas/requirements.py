@@ -20,6 +20,23 @@ class EvidenceItem(BaseModel):
 
 
 class ExtractedRequirements(BaseModel):
+    compressive_strength: list[str] = Field(default_factory=list)
+    setting_time: list[str] = Field(default_factory=list)
+    soundness: list[str] = Field(default_factory=list)
+    construction_use: list[str] = Field(default_factory=list)
+    impact_protection: list[str] = Field(default_factory=list)
+    penetration_resistance: list[str] = Field(default_factory=list)
+    retention: list[str] = Field(default_factory=list)
+    flow: list[str] = Field(default_factory=list)
+    head: list[str] = Field(default_factory=list)
+    hydraulic_efficiency: list[str] = Field(default_factory=list)
+    water_application: list[str] = Field(default_factory=list)
+    pvc_insulation: list[str] = Field(default_factory=list)
+    xlpe_insulation: list[str] = Field(default_factory=list)
+    cable_application: list[str] = Field(default_factory=list)
+    underground_installation: list[str] = Field(default_factory=list)
+    dielectric_testing: list[str] = Field(default_factory=list)
+
     pressure_ratings: list[str] = Field(default_factory=list)
     joints: list[str] = Field(default_factory=list)
     water_use: list[str] = Field(default_factory=list)

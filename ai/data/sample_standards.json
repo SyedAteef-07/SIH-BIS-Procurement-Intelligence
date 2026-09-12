@@ -54,6 +54,34 @@
         "is_mandatory": false,
         "source_section": "Fictional fixture scope: Oil immersed three phase distribution transformers supplying low voltage electricity from medium voltage networks. Abstract: Outdoor 11 kV / 433 V, 50 Hz local distribution equipment; covers ratings, losses and temperature rise."
       }
+    ],
+    "related_standards": [
+      {
+        "standard_code": "IS-DEMO-014",
+        "relationship_type": "material"
+      },
+      {
+        "standard_code": "IS-DEMO-015",
+        "relationship_type": "test_method"
+      },
+      {
+        "standard_code": "IS-DEMO-016",
+        "relationship_type": "component"
+      },
+      {
+        "standard_code": "IS-DEMO-025",
+        "relationship_type": "safety"
+      }
+    ],
+    "certifications": [
+      {
+        "name": "BIS conformity verification",
+        "authority": "Bureau of Indian Standards",
+        "applicable": null,
+        "status": "unverified",
+        "note": "Verify current BIS/QCO applicability from official BIS sources.",
+        "source_url": null
+      }
     ]
   },
   {
@@ -71,20 +99,46 @@
     "source": "Fictional development fixture; not a BIS publication",
     "requirements": [
       {
-        "key": "performance_requirements",
-        "label": "Performance criteria",
-        "description": "Specify compressive strength, setting time and soundness criteria.",
+        "key": "compressive_strength",
+        "label": "Compressive strength",
+        "description": "Specify compressive strength and relevant acceptance criteria.",
         "category": "specification",
         "is_mandatory": false,
         "source_section": "Fictional fixture scope: Portland cement used as a binder in concrete construction. Abstract: Covers compressive strength, setting time and soundness of cement supplied in bags or bulk."
       },
       {
-        "key": "materials",
-        "label": "Construction materials",
-        "description": "Describe the intended cement and concrete application.",
+        "key": "setting_time",
+        "label": "Setting time",
+        "description": "Specify setting time and relevant acceptance criteria.",
         "category": "specification",
         "is_mandatory": false,
         "source_section": "Fictional fixture scope: Portland cement used as a binder in concrete construction. Abstract: Covers compressive strength, setting time and soundness of cement supplied in bags or bulk."
+      },
+      {
+        "key": "soundness",
+        "label": "Soundness",
+        "description": "Specify soundness and relevant acceptance criteria.",
+        "category": "specification",
+        "is_mandatory": false,
+        "source_section": "Fictional fixture scope: Portland cement used as a binder in concrete construction. Abstract: Covers compressive strength, setting time and soundness of cement supplied in bags or bulk."
+      },
+      {
+        "key": "construction_use",
+        "label": "Construction use",
+        "description": "Specify construction use and relevant acceptance criteria.",
+        "category": "specification",
+        "is_mandatory": false,
+        "source_section": "Fictional fixture scope: Portland cement used as a binder in concrete construction. Abstract: Covers compressive strength, setting time and soundness of cement supplied in bags or bulk."
+      }
+    ],
+    "certifications": [
+      {
+        "name": "BIS conformity verification",
+        "authority": "Bureau of Indian Standards",
+        "applicable": null,
+        "status": "unverified",
+        "note": "Verify current BIS/QCO applicability from official BIS sources.",
+        "source_url": null
       }
     ]
   },
@@ -100,7 +154,21 @@
       "50 Hz"
     ],
     "is_mock": true,
-    "source": "Fictional development fixture; not a BIS publication"
+    "source": "Fictional development fixture; not a BIS publication",
+    "related_standards": [
+      {
+        "standard_code": "IS-DEMO-020",
+        "relationship_type": "installation_design"
+      },
+      {
+        "standard_code": "IS-DEMO-021",
+        "relationship_type": "safety"
+      },
+      {
+        "standard_code": "IS-DEMO-022",
+        "relationship_type": "ingress_protection"
+      }
+    ]
   },
   {
     "id": "IS-DEMO-004",
@@ -116,20 +184,46 @@
     "source": "Fictional development fixture; not a BIS publication",
     "requirements": [
       {
-        "key": "safety_requirements",
-        "label": "Protection requirements",
-        "description": "Specify impact protection and penetration resistance.",
+        "key": "impact_protection",
+        "label": "Impact protection",
+        "description": "Specify impact protection and relevant acceptance criteria.",
         "category": "specification",
         "is_mandatory": false,
         "source_section": "Fictional fixture scope: Protective headgear for industrial and construction workers exposed to falling objects. Abstract: Covers impact absorption, penetration resistance and retention of safety helmets."
       },
       {
-        "key": "performance_requirements",
-        "label": "Helmet performance",
-        "description": "Specify helmet impact absorption and retention performance criteria.",
+        "key": "penetration_resistance",
+        "label": "Penetration resistance",
+        "description": "Specify penetration resistance and relevant acceptance criteria.",
         "category": "specification",
         "is_mandatory": false,
         "source_section": "Fictional fixture scope: Protective headgear for industrial and construction workers exposed to falling objects. Abstract: Covers impact absorption, penetration resistance and retention of safety helmets."
+      },
+      {
+        "key": "retention",
+        "label": "Retention",
+        "description": "Specify retention and relevant acceptance criteria.",
+        "category": "specification",
+        "is_mandatory": false,
+        "source_section": "Fictional fixture scope: Protective headgear for industrial and construction workers exposed to falling objects. Abstract: Covers impact absorption, penetration resistance and retention of safety helmets."
+      },
+      {
+        "key": "construction_use",
+        "label": "Construction use",
+        "description": "Specify construction use and relevant acceptance criteria.",
+        "category": "specification",
+        "is_mandatory": false,
+        "source_section": "Fictional fixture scope: Protective headgear for industrial and construction workers exposed to falling objects. Abstract: Covers impact absorption, penetration resistance and retention of safety helmets."
+      }
+    ],
+    "certifications": [
+      {
+        "name": "BIS conformity verification",
+        "authority": "Bureau of Indian Standards",
+        "applicable": null,
+        "status": "unverified",
+        "note": "Verify current BIS/QCO applicability from official BIS sources.",
+        "source_url": null
       }
     ]
   },
@@ -162,6 +256,30 @@
         "category": "specification",
         "is_mandatory": false,
         "source_section": "Fictional fixture scope: Insulated copper and aluminium conductors for electrical power distribution. Abstract: General cable construction and insulation testing; covers supply cables without a specific voltage class."
+      }
+    ],
+    "related_standards": [
+      {
+        "standard_code": "IS-DEMO-023",
+        "relationship_type": "related_product"
+      },
+      {
+        "standard_code": "IS-DEMO-024",
+        "relationship_type": "related_product"
+      },
+      {
+        "standard_code": "IS-DEMO-025",
+        "relationship_type": "safety"
+      }
+    ],
+    "certifications": [
+      {
+        "name": "BIS conformity verification",
+        "authority": "Bureau of Indian Standards",
+        "applicable": null,
+        "status": "unverified",
+        "note": "Verify current BIS/QCO applicability from official BIS sources.",
+        "source_url": null
       }
     ]
   },
@@ -207,20 +325,46 @@
     "source": "Fictional development fixture; not a BIS publication",
     "requirements": [
       {
-        "key": "performance_requirements",
-        "label": "Hydraulic performance",
-        "description": "Specify discharge flow, head and hydraulic efficiency criteria.",
+        "key": "flow",
+        "label": "Flow",
+        "description": "Specify flow and relevant acceptance criteria.",
         "category": "specification",
         "is_mandatory": false,
         "source_section": "Fictional fixture scope: Centrifugal pumps used to transfer water in supply installations. Abstract: Covers discharge flow, head and hydraulic efficiency of rotating impeller pumps."
       },
       {
-        "key": "water_use",
-        "label": "Water application",
-        "description": "Describe the intended water application, including whether drinking water is involved.",
+        "key": "head",
+        "label": "Head",
+        "description": "Specify head and relevant acceptance criteria.",
         "category": "specification",
         "is_mandatory": false,
         "source_section": "Fictional fixture scope: Centrifugal pumps used to transfer water in supply installations. Abstract: Covers discharge flow, head and hydraulic efficiency of rotating impeller pumps."
+      },
+      {
+        "key": "hydraulic_efficiency",
+        "label": "Hydraulic efficiency",
+        "description": "Specify hydraulic efficiency and relevant acceptance criteria.",
+        "category": "specification",
+        "is_mandatory": false,
+        "source_section": "Fictional fixture scope: Centrifugal pumps used to transfer water in supply installations. Abstract: Covers discharge flow, head and hydraulic efficiency of rotating impeller pumps."
+      },
+      {
+        "key": "water_application",
+        "label": "Water application",
+        "description": "Specify water application and relevant acceptance criteria.",
+        "category": "specification",
+        "is_mandatory": false,
+        "source_section": "Fictional fixture scope: Centrifugal pumps used to transfer water in supply installations. Abstract: Covers discharge flow, head and hydraulic efficiency of rotating impeller pumps."
+      }
+    ],
+    "related_standards": [
+      {
+        "standard_code": "IS-DEMO-039",
+        "relationship_type": "component"
+      },
+      {
+        "standard_code": "IS-DEMO-032",
+        "relationship_type": "installation_component"
       }
     ]
   },
@@ -283,6 +427,30 @@
         "category": "specification",
         "is_mandatory": false,
         "source_section": "Fictional fixture scope: Rigid PVC plastic pipes used in pressurized potable water supply systems. Abstract: Covers pipe dimensions, joints and hydrostatic pressure resistance for municipal drinking water networks."
+      }
+    ],
+    "related_standards": [
+      {
+        "standard_code": "IS-DEMO-032",
+        "relationship_type": "system_component"
+      },
+      {
+        "standard_code": "IS-DEMO-034",
+        "relationship_type": "system_component"
+      },
+      {
+        "standard_code": "IS-DEMO-007",
+        "relationship_type": "application"
+      }
+    ],
+    "certifications": [
+      {
+        "name": "BIS conformity verification",
+        "authority": "Bureau of Indian Standards",
+        "applicable": null,
+        "status": "unverified",
+        "note": "Verify current BIS/QCO applicability from official BIS sources.",
+        "source_url": null
       }
     ]
   },
@@ -469,25 +637,33 @@
     "source": "Fictional development fixture; not a BIS publication",
     "requirements": [
       {
-        "key": "materials",
-        "label": "Insulation materials",
-        "description": "Specify the insulation material.",
+        "key": "pvc_insulation",
+        "label": "Pvc insulation",
+        "description": "Specify pvc insulation and relevant acceptance criteria.",
         "category": "specification",
         "is_mandatory": false,
         "source_section": "Fictional fixture scope: PVC insulated low-voltage electrical cables for building wiring and supply circuits. Abstract: Covers 450/750 V and 1.1 kV cable construction and insulation tests for 50 Hz circuits."
       },
       {
         "key": "voltages",
-        "label": "Voltage rating",
-        "description": "Specify the rated voltage.",
+        "label": "Voltages",
+        "description": "Specify voltages and relevant acceptance criteria.",
         "category": "specification",
         "is_mandatory": false,
         "source_section": "Fictional fixture scope: PVC insulated low-voltage electrical cables for building wiring and supply circuits. Abstract: Covers 450/750 V and 1.1 kV cable construction and insulation tests for 50 Hz circuits."
       },
       {
         "key": "frequencies",
-        "label": "Frequency",
-        "description": "Specify the operating frequency.",
+        "label": "Frequencies",
+        "description": "Specify frequencies and relevant acceptance criteria.",
+        "category": "specification",
+        "is_mandatory": false,
+        "source_section": "Fictional fixture scope: PVC insulated low-voltage electrical cables for building wiring and supply circuits. Abstract: Covers 450/750 V and 1.1 kV cable construction and insulation tests for 50 Hz circuits."
+      },
+      {
+        "key": "cable_application",
+        "label": "Cable application",
+        "description": "Specify cable application and relevant acceptance criteria.",
         "category": "specification",
         "is_mandatory": false,
         "source_section": "Fictional fixture scope: PVC insulated low-voltage electrical cables for building wiring and supply circuits. Abstract: Covers 450/750 V and 1.1 kV cable construction and insulation tests for 50 Hz circuits."
@@ -510,33 +686,33 @@
     "source": "Fictional development fixture; not a BIS publication",
     "requirements": [
       {
-        "key": "materials",
-        "label": "Insulation materials",
-        "description": "Specify the insulation material.",
+        "key": "xlpe_insulation",
+        "label": "Xlpe insulation",
+        "description": "Specify xlpe insulation and relevant acceptance criteria.",
         "category": "specification",
         "is_mandatory": false,
         "source_section": "Fictional fixture scope: XLPE insulated high-voltage power cables for underground feeders. Abstract: Covers 11 kV and 33 kV cable insulation, screens and dielectric testing."
       },
       {
         "key": "voltages",
-        "label": "Voltage rating",
-        "description": "Specify the rated voltage.",
+        "label": "Voltages",
+        "description": "Specify voltages and relevant acceptance criteria.",
         "category": "specification",
         "is_mandatory": false,
         "source_section": "Fictional fixture scope: XLPE insulated high-voltage power cables for underground feeders. Abstract: Covers 11 kV and 33 kV cable insulation, screens and dielectric testing."
       },
       {
-        "key": "installation",
-        "label": "Installation environment",
-        "description": "Clarify the installation environment.",
+        "key": "underground_installation",
+        "label": "Underground installation",
+        "description": "Specify underground installation and relevant acceptance criteria.",
         "category": "specification",
         "is_mandatory": false,
         "source_section": "Fictional fixture scope: XLPE insulated high-voltage power cables for underground feeders. Abstract: Covers 11 kV and 33 kV cable insulation, screens and dielectric testing."
       },
       {
-        "key": "testing_requirements",
-        "label": "Testing requirements",
-        "description": "Specify dielectric testing and acceptance criteria.",
+        "key": "dielectric_testing",
+        "label": "Dielectric testing",
+        "description": "Specify dielectric testing and relevant acceptance criteria.",
         "category": "specification",
         "is_mandatory": false,
         "source_section": "Fictional fixture scope: XLPE insulated high-voltage power cables for underground feeders. Abstract: Covers 11 kV and 33 kV cable insulation, screens and dielectric testing."

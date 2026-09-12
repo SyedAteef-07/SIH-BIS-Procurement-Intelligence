@@ -1,14 +1,13 @@
 """Metadata is database-owned; candidate ordering is AI-owned."""
 from app.database.repositories.standards import StandardRepository
 from app.services.gap_analysis import analyze_gaps
-from app.scripts.seed_standards import DEMO_NOTE
 
 
 def certification_details(standard):
     mock = standard.is_mock or standard.standard_code.startswith("IS-DEMO-")
     return [dict(standard_code=standard.standard_code, name=c.name, authority=c.authority,
                  applicable=None if mock else c.applicable, status="unverified" if mock else c.status,
-                 note=DEMO_NOTE if mock else c.note, source_url=c.source_url, is_demo=mock)
+                 note=c.note, source_url=c.source_url, is_demo=mock)
             for c in standard.certifications]
 
 

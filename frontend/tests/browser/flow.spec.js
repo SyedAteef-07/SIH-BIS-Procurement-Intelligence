@@ -1,3 +1,4 @@
+import { readFileSync } from 'node:fs';
 import { test, expect } from '@playwright/test';
 
 const standard = { number: 'IS-DEMO-001', standard_code: 'IS-DEMO-001', title: 'Distribution Transformers', scope: 'Outdoor electrical distribution equipment.', edition: null, revision: null, status: 'unverified', is_mock: true, validity: 'unverified', supporting_evidence: ['Three phase equipment for outdoor use.'], retrieval_score: 0.03, reranker_score: 7.91, retrieval_score_type: 'rrf' };
@@ -26,7 +27,7 @@ test('two-page text flow, tabs, warnings, download and new search', async ({ pag
   await expect(page.getByRole('heading', { name: 'Other matching standards' })).toBeVisible();
   await expect(page.getByText('Fictional development data.', { exact: false })).toHaveCount(0);
   await expect(page.locator('.results-disclaimer')).toHaveCount(1);
-  for (const [tab, empty] of [['Related / Normative Standards', 'No related or normative standards found for this recommendation.'], ['Gap Analysis', 'Gap analysis is not available in the current integrated pipeline.'], ['Certification', 'Certification information is not available in the current integrated pipeline.']]) {
+  for (const [tab, empty] of [['Related Standards', 'No related standards found for this recommendation.'], ['Gap Analysis', 'Gap analysis is not available in the current integrated pipeline.'], ['Certification', 'Certification information is not available in the current integrated pipeline.']]) {
     await page.getByRole('tab', { name: tab, exact: true }).click();
     await expect(page.getByRole('tabpanel')).toContainText(empty);
   }
@@ -35,7 +36,13 @@ test('two-page text flow, tabs, warnings, download and new search', async ({ pag
   await expect(page.getByRole('tabpanel')).toContainText('Edition: Not provided');
   const download = page.waitForEvent('download');
   await page.getByRole('button', { name: 'Download Report' }).click();
-  expect((await download).suggestedFilename()).toBe('procurement-analysis.txt');
+  const report = await download;
+  expect(report.suggestedFilename()).toBe('procurement-analysis.txt');
+  const text = readFileSync(await report.path(), 'utf8');
+  expect(text).toContain('Status: Verification pending');
+  expect(text).toContain('Edition: Not provided');
+  expect(text).not.toContain('Status: unverified');
+  expect(text).not.toContain('Fictional development data.');
   await page.getByRole('button', { name: 'New Search' }).click();
   await expect(page.getByRole('heading', { name: /Find the Right Indian Standards/ })).toBeVisible();
 });
@@ -81,7 +88,7 @@ test('populated optional sections render only returned facts', async ({ page }) 
   await page.getByRole('button', { name: 'Analyze Requirement' }).click();
   await expect(page.getByRole('heading', { name: 'Extracted Requirements' })).toBeVisible();
   await expect(page.getByLabel('Requirement summary')).toContainText('11 kV supply');
-  await page.getByRole('tab', { name: 'Related / Normative Standards' }).click();
+  await page.getByRole('tab', { name: 'Related Standards' }).click();
   await expect(page.getByRole('tabpanel')).toContainText('IS-DEMO-015');
   await page.getByRole('tab', { name: 'Gap Analysis' }).click();
   await expect(page.getByRole('tabpanel')).toContainText('Testing requirement missing');
@@ -144,11 +151,12 @@ test('backend coverage, typed relationships and certification metadata render', 
   await page.getByRole('tab', { name: 'Gap Analysis', exact: true }).click();
   await expect(page.getByRole('tabpanel')).toContainText('Requirement Coverage: 80%');
   await expect(page.getByRole('tabpanel')).toContainText('4 of 5 specification topics mentioned');
-  await page.getByRole('tab', { name: 'Related / Normative Standards', exact: true }).click();
+  await page.getByRole('tab', { name: 'Related Standards', exact: true }).click();
   await expect(page.getByRole('tabpanel')).toContainText('Relationship: material');
   await expect(page.getByRole('tabpanel')).not.toContainText('Demo relationship');
   await page.getByRole('tab', { name: 'Certification', exact: true }).click();
   await expect(page.getByRole('tabpanel')).toContainText('Bureau of Indian Standards');
   await expect(page.getByRole('tabpanel')).toContainText('Applicability: Not determined');
+  await expect(page.getByRole('tabpanel')).toContainText('Status: Verification pending');
   await expect(page.getByRole('tabpanel')).not.toContainText('Demo metadata only.');
 });

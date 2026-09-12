@@ -1,7 +1,7 @@
 import pytest
 from sqlalchemy import func, select
 from app.database.models import StandardCertification, StandardRelationship
-from app.scripts.seed_standards import seed_standards, DEMO_NOTE
+from app.scripts.seed_standards import seed_standards
 from app.services.gap_analysis import analyze_gaps, ExtractedInput
 from app.database.repositories.standards import StandardRepository
 from conftest import ai_payload
@@ -46,7 +46,7 @@ def test_relationships_certifications_and_idempotence(database, api):
     assert [r['relationship_type'] for r in related[:4]] == ['material', 'test_method', 'component', 'safety']
     assert all(r['is_demo_relationship'] and not r['relationship_verified'] for r in related)
     assert all('not a verified BIS normative reference' in r['relationship_note'] for r in related)
-    assert all(c['status'] == 'unverified' and c['applicable'] is None and c['note'] == DEMO_NOTE for c in result['certifications'])
+    assert all(c['status'] == 'unverified' and c['applicable'] is None and c['note'] == 'Verify current BIS/QCO applicability from official BIS sources.' for c in result['certifications'])
     detail = client.get('/api/standards/IS-DEMO-001').json()
     assert len(detail['related']) == 4 and detail['certifications']
     # Even malformed demo metadata cannot be presented as officially verified.

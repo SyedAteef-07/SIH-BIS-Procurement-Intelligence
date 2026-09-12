@@ -56,7 +56,7 @@ export default function InputPage({ onAnalyze }) {
             {selectedFile && <button className="text-button" type="button" disabled={isLoading} onClick={() => setSelectedFile(null)}><X size={14} /> Remove file</button>}
           </div> : <div className="text-input"><label htmlFor="description">Your procurement requirement</label><textarea id="description" value={description} disabled={isLoading} onChange={e => { setDescription(e.target.value); setError(''); }} rows={7} maxLength={2000} placeholder="Describe the product, material, rating and intended use…" /><small>{description.length} / 2,000 characters</small></div>}
         </div>
-        <div className="input-options"><label>Language mode <select value={embeddingMode} disabled={isLoading} onChange={e => setEmbeddingMode(e.target.value)}><option value="english">English</option><option value="multilingual">Multilingual demo</option></select></label><small>Text-based PDFs only. Scanned documents require OCR.</small></div>
+        <div className="input-options"><label>Language mode <select value={embeddingMode} disabled={isLoading} onChange={e => setEmbeddingMode(e.target.value)}><option value="english">English</option><option value="multilingual">Multilingual</option></select></label><small>Text-based PDFs only. Scanned documents require OCR.</small></div>
       </section>
       <div className="examples"><strong>Try an example:</strong><div>{examples.map(example => <button key={example} type="button" disabled={isLoading} onClick={() => { setInputMode('text'); setDescription(example); setError(''); }}>{example}</button>)}</div></div>
       {error && <p className="error-notice" role="alert"><AlertCircle size={18} />{error}</p>}
@@ -65,6 +65,6 @@ export default function InputPage({ onAnalyze }) {
     <section className="feature-grid" aria-label="Product features">
       {[[Search, 'AI-Powered Search', 'Find relevant standards for your requirements.'], [Share2, 'Connected Knowledge', 'Explore supporting references when available.'], [ShieldCheck, 'Compliant Procurement', 'Support informed decisions with evidence.']].map(([Icon, title, description]) => <article key={title}><div className="feature-icon"><Icon size={24} /></div><div><h2>{title}</h2><p>{description}</p></div></article>)}
     </section>
-    <footer>Supporting informed procurement. All demo standards require verification.</footer>
+    <footer>Supporting informed procurement decisions.</footer>
   </main></div>;
 }

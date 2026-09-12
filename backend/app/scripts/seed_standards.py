@@ -4,34 +4,36 @@ import json
 from pathlib import Path
 from typing import Literal
 from pydantic import BaseModel, Field, model_validator
-from sqlalchemy import select
 from app.database.models import Standard, StandardKeyword, StandardRelationship, StandardCertification, StandardRequirement
 from app.database.repositories.standards import StandardRepository
 from app.database.session import SessionLocal, engine
 
 FIXTURE = Path(__file__).resolve().parents[3] / "ai/data/sample_standards.json"
-DEMO_NOTE = "Demo metadata only. Verify current BIS/QCO applicability from official BIS sources."
-DEMO_RELATIONSHIPS = {
-    "001": [("014", "material"), ("015", "test_method"), ("016", "component"), ("025", "safety")],
-    "003": [("020", "installation/design"), ("021", "safety"), ("022", "ingress_protection")],
-    "005": [("023", "related_product"), ("024", "related_product"), ("025", "safety")],
-    "008": [("039", "component"), ("032", "installation_component")],
-    "010": [("032", "system_component"), ("034", "system_component"), ("007", "application")],
-}
-DEMO_CERTIFICATIONS = ("001", "002", "004", "005", "010")
-
-
 class DemoRequirement(BaseModel):
     key: Literal["product_type", "materials", "voltages", "frequencies", "power_ratings", "dimensions",
                  "phase", "ip_ratings", "technical_classes", "installation", "environment",
                  "testing_requirements", "safety_requirements", "performance_requirements",
                  "installation_requirements", "material_requirements", "certification_requirements",
-                 "pressure_ratings", "joints", "water_use"]
+                 "pressure_ratings", "joints", "water_use", "compressive_strength", "setting_time", "soundness", "construction_use", "impact_protection", "penetration_resistance", "retention", "flow", "head", "hydraulic_efficiency", "water_application", "pvc_insulation", "xlpe_insulation", "cable_application", "underground_installation", "dielectric_testing"]
     label: str = Field(min_length=1, max_length=200)
     description: str = Field(min_length=1)
     category: str | None = Field(default=None, max_length=120)
     is_mandatory: bool = True
     source_section: str | None = None
+
+
+class DemoRelationship(BaseModel):
+    standard_code: str = Field(min_length=1, max_length=120)
+    relationship_type: str = Field(min_length=1, max_length=80)
+
+
+class DemoCertification(BaseModel):
+    name: str = Field(min_length=1, max_length=200)
+    authority: str = Field(min_length=1)
+    applicable: bool | None = None
+    status: str = "unverified"
+    note: str = Field(min_length=1)
+    source_url: str | None = None
 
 
 class DemoStandard(BaseModel):
@@ -42,11 +44,17 @@ class DemoStandard(BaseModel):
     keywords: list[str] = Field(default_factory=list)
     revision: str | None = None
     requirements: list[DemoRequirement] = Field(default_factory=list)
+    related_standards: list[DemoRelationship] = Field(default_factory=list)
+    certifications: list[DemoCertification] = Field(default_factory=list)
 
     @model_validator(mode="after")
     def unique_requirement_keys(self):
         if len({r.key for r in self.requirements}) != len(self.requirements):
             raise ValueError("Requirement keys must be unique within each standard")
+        if len({(r.standard_code, r.relationship_type) for r in self.related_standards}) != len(self.related_standards):
+            raise ValueError("Relationships must be unique within each standard")
+        if len({c.name for c in self.certifications}) != len(self.certifications):
+            raise ValueError("Certification names must be unique within each standard")
         return self
 
 
@@ -54,6 +62,9 @@ def seed_standards(session, path=FIXTURE):
     rows = [DemoStandard.model_validate(row) for row in json.loads(Path(path).read_text(encoding="utf-8-sig"))]
     if not rows or len({r.id for r in rows}) != len(rows):
         raise ValueError("Fixture must contain unique demo identifiers")
+    codes = {r.id for r in rows}
+    if any(link.standard_code not in codes for row in rows for link in row.related_standards):
+        raise ValueError("Related standard must exist in the fixture")
     existing = StandardRepository(session).get_by_codes([r.id for r in rows])
     for row in rows:
         standard = existing.get(row.id)
@@ -80,30 +91,25 @@ def seed_standards(session, path=FIXTURE):
             requirement.source_section = metadata.source_section
     session.flush()
     standards = StandardRepository(session).get_by_codes([r.id for r in rows])
-    existing_links = set(session.execute(select(StandardRelationship.source_standard_id,
-        StandardRelationship.target_standard_id, StandardRelationship.relationship_type)).all())
-    for source, targets in DEMO_RELATIONSHIPS.items():
-        for target, kind in targets:
-            source_row, target_row = standards.get("IS-DEMO-" + source), standards.get("IS-DEMO-" + target)
-            if source_row is None or target_row is None:
-                continue
-            key = (source_row.id, target_row.id, kind)
-            if key not in existing_links:
-                session.add(StandardRelationship(source_standard_id=key[0], target_standard_id=key[1], relationship_type=kind))
-                existing_links.add(key)
-    for suffix in DEMO_CERTIFICATIONS:
-        standard = standards.get("IS-DEMO-" + suffix)
-        if standard is None:
-            continue
-        name = "BIS conformity verification"
-        certification = session.scalar(select(StandardCertification).where(
-            StandardCertification.standard_id == standard.id, StandardCertification.name == name))
-        if certification is None:
-            certification = StandardCertification(standard_id=standard.id, name=name)
-            session.add(certification)
-        certification.authority = "Bureau of Indian Standards"
-        certification.applicable, certification.status = None, "unverified"
-        certification.note, certification.source_url = DEMO_NOTE, None
+    for row in rows:
+        standard = standards[row.id]
+        wanted_links = {(standards[r.standard_code].id, r.relationship_type) for r in row.related_standards}
+        retained_links = {(r.target_standard_id, r.relationship_type): r for r in standard.outgoing_relationships}
+        standard.outgoing_relationships[:] = [r for r in standard.outgoing_relationships
+            if (r.target_standard_id, r.relationship_type) in wanted_links]
+        for target_id, kind in sorted(wanted_links - retained_links.keys()):
+            standard.outgoing_relationships.append(StandardRelationship(target_standard_id=target_id, relationship_type=kind))
+        retained_certifications = {c.name: c for c in standard.certifications}
+        wanted_names = {c.name for c in row.certifications}
+        standard.certifications[:] = [c for c in standard.certifications if c.name in wanted_names]
+        for metadata in row.certifications:
+            certification = retained_certifications.get(metadata.name)
+            if certification is None:
+                certification = StandardCertification(name=metadata.name)
+                standard.certifications.append(certification)
+            certification.authority = metadata.authority
+            certification.applicable, certification.status = None, "unverified"
+            certification.note, certification.source_url = metadata.note, metadata.source_url
     session.flush()
     # Refresh already-loaded collections after idempotent inserts.
     for standard in standards.values():

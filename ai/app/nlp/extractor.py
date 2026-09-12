@@ -65,7 +65,5 @@ class RequirementExtractor:
                 add("testing_requirements", match, normalize_phrase(term.group()) + " testing")
         for field, expression in TOPIC_PATTERNS.items():
             for match in re.finditer(expression, text, re.I):
-                result.evidence.setdefault(field, []).append(EvidenceItem(
-                    value=normalize_phrase(match.group()), evidence=match.group(),
-                    start=match.start(), end=match.end(), negated=patterns.is_negated(text, *match.span())))
+                add(field, match, normalize_phrase(match.group()))
         return result

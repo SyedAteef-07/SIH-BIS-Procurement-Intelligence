@@ -13,6 +13,7 @@ def test_demo_topics(text, product, fields):
     extracted = RequirementExtractor().extract(text)
     assert extracted.product == product
     for field in fields:
+        assert getattr(extracted, field)
         assert extracted.evidence[field]
         assert all(e.evidence in text and not e.negated for e in extracted.evidence[field])
 
@@ -20,5 +21,7 @@ def test_demo_topics(text, product, fields):
 def test_topic_specific_evidence_and_negation():
     result = RequirementExtractor().extract('Portland cement without soundness testing; setting time specified.')
     assert result.evidence['soundness'][0].negated
+    assert result.soundness == []
+    assert result.setting_time == ['setting time']
     assert not result.evidence['setting_time'][0].negated
     assert 'compressive_strength' not in result.evidence

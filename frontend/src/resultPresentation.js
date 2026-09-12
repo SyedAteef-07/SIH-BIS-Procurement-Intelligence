@@ -12,5 +12,6 @@ export function presentationText(value) {
 
 export function statusLabel(value) {
   const status = typeof value === 'string' && value.trim() ? value.trim() : 'unverified';
+  if (status.toLowerCase() === 'unverified') return 'Verification pending';
   return status.charAt(0).toUpperCase() + status.slice(1);
 }

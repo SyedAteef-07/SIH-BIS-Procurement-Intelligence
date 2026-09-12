@@ -68,6 +68,6 @@ test('presentation removes boilerplate and retains source content and scope limi
   assert.equal(presentationText('Only the first 2,000 extracted PDF characters were checked. A mention is not proof that a specification is adequate or compliant.'), 'Only the first 2,000 extracted PDF characters were checked.');
   assert.equal(presentationText('Demo metadata only. Verify current BIS/QCO applicability from official BIS sources.'), '');
   assert.equal(presentationText('4 of 5 topics mentioned. This is not a compliance verdict. Based on fictional demo metadata.'), '4 of 5 topics mentioned.');
-  assert.equal(statusLabel('unverified'), 'Unverified');
+  assert.equal(statusLabel('unverified'), 'Verification pending');
   assert.equal(relevanceLabel(null), 'No recommendation available');
 });
