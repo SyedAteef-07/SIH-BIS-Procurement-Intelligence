@@ -17,7 +17,7 @@ def test_pipe_missing_and_present_details(api):
     assert analysis['checks'][-1]['status'] == 'mentioned'
     assert all(c['source_evidence'] for c in analysis['checks'])
     assert result['extracted_requirements'] == ['potable water']
-    assert result['certifications'] == []
+    assert result['certifications'][0]['applicable'] is None
 
 
 def test_zero_gaps_is_assessed_and_negation_needs_review(api):
@@ -31,15 +31,14 @@ def test_zero_gaps_is_assessed_and_negation_needs_review(api):
     evidence['pressure_ratings'][0]['negated'] = True
     ai.payload = payload(evidence)
     result = client.post('/api/analyze', json={'description': text}).json()
-    assert result['gap_analysis']['checks'][1]['status'] == 'needs_review'
+    assert next(c for c in result['gap_analysis']['checks'] if c['requirement_key'] == 'pressure_ratings')['status'] == 'needs_review'
 
 
-@pytest.mark.parametrize('case', ['language', 'product', 'metadata', 'legacy', 'no_match'])
+@pytest.mark.parametrize('case', ['language', 'metadata', 'legacy', 'no_match'])
 def test_unassessed_states(api, case):
     client, ai = api
     ai.payload = payload()
     if case == 'language': ai.payload['detected_language'] = 'hindi'
-    if case == 'product': ai.payload['extracted_requirements']['product'] = None
     if case == 'metadata': ai.payload['recommendations'][0]['standard']['id'] = 'missing'
     if case == 'legacy': ai.payload.pop('extracted_requirements')
     if case == 'no_match': ai.payload.update(recommendations=[], match_status='NO_RELIABLE_MATCH')
@@ -52,7 +51,7 @@ def test_orphan_evidence_does_not_satisfy_check(api):
     client, ai = api
     ai.payload = payload({'pressure_ratings': [{'evidence': '10 bar'}]})
     result = client.post('/api/analyze', json={'description': 'PVC water pipe'}).json()
-    assert result['gap_analysis']['checks'][1]['status'] == 'missing'
+    assert next(c for c in result['gap_analysis']['checks'] if c['requirement_key'] == 'pressure_ratings')['status'] == 'missing'
 
 
 def test_truncated_pdf_limits_gap_scope(api):

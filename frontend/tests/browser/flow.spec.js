@@ -24,14 +24,15 @@ test('two-page text flow, tabs, warnings, download and new search', async ({ pag
   await expect(page.getByRole('heading', { name: 'Analysis Results', exact: true })).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Supporting Evidence', exact: true })).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Other matching standards' })).toBeVisible();
-  await expect(page.getByLabel('Warnings and limitations')).toContainText('Fictional development data.');
+  await expect(page.getByText('Fictional development data.', { exact: false })).toHaveCount(0);
+  await expect(page.locator('.results-disclaimer')).toHaveCount(1);
   for (const [tab, empty] of [['Related / Normative Standards', 'No related or normative standards found for this recommendation.'], ['Gap Analysis', 'Gap analysis is not available in the current integrated pipeline.'], ['Certification', 'Certification information is not available in the current integrated pipeline.']]) {
     await page.getByRole('tab', { name: tab, exact: true }).click();
     await expect(page.getByRole('tabpanel')).toContainText(empty);
   }
   await page.getByRole('tab', { name: 'Status & Amendments' }).click();
   await expect(page.getByRole('tabpanel')).toContainText('IS-DEMO-012');
-  await expect(page.getByRole('tabpanel')).toContainText('Edition: Unverified');
+  await expect(page.getByRole('tabpanel')).toContainText('Edition: Not provided');
   const download = page.waitForEvent('download');
   await page.getByRole('button', { name: 'Download Report' }).click();
   expect((await download).suggestedFilename()).toBe('procurement-analysis.txt');
@@ -67,7 +68,7 @@ test('empty and degraded responses do not invent metadata', async ({ page }) => 
   await page.getByRole('button', { name: '33 kV XLPE power cable', exact: true }).click();
   await page.getByRole('button', { name: 'Analyze Requirement' }).click();
   await expect(page.getByRole('heading', { name: 'No standard identified' })).toBeVisible();
-  await expect(page.getByLabel('Warnings and limitations')).toContainText('IS-DEMO-MISSING');
+  await expect(page.getByLabel('Warnings and limitations')).toHaveCount(0);
   await expect(page.getByRole('tabpanel')).toContainText('No recommendation was returned.');
 });
 
@@ -129,4 +130,25 @@ test('completed zero-gap review displays zero, unsupported shows reason', async 
   await page.getByRole('button', { name: '33 kV XLPE power cable', exact: true }).click();
   await page.getByRole('button', { name: 'Analyze Requirement' }).click();
   await expect(page.getByRole('button', { name: /Potential Gaps/ })).toContainText('0');
+});
+
+test('backend coverage, typed relationships and certification metadata render', async ({ page }) => {
+  await mockAnalysis(page, { ...response,
+    gap_analysis: { status: 'assessed', coverage_percentage: 80, mentioned_count: 4, total_checks: 5, missing_count: 1, needs_review_count: 0, summary: 'This is not a compliance verdict.', scope: 'A mention is not proof that a specification is adequate or compliant.', checks: [] },
+    related_standards: [{ ...standard, number: 'IS-DEMO-014', standard_code: 'IS-DEMO-014', title: 'Transformer Insulating Oil', relationship_type: 'material', source_standard_code: 'IS-DEMO-001', relationship_note: 'Demo relationship; not a verified BIS normative reference.' }],
+    certifications: [{ standard_code: 'IS-DEMO-001', name: 'BIS conformity verification', authority: 'Bureau of Indian Standards', applicable: null, status: 'unverified', note: 'Demo metadata only. Verify current BIS/QCO applicability from official BIS sources.' }]
+  });
+  await page.goto('/');
+  await page.getByRole('button', { name: '33 kV XLPE power cable', exact: true }).click();
+  await page.getByRole('button', { name: 'Analyze Requirement' }).click();
+  await page.getByRole('tab', { name: 'Gap Analysis', exact: true }).click();
+  await expect(page.getByRole('tabpanel')).toContainText('Requirement Coverage: 80%');
+  await expect(page.getByRole('tabpanel')).toContainText('4 of 5 specification topics mentioned');
+  await page.getByRole('tab', { name: 'Related / Normative Standards', exact: true }).click();
+  await expect(page.getByRole('tabpanel')).toContainText('Relationship: material');
+  await expect(page.getByRole('tabpanel')).not.toContainText('Demo relationship');
+  await page.getByRole('tab', { name: 'Certification', exact: true }).click();
+  await expect(page.getByRole('tabpanel')).toContainText('Bureau of Indian Standards');
+  await expect(page.getByRole('tabpanel')).toContainText('Applicability: Not determined');
+  await expect(page.getByRole('tabpanel')).not.toContainText('Demo metadata only.');
 });

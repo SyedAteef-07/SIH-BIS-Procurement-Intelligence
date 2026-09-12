@@ -1,0 +1,265 @@
+{
+  "gap_analysis": {
+    "coverage_percentage": 80.0,
+    "mentioned_count": 4,
+    "total_checks": 5,
+    "missing_count": 1,
+    "needs_review_count": 0,
+    "status": "assessed",
+    "summary": "4 of 5 specification topics were mentioned (80% requirement coverage). 1 topic(s) need clarification. This is not a compliance verdict. Coverage describes topic mentions only; it does not establish standards compliance.",
+    "scope": "Only the submitted text was checked. A mention is not proof that a specification is adequate or compliant.",
+    "standard_code": "IS-DEMO-001",
+    "checks": [
+      {
+        "requirement_key": "frequencies",
+        "label": "Frequency",
+        "requirement_description": "Specify the operating frequency.",
+        "category": "specification",
+        "is_mandatory": false,
+        "source_section": "Fictional fixture scope: Oil immersed three phase distribution transformers supplying low voltage electricity from medium voltage networks. Abstract: Outdoor 11 kV / 433 V, 50 Hz local distribution equipment; covers ratings, losses and temperature rise.",
+        "status": "mentioned",
+        "evidence": [
+          "50 Hz"
+        ],
+        "source_evidence": "Fictional fixture scope: Oil immersed three phase distribution transformers supplying low voltage electricity from medium voltage networks. Abstract: Outdoor 11 kV / 433 V, 50 Hz local distribution equipment; covers ratings, losses and temperature rise.",
+        "action": "Detail mentioned; verify values and acceptance criteria manually."
+      },
+      {
+        "requirement_key": "installation",
+        "label": "Installation environment",
+        "requirement_description": "Specify the installation environment.",
+        "category": "specification",
+        "is_mandatory": false,
+        "source_section": "Fictional fixture scope: Oil immersed three phase distribution transformers supplying low voltage electricity from medium voltage networks. Abstract: Outdoor 11 kV / 433 V, 50 Hz local distribution equipment; covers ratings, losses and temperature rise.",
+        "status": "mentioned",
+        "evidence": [
+          "outdoor"
+        ],
+        "source_evidence": "Fictional fixture scope: Oil immersed three phase distribution transformers supplying low voltage electricity from medium voltage networks. Abstract: Outdoor 11 kV / 433 V, 50 Hz local distribution equipment; covers ratings, losses and temperature rise.",
+        "action": "Detail mentioned; verify values and acceptance criteria manually."
+      },
+      {
+        "requirement_key": "phase",
+        "label": "Phase configuration",
+        "requirement_description": "Specify the required phase configuration.",
+        "category": "specification",
+        "is_mandatory": false,
+        "source_section": "Fictional fixture scope: Oil immersed three phase distribution transformers supplying low voltage electricity from medium voltage networks. Abstract: Outdoor 11 kV / 433 V, 50 Hz local distribution equipment; covers ratings, losses and temperature rise.",
+        "status": "mentioned",
+        "evidence": [
+          "three phase"
+        ],
+        "source_evidence": "Fictional fixture scope: Oil immersed three phase distribution transformers supplying low voltage electricity from medium voltage networks. Abstract: Outdoor 11 kV / 433 V, 50 Hz local distribution equipment; covers ratings, losses and temperature rise.",
+        "action": "Detail mentioned; verify values and acceptance criteria manually."
+      },
+      {
+        "requirement_key": "power_ratings",
+        "label": "Power rating",
+        "requirement_description": "Specify the required transformer capacity in kVA or MVA.",
+        "category": "specification",
+        "is_mandatory": false,
+        "source_section": "Fictional fixture scope: Oil immersed three phase distribution transformers supplying low voltage electricity from medium voltage networks. Abstract: Outdoor 11 kV / 433 V, 50 Hz local distribution equipment; covers ratings, losses and temperature rise.",
+        "status": "missing",
+        "evidence": [],
+        "source_evidence": "Fictional fixture scope: Oil immersed three phase distribution transformers supplying low voltage electricity from medium voltage networks. Abstract: Outdoor 11 kV / 433 V, 50 Hz local distribution equipment; covers ratings, losses and temperature rise.",
+        "action": "Specify the required transformer capacity in kVA or MVA."
+      },
+      {
+        "requirement_key": "voltages",
+        "label": "Voltage ratings",
+        "requirement_description": "Specify the required primary and secondary voltages.",
+        "category": "specification",
+        "is_mandatory": false,
+        "source_section": "Fictional fixture scope: Oil immersed three phase distribution transformers supplying low voltage electricity from medium voltage networks. Abstract: Outdoor 11 kV / 433 V, 50 Hz local distribution equipment; covers ratings, losses and temperature rise.",
+        "status": "mentioned",
+        "evidence": [
+          "11 kV"
+        ],
+        "source_evidence": "Fictional fixture scope: Oil immersed three phase distribution transformers supplying low voltage electricity from medium voltage networks. Abstract: Outdoor 11 kV / 433 V, 50 Hz local distribution equipment; covers ratings, losses and temperature rise.",
+        "action": "Detail mentioned; verify values and acceptance criteria manually."
+      }
+    ]
+  },
+  "extracted_requirements": [
+    "11 kV",
+    "three phase",
+    "50 Hz",
+    "outdoor"
+  ],
+  "embedding_mode": "english",
+  "detected_language": "english",
+  "reranking_applied": true,
+  "input": "distribution transformer 11 kV three phase 50 Hz outdoor",
+  "recommendations": [
+    {
+      "number": "IS-DEMO-001",
+      "title": "Distribution Transformers",
+      "scope": "Oil immersed three phase distribution transformers supplying low voltage electricity from medium voltage networks.",
+      "edition": null,
+      "status": "unverified",
+      "standard_code": "IS-DEMO-001",
+      "revision": null,
+      "is_mock": true,
+      "validity": "unverified",
+      "abstract": "Outdoor 11 kV / 433 V, 50 Hz local distribution equipment; covers ratings, losses and temperature rise.",
+      "publication_date": null,
+      "withdrawn_date": null,
+      "superseded_by": null,
+      "source_url": null,
+      "keywords": [
+        "11 kV",
+        "433 V",
+        "electrical distribution",
+        "oil immersed",
+        "transformer"
+      ],
+      "related": [
+        "IS-DEMO-014",
+        "IS-DEMO-015",
+        "IS-DEMO-016",
+        "IS-DEMO-025"
+      ],
+      "certification": "BIS conformity verification",
+      "requirements": [
+        "Review topic: Frequency",
+        "Review topic: Installation environment",
+        "Review topic: Phase configuration",
+        "Review topic: Power rating",
+        "Review topic: Voltage ratings"
+      ],
+      "certifications": [
+        {
+          "standard_code": "IS-DEMO-001",
+          "name": "BIS conformity verification",
+          "authority": "Bureau of Indian Standards",
+          "applicable": null,
+          "status": "unverified",
+          "note": "Demo metadata only. Verify current BIS/QCO applicability from official BIS sources.",
+          "source_url": null,
+          "is_demo": true
+        }
+      ],
+      "relevance_label": "Recommended",
+      "matched_terms": [],
+      "supporting_evidence": [
+        "Evidence from the retrieval fixture"
+      ],
+      "retrieval_score": 0.031,
+      "reranker_score": 7.91,
+      "retrieval_score_type": "rrf"
+    }
+  ],
+  "related_standards": [
+    {
+      "number": "IS-DEMO-014",
+      "title": "Transformer Insulating Oil",
+      "scope": "Mineral insulating oil used as the dielectric and cooling medium in oil-filled transformers.",
+      "edition": null,
+      "status": "unverified",
+      "standard_code": "IS-DEMO-014",
+      "revision": null,
+      "is_mock": true,
+      "validity": "unverified",
+      "abstract": "Covers fluid breakdown voltage, moisture and acidity; applies to supplied oil rather than complete transformers.",
+      "publication_date": null,
+      "withdrawn_date": null,
+      "superseded_by": null,
+      "source_url": null,
+      "source_standard_code": "IS-DEMO-001",
+      "relationship_type": "material",
+      "is_demo_relationship": true,
+      "relationship_verified": false,
+      "relationship_note": "Demo relationship; not a verified BIS normative reference."
+    },
+    {
+      "number": "IS-DEMO-015",
+      "title": "Transformer Test Methods",
+      "scope": "Methods for electrical and thermal testing of power and distribution transformers.",
+      "edition": null,
+      "status": "unverified",
+      "standard_code": "IS-DEMO-015",
+      "revision": null,
+      "is_mock": true,
+      "validity": "unverified",
+      "abstract": "Covers ratio, winding resistance, losses, temperature rise and applied voltage test procedures.",
+      "publication_date": null,
+      "withdrawn_date": null,
+      "superseded_by": null,
+      "source_url": null,
+      "source_standard_code": "IS-DEMO-001",
+      "relationship_type": "test_method",
+      "is_demo_relationship": true,
+      "relationship_verified": false,
+      "relationship_note": "Demo relationship; not a verified BIS normative reference."
+    },
+    {
+      "number": "IS-DEMO-016",
+      "title": "Transformer Bushings",
+      "scope": "Insulated bushings carrying electrical conductors through grounded transformer tanks.",
+      "edition": null,
+      "status": "unverified",
+      "standard_code": "IS-DEMO-016",
+      "revision": null,
+      "is_mock": true,
+      "validity": "unverified",
+      "abstract": "Covers terminals, dielectric withstand and mechanical performance at tank penetrations.",
+      "publication_date": null,
+      "withdrawn_date": null,
+      "superseded_by": null,
+      "source_url": null,
+      "source_standard_code": "IS-DEMO-001",
+      "relationship_type": "component",
+      "is_demo_relationship": true,
+      "relationship_verified": false,
+      "relationship_note": "Demo relationship; not a verified BIS normative reference."
+    },
+    {
+      "number": "IS-DEMO-025",
+      "title": "Electrical Installation Safety",
+      "scope": "Safe electrical installations in buildings and industrial facilities.",
+      "edition": null,
+      "status": "unverified",
+      "standard_code": "IS-DEMO-025",
+      "revision": null,
+      "is_mock": true,
+      "validity": "unverified",
+      "abstract": "Covers protection against shock, isolation, live-part barriers and safe inspection practices.",
+      "publication_date": null,
+      "withdrawn_date": null,
+      "superseded_by": null,
+      "source_url": null,
+      "source_standard_code": "IS-DEMO-001",
+      "relationship_type": "safety",
+      "is_demo_relationship": true,
+      "relationship_verified": false,
+      "relationship_note": "Demo relationship; not a verified BIS normative reference."
+    }
+  ],
+  "certifications": [
+    {
+      "standard_code": "IS-DEMO-001",
+      "name": "BIS conformity verification",
+      "authority": "Bureau of Indian Standards",
+      "applicable": null,
+      "status": "unverified",
+      "note": "Demo metadata only. Verify current BIS/QCO applicability from official BIS sources.",
+      "source_url": null,
+      "is_demo": true
+    }
+  ],
+  "gaps": [
+    "Power rating: Specify the required transformer capacity in kVA or MVA."
+  ],
+  "explanation": "AI service ranking enriched with database metadata. 4 of 5 specification topics were mentioned (80% requirement coverage). 1 topic(s) need clarification. This is not a compliance verdict. Coverage describes topic mentions only; it does not establish standards compliance. Related/normative relationships and certification obligations have not been verified.",
+  "recommendation_source": "ai_service",
+  "match_status": "NOT_ASSESSED",
+  "ai_match_status": "NOT_ASSESSED",
+  "has_reliable_match": null,
+  "warnings": [
+    "Deterministic example with a stub AI candidate; scores are not confidence.",
+    "Relevance scores are uncalibrated, not probabilities. Metadata validity has not been verified.",
+    "Fictional IS-DEMO development metadata; these are not official BIS standards."
+  ],
+  "degraded": false,
+  "missing_standard_codes": []
+}

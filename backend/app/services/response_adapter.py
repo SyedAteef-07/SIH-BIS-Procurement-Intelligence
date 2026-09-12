@@ -1,10 +1,21 @@
 """Metadata is database-owned; candidate ordering is AI-owned."""
 from app.database.repositories.standards import StandardRepository
 from app.services.gap_analysis import analyze_gaps
+from app.scripts.seed_standards import DEMO_NOTE
+
+
+def certification_details(standard):
+    mock = standard.is_mock or standard.standard_code.startswith("IS-DEMO-")
+    return [dict(standard_code=standard.standard_code, name=c.name, authority=c.authority,
+                 applicable=None if mock else c.applicable, status="unverified" if mock else c.status,
+                 note=DEMO_NOTE if mock else c.note, source_url=c.source_url, is_demo=mock)
+            for c in standard.certifications]
 
 
 def standard_detail(standard):
     mock = standard.is_mock or standard.standard_code.startswith("IS-DEMO-")
+    certifications = certification_details(standard)
+    topics = ["Review topic: " + requirement.label for requirement in standard.requirements]
     return dict(number=standard.standard_code, standard_code=standard.standard_code,
                 title=standard.title, scope=standard.scope, abstract=standard.abstract,
                 edition=standard.revision, revision=standard.revision,
@@ -12,12 +23,22 @@ def standard_detail(standard):
                 validity="unverified", publication_date=standard.publication_date,
                 withdrawn_date=standard.withdrawn_date, superseded_by=standard.superseded_by,
                 source_url=standard.source_url, keywords=[k.keyword for k in standard.keywords],
-                related=[], certification=None, requirements=[])
+                related=sorted({r.target.standard_code for r in standard.outgoing_relationships}),
+                certification=certifications[0]["name"] if certifications else None,
+                certifications=certifications, requirements=topics)
 
 
 def adapt_analysis(text, ai_response, session):
     codes = [c.standard.id for c in ai_response.recommendations]
     metadata = StandardRepository(session).get_by_codes(codes)
+    related = []
+    for source, kind, target in StandardRepository(session).get_related_standards(codes):
+        item = standard_detail(target)
+        demo = metadata[source].is_mock or target.is_mock
+        item.update(source_standard_code=source, relationship_type=kind,
+                    is_demo_relationship=demo, relationship_verified=False,
+                    relationship_note="Demo relationship; not a verified BIS normative reference." if demo else "Relationship has not been verified as a BIS normative reference.")
+        related.append(item)
     missing = [code for code in codes if code not in metadata]
     warnings = list(ai_response.warnings)
     if ai_response.warning:
@@ -44,7 +65,8 @@ def adapt_analysis(text, ai_response, session):
     extracted = ai_response.extracted_requirements
     details = list(dict.fromkeys(e.evidence for entries in extracted.evidence.values() for e in entries
                                if not e.negated and e.evidence and e.evidence in text)) if extracted else []
-    return dict(input=text, recommendations=recommendations, related_standards=[], certifications=[],
+    return dict(input=text, recommendations=recommendations, related_standards=related,
+                certifications=[c for item in recommendations for c in item["certifications"]],
                 gaps=[f"{c.label}: {c.action}" for c in analysis.checks if c.status != "mentioned"],
                 gap_analysis=analysis.model_dump(), extracted_requirements=details,
                 embedding_mode=ai_response.embedding_mode, detected_language=ai_response.detected_language,

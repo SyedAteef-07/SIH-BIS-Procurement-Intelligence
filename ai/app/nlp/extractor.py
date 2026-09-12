@@ -4,6 +4,7 @@ from app.nlp import technical_patterns as patterns
 from app.nlp.normalization import normalize_technical_value, normalize_phase, normalize_ip_rating, normalize_phrase
 from app.nlp.preprocess import clean_text
 from app.nlp.product_matcher import ProductMatcher
+from app.nlp.coverage_topics import TOPIC_PATTERNS
 from app.schemas.requirements import ExtractedRequirements, EvidenceItem
 
 
@@ -62,4 +63,9 @@ class RequirementExtractor:
         for match in patterns.TESTING.finditer(text):
             for term in patterns.TEST_TERM.finditer(match.group("terms")):
                 add("testing_requirements", match, normalize_phrase(term.group()) + " testing")
+        for field, expression in TOPIC_PATTERNS.items():
+            for match in re.finditer(expression, text, re.I):
+                result.evidence.setdefault(field, []).append(EvidenceItem(
+                    value=normalize_phrase(match.group()), evidence=match.group(),
+                    start=match.start(), end=match.end(), negated=patterns.is_negated(text, *match.span())))
         return result

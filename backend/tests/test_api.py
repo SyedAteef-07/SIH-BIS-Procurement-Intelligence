@@ -17,7 +17,7 @@ def test_analysis_returns_ranked_metadata_without_invented_certification(api):
     body = response.json()
     assert body["recommendations"][0]["number"] == "IS-DEMO-002"
     assert body["recommendations"][0]["title"] == "Portland Cement"
-    assert body["certifications"] == [] and body["related_standards"] == []
+    assert body["certifications"][0]["status"] == "unverified" and body["related_standards"] == []
     assert ai.calls == [("53 grade cement for concrete construction", 1)]
 
 

@@ -1,4 +1,4 @@
-﻿[
+[
   {
     "id": "IS-DEMO-001",
     "title": "Distribution Transformers",
@@ -12,7 +12,49 @@
       "433 V"
     ],
     "is_mock": true,
-    "source": "Fictional development fixture; not a BIS publication"
+    "source": "Fictional development fixture; not a BIS publication",
+    "requirements": [
+      {
+        "key": "voltages",
+        "label": "Voltage ratings",
+        "description": "Specify the required primary and secondary voltages.",
+        "category": "specification",
+        "is_mandatory": false,
+        "source_section": "Fictional fixture scope: Oil immersed three phase distribution transformers supplying low voltage electricity from medium voltage networks. Abstract: Outdoor 11 kV / 433 V, 50 Hz local distribution equipment; covers ratings, losses and temperature rise."
+      },
+      {
+        "key": "power_ratings",
+        "label": "Power rating",
+        "description": "Specify the required transformer capacity in kVA or MVA.",
+        "category": "specification",
+        "is_mandatory": false,
+        "source_section": "Fictional fixture scope: Oil immersed three phase distribution transformers supplying low voltage electricity from medium voltage networks. Abstract: Outdoor 11 kV / 433 V, 50 Hz local distribution equipment; covers ratings, losses and temperature rise."
+      },
+      {
+        "key": "phase",
+        "label": "Phase configuration",
+        "description": "Specify the required phase configuration.",
+        "category": "specification",
+        "is_mandatory": false,
+        "source_section": "Fictional fixture scope: Oil immersed three phase distribution transformers supplying low voltage electricity from medium voltage networks. Abstract: Outdoor 11 kV / 433 V, 50 Hz local distribution equipment; covers ratings, losses and temperature rise."
+      },
+      {
+        "key": "frequencies",
+        "label": "Frequency",
+        "description": "Specify the operating frequency.",
+        "category": "specification",
+        "is_mandatory": false,
+        "source_section": "Fictional fixture scope: Oil immersed three phase distribution transformers supplying low voltage electricity from medium voltage networks. Abstract: Outdoor 11 kV / 433 V, 50 Hz local distribution equipment; covers ratings, losses and temperature rise."
+      },
+      {
+        "key": "installation",
+        "label": "Installation environment",
+        "description": "Specify the installation environment.",
+        "category": "specification",
+        "is_mandatory": false,
+        "source_section": "Fictional fixture scope: Oil immersed three phase distribution transformers supplying low voltage electricity from medium voltage networks. Abstract: Outdoor 11 kV / 433 V, 50 Hz local distribution equipment; covers ratings, losses and temperature rise."
+      }
+    ]
   },
   {
     "id": "IS-DEMO-002",
@@ -26,7 +68,25 @@
       "construction"
     ],
     "is_mock": true,
-    "source": "Fictional development fixture; not a BIS publication"
+    "source": "Fictional development fixture; not a BIS publication",
+    "requirements": [
+      {
+        "key": "performance_requirements",
+        "label": "Performance criteria",
+        "description": "Specify compressive strength, setting time and soundness criteria.",
+        "category": "specification",
+        "is_mandatory": false,
+        "source_section": "Fictional fixture scope: Portland cement used as a binder in concrete construction. Abstract: Covers compressive strength, setting time and soundness of cement supplied in bags or bulk."
+      },
+      {
+        "key": "materials",
+        "label": "Construction materials",
+        "description": "Describe the intended cement and concrete application.",
+        "category": "specification",
+        "is_mandatory": false,
+        "source_section": "Fictional fixture scope: Portland cement used as a binder in concrete construction. Abstract: Covers compressive strength, setting time and soundness of cement supplied in bags or bulk."
+      }
+    ]
   },
   {
     "id": "IS-DEMO-003",
@@ -53,7 +113,25 @@
       "worker safety"
     ],
     "is_mock": true,
-    "source": "Fictional development fixture; not a BIS publication"
+    "source": "Fictional development fixture; not a BIS publication",
+    "requirements": [
+      {
+        "key": "safety_requirements",
+        "label": "Protection requirements",
+        "description": "Specify impact protection and penetration resistance.",
+        "category": "specification",
+        "is_mandatory": false,
+        "source_section": "Fictional fixture scope: Protective headgear for industrial and construction workers exposed to falling objects. Abstract: Covers impact absorption, penetration resistance and retention of safety helmets."
+      },
+      {
+        "key": "performance_requirements",
+        "label": "Helmet performance",
+        "description": "Specify helmet impact absorption and retention performance criteria.",
+        "category": "specification",
+        "is_mandatory": false,
+        "source_section": "Fictional fixture scope: Protective headgear for industrial and construction workers exposed to falling objects. Abstract: Covers impact absorption, penetration resistance and retention of safety helmets."
+      }
+    ]
   },
   {
     "id": "IS-DEMO-005",
@@ -67,7 +145,25 @@
       "insulation"
     ],
     "is_mock": true,
-    "source": "Fictional development fixture; not a BIS publication"
+    "source": "Fictional development fixture; not a BIS publication",
+    "requirements": [
+      {
+        "key": "materials",
+        "label": "Conductor and insulation materials",
+        "description": "Specify conductor and insulation materials.",
+        "category": "specification",
+        "is_mandatory": false,
+        "source_section": "Fictional fixture scope: Insulated copper and aluminium conductors for electrical power distribution. Abstract: General cable construction and insulation testing; covers supply cables without a specific voltage class."
+      },
+      {
+        "key": "testing_requirements",
+        "label": "Testing requirements",
+        "description": "Specify the required insulation tests and acceptance criteria.",
+        "category": "specification",
+        "is_mandatory": false,
+        "source_section": "Fictional fixture scope: Insulated copper and aluminium conductors for electrical power distribution. Abstract: General cable construction and insulation testing; covers supply cables without a specific voltage class."
+      }
+    ]
   },
   {
     "id": "IS-DEMO-006",
@@ -108,7 +204,25 @@
       "head"
     ],
     "is_mock": true,
-    "source": "Fictional development fixture; not a BIS publication"
+    "source": "Fictional development fixture; not a BIS publication",
+    "requirements": [
+      {
+        "key": "performance_requirements",
+        "label": "Hydraulic performance",
+        "description": "Specify discharge flow, head and hydraulic efficiency criteria.",
+        "category": "specification",
+        "is_mandatory": false,
+        "source_section": "Fictional fixture scope: Centrifugal pumps used to transfer water in supply installations. Abstract: Covers discharge flow, head and hydraulic efficiency of rotating impeller pumps."
+      },
+      {
+        "key": "water_use",
+        "label": "Water application",
+        "description": "Describe the intended water application, including whether drinking water is involved.",
+        "category": "specification",
+        "is_mandatory": false,
+        "source_section": "Fictional fixture scope: Centrifugal pumps used to transfer water in supply installations. Abstract: Covers discharge flow, head and hydraulic efficiency of rotating impeller pumps."
+      }
+    ]
   },
   {
     "id": "IS-DEMO-009",
@@ -136,7 +250,41 @@
       "water"
     ],
     "is_mock": true,
-    "source": "Fictional development fixture; not a BIS publication"
+    "source": "Fictional development fixture; not a BIS publication",
+    "requirements": [
+      {
+        "key": "dimensions",
+        "label": "Pipe dimensions",
+        "description": "Specify pipe diameter and wall thickness or dimension class.",
+        "category": "specification",
+        "is_mandatory": false,
+        "source_section": "Fictional fixture scope: Rigid PVC plastic pipes used in pressurized potable water supply systems. Abstract: Covers pipe dimensions, joints and hydrostatic pressure resistance for municipal drinking water networks."
+      },
+      {
+        "key": "pressure_ratings",
+        "label": "Pressure rating",
+        "description": "Specify the required operating pressure or pressure class.",
+        "category": "specification",
+        "is_mandatory": false,
+        "source_section": "Fictional fixture scope: Rigid PVC plastic pipes used in pressurized potable water supply systems. Abstract: Covers pipe dimensions, joints and hydrostatic pressure resistance for municipal drinking water networks."
+      },
+      {
+        "key": "joints",
+        "label": "Joint type",
+        "description": "Specify the joint or connection type.",
+        "category": "specification",
+        "is_mandatory": false,
+        "source_section": "Fictional fixture scope: Rigid PVC plastic pipes used in pressurized potable water supply systems. Abstract: Covers pipe dimensions, joints and hydrostatic pressure resistance for municipal drinking water networks."
+      },
+      {
+        "key": "water_use",
+        "label": "Water application",
+        "description": "Clarify whether the pipe is intended for potable water.",
+        "category": "specification",
+        "is_mandatory": false,
+        "source_section": "Fictional fixture scope: Rigid PVC plastic pipes used in pressurized potable water supply systems. Abstract: Covers pipe dimensions, joints and hydrostatic pressure resistance for municipal drinking water networks."
+      }
+    ]
   },
   {
     "id": "IS-DEMO-011",
@@ -318,7 +466,33 @@
       "1.1 kV"
     ],
     "is_mock": true,
-    "source": "Fictional development fixture; not a BIS publication"
+    "source": "Fictional development fixture; not a BIS publication",
+    "requirements": [
+      {
+        "key": "materials",
+        "label": "Insulation materials",
+        "description": "Specify the insulation material.",
+        "category": "specification",
+        "is_mandatory": false,
+        "source_section": "Fictional fixture scope: PVC insulated low-voltage electrical cables for building wiring and supply circuits. Abstract: Covers 450/750 V and 1.1 kV cable construction and insulation tests for 50 Hz circuits."
+      },
+      {
+        "key": "voltages",
+        "label": "Voltage rating",
+        "description": "Specify the rated voltage.",
+        "category": "specification",
+        "is_mandatory": false,
+        "source_section": "Fictional fixture scope: PVC insulated low-voltage electrical cables for building wiring and supply circuits. Abstract: Covers 450/750 V and 1.1 kV cable construction and insulation tests for 50 Hz circuits."
+      },
+      {
+        "key": "frequencies",
+        "label": "Frequency",
+        "description": "Specify the operating frequency.",
+        "category": "specification",
+        "is_mandatory": false,
+        "source_section": "Fictional fixture scope: PVC insulated low-voltage electrical cables for building wiring and supply circuits. Abstract: Covers 450/750 V and 1.1 kV cable construction and insulation tests for 50 Hz circuits."
+      }
+    ]
   },
   {
     "id": "IS-DEMO-024",
@@ -333,7 +507,41 @@
       "33 kV"
     ],
     "is_mock": true,
-    "source": "Fictional development fixture; not a BIS publication"
+    "source": "Fictional development fixture; not a BIS publication",
+    "requirements": [
+      {
+        "key": "materials",
+        "label": "Insulation materials",
+        "description": "Specify the insulation material.",
+        "category": "specification",
+        "is_mandatory": false,
+        "source_section": "Fictional fixture scope: XLPE insulated high-voltage power cables for underground feeders. Abstract: Covers 11 kV and 33 kV cable insulation, screens and dielectric testing."
+      },
+      {
+        "key": "voltages",
+        "label": "Voltage rating",
+        "description": "Specify the rated voltage.",
+        "category": "specification",
+        "is_mandatory": false,
+        "source_section": "Fictional fixture scope: XLPE insulated high-voltage power cables for underground feeders. Abstract: Covers 11 kV and 33 kV cable insulation, screens and dielectric testing."
+      },
+      {
+        "key": "installation",
+        "label": "Installation environment",
+        "description": "Clarify the installation environment.",
+        "category": "specification",
+        "is_mandatory": false,
+        "source_section": "Fictional fixture scope: XLPE insulated high-voltage power cables for underground feeders. Abstract: Covers 11 kV and 33 kV cable insulation, screens and dielectric testing."
+      },
+      {
+        "key": "testing_requirements",
+        "label": "Testing requirements",
+        "description": "Specify dielectric testing and acceptance criteria.",
+        "category": "specification",
+        "is_mandatory": false,
+        "source_section": "Fictional fixture scope: XLPE insulated high-voltage power cables for underground feeders. Abstract: Covers 11 kV and 33 kV cable insulation, screens and dielectric testing."
+      }
+    ]
   },
   {
     "id": "IS-DEMO-025",

@@ -42,11 +42,31 @@ class StandardSummary(BaseModel):
     source_url: str | None = None
 
 
+class CertificationInfo(BaseModel):
+    standard_code: str
+    name: str
+    authority: str
+    applicable: bool | None = None
+    status: str = "unverified"
+    note: str
+    source_url: str | None = None
+    is_demo: bool = True
+
+
+class RelatedStandard(StandardSummary):
+    source_standard_code: str
+    relationship_type: str
+    is_demo_relationship: bool
+    relationship_verified: bool = False
+    relationship_note: str
+
+
 class StandardDetail(StandardSummary):
     keywords: list[str] = Field(default_factory=list)
     related: list[str] = Field(default_factory=list)
     certification: str | None = None
     requirements: list[str] = Field(default_factory=list)
+    certifications: list[CertificationInfo] = Field(default_factory=list)
 
 
 class Recommendation(StandardDetail):
@@ -66,8 +86,8 @@ class AnalysisResponse(BaseModel):
     reranking_applied: bool = True
     input: str
     recommendations: list[Recommendation]
-    related_standards: list[Recommendation]
-    certifications: list[str]
+    related_standards: list[RelatedStandard]
+    certifications: list[CertificationInfo]
     gaps: list[str]
     explanation: str
     recommendation_source: Literal["ai_service"] = "ai_service"

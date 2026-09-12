@@ -52,11 +52,22 @@ test('service failures and validation failures are visible', async () => {
 
 test('raw scores never become confidence percentages', () => {
   for (const score of [-11, 0.02, 0.95, 7.91]) {
-    assert.equal(relevanceLabel({ is_mock: true, score, reranker_score: score }), 'Demo recommendation · Unverified');
-    assert.equal(relevanceLabel({ is_mock: false, score }), 'Recommended · Unverified');
+    assert.equal(relevanceLabel({ is_mock: true, score, reranker_score: score }), 'Recommended Standard');
+    assert.equal(relevanceLabel({ is_mock: false, score }), 'Recommended Standard');
   }
   const component = readFileSync(new URL('../src/ResultsPage.jsx', import.meta.url), 'utf8');
   assert.ok(component.includes('relevanceLabel(primary)'));
   assert.ok(!component.includes('% match'));
   assert.ok(!component.includes('Math.round'));
+});
+
+import { presentationText, statusLabel } from '../src/resultPresentation.js';
+
+test('presentation removes boilerplate and retains source content and scope limits', () => {
+  assert.equal(presentationText('Fictional fixture scope: PVC pipes for water. Abstract: Pressure resistance.'), 'Scope: PVC pipes for water. Abstract: Pressure resistance.');
+  assert.equal(presentationText('Only the first 2,000 extracted PDF characters were checked. A mention is not proof that a specification is adequate or compliant.'), 'Only the first 2,000 extracted PDF characters were checked.');
+  assert.equal(presentationText('Demo metadata only. Verify current BIS/QCO applicability from official BIS sources.'), '');
+  assert.equal(presentationText('4 of 5 topics mentioned. This is not a compliance verdict. Based on fictional demo metadata.'), '4 of 5 topics mentioned.');
+  assert.equal(statusLabel('unverified'), 'Unverified');
+  assert.equal(relevanceLabel(null), 'No recommendation available');
 });

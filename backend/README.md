@@ -74,7 +74,7 @@ volume/fresh database; this revision does not overwrite or import legacy data.
 ## API behavior and compatibility
 
 `description` accepts meaningful text of at most 2,000 characters (previously
-50,000); `limit` remains 1–20. Backend validation runs before AI recommendation.
+50,000); `limit` remains 1â€“20. Backend validation runs before AI recommendation.
 The backend sends `{text, top_k}` to `/recommend` through a finite-timeout
 `httpx.AsyncClient`. Errors are sanitized and requests are not retried.
 
@@ -107,11 +107,10 @@ is 503. No complete requirement or upstream error body is logged. Basic
 liveness stays independent of dependency availability.
 
 Legacy `catalog.py`/`service.py` and graph helpers remain in the repository but
-are not used by the API. There is no automatic heuristic fallback. Related,
-certification and gap lists remain empty because this fixture contains no
-verified facts for those features; the response explanation states that these
-checks were not performed. Old API tests were adapted to this intentional
-replacement of the legacy catalog contract with fictional database metadata.
+are not used by the API. There is no automatic heuristic fallback. Related
+and certification metadata now come from explicitly labeled demo database
+records. Gap analysis checks topic mentions against stored requirement metadata; it
+does not verify compliance. See the demo feature contract below.
 
 ## Tests
 
@@ -139,3 +138,47 @@ docker rm -v bis-metadata-test
 The PostgreSQL test applies the actual migration, checks ORM/schema agreement,
 seeds twice and exercises `/api/analyze` against real database metadata with a
 mock HTTP AI response. Backend tests do not download or import AI models.
+
+## Demo requirement coverage, relationships and certification
+
+Apply the new additive migration and rerun the idempotent seed before restarting the backend:
+
+```powershell
+cd backend
+.venv/Scripts/alembic upgrade head
+.venv/Scripts/python -m app.scripts.seed_standards
+```
+
+Migration `0002_standard_certifications` adds a table with a standard foreign key and a unique `(standard_id, name)` constraint. Migration 0001 is unchanged. The seed now maintains 40 standards, their keywords, 15 directed demo relationships and five certification placeholders (001, 002, 004, 005, 010). Repeated seeding does not duplicate records. Existing unrelated records are retained. Restart the AI service as well to enable the additional topic extraction, then submit a fresh analysis.
+
+Requirement Coverage is `mentioned_count / total_checks * 100`, rounded to two decimal places, only when assessed with at least one check. Missing and needs-review topics stay in the denominator. Unassessed coverage is null, not zero. Retrieval and reranker scores play no role. A mention is not proof that a specification is adequate or compliant. Checklists are loaded from StandardRequirement rows for the primary standard; there are no product-name or standard-ID rules in the gap engine. Standards without requirement rows, unavailable extraction/primary metadata, and languages other than English remain unassessed. Product identification is not a gate. Fixture requirements use existing ExtractedRequirements field names, with related topics grouped into their extraction category. A category mention is not proof that every detail in its description was supplied. PDF coverage applies only to analyzed text, with the 2,000-character truncation warning preserved.
+
+Related entries include `source_standard_code`, target metadata, actual `relationship_type`, `is_demo_relationship`, `relationship_verified: false`, and a note saying these are not verified BIS normative references. Ordering is source code, target code, then relationship type. AI recommendation ordering is unchanged. Relationships are directed and are not automatically labeled normative.
+
+Certifications are structured objects with name, authority, applicable, status, note and source_url, plus the owning standard_code and is_demo. Demo certification applicability remains null and status unverified, even if an underlying demo row is accidentally marked verified. No official QCO applicability is asserted. Missing certification metadata remains an empty list. Legacy per-standard `related` code lists and `certification` name are retained; structured `certifications` is also provided per standard. The top-level certifications field now contains objects rather than strings; the current frontend accepts both formats. Legacy `gaps` strings remain available alongside structured `gap_analysis`.
+
+The frontend retains its existing layout and tabs. It displays Requirement Coverage, relationship types and provenance, certification authority/status/applicability/note, and exports these details. Metadata review topics are labeled separately from extracted tender requirements.
+
+See [the example response](examples/demo_analysis_response.json): an actual backend `/api/analyze` response using the seeded temporary PostgreSQL database and a deterministic stub AI candidate. Request: `{"description":"distribution transformer 11 kV three phase 50 Hz outdoor","limit":1}`. Four of five topics are mentioned, giving 80% coverage; the missing topic is power rating. It returns four typed transformer relationships and one unverified certification placeholder. The example scores are illustrative, not a live retrieval benchmark.
+
+Validation: backend `pytest -v` (47 passed, optional PostgreSQL test skipped), isolated PostgreSQL smoke test (1 passed, migration and double seed), AI `pytest -v` (164 passed), frontend unit tests (6 passed), browser checks (11 passed), and production build passed.
+
+Files changed for this phase:
+
+- AI: `app/nlp/extractor.py`, new `app/nlp/coverage_topics.py`, new `tests/test_coverage_topics.py`.
+- Backend: `app/database/models.py`, `app/database/repositories/standards.py`, `app/scripts/seed_standards.py`, `app/services/gap_analysis.py`, `app/services/response_adapter.py`, `app/schemas.py`.
+- Migration and example: new `alembic/versions/0002_standard_certifications.py`, new `examples/demo_analysis_response.json`.
+- Backend validation/documentation: `tests/test_api.py`, `tests/test_gap_analysis.py`, new `tests/test_demo_features.py`, `README.md`.
+- Frontend: `src/ResultsPage.jsx`, `tests/browser/flow.spec.js` (data rendering only; no redesign).
+
+
+## Data-driven requirement metadata
+
+Migration `0003_standard_requirements` adds `standard_requirements`, linked to `standards`, with a unique `(standard_id, requirement_key)` constraint. Existing migrations are unchanged. Run `alembic upgrade head`, rerun `python -m app.scripts.seed_standards`, and restart the backend before analyzing again.
+
+The shared fictional fixture now defines 24 requirements across eight standards. The seed validates extraction keys and duplicate keys before writing, preserves row IDs when updating descriptions, and removes obsolete requirement rows for standards included in the fixture. Omitted standards are untouched. Database loading eagerly includes requirements in deterministic key order. Requirement metadata alone defines the checklist; scope/abstract are not reinterpreted at runtime.
+
+Each check returns requirement_key, label, requirement_description, category, is_mandatory, source_section, source_evidence, evidence, status and action. Source sections in the fixture explicitly identify fictional scope/abstract provenance. The model defaults is_mandatory to true; demo fixture entries explicitly use false to avoid suggesting official mandatory obligations. All stored requirements contribute equally to coverage, regardless of this flag.
+
+A source-backed non-negated, non-conflicting mention takes precedence over negative mentions for the same key. Only negative/conflicting evidence yields needs_review; no source-backed evidence yields missing. All returned snippets are checked against analyzed input. Raw AI scores are never used. No compliance inference is made.
+Validation for the data-driven update: all 51 backend tests passed with isolated PostgreSQL enabled (including migration upgrade/downgrade and idempotent seeding); all 164 AI tests passed.
